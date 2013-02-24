@@ -80,8 +80,8 @@ create_window (void)
 
 	color_chooser = gtk_color_selection_new();
 	separator = gtk_separator_new (GTK_ORIENTATION_HORIZONTAL);
-	button_quit = gtk_button_new_with_label (_("Quit"));
-	button_about = gtk_button_new_with_label (_("About"));
+	button_quit = gtk_button_new_from_stock ("gtk-quit");
+	button_about = gtk_button_new_from_stock ("gtk-about");
 
 	gtk_box_pack_start (GTK_BOX (box_all), color_chooser, TRUE, TRUE, 0);
 	gtk_box_pack_start (GTK_BOX (box_all), separator, TRUE, TRUE, 0);
