@@ -1,6 +1,6 @@
 pkgname=gcolor3-git
 pkgbase=gcolor3
-pkgver=20130212
+pkgver=20130224
 pkgrel=1
 pkgdesc="A simple color selection dialog in GTK3"
 arch=(any)
