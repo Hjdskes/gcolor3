@@ -1,6 +1,6 @@
 pkgname=gcolor3-git
 pkgbase=gcolor3
-pkgver=20130224
+pkgver=20130225
 pkgrel=1
 pkgdesc="A simple color selection dialog in GTK3"
 arch=(any)
@@ -27,7 +27,7 @@ build() {
 
 package() {
   cd "$srcdir/$pkgbase"
-  make
+  make gcolor3
   make DESTDIR="$pkgdir" install
 }
 md5sums=()
