@@ -1,7 +1,7 @@
 /* -*- Mode: C; indent-tabs-mode: t; c-basic-offset: 4; tab-width: 4 -*-  */
 /*
  * gcolor3
- * Copyright (C) 2013 Jente <jthidskes@outlook.com>
+ * Copyright (C) 2013 Jente (jthidskes at outlook dot com)
  *
  * gcolor3 is free software: you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
