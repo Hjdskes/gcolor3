@@ -149,7 +149,7 @@ save_dialog_open (void)
 
 	save_dialog_cancel_button = gtk_button_new_from_stock ("gtk-cancel");
 	gtk_widget_show (save_dialog_cancel_button);
-	gtk_dialog_add_action_widget (GTK_DIALOG (save_dialog), save_dialog_cancel_button, GTK_RESPONSE_OK);
+	gtk_dialog_add_action_widget (GTK_DIALOG (save_dialog), save_dialog_cancel_button, GTK_RESPONSE_CANCEL);
 	gtk_widget_set_sensitive (save_dialog_cancel_button, TRUE);
 	gtk_widget_set_can_default(save_dialog_cancel_button, TRUE);
 
@@ -319,7 +319,7 @@ delete_color (gchar *color_name, gchar *color_value)
 
 		/* make sure to only remove the first matching color; both value and name must match */
 		if (found || strcmp (file_color_name, color_name) != 0 || strcmp (g_ascii_strup (file_color_value, -1), color_value) != 0) {
-			g_sprintf (newstuff, "%s%3d %3d %3d\t\t%s\n", newstuff, r, g, b, file_color_name);
+			g_sprintf (newstuff+strlen(newstuff), "%3d %3d %3d\t\t%s\n", r, g, b, file_color_name);
 		} else {
 			found = TRUE;
 		}
