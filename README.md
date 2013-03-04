@@ -1,16 +1,16 @@
 Gcolor3
 =========
 
-**A simple color chooser dialog written in GTK3, much alike gcolor2.**
+**A simple color chooser dialog written in GTK3, much alike Gcolor2.**
 
 ![Screenshot](https://github.com/Unia/gcolor3/raw/master/comparison.png "comparison")
 
 Installation
 ------------
 
-The only dependency required to built and run gcolor3, is gtk3.
+The only dependency required to build and run Gcolor3, is GTK3.
 
-Once the ridiculous amount of dependencies are installed, just run these commands to built and install gcolor3:
+Once the ridiculous amount of dependencies are installed, just run these commands to build and install Gcolor3:
 
     $ make gcolor3
     # make clean install
@@ -18,7 +18,7 @@ Once the ridiculous amount of dependencies are installed, just run these command
 Bugs
 ----
 
-For any bug or request [fill an issue][bug] on [GitHub][ghp]
+For any bug or request [fill an issue][bug] on [GitHub][ghp].
 
   [bug]: https://github.com/Unia/gcolor3/issues
   [ghp]: https://github.com/Unia/gcolor3

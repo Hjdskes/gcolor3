@@ -12,22 +12,23 @@ _gitroot="https://github.com/Unia/$pkgbase"
 _gitname="$pkgbase"
 
 build() {
-  cd "$srcdir"
-  msg "Connecting to GIT server..."
+	cd "$srcdir"
+	msg "Connecting to GIT server..."
 
-  if [ -d ${_gitname} ] ; then
-    cd ${_gitname}
-    git pull
-    msg "The local files are updated."
-  else
-    git clone ${_gitroot} ${_gitname}
-  fi
-  msg "GIT checkout done or server timeout"
+	if [ -d ${_gitname} ] ; then
+		cd ${_gitname}
+		git pull
+		msg "The local files are updated."
+	else
+		git clone ${_gitroot} ${_gitname}
+	fi
+	msg "GIT checkout done or server timeout"
 }
 
 package() {
-  cd "$srcdir/$pkgbase"
-  make gcolor3
-  make DESTDIR="$pkgdir" install
+	cd "$srcdir/$pkgbase"
+	make gcolor3
+	make DESTDIR="$pkgdir" install
 }
+
 md5sums=()

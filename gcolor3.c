@@ -25,6 +25,7 @@
 
 GtkWidget *window, *color_chooser, *save_dialog, *tree, *button_save, *save_label, *button_delete, *save_dialog_ok_button, *save_entry;
 GtkTreeIter selection_iter, iter;
+GtkTreeSelection *selection;
 GtkListStore *liststore;
 GdkColor colorvalue;
 gchar *colorname, *user_filename;
@@ -37,24 +38,18 @@ enum
 	N_COLUMNS
 };
 
-void on_save_entry_changed (void);
-void on_list_selection_changed (GtkTreeSelection *selection);
-void on_colorselection_color_changed (void);
-void on_save_button_clicked (void);
-void on_delete_button_clicked (void);
-
 gboolean save_selected_color (void);
 gboolean delete_color (gchar* color_name, gchar* color_value);
 void add_rgb_file (void);
 
 void on_colorselection_color_changed (void);
 void on_save_entry_changed (void);
-void on_list_selection_changed (GtkTreeSelection *selection);
+void on_list_selection_changed (void);
 void on_save_button_clicked (void);
 void on_delete_button_clicked (void);
 
 gchar* hex_value (GdkColor colorvalue);
-void add_color_to_treeview ();
+void add_color_to_treeview (void);
 void add_list_color (gchar *spec, gchar *colorname, gboolean is_new_color);
 
 /*#####################################################################################################################################
@@ -66,9 +61,7 @@ show_file_error (gchar* type)
 {
 	GtkDialog *error_dialog;
 
-	error_dialog = GTK_DIALOG (gtk_message_dialog_new (GTK_WINDOW (window), GTK_DIALOG_MODAL, GTK_MESSAGE_ERROR,
-													   GTK_BUTTONS_OK, _("An error occurred trying to open file \"%s\" for %s access!\n\n"
-																		 "Please check the file permissions and try again."), user_filename, type));
+	error_dialog = GTK_DIALOG (gtk_message_dialog_new (GTK_WINDOW (window), GTK_DIALOG_MODAL, GTK_MESSAGE_ERROR, GTK_BUTTONS_OK, _("An error occurred trying to open file \"%s\" for %s access!\n\nPlease check the file permissions and try again."), user_filename, type));
 	gtk_dialog_run (error_dialog);
 	gtk_widget_destroy (GTK_WIDGET (error_dialog));
 }
@@ -150,8 +143,6 @@ save_dialog_open (void)
 	save_dialog_cancel_button = gtk_button_new_from_stock ("gtk-cancel");
 	gtk_widget_show (save_dialog_cancel_button);
 	gtk_dialog_add_action_widget (GTK_DIALOG (save_dialog), save_dialog_cancel_button, GTK_RESPONSE_CANCEL);
-	gtk_widget_set_sensitive (save_dialog_cancel_button, TRUE);
-	gtk_widget_set_can_default(save_dialog_cancel_button, TRUE);
 
 	g_signal_connect ((gpointer) save_entry, "changed", G_CALLBACK (on_save_entry_changed), NULL);
 
@@ -159,6 +150,7 @@ save_dialog_open (void)
 	gtk_container_add (GTK_CONTAINER (content_area), save_entry);
 
 	gtk_widget_grab_focus (save_entry);
+	gtk_widget_grab_default (save_dialog_ok_button);
 
 	return save_dialog;
 }
@@ -168,7 +160,6 @@ create_window (void)
 {
 	GtkWidget *window, *box_all, *expander, *expander_box_all, *expander_box_buttons, *separator, *box_buttons, *button_quit, *button_about;
 	GtkTreeViewColumn *column;
-	GtkTreeSelection *selection;
 	GtkCellRenderer *renderer;
 
 	window = gtk_window_new (GTK_WINDOW_TOPLEVEL);
@@ -260,7 +251,6 @@ save_selected_color (void)
 	FILE     *fp;
 	gchar     old[512] = "";
 
-	/* get entry text */
 	colorname = g_strdup (gtk_entry_get_text (GTK_ENTRY (save_entry)));
 	if (!strcmp (colorname, ""))
 		return FALSE;
@@ -281,11 +271,11 @@ save_selected_color (void)
 	if (!fp) {
 		show_file_error ("write");
 		return FALSE;
+	} else {
+		g_fprintf (fp, "%3d %3d %3d\t\t%s\n%s", colorvalue.red/256, colorvalue.green/256, colorvalue.blue/256, colorname, old);
+		fclose (fp);
+		return TRUE;
 	}
-
-	fprintf (fp, "%3d %3d %3d\t\t%s\n%s", colorvalue.red/256, colorvalue.green/256, colorvalue.blue/256, colorname, old);
-	fclose (fp);
-	return TRUE;
 }
 
 gboolean
@@ -305,40 +295,40 @@ delete_color (gchar *color_name, gchar *color_value)
 	if (!fp) {
 		show_file_error ("read");
 		return FALSE;
-	}
+	} else {
+		while ((p = fgets (buffer, sizeof buffer, fp)) != NULL) {
+			if (buffer[0] == '!')
+				continue;
+			r = g_ascii_strtoull (p, &p, 10);
+			g = g_ascii_strtoull (p, &p, 10);
+			b = g_ascii_strtoull (p, &p, 10);
+			p += strspn (p, " \t");
+			g_sprintf (file_color_value, "#%.2X%.2X%.2X", r, g, b);
+			file_color_name = g_strchomp (g_strdup (p));
 
-	while ((p = fgets (buffer, sizeof buffer, fp)) != NULL) {
-		if (buffer[0] == '!')
-			continue;
-		r = g_ascii_strtoull (p, &p, 10);
-		g = g_ascii_strtoull (p, &p, 10);
-		b = g_ascii_strtoull (p, &p, 10);
-		p += strspn (p, " \t");
-		g_sprintf (file_color_value, "#%.2X%.2X%.2X", r, g, b);
-		file_color_name = g_strchomp (g_strdup (p));
-
-		/* make sure to only remove the first matching color; both value and name must match */
-		if (found || strcmp (file_color_name, color_name) != 0 || strcmp (g_ascii_strup (file_color_value, -1), color_value) != 0) {
-			g_sprintf (newstuff+strlen(newstuff), "%3d %3d %3d\t\t%s\n", r, g, b, file_color_name);
-		} else {
-			found = TRUE;
-		}
-	}
-	fclose (fp);
-
-	/* only rewrite the file if we found a match */
-	if (found) {
-		fp = fopen (user_filename, "w");
-		if (!fp) {
-			show_file_error ("write");
-			return FALSE;
-		}
-
-		fprintf (fp, "%s", newstuff);
+			/* make sure to only remove the first matching color; both value and name must match */
+			if (found || strcmp (file_color_name, color_name) != 0 || strcmp (g_ascii_strup (file_color_value, -1), color_value) != 0) {
+				g_sprintf (newstuff+strlen(newstuff), "%3d %3d %3d\t\t%s\n", r, g, b, file_color_name);
+			} else {
+				found = TRUE;
+			}
+		}		
 		fclose (fp);
-		return TRUE;
+
+		/* only rewrite the file if we found a match */
+		if (found) {
+			fp = fopen (user_filename, "w");
+			if (!fp) {
+				show_file_error ("write");
+				return FALSE;
+			} else {
+				g_fprintf (fp, "%s", newstuff);
+				fclose (fp);
+				return TRUE;
+			}
+		}
+		return FALSE;
 	}
-	return FALSE;
 }
 
 void
@@ -392,7 +382,7 @@ on_save_entry_changed (void)
 }
 
 void
-on_list_selection_changed (GtkTreeSelection *selection)
+on_list_selection_changed (void)
 {
 	GdkColor     new_color, curr_color;
 	GtkTreeModel *model;
@@ -460,16 +450,14 @@ hex_value (GdkColor colorvalue)
 }
 
 void
-add_color_to_treeview ()
+add_color_to_treeview (void)
 {
-	GtkTreeSelection *selection;
 	GtkTreePath *path;
 
 	/* add color to tree view */
 	add_list_color (hex_value (colorvalue), colorname, TRUE);
 
 	/* scroll tree view so user sees new color */
-	selection = gtk_tree_view_get_selection (GTK_TREE_VIEW (tree));
 	if (selection) {
 		if (gtk_tree_selection_get_selected (selection, NULL, &iter) ) {
 			path = gtk_tree_model_get_path (gtk_tree_view_get_model (GTK_TREE_VIEW(tree)), &iter);
@@ -531,5 +519,6 @@ main (int argc, char *argv[])
 	user_filename = g_build_filename (g_get_home_dir(), ".rgb.txt", NULL);
 	add_rgb_file ();
 	gtk_main ();
+	g_free(user_filename);
 	return 0;
 }
