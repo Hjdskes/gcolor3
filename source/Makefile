@@ -29,7 +29,7 @@ install:
 	mkdir -p $(DESTDIR)$(BINPREFIX)
 	mkdir -p $(DESTDIR)/usr/share/applications/
 	install -m 755 $(PROG) $(DESTDIR)$(BINPREFIX)/
-	install -m 0644 data/gcolor3.desktop $(DESTDIR)/usr/share/applications/
+	install -m 0644 ../data/gcolor3.desktop $(DESTDIR)/usr/share/applications/
 
 uninstall:
 	rm -f $(DESTDIR)$(BINPREFIX)/$(PROG)
