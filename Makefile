@@ -1,21 +1,41 @@
-CFLAGS = -Wall -Wno-deprecated-declarations
+PROG    = gcolor3
+VERSION = 1.0
 
-debug: CFLAGS += -O0 -g -Wextra -pedantic
-debug: gcolor3
+CC      = gcc
+LIBS    = `pkg-config --cflags --libs gtk+-3.0`
+CFLAGS  = -std=c99 -Wall -Wextra -Wno-deprecated-declarations
+CFLAGS += -DVERSION=\"$(VERSION)\"
 
-gcolor3: gcolor3.c
-	gcc gcolor3.c -o gcolor3 ${CFLAGS} `pkg-config --cflags --libs gtk+-3.0`
+PREFIX   ?= /usr/local
+BINPREFIX = $(PREFIX)/bin
 
-install: gcolor3
-	mkdir -p $(DESTDIR)/usr/bin/
+SRC = ui.c callbacks.c gcolor3.c
+OBJ = $(SRC:.c=.o)
+
+all: CFLAGS += -Os
+all: LDFLAGS += -s
+all: $(PROG)
+
+debug: CFLAGS += -O0 -g -pedantic -DDEBUG
+debug: all
+
+.c.o:
+	$(CC) $(LIBS) $(CFLAGS) -c -o $@ $<
+
+gcolor3: $(OBJ)
+	$(CC) -o $@ $(OBJ) $(LDFLAGS) $(LIBS)
+
+install:
+	mkdir -p $(DESTDIR)$(BINPREFIX)
 	mkdir -p $(DESTDIR)/usr/share/applications/
-
-	install -m 0755 gcolor3 $(DESTDIR)/usr/bin/
+	install -m 755 $(PROG) $(DESTDIR)$(BINPREFIX)/
 	install -m 0644 data/gcolor3.desktop $(DESTDIR)/usr/share/applications/
 
 uninstall:
-	rm -f /usr/bin/gcolor3
+	rm -f $(DESTDIR)$(BINPREFIX)/$(PROG)
 	rm -f /usr/share/applications/gcolor3.desktop
 
 clean:
-	rm -f gcolor3
+	rm -f $(OBJ) $(PROG)
+
+.PHONY: all debug clean install uninstall

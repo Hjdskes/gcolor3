@@ -1,6 +1,6 @@
 pkgname=gcolor3-git
 pkgbase=gcolor3
-pkgver=20130303
+pkgver=20130312
 pkgrel=1
 pkgdesc="A simple color selection dialog in GTK3"
 arch=(any)
@@ -11,7 +11,7 @@ depends=('gtk3')
 _gitroot="https://github.com/Unia/$pkgbase"
 _gitname="$pkgbase"
 
-build() {
+package() {
 	cd "$srcdir"
 	msg "Connecting to GIT server..."
 
@@ -23,11 +23,12 @@ build() {
 		git clone ${_gitroot} ${_gitname}
 	fi
 	msg "GIT checkout done or server timeout"
+
+	make
 }
 
-package() {
+build() {
 	cd "$srcdir/$pkgbase"
-	make gcolor3
 	make DESTDIR="$pkgdir" install
 }
 
