@@ -1,10 +1,8 @@
 PROG    = gcolor3
-VERSION = 1.0
 
 CC      = gcc
 LIBS    = `pkg-config --cflags --libs gtk+-3.0`
 CFLAGS  = -std=c99 -Wall -Wextra -Wno-deprecated-declarations
-CFLAGS += -DVERSION=\"$(VERSION)\"
 
 PREFIX   ?= /usr/local
 BINPREFIX = $(PREFIX)/bin
