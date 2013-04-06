@@ -26,11 +26,11 @@ gcolor3: $(OBJ)
 install:
 	mkdir -p $(DESTDIR)$(BINPREFIX)
 	mkdir -p $(DESTDIR)/usr/share/applications/
-	install -m 755 $(PROG) $(DESTDIR)$(BINPREFIX)/
+	install -m 755 $(PROG) $(DESTDIR)/$(BINPREFIX)/
 	install -m 0644 ../data/gcolor3.desktop $(DESTDIR)/usr/share/applications/
 
 uninstall:
-	rm -f $(DESTDIR)$(BINPREFIX)/$(PROG)
+	rm -f $(BINPREFIX)/$(PROG)
 	rm -f /usr/share/applications/gcolor3.desktop
 
 clean:
