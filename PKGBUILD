@@ -26,7 +26,8 @@ build() {
 	fi
 	msg "GIT checkout done or server timeout"
 
-	cd "$pkgbase/source"
+	cd "$pkgbase"
+	./configure
 	make
 }
 
