@@ -112,7 +112,7 @@ GtkWidget* save_dialog_open (void) {
 }
 
 GtkWidget* create_window (void) {
-	GtkWidget *window, *box_all, *expander, *expander_box_all, *expander_box_buttons, *separator, *box_buttons, *button_quit, *button_about;
+	GtkWidget *window, *box_all, *expander, *expander_box_all, *expander_box_buttons, *scroll, *separator, *box_buttons, *button_quit, *button_about;
 	GtkTreeViewColumn *column;
 	GtkCellRenderer *renderer;
 
@@ -131,6 +131,8 @@ GtkWidget* create_window (void) {
 	expander = gtk_expander_new("Show saved colors");
 	expander_box_all = gtk_box_new (GTK_ORIENTATION_VERTICAL, 5);
 	expander_box_buttons = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 5);
+	scroll = gtk_scrolled_window_new (NULL, NULL);
+	g_object_set (scroll, "shadow-type", GTK_SHADOW_IN, NULL);
 	button_save = gtk_button_new_from_stock ("gtk-save");
 	button_delete = gtk_button_new_from_stock ("gtk-delete");
 	gtk_widget_set_sensitive (button_delete, FALSE);
@@ -175,7 +177,8 @@ GtkWidget* create_window (void) {
 	gtk_box_pack_end (GTK_BOX (expander_box_buttons), button_save, FALSE, FALSE, 0);
 	gtk_box_pack_start (GTK_BOX (expander_box_buttons), button_delete, FALSE, FALSE, 0);
 	gtk_box_pack_start (GTK_BOX (expander_box_all), expander_box_buttons, TRUE, TRUE, 0);
-	gtk_box_pack_start (GTK_BOX (expander_box_all), tree, TRUE, TRUE, 0);
+	gtk_container_add (GTK_CONTAINER (scroll), tree);
+	gtk_box_pack_start (GTK_BOX (expander_box_all), scroll, TRUE, TRUE, 0);
 	gtk_container_add (GTK_CONTAINER (expander), expander_box_all);
 	gtk_box_pack_start (GTK_BOX (box_all), expander, FALSE, FALSE, 0);
 	gtk_box_pack_start (GTK_BOX (box_all), separator, TRUE, TRUE, 0);

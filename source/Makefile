@@ -37,3 +37,4 @@ clean:
 	rm -f $(OBJ) $(PROG)
 
 .PHONY: all debug clean install uninstall
+
