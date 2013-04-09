@@ -1,6 +1,6 @@
 pkgname=gcolor3-git
 pkgbase=gcolor3
-pkgver=2013.04.08
+pkgver=2013.04.10
 pkgrel=1
 pkgdesc="A simple color selection dialog in GTK3"
 arch=(any)
@@ -11,11 +11,6 @@ md5sums=()
 
 _gitroot="https://github.com/Unia/$pkgbase"
 _gitname="$pkgbase"
-
-pkgver() {
-	cd "$srcdir/$_gitname"
-	git log -1 --format="%cd" --date=short | sed 's|-|.|g'
-}
 
 build() {
 	cd "$srcdir"
@@ -33,6 +28,11 @@ build() {
 
 	cd "$pkgbase/source"
 	make
+}
+
+pkgver() {
+	cd "$srcdir/$_gitname"
+	git log -1 --format="%cd" --date=short | sed 's|-|.|g'
 }
 
 package() {
