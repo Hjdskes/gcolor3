@@ -1,41 +1,29 @@
+# Maintainer: Unia <jthidskes@outlook.com> 
+
 pkgname=gcolor3-git
-pkgbase=gcolor3
+_gitname=gcolor3
 pkgver=2013.04.10
 pkgrel=1
 pkgdesc="A simple color selection dialog in GTK3"
-arch=(any)
+arch=('i686' 'x86_64')
 url="https://github.com/Unia/gcolor3"
-license=(GPL)
+license=('GPL2')
 depends=('gtk3')
-md5sums=()
-
-_gitroot="https://github.com/Unia/$pkgbase"
-_gitname="$pkgbase"
-
-build() {
-	cd "$srcdir"
-	msg "Connecting to GIT server..."
-
-	if [ -d ${_gitname} ] ; then
-		cd ${_gitname}/
-		git pull
-		msg "The local files are updated."
-		cd "$srcdir"
-	else
-		git clone ${_gitroot} ${_gitname}
-	fi
-	msg "GIT checkout done or server timeout"
-
-	cd "$pkgbase/source"
-	make
-}
+makedepends=('git')
+source=('git://github.com/Unia/gcolor3.git')
+md5sums=('SKIP')
 
 pkgver() {
-	cd "$srcdir/$_gitname"
-	git log -1 --format="%cd" --date=short | sed 's\-\.\g'
+  cd $_gitname
+  git log -1 --format="%cd" --date=short | sed 's|-|.|g'
+}
+
+build() {
+  cd $_gitname/source
+  make
 }
 
 package() {
-	cd "$srcdir/$pkgbase/source"
-	make DESTDIR="$pkgdir" install
+  cd $_gitname/source
+  make PREFIX=/usr DESTDIR="$pkgdir" install
 }
