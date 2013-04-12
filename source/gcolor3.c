@@ -178,8 +178,8 @@ void add_list_color (gchar *spec, gchar *colorname, gboolean is_new_color) {
 	}
 }
 
-int main (gint argc, gchar *argv[]) {
-	gtk_init (&argc, &argv);
+int main (void) {
+	gtk_init (NULL, NULL);
 	colorvalue.red = colorvalue.green = colorvalue.blue = 65535;
 	window = create_window ();
 	gtk_widget_show_all (window);
