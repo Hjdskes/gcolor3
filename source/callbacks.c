@@ -64,6 +64,7 @@ void on_save_button_clicked (void) {
 
 	labeltext = g_strdup_printf (_("Enter a color name for %s:"), hex_value (colorvalue));
 	gtk_label_set_markup (GTK_LABEL (save_label), labeltext);
+	g_free(labeltext);
 	result = gtk_dialog_run (GTK_DIALOG (save_dialog));
 	switch (result) {
 		case GTK_RESPONSE_OK:
@@ -84,4 +85,5 @@ void on_delete_button_clicked (void) {
 	gtk_tree_model_get (gtk_tree_view_get_model (GTK_TREE_VIEW (tree)), &selection_iter, COLOR_NAME, &colorname, COLOR_VALUE, &color_value, -1);
 	if (delete_color (colorname, color_value))
 		gtk_list_store_remove (GTK_LIST_STORE (gtk_tree_view_get_model (GTK_TREE_VIEW (tree))), &selection_iter);
+	g_free(color_value);
 }

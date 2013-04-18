@@ -2,7 +2,7 @@
 
 pkgname=gcolor3-git
 _gitname=gcolor3
-pkgver=2013.04.10
+pkgver=2013.04.12
 pkgrel=1
 pkgdesc="A simple color selection dialog in GTK3"
 arch=('i686' 'x86_64')

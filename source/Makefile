@@ -20,18 +20,18 @@ debug: all
 .c.o:
 	$(CC) $(LIBS) $(CFLAGS) -c -o $@ $<
 
-gcolor3: $(OBJ)
+$(PROG): $(OBJ)
 	$(CC) -o $@ $(OBJ) $(LDFLAGS) $(LIBS)
 
 install:
 	mkdir -p $(DESTDIR)$(BINPREFIX)
 	mkdir -p $(DESTDIR)/usr/share/applications/
 	install -m 755 $(PROG) $(DESTDIR)/$(BINPREFIX)/
-	install -m 0644 ../data/gcolor3.desktop $(DESTDIR)/usr/share/applications/
+	install -m 0644 ../data/$(PROG).desktop $(DESTDIR)/usr/share/applications/
 
 uninstall:
 	rm -f $(BINPREFIX)/$(PROG)
-	rm -f /usr/share/applications/gcolor3.desktop
+	rm -f /usr/share/applications/$(PROG).desktop
 
 clean:
 	rm -f $(OBJ) $(PROG)

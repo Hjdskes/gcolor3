@@ -53,7 +53,7 @@ gboolean save_selected_color (void) {
 
 gboolean delete_color (gchar *color_name, gchar *color_value) {
 	FILE *fp;
-	gchar *p, *file_color_name, file_color_value[8], buffer[512] = "", newstuff[512] = "";
+	gchar *p, *file_color_name = NULL, file_color_value[8], buffer[512] = "", newstuff[512] = "";
 	gint r, g, b;
 	gboolean found = FALSE;
 
@@ -79,6 +79,8 @@ gboolean delete_color (gchar *color_name, gchar *color_value) {
 			else
 				found = TRUE;
 		}
+		g_free(p);
+		g_free(file_color_name);
 		fclose (fp);
 
 		/* only rewrite the file if we found a match */
@@ -117,6 +119,7 @@ void add_rgb_file (void) {
 		colorname = g_strchomp (g_strdup (p));
 		add_list_color (spec, colorname, FALSE);
 	}
+	g_free(p);
 	fclose (fp);
 }
 
@@ -172,10 +175,9 @@ void add_list_color (gchar *spec, gchar *colorname, gboolean is_new_color) {
 	else
 		gtk_list_store_append (liststore, &iter);
 	gtk_list_store_set (liststore, &iter, COLOR, buf, COLOR_VALUE, spec, COLOR_NAME, colorname, -1);
-	if (is_new_color) {
-		/* when adding a new color, select it in the treeview */
+	/* when adding a new color, select it in the treeview */
+	if (is_new_color)
 		gtk_tree_selection_select_iter (gtk_tree_view_get_selection (GTK_TREE_VIEW (tree)), &iter);
-	}
 }
 
 int main (void) {

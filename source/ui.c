@@ -65,6 +65,7 @@ void about_dialog_open (void) {
 	g_signal_connect (GTK_DIALOG (about_dialog), "response", G_CALLBACK (about_dialog_close), NULL);
 
 	gtk_widget_show (about_dialog);
+	g_free(license_trans);
 }
 
 GtkWidget* save_dialog_open (void) {
