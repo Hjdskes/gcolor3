@@ -119,7 +119,7 @@ void add_rgb_file (void) {
 		colorname = g_strchomp (g_strdup (p));
 		add_list_color (spec, colorname, FALSE);
 	}
-	/*g_free(p);*/
+	g_free(p);
 	fclose (fp);
 }
 
@@ -177,7 +177,7 @@ void add_list_color (gchar *spec, gchar *colorname, gboolean is_new_color) {
 	gtk_list_store_set (liststore, &iter, COLOR, buf, COLOR_VALUE, spec, COLOR_NAME, colorname, -1);
 	/* when adding a new color, select it in the treeview */
 	if (is_new_color)
-		gtk_tree_selection_select_iter (gtk_tree_view_get_selection (GTK_TREE_VIEW (tree)), &iter);	
+		gtk_tree_selection_select_iter (gtk_tree_view_get_selection (GTK_TREE_VIEW (tree)), &iter);
 }
 
 int main (void) {
@@ -191,4 +191,3 @@ int main (void) {
 	g_free(user_filename);
 	return 0;
 }
-

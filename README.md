@@ -23,6 +23,7 @@ For any bug or request [fill an issue][bug] on [GitHub][ghp].
   [bug]: https://github.com/Unia/gcolor3/issues
   [ghp]: https://github.com/Unia/gcolor3
 
+* `~/.rgb.txt` does not get initialized at startup, resulting in emptry treeview. saving a color resolves this.
 
 License
 -------
