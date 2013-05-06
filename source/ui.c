@@ -47,7 +47,7 @@ void about_dialog_open (void) {
 		   "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the "
 		   "GNU General Public License for more details."),
 		N_("You should have received a copy of the GNU General Public License "
-		   "along with this program. If not, see <http://www.gnu.org/licenses/>.")
+		   "along with this program. If not, see http://www.gnu.org/licenses/.")
 	};
 	license_trans = g_strjoin ("\n\n", _(license[0]), _(license[1]), _(license[2]), NULL);
 
@@ -120,7 +120,7 @@ GtkWidget* create_window (void) {
 	window = gtk_window_new (GTK_WINDOW_TOPLEVEL);
 	gtk_window_set_title (GTK_WINDOW (window), "Gcolor3");
 	gtk_window_set_default_icon_name ("gcolor2");
-	gtk_window_set_resizable (GTK_WINDOW (window), FALSE);
+	/*gtk_window_set_resizable (GTK_WINDOW (window), FALSE);*/
 	g_signal_connect (window, "destroy", G_CALLBACK (gtk_main_quit), NULL);
 
 	box_all = gtk_box_new (GTK_ORIENTATION_VERTICAL, 5);

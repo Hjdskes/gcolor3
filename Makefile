@@ -7,11 +7,10 @@ CFLAGS  = -std=c99 -Wall -Wextra -Wno-deprecated-declarations
 PREFIX   ?= /usr/local
 BINPREFIX = $(PREFIX)/bin
 
-SRC = ui.c callbacks.c gcolor3.c
+SRC = source/ui.c source/callbacks.c source/gcolor3.c
 OBJ = $(SRC:.c=.o)
 
 all: CFLAGS += -Os
-all: LDFLAGS += -s
 all: $(PROG)
 
 debug: CFLAGS += -O0 -g -pedantic -DDEBUG
@@ -27,7 +26,7 @@ install:
 	mkdir -p $(DESTDIR)$(BINPREFIX)
 	mkdir -p $(DESTDIR)/usr/share/applications/
 	install -m 755 $(PROG) $(DESTDIR)/$(BINPREFIX)/
-	install -m 0644 ../data/$(PROG).desktop $(DESTDIR)/usr/share/applications/
+	install -m 0644 data/$(PROG).desktop $(DESTDIR)/usr/share/applications/
 
 uninstall:
 	rm -f $(BINPREFIX)/$(PROG)
