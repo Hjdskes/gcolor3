@@ -28,6 +28,8 @@
 
 gboolean save_selected_color (void) {
 	FILE *fp;
+	size_t filesize1;
+	long filesize2;
 	gchar old[512] = "";
 
 	colorname = g_strdup (gtk_entry_get_text (GTK_ENTRY (save_entry)));
@@ -37,9 +39,12 @@ gboolean save_selected_color (void) {
 	/* if file exists already, get its contents, otherwise just write to it */
 	if (g_file_test (user_filename, G_FILE_TEST_EXISTS)) {
 		fp = fopen (user_filename, "r");
+		filesize2 = ftell (fp);
 		if (fp) {
-			fread (old, sizeof (old), 1, fp);
+			filesize1 = fread (old, sizeof (old), 1, fp);
 			fclose (fp);
+			if(filesize1 != filesize2)
+				show_file_error("read");
 		} else {
 			show_file_error ("read");
 			return FALSE;
