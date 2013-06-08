@@ -14,7 +14,7 @@ Once the ridiculous amount of dependencies are installed, just run these command
     $ make
     # make clean install
 
-Translation
+Translations
 -----------
 
 You can help translate Gcolor3 in your language!
@@ -24,9 +24,9 @@ To do so, simply follow these steps:
 	$ intltool-update --pot
 	$ cp gcolor3.pot <language code>.po
 
-Where <language code> is, obviously, the code of your language (e.g. nl for Dutch, fr for French, en for English...)
+Where `<language code>` is, obviously, the code of your language (e.g. `nl` for Dutch, `fr` for French, `en` for English...)
 Edit the `LINGUAS` file and add your language code. Please keep the list alphabetically.
-Lastly, open the .po file you just generated and translate all the string. Don't forget to fill in the information in the header!
+Lastly, open the .po file you just generated and translate all the strings. Don't forget to fill in the information in the header!
 
 Bugs
 ----
