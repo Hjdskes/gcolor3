@@ -1,0 +1,71 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2013 Jente Hidskes <jthidskes@outlook.com>
+# This file is distributed under the same license as the PACKAGE package.
+# Jente Hidskes <jthidskes@outlook.com>, 2013.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: 0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-06-08 20:58+0200\n"
+"PO-Revision-Date: 2013-06-08 20:58+0200\n"
+"Last-Translator: Jente Hidskes <jthidskes@outlook.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../src/callbacks.c:70
+#, c-format
+msgid "Enter a color name for %s:"
+msgstr "Geef een naam voor %s:"
+
+#: ../src/ui.c:29
+#, c-format
+msgid ""
+"An error occurred trying to open file \"%s\" for %s access!\n"
+"\n"
+"Please check the file permissions and try again."
+msgstr "Er is een fout opgetreden bij het openen van bestand \"%s\"!\n"
+"\n"
+"Controleer de bestandsrechten en probeer het opnieuw."
+
+#: ../src/ui.c:44
+msgid ""
+"Gcolor3 is free software: you can redistribute it and/or modify it under the "
+"terms of the GNU General Public License as published by the Free Software "
+"Foundation, either version 3 of the License, or (at your option) any later "
+"version."
+msgstr ""
+
+#: ../src/ui.c:48
+msgid ""
+"Gcolor3 is distributed in the hope that it will be useful but WITHOUT ANY "
+"WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS "
+"FOR A PARTICULAR PURPOSE. See the GNU General Public License for more "
+"details."
+msgstr ""
+
+#: ../src/ui.c:52
+msgid ""
+"You should have received a copy of the GNU General Public License along with "
+"this program. If not, see http://www.gnu.org/licenses/."
+msgstr ""
+
+#: ../src/ui.c:80
+msgid "Save a Color"
+msgstr "Kleur opslaan"
+
+#: ../src/ui.c:135
+msgid "Show saved colors"
+msgstr "Opgeslagen kleuren weergeven"
+
+#: ../src/ui.c:149
+msgid "Color"
+msgstr "Kleur"
+
+#: ../src/ui.c:163
+msgid "Name"
+msgstr "Naam"
