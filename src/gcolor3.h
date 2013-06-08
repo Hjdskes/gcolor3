@@ -1,6 +1,6 @@
 /* -*- Mode: C; indent-tabs-mode: t; c-basic-offset: 4; tab-width: 4 -*-  */
 /*
- * main.c
+ * gcolor3.h
  * Copyright (C) 2013 Jente Hidskes <jthidskes@outlook.com>
  * 
  * gcolor3 is free software: you can redistribute it and/or modify it
