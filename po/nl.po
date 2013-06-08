@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-06-08 20:58+0200\n"
-"PO-Revision-Date: 2013-06-08 20:58+0200\n"
+"POT-Creation-Date: 2013-06-08 21:08+0200\n"
+"PO-Revision-Date: 2013-06-08 21:08+0200\n"
 "Last-Translator: Jente Hidskes <jthidskes@outlook.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: nl\n"
@@ -20,7 +20,7 @@ msgstr ""
 #: ../src/callbacks.c:70
 #, c-format
 msgid "Enter a color name for %s:"
-msgstr "Geef een naam voor %s:"
+msgstr "Voer een naam in voor %s:"
 
 #: ../src/ui.c:29
 #, c-format
@@ -54,13 +54,17 @@ msgid ""
 "this program. If not, see http://www.gnu.org/licenses/."
 msgstr ""
 
+#: ../src/ui.c:59
+msgid "A simple color selection dialog in GTK3"
+msgstr "Een simpele dialoog voor kleurselectie in GTK3"
+
 #: ../src/ui.c:80
 msgid "Save a Color"
 msgstr "Kleur opslaan"
 
 #: ../src/ui.c:135
 msgid "Show saved colors"
-msgstr "Opgeslagen kleuren weergeven"
+msgstr "Kleuren weergeven"
 
 #: ../src/ui.c:149
 msgid "Color"
