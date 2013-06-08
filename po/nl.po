@@ -1,6 +1,6 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) 2013 Jente Hidskes <jthidskes@outlook.com>
-# This file is distributed under the same license as the PACKAGE package.
+# This file is distributed under the same license as the gcolor3 package.
 # Jente Hidskes <jthidskes@outlook.com>, 2013.
 #
 #, fuzzy
@@ -28,7 +28,7 @@ msgid ""
 "An error occurred trying to open file \"%s\" for %s access!\n"
 "\n"
 "Please check the file permissions and try again."
-msgstr "Er is een fout opgetreden bij het openen van bestand \"%s\"!\n"
+msgstr "Er is een fout opgetreden bij het openen van bestand \"%s\" voor %s toegang!\n"
 "\n"
 "Controleer de bestandsrechten en probeer het opnieuw."
 
@@ -59,7 +59,7 @@ msgid "A simple color selection dialog in GTK3"
 msgstr "Een simpele dialoog voor kleurselectie in GTK3"
 
 #: ../src/ui.c:80
-msgid "Save a Color"
+msgid "Save a color"
 msgstr "Kleur opslaan"
 
 #: ../src/ui.c:135

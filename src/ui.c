@@ -77,7 +77,7 @@ GtkWidget* save_dialog_open (void) {
 	save_dialog = gtk_dialog_new ();
 	gtk_container_set_border_width (GTK_CONTAINER (save_dialog), 5);
 	gtk_window_set_resizable (GTK_WINDOW (save_dialog), FALSE);
-	gtk_window_set_title (GTK_WINDOW (save_dialog), _("Save a Color"));
+	gtk_window_set_title (GTK_WINDOW (save_dialog), _("Save a color"));
 	gtk_window_set_position (GTK_WINDOW (save_dialog), GTK_WIN_POS_CENTER_ON_PARENT);
 	gtk_window_set_modal (GTK_WINDOW (save_dialog), TRUE);
 	gtk_window_set_destroy_with_parent (GTK_WINDOW (save_dialog), TRUE);
