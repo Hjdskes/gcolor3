@@ -1,21 +1,24 @@
 /* -*- Mode: C; indent-tabs-mode: t; c-basic-offset: 4; tab-width: 4 -*-  */
 /*
- * gcolor3
- * Copyright (C) 2013 Jente (jthidskes at outlook dot com)
- *
+ * main.c
+ * Copyright (C) 2013 Jente Hidskes <jthidskes@outlook.com>
+ * 
  * gcolor3 is free software: you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
  * Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
- *
+ * 
  * gcolor3 is distributed in the hope that it will be useful, but
  * WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  * See the GNU General Public License for more details.
- *
+ * 
  * You should have received a copy of the GNU General Public License along
  * with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+
+#include <gtk/gtk.h>
+#include <glib/gi18n.h>
 
 #include "gcolor3.h"
 #include "ui.h"
@@ -36,7 +39,7 @@ void about_dialog_open (void) {
 	GtkWidget *about_dialog;
 	gchar *license_trans;
 
-	const gchar *authors[] = {"Unia (Jente)", NULL};
+	const gchar *authors[] = {"Jente Hidskes", NULL};
 	const gchar *license[] = {
 		N_("Gcolor3 is free software: you can redistribute it and/or modify "
 		   "it under the terms of the GNU General Public License as published by "
@@ -54,7 +57,7 @@ void about_dialog_open (void) {
 	about_dialog = gtk_about_dialog_new ();
 	gtk_about_dialog_set_program_name (GTK_ABOUT_DIALOG (about_dialog), "Gcolor3");
 	gtk_about_dialog_set_comments (GTK_ABOUT_DIALOG (about_dialog), "A simple color selection dialog in GTK3"),
-	gtk_about_dialog_set_copyright (GTK_ABOUT_DIALOG (about_dialog), "Copyright \xc2\xa9 2013 Unia (Jente)");
+	gtk_about_dialog_set_copyright (GTK_ABOUT_DIALOG (about_dialog), "Copyright \xc2\xa9 2013 Jente Hidskes");
 	gtk_about_dialog_set_license (GTK_ABOUT_DIALOG (about_dialog), license_trans);
 	gtk_about_dialog_set_wrap_license (GTK_ABOUT_DIALOG (about_dialog), TRUE);
 	gtk_about_dialog_set_authors (GTK_ABOUT_DIALOG (about_dialog), authors);
@@ -120,7 +123,7 @@ GtkWidget* create_window (void) {
 	window = gtk_window_new (GTK_WINDOW_TOPLEVEL);
 	gtk_window_set_title (GTK_WINDOW (window), "Gcolor3");
 	gtk_window_set_default_icon_name ("gcolor2");
-	/*gtk_window_set_resizable (GTK_WINDOW (window), FALSE);*/
+	gtk_window_set_resizable (GTK_WINDOW (window), FALSE);
 	g_signal_connect (window, "destroy", G_CALLBACK (gtk_main_quit), NULL);
 
 	box_all = gtk_box_new (GTK_ORIENTATION_VERTICAL, 5);
@@ -129,7 +132,7 @@ GtkWidget* create_window (void) {
 	gtk_container_set_border_width (GTK_CONTAINER (box_buttons), 5);
 
 	color_chooser = gtk_color_selection_new();
-	expander = gtk_expander_new("Show saved colors");
+	expander = gtk_expander_new(_("Show saved colors"));
 	expander_box_all = gtk_box_new (GTK_ORIENTATION_VERTICAL, 5);
 	expander_box_buttons = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 5);
 	button_save = gtk_button_new_from_stock ("gtk-save");
@@ -143,7 +146,7 @@ GtkWidget* create_window (void) {
 	gtk_tree_view_set_model (GTK_TREE_VIEW (tree), GTK_TREE_MODEL (liststore));
 
 	column = gtk_tree_view_column_new ();
-	gtk_tree_view_column_set_title (column, "Color");
+	gtk_tree_view_column_set_title (column, _("Color"));
 
 	renderer = gtk_cell_renderer_pixbuf_new ();
 	gtk_tree_view_column_pack_start (column, renderer, FALSE);
@@ -157,7 +160,7 @@ GtkWidget* create_window (void) {
 	gtk_tree_view_append_column (GTK_TREE_VIEW (tree), column);
 
 	renderer = gtk_cell_renderer_text_new ();
-	column = gtk_tree_view_column_new_with_attributes ("Name", renderer, "text", COLOR_NAME, NULL);
+	column = gtk_tree_view_column_new_with_attributes (_("Name"), renderer, "text", COLOR_NAME, NULL);
 	gtk_tree_view_column_set_sort_column_id (column, COLOR_NAME);
 	gtk_tree_view_append_column (GTK_TREE_VIEW (tree), column);
 
