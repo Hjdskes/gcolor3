@@ -1,9 +1,9 @@
 [Desktop Entry]
 Type=Application
-Name=Gcolor3
+Name=@PACKAGE_NAME@
 GenericName=A simple color selection dialog in GTK3
 Comment=Choose colors from palette or screen
 Icon=gcolor2
 Terminal=false
-Exec=gcolor3
+Exec=@PACKAGE@
 Categories=GNOME;GTK;Graphics;

@@ -1,4 +1,4 @@
-# Dutch translation for Gcolor3.
+# British English translation for Gcolor3.
 # Copyright (C) 2013 Jente Hidskes <jthidskes@outlook.com>
 # This file is distributed under the same license as the Gcolor3 package.
 # Jente Hidskes <jthidskes@outlook.com>, 2013.
@@ -8,11 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-06-08 21:08+0200\n"
-"PO-Revision-Date: 2013-06-08 21:08+0200\n"
+"POT-Creation-Date: 2013-06-09 19:04+0200\n"
+"PO-Revision-Date: 2013-06-09 19:04+0200\n"
 "Last-Translator: Jente Hidskes <jthidskes@outlook.com>\n"
-"Language-Team: Dutch\n"
-"Language: nl\n"
+"Language-Team: British English\n"
+"Language: en_GB\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -20,7 +20,7 @@ msgstr ""
 #: ../src/callbacks.c:70
 #, c-format
 msgid "Enter a color name for %s:"
-msgstr "Voer een naam in voor %s:"
+msgstr "Enter a colour name for %s:"
 
 #: ../src/ui.c:29
 #, c-format
@@ -28,9 +28,9 @@ msgid ""
 "An error occurred trying to open file \"%s\" for %s access!\n"
 "\n"
 "Please check the file permissions and try again."
-msgstr "Er is een fout opgetreden bij het openen van bestand \"%s\" voor %s toegang!\n"
+msgstr "An error occurred trying to open file \"%s\" for %s access!\n"
 "\n"
-"Controleer de bestandsrechten en probeer het opnieuw."
+"Please check the file permissions and try again."
 
 #: ../src/ui.c:44
 msgid ""
@@ -56,20 +56,20 @@ msgstr ""
 
 #: ../src/ui.c:59
 msgid "A simple color selection dialog in GTK3"
-msgstr "Een simpele dialoog voor kleurselectie in GTK3"
+msgstr "A simple colour selection dialog in GTK3"
 
 #: ../src/ui.c:80
 msgid "Save a color"
-msgstr "Kleur opslaan"
+msgstr "Save a colour"
 
-#: ../src/ui.c:135
+#: ../src/ui.c:134
 msgid "Show saved colors"
-msgstr "Kleuren weergeven"
+msgstr "Show saved colours"
 
-#: ../src/ui.c:149
+#: ../src/ui.c:148
 msgid "Color"
-msgstr "Kleur"
+msgstr "Colour"
 
-#: ../src/ui.c:163
+#: ../src/ui.c:162
 msgid "Name"
-msgstr "Naam"
+msgstr "Name"

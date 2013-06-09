@@ -1,6 +1,6 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2013 Angelica Ankarberg
-# This file is distributed under the same license as the gcolor3 package.
+# Swedish translation for Gcolor3.
+# Copyright (C) 2013 Jente Hidskes <jthidskes@outlook.com>
+# This file is distributed under the same license as the Gcolor3 package.
 # Angelica Ankarberg, 2013.
 #
 #, fuzzy
@@ -11,7 +11,7 @@ msgstr ""
 "POT-Creation-Date: 2013-06-08 22:16+0200\n"
 "PO-Revision-Date: 2013-06-08 22:16+0200\n"
 "Last-Translator: Angelica Ankarberg\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language-Team: Swedish\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"

@@ -22,7 +22,7 @@ To do so, simply follow these steps:
 
 	$ cd po
 	$ intltool-update --pot
-	$ cp gcolor3.pot <language code>.po
+	$ mv gcolor3.pot <language code>.po
 
 Where `<language code>` is, obviously, the code of your language (e.g. `nl` for Dutch, `fr` for French, `en` for English...)
 Edit the `LINGUAS` file and add your language code. Please keep the list alphabetically.
