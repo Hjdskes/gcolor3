@@ -36,9 +36,8 @@ For any bug or request [fill an issue][bug] on [GitHub][ghp].
   [bug]: https://github.com/Unia/gcolor3/issues
   [ghp]: https://github.com/Unia/gcolor3
 
-* `~/.rgb.txt` does not get initialized at startup, resulting in emptry treeview. saving a color resolves this.
-* Figure out how to install our .desktop file.
 * Use our own icon instead of stealing Gcolor2's?
+* Complete Norwegian translation.
 
 License
 -------

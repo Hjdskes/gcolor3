@@ -116,7 +116,7 @@ GtkWidget* save_dialog_open (void) {
 }
 
 GtkWidget* create_window (void) {
-	GtkWidget *window, *box_all, *expander, *expander_box_all, *expander_box_buttons, *separator, *box_buttons, *button_quit, *button_about;
+	GtkWidget *window, *box_all, *expander, *expander_box_all, *expander_box_buttons, *scroll, *separator, *box_buttons, *button_quit, *button_about;
 	GtkTreeViewColumn *column;
 	GtkCellRenderer *renderer;
 
@@ -132,29 +132,27 @@ GtkWidget* create_window (void) {
 
 	color_chooser = gtk_color_selection_new();
 	expander = gtk_expander_new(_("Show saved colors"));
+	gtk_expander_set_resize_toplevel (GTK_EXPANDER (expander), TRUE);
 	expander_box_all = gtk_box_new (GTK_ORIENTATION_VERTICAL, 5);
 	expander_box_buttons = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 5);
+	scroll = gtk_scrolled_window_new (NULL, NULL);
 	button_save = gtk_button_new_from_stock ("gtk-save");
 	button_delete = gtk_button_new_from_stock ("gtk-delete");
 	gtk_widget_set_sensitive (button_delete, FALSE);
 
 	/* setup the tree view widget */
 	liststore = gtk_list_store_new (N_COLUMNS, GDK_TYPE_PIXBUF, G_TYPE_STRING, G_TYPE_STRING, G_TYPE_STRING);
-	tree = gtk_tree_view_new();
-	gtk_tree_view_set_rules_hint (GTK_TREE_VIEW (tree), TRUE);
-	gtk_tree_view_set_model (GTK_TREE_VIEW (tree), GTK_TREE_MODEL (liststore));
+	tree = gtk_tree_view_new_with_model(GTK_TREE_MODEL (liststore));
+	gtk_tree_view_set_search_column (GTK_TREE_VIEW (tree), COLOR_NAME);
 
 	column = gtk_tree_view_column_new ();
 	gtk_tree_view_column_set_title (column, _("Color"));
-
 	renderer = gtk_cell_renderer_pixbuf_new ();
 	gtk_tree_view_column_pack_start (column, renderer, FALSE);
 	gtk_tree_view_column_set_attributes (column, renderer, "pixbuf", COLOR, NULL);
-
 	renderer = gtk_cell_renderer_text_new ();
 	gtk_tree_view_column_pack_start (column, renderer, TRUE);
 	gtk_tree_view_column_set_attributes (column, renderer, "text", COLOR_VALUE, NULL);
-
 	gtk_tree_view_column_set_sort_column_id (column, COLOR_VALUE);
 	gtk_tree_view_append_column (GTK_TREE_VIEW (tree), column);
 
@@ -162,13 +160,6 @@ GtkWidget* create_window (void) {
 	column = gtk_tree_view_column_new_with_attributes (_("Name"), renderer, "text", COLOR_NAME, NULL);
 	gtk_tree_view_column_set_sort_column_id (column, COLOR_NAME);
 	gtk_tree_view_append_column (GTK_TREE_VIEW (tree), column);
-
-	/* enable searching on Name column */
-	gtk_tree_view_set_search_column (GTK_TREE_VIEW (tree), COLOR_NAME);
-
-	/* setup the selection handler */
-	selection = gtk_tree_view_get_selection (GTK_TREE_VIEW (tree));
-	gtk_tree_selection_set_mode (selection, GTK_SELECTION_SINGLE);
 
 	separator = gtk_separator_new (GTK_ORIENTATION_HORIZONTAL);
 	button_quit = gtk_button_new_from_stock ("gtk-quit");
@@ -178,7 +169,8 @@ GtkWidget* create_window (void) {
 	gtk_box_pack_end (GTK_BOX (expander_box_buttons), button_save, FALSE, FALSE, 0);
 	gtk_box_pack_start (GTK_BOX (expander_box_buttons), button_delete, FALSE, FALSE, 0);
 	gtk_box_pack_start (GTK_BOX (expander_box_all), expander_box_buttons, TRUE, TRUE, 0);
-	gtk_box_pack_start (GTK_BOX (expander_box_all), tree, TRUE, TRUE, 0);
+	gtk_container_add (GTK_CONTAINER (scroll), tree);
+	gtk_box_pack_start (GTK_BOX (expander_box_all), scroll, TRUE, TRUE, 0);
 	gtk_container_add (GTK_CONTAINER (expander), expander_box_all);
 	gtk_box_pack_start (GTK_BOX (box_all), expander, FALSE, FALSE, 0);
 	gtk_box_pack_start (GTK_BOX (box_all), separator, TRUE, TRUE, 0);
