@@ -36,9 +36,6 @@ For any bug or request [fill an issue][bug] on [GitHub][ghp].
   [bug]: https://github.com/Unia/gcolor3/issues
   [ghp]: https://github.com/Unia/gcolor3
 
-* Use our own icon instead of stealing Gcolor2's?
-* Complete Norwegian translation.
-
 License
 -------
 **Gcolor3** is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
