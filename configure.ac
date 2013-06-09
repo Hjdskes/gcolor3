@@ -11,8 +11,6 @@ AM_SILENT_RULES([yes])
 
 AC_PROG_CC
 
-AC_CONFIG_FILES([data/gcolor3.desktop])
-
 
 dnl ***************************************************************************
 dnl Internationalization
@@ -38,6 +36,7 @@ PKG_CHECK_MODULES(GCOLOR3, [gtk+-3.0 gtk+-3.0])
 
 AC_OUTPUT([
 Makefile
+data/Makefile
 src/Makefile
 po/Makefile.in
 ])
