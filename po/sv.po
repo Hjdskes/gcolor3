@@ -25,6 +25,14 @@ msgstr "En simpel färgvals ruta i GTK3"
 msgid "Choose colors from palette or screen"
 msgstr "Välj färger från palett eller skärm"
 
+#: ../src/main.c:47 ../src/main.c:49 ../src/main.c:74
+msgid "read"
+msgstr "läs"
+
+#: ../src/main.c:56 ../src/main.c:101
+msgid "write"
+msgstr "skriv"
+
 #: ../src/callbacks.c:70
 #, c-format
 msgid "Enter a color name for %s:"

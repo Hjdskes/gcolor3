@@ -25,6 +25,14 @@ msgstr "Een simpele dialoog voor kleurselectie in GTK3"
 msgid "Choose colors from palette or screen"
 msgstr "Kies kleuren van palet of scherm"
 
+#: ../src/main.c:47 ../src/main.c:49 ../src/main.c:74
+msgid "read"
+msgstr "lees"
+
+#: ../src/main.c:56 ../src/main.c:101
+msgid "write"
+msgstr "schrijf"
+
 #: ../src/callbacks.c:70
 #, c-format
 msgid "Enter a color name for %s:"

@@ -4,3 +4,4 @@
 2013-06-09: v0.1: Added British English translation
                   Added Norwegian translation
                   Enabled translation of .desktop file
+                  Enabled translation of "read" and "write" upon file error

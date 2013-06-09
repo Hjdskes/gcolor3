@@ -25,6 +25,14 @@ msgstr "En enkel farge velger laget i GTK3"
 msgid "Choose colors from palette or screen"
 msgstr ""
 
+#: ../src/main.c:47 ../src/main.c:49 ../src/main.c:74
+msgid "read"
+msgstr "lese"
+
+#: ../src/main.c:56 ../src/main.c:101
+msgid "write"
+msgstr "skrive"
+
 #: ../src/callbacks.c:70
 #, c-format
 msgid "Enter a color name for %s:"

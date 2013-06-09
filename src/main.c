@@ -44,16 +44,16 @@ gboolean save_selected_color (void) {
 			filesize1 = fread (old, sizeof (old), 1, fp);
 			fclose (fp);
 			if(filesize1 != filesize2)
-				show_file_error("read");
+				show_file_error(_("read"));
 		} else {
-			show_file_error ("read");
+			show_file_error (_("read"));
 			return FALSE;
 		}
 	}
 
 	fp = fopen (user_filename, "w");
 	if (!fp) {
-		show_file_error ("write");
+		show_file_error (_("write"));
 		return FALSE;
 	} else {
 		g_fprintf (fp, "%3d %3d %3d\t\t%s\n%s", colorvalue.red/256, colorvalue.green/256, colorvalue.blue/256, colorname, old);
@@ -71,7 +71,7 @@ gboolean delete_color (gchar *color_name, gchar *color_value) {
 	/* remove from file */
 	fp = fopen (user_filename, "r");
 	if (!fp) {
-		show_file_error ("read");
+		show_file_error (_("read"));
 		return FALSE;
 	} else {
 		while ((p = fgets (buffer, sizeof buffer, fp)) != NULL) {
@@ -98,7 +98,7 @@ gboolean delete_color (gchar *color_name, gchar *color_value) {
 		if (found) {
 			fp = fopen (user_filename, "w");
 			if (!fp) {
-				show_file_error ("write");
+				show_file_error (_("write"));
 				return FALSE;
 			} else {
 				g_fprintf (fp, "%s", newstuff);
