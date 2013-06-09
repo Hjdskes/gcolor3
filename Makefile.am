@@ -1,7 +1,7 @@
 ## Process this file with automake to produce Makefile.in
 ## Created by Anjuta
 
-SUBDIRS = src po
+SUBDIRS = src po data
 
 gcolor3docdir = ${prefix}/doc/gcolor3
 gcolor3doc_DATA = \
