@@ -17,6 +17,14 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+#: ../data/gcolor3.desktop.in.h:1 ../src/ui.c:59
+msgid "A simple color selection dialog in GTK3"
+msgstr "A simple colour selection dialog in GTK3"
+
+#: ../data/gcolor3.desktop.in.h:2
+msgid "Choose colors from palette or screen"
+msgstr "Choose colours from palette or screen"
+
 #: ../src/callbacks.c:70
 #, c-format
 msgid "Enter a color name for %s:"
@@ -53,10 +61,6 @@ msgid ""
 "You should have received a copy of the GNU General Public License along with "
 "this program. If not, see http://www.gnu.org/licenses/."
 msgstr ""
-
-#: ../src/ui.c:59
-msgid "A simple color selection dialog in GTK3"
-msgstr "A simple colour selection dialog in GTK3"
 
 #: ../src/ui.c:80
 msgid "Save a color"

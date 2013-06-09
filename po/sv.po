@@ -9,13 +9,21 @@ msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-06-08 22:16+0200\n"
-"PO-Revision-Date: 2013-06-08 22:16+0200\n"
+"PO-Revision-Date: 2013-06-09 21:33+0200\n"
 "Last-Translator: Angelica Ankarberg\n"
 "Language-Team: Swedish\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+#: ../data/gcolor3.desktop.in.h:1 ../src/ui.c:59
+msgid "A simple color selection dialog in GTK3"
+msgstr "En simpel färgvals ruta i GTK3"
+
+#: ../data/gcolor3.desktop.in.h:2
+msgid "Choose colors from palette or screen"
+msgstr "Välj färger från palett eller skärm"
 
 #: ../src/callbacks.c:70
 #, c-format
@@ -53,10 +61,6 @@ msgid ""
 "You should have received a copy of the GNU General Public License along with "
 "this program. If not, see http://www.gnu.org/licenses/."
 msgstr ""
-
-#: ../src/ui.c:59
-msgid "A simple color selection dialog in GTK3"
-msgstr "En simpel färgvals ruta i GTK3"
 
 #: ../src/ui.c:80
 msgid "Save a color"
