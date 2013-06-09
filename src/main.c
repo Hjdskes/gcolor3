@@ -146,7 +146,7 @@ void add_color_to_treeview (void) {
 
 	/* scroll tree view so user sees new color */
 	if (selection) {
-		if (gtk_tree_selection_get_selected (selection, NULL, &iter) ) {
+		if (gtk_tree_selection_get_selected (selection, NULL, &iter)) {
 			path = gtk_tree_model_get_path (gtk_tree_view_get_model (GTK_TREE_VIEW(tree)), &iter);
 			gtk_tree_view_scroll_to_cell (GTK_TREE_VIEW(tree), path, NULL, FALSE, 0, 0);
 			gtk_tree_path_free (path);
