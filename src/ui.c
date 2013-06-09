@@ -144,6 +144,8 @@ GtkWidget* create_window (void) {
 	liststore = gtk_list_store_new (N_COLUMNS, GDK_TYPE_PIXBUF, G_TYPE_STRING, G_TYPE_STRING, G_TYPE_STRING);
 	tree = gtk_tree_view_new_with_model(GTK_TREE_MODEL (liststore));
 	gtk_tree_view_set_search_column (GTK_TREE_VIEW (tree), COLOR_NAME);
+	selection = gtk_tree_view_get_selection (GTK_TREE_VIEW (tree));
+	gtk_tree_selection_set_mode (selection, GTK_SELECTION_SINGLE);
 
 	column = gtk_tree_view_column_new ();
 	gtk_tree_view_column_set_title (column, _("Color"));
