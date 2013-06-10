@@ -17,8 +17,9 @@ INTLTOOL_FILES = intltool-extract.in \
 	intltool-update.in
 
 EXTRA_DIST = $(gcolor3doc_DATA) \
-	$(INTLTOOL_FILES)
-	$(desktop_DATA)
+	$(INTLTOOL_FILES) \
+	$(desktop_DATA) \
+	$(pixmaps_DATA)
 
 DISTCLEANFILES = intltool-extract \
 	intltool-merge \

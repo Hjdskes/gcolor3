@@ -19,6 +19,8 @@
 
 #include <gtk/gtk.h>
 #include <glib/gi18n.h>
+#include <glib/gstdio.h>
+#include <gdk-pixbuf/gdk-pixbuf.h>
 
 #include "gcolor3.h"
 #include "ui.h"
@@ -37,9 +39,12 @@ void about_dialog_close (GtkWidget *about_dialog) {
 
 void about_dialog_open (void) {
 	GtkWidget *about_dialog;
+	GdkPixbuf *about_icon;
+	GError *error = NULL;
 	gchar *license_trans;
 
-	const gchar *authors[] = {"Jente Hidskes", NULL};
+	const gchar *authors[] = { "Jente Hidskes", NULL };
+	const gchar *artists[] = { "HHH", NULL };
 	const gchar *license[] = {
 		N_("Gcolor3 is free software: you can redistribute it and/or modify "
 		   "it under the terms of the GNU General Public License as published by "
@@ -54,6 +59,12 @@ void about_dialog_open (void) {
 	};
 	license_trans = g_strjoin ("\n\n", _(license[0]), _(license[1]), _(license[2]), NULL);
 
+	about_icon = gdk_pixbuf_new_from_file (PACKAGE_DATA_DIR "/pixmaps/gcolor3.svg", &error);
+	if (!about_icon) {
+		g_fprintf (stderr, "Failed to load pixbuf file: %s\n", error->message);
+		g_error_free (error);
+	}
+	
 	about_dialog = gtk_about_dialog_new ();
 	gtk_about_dialog_set_program_name (GTK_ABOUT_DIALOG (about_dialog), "Gcolor3");
 	gtk_about_dialog_set_comments (GTK_ABOUT_DIALOG (about_dialog), _("A simple color selection dialog in GTK3")),
@@ -61,9 +72,15 @@ void about_dialog_open (void) {
 	gtk_about_dialog_set_license (GTK_ABOUT_DIALOG (about_dialog), license_trans);
 	gtk_about_dialog_set_wrap_license (GTK_ABOUT_DIALOG (about_dialog), TRUE);
 	gtk_about_dialog_set_authors (GTK_ABOUT_DIALOG (about_dialog), authors);
+	gtk_about_dialog_set_artists (GTK_ABOUT_DIALOG (about_dialog), artists);
+	gtk_about_dialog_set_translator_credits (GTK_ABOUT_DIALOG (about_dialog), _("translator-credits"));
 	gtk_about_dialog_set_website_label (GTK_ABOUT_DIALOG (about_dialog), "GitHub");
 	gtk_about_dialog_set_website (GTK_ABOUT_DIALOG (about_dialog), "https://github.com/Unia/gcolor3");
-	gtk_about_dialog_set_logo_icon_name (GTK_ABOUT_DIALOG (about_dialog), "gcolor2");
+	if (about_icon) {
+		gtk_about_dialog_set_logo (GTK_ABOUT_DIALOG (about_dialog), about_icon);
+		g_object_unref (about_icon);
+	} else
+		gtk_about_dialog_set_logo_icon_name (GTK_ABOUT_DIALOG (about_dialog), "gcolor2");
 
 	g_signal_connect (GTK_DIALOG (about_dialog), "response", G_CALLBACK (about_dialog_close), NULL);
 
