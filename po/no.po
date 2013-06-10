@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-06-09 15:09+0200\n"
-"PO-Revision-Date: 2013-06-09 15:09+0200\n"
+"PO-Revision-Date: 2013-06-10 21:24+0200\n"
 "Last-Translator: HikariKnight\n"
 "Language-Team: Norwegian\n"
 "Language: no\n"
@@ -23,7 +23,7 @@ msgstr "En enkel farge velger laget i GTK3"
 
 #: ../data/gcolor3.desktop.in.h:2
 msgid "Choose colors from palette or screen"
-msgstr ""
+msgstr "Velg farger fra paletten eller skjermen"
 
 #: ../src/main.c:47 ../src/main.c:49 ../src/main.c:74
 msgid "read"
