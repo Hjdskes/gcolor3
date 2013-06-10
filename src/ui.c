@@ -136,6 +136,10 @@ GtkWidget* create_window (void) {
 	expander_box_all = gtk_box_new (GTK_ORIENTATION_VERTICAL, 5);
 	expander_box_buttons = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 5);
 	scroll = gtk_scrolled_window_new (NULL, NULL);
+	gtk_widget_set_vexpand (scroll, TRUE);
+	gtk_scrolled_window_set_policy (GTK_SCROLLED_WINDOW (scroll), GTK_POLICY_AUTOMATIC, GTK_POLICY_AUTOMATIC);
+	gtk_scrolled_window_set_shadow_type (GTK_SCROLLED_WINDOW (scroll), GTK_SHADOW_IN);
+
 	button_save = gtk_button_new_from_stock ("gtk-save");
 	button_delete = gtk_button_new_from_stock ("gtk-delete");
 	gtk_widget_set_sensitive (button_delete, FALSE);
@@ -167,14 +171,14 @@ GtkWidget* create_window (void) {
 	button_quit = gtk_button_new_from_stock ("gtk-quit");
 	button_about = gtk_button_new_from_stock ("gtk-about");
 
-	gtk_box_pack_start (GTK_BOX (box_all), color_chooser, TRUE, TRUE, 0);
+	gtk_box_pack_start (GTK_BOX (box_all), color_chooser, FALSE, FALSE, 0);
 	gtk_box_pack_end (GTK_BOX (expander_box_buttons), button_save, FALSE, FALSE, 0);
 	gtk_box_pack_start (GTK_BOX (expander_box_buttons), button_delete, FALSE, FALSE, 0);
-	gtk_box_pack_start (GTK_BOX (expander_box_all), expander_box_buttons, TRUE, TRUE, 0);
+	gtk_box_pack_start (GTK_BOX (expander_box_all), expander_box_buttons, FALSE, FALSE, 0);
 	gtk_container_add (GTK_CONTAINER (scroll), tree);
 	gtk_box_pack_start (GTK_BOX (expander_box_all), scroll, TRUE, TRUE, 0);
 	gtk_container_add (GTK_CONTAINER (expander), expander_box_all);
-	gtk_box_pack_start (GTK_BOX (box_all), expander, FALSE, FALSE, 0);
+	gtk_box_pack_start (GTK_BOX (box_all), expander, FALSE, TRUE, 0);
 	gtk_box_pack_start (GTK_BOX (box_all), separator, TRUE, TRUE, 0);
 	gtk_box_pack_end (GTK_BOX (box_buttons), button_quit, FALSE, FALSE, 0);
 	gtk_box_pack_start (GTK_BOX (box_buttons), button_about, FALSE, FALSE, 0);
