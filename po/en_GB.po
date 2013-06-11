@@ -78,6 +78,10 @@ msgstr "Jente Hidskes"
 msgid "Contributors"
 msgstr "Contributors"
 
+#: ../src/ui.c:80
+msgid "Website"
+msgstr "Website"
+
 #: ../src/ui.c:100
 msgid "Save a color"
 msgstr "Save a colour"

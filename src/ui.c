@@ -77,7 +77,7 @@ void about_dialog_open (void) {
 	gtk_about_dialog_set_artists (GTK_ABOUT_DIALOG (about_dialog), artists);
 	gtk_about_dialog_set_translator_credits (GTK_ABOUT_DIALOG (about_dialog), _("translator-credits"));
 	gtk_about_dialog_add_credit_section (GTK_ABOUT_DIALOG (about_dialog), _("Contributors"), contributors);
-	gtk_about_dialog_set_website_label (GTK_ABOUT_DIALOG (about_dialog), "GitHub page");
+	gtk_about_dialog_set_website_label (GTK_ABOUT_DIALOG (about_dialog), _("Website"));
 	gtk_about_dialog_set_website (GTK_ABOUT_DIALOG (about_dialog), "http://unia.github.io/gcolor3");
 	if (about_icon) {
 		gtk_about_dialog_set_logo (GTK_ABOUT_DIALOG (about_dialog), about_icon);
