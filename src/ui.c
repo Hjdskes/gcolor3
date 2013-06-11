@@ -45,6 +45,7 @@ void about_dialog_open (void) {
 
 	const gchar *authors[] = { "Jente Hidskes", NULL };
 	const gchar *artists[] = { "HHH", NULL };
+	const gchar *contributors[] = { "Sujoy Kumar Das", NULL };
 	const gchar *license[] = {
 		N_("Gcolor3 is free software: you can redistribute it and/or modify "
 		   "it under the terms of the GNU General Public License as published by "
@@ -67,15 +68,18 @@ void about_dialog_open (void) {
 	
 	about_dialog = gtk_about_dialog_new ();
 	gtk_about_dialog_set_program_name (GTK_ABOUT_DIALOG (about_dialog), "Gcolor3");
+	gtk_about_dialog_set_version (GTK_ABOUT_DIALOG (about_dialog), "0.1");
 	gtk_about_dialog_set_comments (GTK_ABOUT_DIALOG (about_dialog), _("A simple color selection dialog in GTK3")),
 	gtk_about_dialog_set_copyright (GTK_ABOUT_DIALOG (about_dialog), "Copyright \xc2\xa9 2013 Jente Hidskes");
 	gtk_about_dialog_set_license (GTK_ABOUT_DIALOG (about_dialog), license_trans);
 	gtk_about_dialog_set_wrap_license (GTK_ABOUT_DIALOG (about_dialog), TRUE);
+	gtk_about_dialog_set_license_type (GTK_ABOUT_DIALOG (about_dialog), GTK_LICENSE_GPL_2_0);
 	gtk_about_dialog_set_authors (GTK_ABOUT_DIALOG (about_dialog), authors);
 	gtk_about_dialog_set_artists (GTK_ABOUT_DIALOG (about_dialog), artists);
 	gtk_about_dialog_set_translator_credits (GTK_ABOUT_DIALOG (about_dialog), _("translator-credits"));
+	gtk_about_dialog_add_credit_section (GTK_ABOUT_DIALOG (about_dialog), _("Contributors"), contributors);
 	gtk_about_dialog_set_website_label (GTK_ABOUT_DIALOG (about_dialog), "GitHub page");
-	gtk_about_dialog_set_website (GTK_ABOUT_DIALOG (about_dialog), "https://unia.github.io/gcolor3");
+	gtk_about_dialog_set_website (GTK_ABOUT_DIALOG (about_dialog), "http://unia.github.io/gcolor3");
 	if (about_icon) {
 		gtk_about_dialog_set_logo (GTK_ABOUT_DIALOG (about_dialog), about_icon);
 		g_object_unref (about_icon);
