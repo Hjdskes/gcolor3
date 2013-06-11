@@ -13,6 +13,7 @@ AM_CPPFLAGS = \
 AM_CFLAGS =\
 	 -Wall\
 	 -g
+	 -DDATA_DIR=\"$(datadir)\"
 
 bin_PROGRAMS = gcolor3
 
