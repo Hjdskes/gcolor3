@@ -8,12 +8,12 @@ AM_CPPFLAGS = \
 	-DPACKAGE_LOCALE_DIR=\""$(localedir)"\" \
 	-DPACKAGE_SRC_DIR=\""$(srcdir)"\" \
 	-DPACKAGE_DATA_DIR=\""$(pkgdatadir)"\" \
+	-DDATA_DIR=\""$(datadir)"\" \
 	$(GCOLOR3_CFLAGS)
 
 AM_CFLAGS =\
 	 -Wall\
 	 -g
-	 -DDATA_DIR=\"$(datadir)\"
 
 bin_PROGRAMS = gcolor3
 
