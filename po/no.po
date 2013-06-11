@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-06-09 15:09+0200\n"
-"PO-Revision-Date: 2013-06-10 21:24+0200\n"
+"PO-Revision-Date: 2013-06-11 13:26+0200\n"
 "Last-Translator: HikariKnight\n"
 "Language-Team: Norwegian\n"
 "Language: no\n"
@@ -17,13 +17,13 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../data/gcolor3.desktop.in.h:1 ../src/ui.c:59
+#: ../data/gcolor3.desktop.in.h:1 ../src/ui.c:72
 msgid "A simple color selection dialog in GTK3"
 msgstr "En enkel farge velger laget i GTK3"
 
 #: ../data/gcolor3.desktop.in.h:2
-msgid "Choose colors from palette or screen"
-msgstr "Velg farger fra paletten eller skjermen"
+msgid "Choose colors from the palette or the screen"
+msgstr ""
 
 #: ../src/main.c:47 ../src/main.c:49 ../src/main.c:74
 msgid "read"
@@ -38,17 +38,15 @@ msgstr "skrive"
 msgid "Enter a color name for %s:"
 msgstr "Skriv inn et fargenavn for %s:"
 
-#: ../src/ui.c:29
+#: ../src/ui.c:31
 #, c-format
 msgid ""
 "An error occurred trying to open file \"%s\" for %s access!\n"
 "\n"
 "Please check the file permissions and try again."
-msgstr "En feil oppstod en feil ved åpning av filen \"%s\", mangler %s tilgang!\n" 
-"\n"
-"Vennligst sjekk rettighetene til filen."
+msgstr ""
 
-#: ../src/ui.c:44
+#: ../src/ui.c:50
 msgid ""
 "Gcolor3 is free software: you can redistribute it and/or modify it under the "
 "terms of the GNU General Public License as published by the Free Software "
@@ -56,7 +54,7 @@ msgid ""
 "version."
 msgstr ""
 
-#: ../src/ui.c:48
+#: ../src/ui.c:54
 msgid ""
 "Gcolor3 is distributed in the hope that it will be useful but WITHOUT ANY "
 "WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS "
@@ -64,24 +62,36 @@ msgid ""
 "details."
 msgstr ""
 
-#: ../src/ui.c:52
+#: ../src/ui.c:58
 msgid ""
 "You should have received a copy of the GNU General Public License along with "
 "this program. If not, see http://www.gnu.org/licenses/."
 msgstr ""
 
+#: ../src/ui.c:78
+msgid "translator-credits"
+msgstr "HikariKnight"
+
+#: ../src/ui.c:79
+msgid "Contributors"
+msgstr ""
+
 #: ../src/ui.c:80
+msgid "Website"
+msgstr ""
+
+#: ../src/ui.c:100
 msgid "Save a color"
 msgstr "Lagre en farge"
 
-#: ../src/ui.c:134
+#: ../src/ui.c:154
 msgid "Show saved colors"
 msgstr "Vis lagrede farger"
 
-#: ../src/ui.c:148
+#: ../src/ui.c:175
 msgid "Color"
 msgstr "Farge"
 
-#: ../src/ui.c:162
+#: ../src/ui.c:186
 msgid "Name"
 msgstr "Navn"

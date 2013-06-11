@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-06-08 22:16+0200\n"
-"PO-Revision-Date: 2013-06-09 21:33+0200\n"
+"PO-Revision-Date: 2013-06-11 13:24+0200\n"
 "Last-Translator: Angelica Ankarberg\n"
 "Language-Team: Swedish\n"
 "Language: sv\n"
@@ -17,13 +17,13 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../data/gcolor3.desktop.in.h:1 ../src/ui.c:59
+#: ../data/gcolor3.desktop.in.h:1 ../src/ui.c:72
 msgid "A simple color selection dialog in GTK3"
 msgstr "En simpel färgvals ruta i GTK3"
 
 #: ../data/gcolor3.desktop.in.h:2
-msgid "Choose colors from palette or screen"
-msgstr "Välj färger från palett eller skärm"
+msgid "Choose colors from the palette or the screen"
+msgstr ""
 
 #: ../src/main.c:47 ../src/main.c:49 ../src/main.c:74
 msgid "read"
@@ -38,7 +38,7 @@ msgstr "skriv"
 msgid "Enter a color name for %s:"
 msgstr "Ange ett färgnamn för %s:"
 
-#: ../src/ui.c:29
+#: ../src/ui.c:31
 #, c-format
 msgid ""
 "An error occurred trying to open file \"%s\" for %s access!\n"
@@ -48,7 +48,7 @@ msgstr "Ett fel skedde vid öppnandet av filen \"%s\" för %s tillgång!\n"
 "\n"
 "Var vänlig och kontrollera filens tillåtelser och försök igen."
 
-#: ../src/ui.c:44
+#: ../src/ui.c:50
 msgid ""
 "Gcolor3 is free software: you can redistribute it and/or modify it under the "
 "terms of the GNU General Public License as published by the Free Software "
@@ -56,7 +56,7 @@ msgid ""
 "version."
 msgstr ""
 
-#: ../src/ui.c:48
+#: ../src/ui.c:54
 msgid ""
 "Gcolor3 is distributed in the hope that it will be useful but WITHOUT ANY "
 "WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS "
@@ -64,24 +64,36 @@ msgid ""
 "details."
 msgstr ""
 
-#: ../src/ui.c:52
+#: ../src/ui.c:58
 msgid ""
 "You should have received a copy of the GNU General Public License along with "
 "this program. If not, see http://www.gnu.org/licenses/."
 msgstr ""
 
+#: ../src/ui.c:78
+msgid "translator-credits"
+msgstr "Angelica Ankarberg"
+
+#: ../src/ui.c:79
+msgid "Contributors"
+msgstr ""
+
 #: ../src/ui.c:80
+msgid "Website"
+msgstr ""
+
+#: ../src/ui.c:100
 msgid "Save a color"
 msgstr "Spara en färg"
 
-#: ../src/ui.c:135
+#: ../src/ui.c:154
 msgid "Show saved colors"
 msgstr "Visa sparade färger"
 
-#: ../src/ui.c:149
+#: ../src/ui.c:175
 msgid "Color"
 msgstr "Färg"
 
-#: ../src/ui.c:163
+#: ../src/ui.c:186
 msgid "Name"
 msgstr "Namn"

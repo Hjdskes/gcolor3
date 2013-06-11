@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-06-10 00:12+0200\n"
-"PO-Revision-Date: 2013-06-10 01:00+0200\n"
+"PO-Revision-Date: 2013-06-11 13:21+0200\n"
 "Last-Translator: Jens John <asterisk@2ion.de>\n"
 "Language-Team: German Translations\n"
 "Language: de_DE\n"
@@ -17,13 +17,13 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../data/gcolor3.desktop.in.h:1 ../src/ui.c:59
+#: ../data/gcolor3.desktop.in.h:1 ../src/ui.c:72
 msgid "A simple color selection dialog in GTK3"
 msgstr "Ein einfacher Farbauswahldialog in GTK3"
 
 #: ../data/gcolor3.desktop.in.h:2
-msgid "Choose colors from palette or screen"
-msgstr "Wählen Sie Farben auf Bildschirm oder Palette aus"
+msgid "Choose colors from the palette or the screen"
+msgstr ""
 
 #: ../src/main.c:47 ../src/main.c:49 ../src/main.c:74
 msgid "read"
@@ -38,61 +38,69 @@ msgstr "Schreibe"
 msgid "Enter a color name for %s:"
 msgstr "Geben Sie einen Farbnahmen für %s ein:"
 
-#: ../src/ui.c:29
+#: ../src/ui.c:31
 #, c-format
 msgid ""
 "An error occurred trying to open file \"%s\" for %s access!\n"
 "\n"
 "Please check the file permissions and try again."
-msgstr ""
-"Beim Öffnen der Datei \"%s\" für den %szugriff ist ein Fehler aufgetreten.\n"
+msgstr "Beim Öffnen der Datei \"%s\" für den %szugriff ist ein Fehler aufgetreten.\n"
 "\n"
 "Bitte überprüfen Sie die Zugriffsrechte der Datei und versuchen Sie es erneut."
 
-#: ../src/ui.c:44
+#: ../src/ui.c:50
 msgid ""
 "Gcolor3 is free software: you can redistribute it and/or modify it under the "
 "terms of the GNU General Public License as published by the Free Software "
 "Foundation, either version 3 of the License, or (at your option) any later "
 "version."
-msgstr ""
-"Dieses Programm ist freie Software. Sie können es unter den Bedingungen der "
+msgstr "Dieses Programm ist freie Software. Sie können es unter den Bedingungen der "
 "GNU General Public License, wie von der Free Software Foundation veröffentlicht, "
 "weitergeben und/oder modifizieren, entweder gemäß Version 3 der Lizenz oder "
 "(nach Ihrer Option) jeder späteren Version."
 
-#: ../src/ui.c:48
+#: ../src/ui.c:54
 msgid ""
 "Gcolor3 is distributed in the hope that it will be useful but WITHOUT ANY "
 "WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS "
 "FOR A PARTICULAR PURPOSE. See the GNU General Public License for more "
 "details."
-msgstr ""
-"Die Veröffentlichung dieses Programms erfolgt in der Hoffnung, daß es Ihnen "
+msgstr "Die Veröffentlichung dieses Programms erfolgt in der Hoffnung, daß es Ihnen "
 "von Nutzen sein wird, aber OHNE IRGENDEINE GARANTIE, sogar ohne die implizite "
 "Garantie der MARKTREIFE oder der VERWENDBARKEIT FÜR EINEN BESTIMMTEN ZWECK. "
 "Details finden Sie in der GNU General Public License."
 
-#: ../src/ui.c:52
+#: ../src/ui.c:58
 msgid ""
 "You should have received a copy of the GNU General Public License along with "
 "this program. If not, see http://www.gnu.org/licenses/."
-msgstr ""
-"Sie sollten ein Exemplar der GNU General Public License zusammen mit diesem Programm "
+msgstr "Sie sollten ein Exemplar der GNU General Public License zusammen mit diesem Programm "
 "erhalten haben. Falls nicht, siehe <http://www.gnu.org/licenses/>."
 
+#: ../src/ui.c:78
+msgid "translator-credits"
+msgstr "Jens John"
+
+#: ../src/ui.c:79
+msgid "Contributors"
+msgstr ""
+
 #: ../src/ui.c:80
+msgid "Website"
+msgstr ""
+
+#: ../src/ui.c:100
 msgid "Save a color"
 msgstr "Farbe speichern"
 
-#: ../src/ui.c:134
+#: ../src/ui.c:154
 msgid "Show saved colors"
 msgstr "Gespeicherte Farben anzeigen"
 
-#: ../src/ui.c:148
+#: ../src/ui.c:175
 msgid "Color"
 msgstr "Farbe"
 
-#: ../src/ui.c:162
+#: ../src/ui.c:186
 msgid "Name"
 msgstr "Name"
