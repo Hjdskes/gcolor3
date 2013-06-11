@@ -59,7 +59,7 @@ void about_dialog_open (void) {
 	};
 	license_trans = g_strjoin ("\n\n", _(license[0]), _(license[1]), _(license[2]), NULL);
 
-	about_icon = gdk_pixbuf_new_from_file (PACKAGE_DATA_DIR "/pixmaps/gcolor3.svg", &error);
+	about_icon = gdk_pixbuf_new_from_file (DATA_DIR "/pixmaps/gcolor3.svg", &error);
 	if (!about_icon) {
 		g_fprintf (stderr, "Failed to load pixbuf file: %s\n", error->message);
 		g_error_free (error);
