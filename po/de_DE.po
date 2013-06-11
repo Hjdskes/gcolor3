@@ -23,7 +23,7 @@ msgstr "Ein einfacher Farbauswahldialog in GTK3"
 
 #: ../data/gcolor3.desktop.in.h:2
 msgid "Choose colors from the palette or the screen"
-msgstr ""
+msgstr "Wählen Sie eine Farbe von Palette oder Bildschirm"
 
 #: ../src/main.c:47 ../src/main.c:49 ../src/main.c:74
 msgid "read"
@@ -36,7 +36,7 @@ msgstr "Schreibe"
 #: ../src/callbacks.c:70
 #, c-format
 msgid "Enter a color name for %s:"
-msgstr "Geben Sie einen Farbnahmen für %s ein:"
+msgstr "Geben Sie einen Farbnamen für %s ein:"
 
 #: ../src/ui.c:31
 #, c-format
@@ -83,11 +83,11 @@ msgstr "Jens John"
 
 #: ../src/ui.c:79
 msgid "Contributors"
-msgstr ""
+msgstr "Mitwirkende"
 
 #: ../src/ui.c:80
 msgid "Website"
-msgstr ""
+msgstr "Webseite"
 
 #: ../src/ui.c:100
 msgid "Save a color"
