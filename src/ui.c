@@ -73,7 +73,6 @@ void about_dialog_open (void) {
 	gtk_about_dialog_set_copyright (GTK_ABOUT_DIALOG (about_dialog), "Copyright \xc2\xa9 2013 Jente Hidskes");
 	gtk_about_dialog_set_license (GTK_ABOUT_DIALOG (about_dialog), license_trans);
 	gtk_about_dialog_set_wrap_license (GTK_ABOUT_DIALOG (about_dialog), TRUE);
-	gtk_about_dialog_set_license_type (GTK_ABOUT_DIALOG (about_dialog), GTK_LICENSE_GPL_2_0);
 	gtk_about_dialog_set_authors (GTK_ABOUT_DIALOG (about_dialog), authors);
 	gtk_about_dialog_set_artists (GTK_ABOUT_DIALOG (about_dialog), artists);
 	gtk_about_dialog_set_translator_credits (GTK_ABOUT_DIALOG (about_dialog), _("translator-credits"));
