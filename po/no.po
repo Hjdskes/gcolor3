@@ -44,7 +44,9 @@ msgid ""
 "An error occurred trying to open file \"%s\" for %s access!\n"
 "\n"
 "Please check the file permissions and try again."
-msgstr ""
+msgstr "En feil oppstod en feil ved åpning av filen \"%s\", mangler %s tilgang!\n" 
+"\n"
+"Vennligst sjekk rettighetene til filen."
 
 #: ../src/ui.c:50
 msgid ""
