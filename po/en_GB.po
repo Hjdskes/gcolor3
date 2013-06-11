@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-06-09 19:04+0200\n"
-"PO-Revision-Date: 2013-06-09 19:04+0200\n"
+"PO-Revision-Date: 2013-06-11 13:09+0200\n"
 "Last-Translator: Jente Hidskes <jthidskes@outlook.com>\n"
 "Language-Team: British English\n"
 "Language: en_GB\n"
@@ -17,13 +17,13 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../data/gcolor3.desktop.in.h:1 ../src/ui.c:59
+#: ../data/gcolor3.desktop.in.h:1 ../src/ui.c:72
 msgid "A simple color selection dialog in GTK3"
 msgstr "A simple colour selection dialog in GTK3"
 
 #: ../data/gcolor3.desktop.in.h:2
-msgid "Choose colors from palette or screen"
-msgstr "Choose colours from palette or screen"
+msgid "Choose colors from the palette or the screen"
+msgstr "Choose colours from the palette or the screen"
 
 #: ../src/main.c:47 ../src/main.c:49 ../src/main.c:74
 msgid "read"
@@ -38,7 +38,7 @@ msgstr "write"
 msgid "Enter a color name for %s:"
 msgstr "Enter a colour name for %s:"
 
-#: ../src/ui.c:29
+#: ../src/ui.c:31
 #, c-format
 msgid ""
 "An error occurred trying to open file \"%s\" for %s access!\n"
@@ -48,7 +48,7 @@ msgstr "An error occurred trying to open file \"%s\" for %s access!\n"
 "\n"
 "Please check the file permissions and try again."
 
-#: ../src/ui.c:44
+#: ../src/ui.c:50
 msgid ""
 "Gcolor3 is free software: you can redistribute it and/or modify it under the "
 "terms of the GNU General Public License as published by the Free Software "
@@ -56,7 +56,7 @@ msgid ""
 "version."
 msgstr ""
 
-#: ../src/ui.c:48
+#: ../src/ui.c:54
 msgid ""
 "Gcolor3 is distributed in the hope that it will be useful but WITHOUT ANY "
 "WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS "
@@ -64,24 +64,32 @@ msgid ""
 "details."
 msgstr ""
 
-#: ../src/ui.c:52
+#: ../src/ui.c:58
 msgid ""
 "You should have received a copy of the GNU General Public License along with "
 "this program. If not, see http://www.gnu.org/licenses/."
 msgstr ""
 
-#: ../src/ui.c:80
+#: ../src/ui.c:78
+msgid "translator-credits"
+msgstr "Jente Hidskes"
+
+#: ../src/ui.c:79
+msgid "Contributors"
+msgstr "Contributors"
+
+#: ../src/ui.c:100
 msgid "Save a color"
 msgstr "Save a colour"
 
-#: ../src/ui.c:134
+#: ../src/ui.c:154
 msgid "Show saved colors"
 msgstr "Show saved colours"
 
-#: ../src/ui.c:148
+#: ../src/ui.c:175
 msgid "Color"
 msgstr "Colour"
 
-#: ../src/ui.c:162
+#: ../src/ui.c:186
 msgid "Name"
 msgstr "Name"
