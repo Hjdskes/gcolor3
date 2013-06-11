@@ -39,6 +39,7 @@ PKG_CHECK_MODULES(GCOLOR3, [gtk+-3.0 gtk+-3.0])
 AC_OUTPUT([
 Makefile
 data/Makefile
+data/icons/Makefile
 src/Makefile
 po/Makefile.in
 ])
