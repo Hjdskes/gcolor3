@@ -39,8 +39,8 @@ void about_dialog_close (GtkWidget *about_dialog) {
 
 void about_dialog_open (void) {
 	GtkWidget *about_dialog;
-	GdkPixbuf *about_icon;
-	GError *error = NULL;
+	/*GdkPixbuf *about_icon;
+	GError *error = NULL;*/
 	gchar *license_trans;
 
 	const gchar *authors[] = { "Jente Hidskes", NULL };
@@ -60,11 +60,11 @@ void about_dialog_open (void) {
 	};
 	license_trans = g_strjoin ("\n\n", _(license[0]), _(license[1]), _(license[2]), NULL);
 
-	about_icon = gdk_pixbuf_new_from_file (DATA_DIR "/pixmaps/gcolor3.svg", &error);
+	/*about_icon = gdk_pixbuf_new_from_file (DATA_DIR "/pixmaps/gcolor3.svg", &error);
 	if (!about_icon) {
 		g_fprintf (stderr, "Failed to load pixbuf file: %s\n", error->message);
 		g_error_free (error);
-	}
+	}*/
 	
 	about_dialog = gtk_about_dialog_new ();
 	gtk_about_dialog_set_program_name (GTK_ABOUT_DIALOG (about_dialog), "Gcolor3");
@@ -79,11 +79,11 @@ void about_dialog_open (void) {
 	gtk_about_dialog_add_credit_section (GTK_ABOUT_DIALOG (about_dialog), _("Contributors"), contributors);
 	gtk_about_dialog_set_website_label (GTK_ABOUT_DIALOG (about_dialog), _("Website"));
 	gtk_about_dialog_set_website (GTK_ABOUT_DIALOG (about_dialog), "http://unia.github.io/gcolor3");
-	if (about_icon) {
+	/*if (about_icon) {
 		gtk_about_dialog_set_logo (GTK_ABOUT_DIALOG (about_dialog), about_icon);
 		g_object_unref (about_icon);
-	} else
-		gtk_about_dialog_set_logo_icon_name (GTK_ABOUT_DIALOG (about_dialog), "gcolor2");
+	} else*/
+	gtk_about_dialog_set_logo_icon_name (GTK_ABOUT_DIALOG (about_dialog), "gcolor3");
 
 	g_signal_connect (GTK_DIALOG (about_dialog), "response", G_CALLBACK (about_dialog_close), NULL);
 
@@ -142,7 +142,7 @@ GtkWidget* create_window (void) {
 
 	window = gtk_window_new (GTK_WINDOW_TOPLEVEL);
 	gtk_window_set_title (GTK_WINDOW (window), "Gcolor3");
-	gtk_window_set_default_icon_name ("gcolor2");
+	gtk_window_set_default_icon_name ("gcolor3");
 	g_signal_connect (window, "destroy", G_CALLBACK (gtk_main_quit), NULL);
 
 	box_all = gtk_box_new (GTK_ORIENTATION_VERTICAL, 5);
