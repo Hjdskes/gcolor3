@@ -23,7 +23,7 @@ msgstr "En enkel farge velger laget i GTK3"
 
 #: ../data/gcolor3.desktop.in.h:2
 msgid "Choose colors from the palette or the screen"
-msgstr ""
+msgstr "Velg farger fra paletten eller skjermen"
 
 #: ../src/main.c:47 ../src/main.c:49 ../src/main.c:74
 msgid "read"
@@ -76,11 +76,11 @@ msgstr "HikariKnight"
 
 #: ../src/ui.c:79
 msgid "Contributors"
-msgstr ""
+msgstr "Bidragsytere"
 
 #: ../src/ui.c:80
 msgid "Website"
-msgstr ""
+msgstr "Webside"
 
 #: ../src/ui.c:100
 msgid "Save a color"
