@@ -26,7 +26,7 @@
 #include "callbacks.h"
 #include "ui.h"
 
-gchar* hex_value (GdkColor colorvalue) {
+gchar *hex_value (GdkColor colorvalue) {
 	return g_strdup_printf ("#%.2X%.2X%.2X", colorvalue.red/256, colorvalue.green/256, colorvalue.blue/256);
 }
 

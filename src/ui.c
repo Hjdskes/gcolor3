@@ -60,6 +60,9 @@ void about_dialog_open (void) {
 	license_trans = g_strjoin ("\n\n", _(license[0]), _(license[1]), _(license[2]), NULL);
 
 	about_dialog = gtk_about_dialog_new ();
+	gtk_window_set_transient_for (GTK_WINDOW (about_dialog), GTK_WINDOW (window));
+	gtk_window_set_modal (GTK_WINDOW (about_dialog), TRUE);
+
 	gtk_about_dialog_set_program_name (GTK_ABOUT_DIALOG (about_dialog), "Gcolor3");
 	gtk_about_dialog_set_version (GTK_ABOUT_DIALOG (about_dialog), "1.0");
 	gtk_about_dialog_set_comments (GTK_ABOUT_DIALOG (about_dialog), _("A simple color selection dialog in GTK3")),
@@ -77,6 +80,7 @@ void about_dialog_open (void) {
 	g_signal_connect (GTK_DIALOG (about_dialog), "response", G_CALLBACK (about_dialog_close), NULL);
 
 	gtk_widget_show (about_dialog);
+
 	g_free(license_trans);
 }
 
@@ -87,10 +91,7 @@ GtkWidget *save_dialog_open (void) {
 	gtk_container_set_border_width (GTK_CONTAINER (save_dialog), 5);
 	gtk_window_set_resizable (GTK_WINDOW (save_dialog), FALSE);
 	gtk_window_set_title (GTK_WINDOW (save_dialog), _("Save a color"));
-	gtk_window_set_position (GTK_WINDOW (save_dialog), GTK_WIN_POS_CENTER_ON_PARENT);
 	gtk_window_set_modal (GTK_WINDOW (save_dialog), TRUE);
-	gtk_window_set_destroy_with_parent (GTK_WINDOW (save_dialog), TRUE);
-	gtk_window_set_type_hint (GTK_WINDOW (save_dialog), GDK_WINDOW_TYPE_HINT_DIALOG);
 
 	content_area = gtk_dialog_get_content_area (GTK_DIALOG (save_dialog));
 
@@ -125,7 +126,7 @@ GtkWidget *save_dialog_open (void) {
 }
 
 GtkWidget *create_window (void) {
-	GtkWidget *window, *box_all, *expander, *expander_box_all, *expander_box_buttons, *scroll, *separator, *box_buttons, *button_quit, *button_about;
+	GtkWidget *box_all, *expander, *expander_box_all, *expander_box_buttons, *scroll, *separator, *box_buttons, *button_quit, *button_about;
 	GtkTreeViewColumn *column;
 	GtkCellRenderer *renderer;
 

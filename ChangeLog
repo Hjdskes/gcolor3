@@ -1,3 +1,6 @@
-2013-06-08: v0.1: Imported Gcolor3 into Anjuta for easier management
+v1.1: Code cleanup
+      All dialogs are now now modal dialogs
 
-2013-06-11: v1.0: Release version 1.0.
+v1.0: Release version 1.0.
+
+v0.1: Imported Gcolor3 into Anjuta for easier management
