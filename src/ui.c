@@ -126,7 +126,7 @@ GtkWidget *save_dialog_open (void) {
 }
 
 GtkWidget *create_window (void) {
-	GtkWidget *box_all, *expander, *expander_box_all, *expander_box_buttons, *scroll, *separator, *box_buttons, *button_quit, *button_about;
+	GtkWidget *box_all, *expander, *expander_box_all, *expander_box_buttons, *button_save, *scroll, *separator, *box_buttons, *button_quit, *button_about;
 	GtkTreeViewColumn *column;
 	GtkCellRenderer *renderer;
 

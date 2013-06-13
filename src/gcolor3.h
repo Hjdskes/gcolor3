@@ -22,7 +22,7 @@
 
 #include <gtk/gtk.h>
 
-GtkWidget *window, *color_chooser, *save_dialog, *tree, *button_save, *save_label, *button_delete, *save_dialog_ok_button, *save_entry;
+GtkWidget *window, *color_chooser, *save_dialog, *tree, *save_label, *button_delete, *save_dialog_ok_button, *save_entry;
 GtkTreeSelection *selection;
 GtkListStore *liststore;
 GdkColor colorvalue;
