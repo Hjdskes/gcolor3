@@ -3,12 +3,12 @@
  * ui.h
  * Copyright (C) 2013 Jente Hidskes <jthidskes@outlook.com>
  * 
- * gcolor3 is free software: you can redistribute it and/or modify it
+ * Gcolor3 is free software: you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
  * Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  * 
- * gcolor3 is distributed in the hope that it will be useful, but
+ * Gcolor3 is distributed in the hope that it will be useful, but
  * WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  * See the GNU General Public License for more details.
@@ -24,11 +24,11 @@
 
 G_BEGIN_DECLS
 
-void show_file_error (gchar *type);
+void show_file_error (gchar *file, gchar *type);
 void about_dialog_close (GtkWidget *about_dialog);
 void about_dialog_open (void);
-GtkWidget* save_dialog_open (void);
-GtkWidget* create_window (void);
+GtkWidget *save_dialog_open (void);
+GtkWidget *create_window (void);
 
 G_END_DECLS
 

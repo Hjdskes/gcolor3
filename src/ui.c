@@ -3,12 +3,12 @@
  * ui.c
  * Copyright (C) 2013 Jente Hidskes <jthidskes@outlook.com>
  * 
- * gcolor3 is free software: you can redistribute it and/or modify it
+ * Gcolor3 is free software: you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
  * Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  * 
- * gcolor3 is distributed in the hope that it will be useful, but
+ * Gcolor3 is distributed in the hope that it will be useful, but
  * WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  * See the GNU General Public License for more details.
@@ -23,12 +23,13 @@
 #include <gdk-pixbuf/gdk-pixbuf.h>
 
 #include "gcolor3.h"
+#include "callbacks.h"
 #include "ui.h"
 
-void show_file_error (gchar *type) {
+void show_file_error (gchar *file, gchar *type) {
 	GtkDialog *error_dialog;
 
-	error_dialog = GTK_DIALOG (gtk_message_dialog_new (GTK_WINDOW (window), GTK_DIALOG_MODAL, GTK_MESSAGE_ERROR, GTK_BUTTONS_OK, _("An error occurred trying to open file \"%s\" for %s access!\n\nPlease check the file permissions and try again."), user_filename, type));
+	error_dialog = GTK_DIALOG (gtk_message_dialog_new (GTK_WINDOW (window), GTK_DIALOG_MODAL, GTK_MESSAGE_ERROR, GTK_BUTTONS_OK, _("An error occurred trying to open file \"%s\" for %s access!\n\nPlease check the file permissions and try again."), file, type));
 	gtk_dialog_run (error_dialog);
 	gtk_widget_destroy (GTK_WIDGET (error_dialog));
 }
@@ -79,7 +80,7 @@ void about_dialog_open (void) {
 	g_free(license_trans);
 }
 
-GtkWidget* save_dialog_open (void) {
+GtkWidget *save_dialog_open (void) {
 	GtkWidget *content_area, *save_dialog_cancel_button;
 
 	save_dialog = gtk_dialog_new ();
@@ -123,7 +124,7 @@ GtkWidget* save_dialog_open (void) {
 	return save_dialog;
 }
 
-GtkWidget* create_window (void) {
+GtkWidget *create_window (void) {
 	GtkWidget *window, *box_all, *expander, *expander_box_all, *expander_box_buttons, *scroll, *separator, *box_buttons, *button_quit, *button_about;
 	GtkTreeViewColumn *column;
 	GtkCellRenderer *renderer;
@@ -137,7 +138,7 @@ GtkWidget* create_window (void) {
 	box_buttons = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 5);
 	gtk_container_set_border_width (GTK_CONTAINER (box_buttons), 5);
 
-	color_chooser = gtk_color_selection_new();
+	color_chooser = gtk_color_selection_new ();
 	expander = gtk_expander_new(_("Show saved colors"));
 	gtk_expander_set_resize_toplevel (GTK_EXPANDER (expander), TRUE);
 	expander_box_all = gtk_box_new (GTK_ORIENTATION_VERTICAL, 5);
@@ -151,7 +152,6 @@ GtkWidget* create_window (void) {
 	button_delete = gtk_button_new_from_stock ("gtk-delete");
 	gtk_widget_set_sensitive (button_delete, FALSE);
 
-	/* setup the tree view widget */
 	liststore = gtk_list_store_new (N_COLUMNS, GDK_TYPE_PIXBUF, G_TYPE_STRING, G_TYPE_STRING, G_TYPE_STRING);
 	tree = gtk_tree_view_new_with_model(GTK_TREE_MODEL (liststore));
 	gtk_tree_view_set_search_column (GTK_TREE_VIEW (tree), COLOR_NAME);
