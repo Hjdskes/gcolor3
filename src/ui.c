@@ -132,6 +132,7 @@ GtkWidget *create_window (void) {
 
 	window = gtk_window_new (GTK_WINDOW_TOPLEVEL);
 	gtk_window_set_title (GTK_WINDOW (window), "Gcolor3");
+	gtk_window_set_resizable (GTK_WINDOW (save_dialog), FALSE);
 	g_signal_connect (window, "destroy", G_CALLBACK (gtk_main_quit), NULL);
 
 	box_all = gtk_box_new (GTK_ORIENTATION_VERTICAL, 5);
