@@ -90,7 +90,7 @@ GtkWidget *save_dialog_open (void) {
 	save_dialog = gtk_dialog_new ();
 	gtk_container_set_border_width (GTK_CONTAINER (save_dialog), 5);
 	gtk_window_set_resizable (GTK_WINDOW (save_dialog), FALSE);
-	gtk_window_set_title (GTK_WINDOW (save_dialog), _("Save a color"));
+	gtk_window_set_title (GTK_WINDOW (save_dialog), _("Save a color")); /*ToDo: still needed?*/
 	gtk_window_set_modal (GTK_WINDOW (save_dialog), TRUE);
 
 	content_area = gtk_dialog_get_content_area (GTK_DIALOG (save_dialog));
@@ -104,13 +104,13 @@ GtkWidget *save_dialog_open (void) {
 	gtk_widget_show (save_entry);
 	gtk_entry_set_activates_default (GTK_ENTRY (save_entry), TRUE);
 
-	save_dialog_ok_button = gtk_button_new_from_stock ("gtk-save");
+	save_dialog_ok_button = gtk_button_new_with_label (_("Save"));
 	gtk_widget_show (save_dialog_ok_button);
 	gtk_dialog_add_action_widget (GTK_DIALOG (save_dialog), save_dialog_ok_button, GTK_RESPONSE_OK);
 	gtk_widget_set_sensitive (save_dialog_ok_button, FALSE);
-	gtk_widget_set_can_default(save_dialog_ok_button, TRUE);
+	gtk_widget_set_can_default (save_dialog_ok_button, TRUE);
 
-	save_dialog_cancel_button = gtk_button_new_from_stock ("gtk-cancel");
+	save_dialog_cancel_button = gtk_button_new_with_label (_("Cancel"));
 	gtk_widget_show (save_dialog_cancel_button);
 	gtk_dialog_add_action_widget (GTK_DIALOG (save_dialog), save_dialog_cancel_button, GTK_RESPONSE_CANCEL);
 
@@ -126,13 +126,13 @@ GtkWidget *save_dialog_open (void) {
 }
 
 GtkWidget *create_window (void) {
-	GtkWidget *box_all, *expander, *expander_box_all, *expander_box_buttons, *button_save, *scroll, *separator, *box_buttons, *button_quit, *button_about;
+	GtkWidget *box_all, *stack, *header_bar, *stackswitcher, *box_color_chooser, *save_box_all, *save_box_buttons, *button_save, *scroll, *box_buttons, *button_about;
 	GtkTreeViewColumn *column;
 	GtkCellRenderer *renderer;
 
 	window = gtk_window_new (GTK_WINDOW_TOPLEVEL);
-	gtk_window_set_title (GTK_WINDOW (window), "Gcolor3");
-	gtk_window_set_resizable (GTK_WINDOW (window), FALSE);
+	gtk_window_set_title (GTK_WINDOW (window), "Gcolor3"); /*ToDo: still needed?*/
+	gtk_window_set_resizable (GTK_WINDOW (window), TRUE);
 	g_signal_connect (window, "destroy", G_CALLBACK (gtk_main_quit), NULL);
 
 	box_all = gtk_box_new (GTK_ORIENTATION_VERTICAL, 5);
@@ -140,18 +140,26 @@ GtkWidget *create_window (void) {
 	box_buttons = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 5);
 	gtk_container_set_border_width (GTK_CONTAINER (box_buttons), 5);
 
+	header_bar = gtk_header_bar_new ();
+	gtk_header_bar_set_title (GTK_HEADER_BAR (header_bar), "Gcolor3");
+	gtk_header_bar_set_subtitle (GTK_HEADER_BAR (header_bar), _("A simple color selection dialog in GTK3"));
+	gtk_header_bar_set_show_close_button (GTK_HEADER_BAR (header_bar), TRUE);
+
+	stack = gtk_stack_new ();
+	stackswitcher = gtk_stack_switcher_new ();
+	gtk_stack_switcher_set_stack (GTK_STACK_SWITCHER (stackswitcher), GTK_STACK (stack));
+
+	box_color_chooser = gtk_box_new (GTK_ORIENTATION_VERTICAL, 5);
 	color_chooser = gtk_color_selection_new ();
-	expander = gtk_expander_new(_("Show saved colors"));
-	gtk_expander_set_resize_toplevel (GTK_EXPANDER (expander), TRUE);
-	expander_box_all = gtk_box_new (GTK_ORIENTATION_VERTICAL, 5);
-	expander_box_buttons = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 5);
+	save_box_all = gtk_box_new (GTK_ORIENTATION_VERTICAL, 5);
+	save_box_buttons = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 5);
 	scroll = gtk_scrolled_window_new (NULL, NULL);
 	gtk_widget_set_vexpand (scroll, TRUE);
 	gtk_scrolled_window_set_policy (GTK_SCROLLED_WINDOW (scroll), GTK_POLICY_AUTOMATIC, GTK_POLICY_AUTOMATIC);
 	gtk_scrolled_window_set_shadow_type (GTK_SCROLLED_WINDOW (scroll), GTK_SHADOW_IN);
 
-	button_save = gtk_button_new_from_stock ("gtk-save");
-	button_delete = gtk_button_new_from_stock ("gtk-delete");
+	button_save = gtk_button_new_with_label (_("Save"));
+	button_delete = gtk_button_new_with_label (_("Delete"));
 	gtk_widget_set_sensitive (button_delete, FALSE);
 
 	liststore = gtk_list_store_new (N_COLUMNS, GDK_TYPE_PIXBUF, G_TYPE_STRING, G_TYPE_STRING, G_TYPE_STRING);
@@ -176,27 +184,25 @@ GtkWidget *create_window (void) {
 	gtk_tree_view_column_set_sort_column_id (column, COLOR_NAME);
 	gtk_tree_view_append_column (GTK_TREE_VIEW (tree), column);
 
-	separator = gtk_separator_new (GTK_ORIENTATION_HORIZONTAL);
-	button_quit = gtk_button_new_from_stock ("gtk-quit");
-	button_about = gtk_button_new_from_stock ("gtk-about");
+	button_about = gtk_button_new_with_label (_("About"));
 
-	gtk_box_pack_start (GTK_BOX (box_all), color_chooser, FALSE, FALSE, 0);
-	gtk_box_pack_end (GTK_BOX (expander_box_buttons), button_save, FALSE, FALSE, 0);
-	gtk_box_pack_start (GTK_BOX (expander_box_buttons), button_delete, FALSE, FALSE, 0);
-	gtk_box_pack_start (GTK_BOX (expander_box_all), expander_box_buttons, FALSE, FALSE, 0);
+	gtk_box_pack_start (GTK_BOX (box_all), header_bar, FALSE, FALSE, 0);
+	gtk_box_pack_start (GTK_BOX (box_color_chooser), color_chooser, FALSE, FALSE, 0);
+	gtk_stack_add_titled (GTK_STACK (stack), box_color_chooser, "color chooser", _("Color chooser"));
+	gtk_box_pack_end (GTK_BOX (save_box_buttons), button_save, FALSE, FALSE, 0);
+	gtk_box_pack_start (GTK_BOX (save_box_buttons), button_delete, FALSE, FALSE, 0);
+	gtk_box_pack_start (GTK_BOX (save_box_all), save_box_buttons, FALSE, FALSE, 0);
 	gtk_container_add (GTK_CONTAINER (scroll), tree);
-	gtk_box_pack_start (GTK_BOX (expander_box_all), scroll, TRUE, TRUE, 0);
-	gtk_container_add (GTK_CONTAINER (expander), expander_box_all);
-	gtk_box_pack_start (GTK_BOX (box_all), expander, FALSE, TRUE, 0);
-	gtk_box_pack_start (GTK_BOX (box_all), separator, TRUE, TRUE, 0);
-	gtk_box_pack_end (GTK_BOX (box_buttons), button_quit, FALSE, FALSE, 0);
-	gtk_box_pack_start (GTK_BOX (box_buttons), button_about, FALSE, FALSE, 0);
+	gtk_box_pack_start (GTK_BOX (save_box_all), scroll, TRUE, TRUE, 0);
+	gtk_stack_add_titled (GTK_STACK (stack), save_box_all, "saved colors", _("Saved colors"));
+	gtk_container_add (GTK_CONTAINER (box_all), stack);
+	gtk_header_bar_pack_start (GTK_HEADER_BAR (header_bar), stackswitcher);
+	gtk_header_bar_pack_end (GTK_HEADER_BAR (header_bar), button_about);
 
 	g_signal_connect (G_OBJECT (selection), "changed", G_CALLBACK (on_list_selection_changed), NULL);
 	g_signal_connect ((gpointer) color_chooser, "color_changed", G_CALLBACK (on_colorselection_color_changed), NULL);
 	g_signal_connect (button_save, "clicked", G_CALLBACK (on_save_button_clicked), NULL);
 	g_signal_connect (button_delete, "clicked", G_CALLBACK (on_delete_button_clicked), NULL);
-	g_signal_connect (button_quit, "clicked", G_CALLBACK (gtk_main_quit), NULL);
 	g_signal_connect (button_about, "clicked", G_CALLBACK (about_dialog_open), NULL);
 
 	gtk_container_add (GTK_CONTAINER (box_all), box_buttons);

@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-06-08 21:08+0200\n"
-"PO-Revision-Date: 2013-06-11 13:05+0200\n"
+"POT-Creation-Date: 2013-10-12 01:14+0200\n"
+"PO-Revision-Date: 2013-10-11 13:05+0200\n"
 "Last-Translator: Jente Hidskes <jthidskes@outlook.com>\n"
 "Language-Team: Dutch\n"
 "Language: nl\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../data/gcolor3.desktop.in.h:1 ../src/ui.c:72
+#: ../data/gcolor3.desktop.in.h:1 ../src/ui.c:68 ../src/ui.c:145
 msgid "A simple color selection dialog in GTK3"
 msgstr "Een simpele dialoog voor kleurselectie in GTK3"
 
@@ -25,30 +25,32 @@ msgstr "Een simpele dialoog voor kleurselectie in GTK3"
 msgid "Choose colors from the palette or the screen"
 msgstr "Kies kleuren van het palet of het scherm"
 
-#: ../src/main.c:47 ../src/main.c:49 ../src/main.c:74
+#: ../src/callbacks.c:51 ../src/callbacks.c:53 ../src/callbacks.c:78
 msgid "read"
 msgstr "lees"
 
-#: ../src/main.c:56 ../src/main.c:101
+#: ../src/callbacks.c:60 ../src/callbacks.c:105
 msgid "write"
 msgstr "schrijf"
 
-#: ../src/callbacks.c:70
+#: ../src/callbacks.c:235
 #, c-format
 msgid "Enter a color name for %s:"
 msgstr "Voer een naam in voor %s:"
 
-#: ../src/ui.c:31
+#: ../src/ui.c:32
 #, c-format
 msgid ""
 "An error occurred trying to open file \"%s\" for %s access!\n"
 "\n"
 "Please check the file permissions and try again."
-msgstr "Er is een fout opgetreden bij het openen van bestand \"%s\" voor %s toegang!\n"
+msgstr ""
+"Er is een fout opgetreden bij het openen van bestand \"%s\" voor %s "
+"toegang!\n"
 "\n"
 "Controleer de bestandsrechten en probeer het opnieuw."
 
-#: ../src/ui.c:50
+#: ../src/ui.c:49
 msgid ""
 "Gcolor3 is free software: you can redistribute it and/or modify it under the "
 "terms of the GNU General Public License as published by the Free Software "
@@ -56,7 +58,7 @@ msgid ""
 "version."
 msgstr ""
 
-#: ../src/ui.c:54
+#: ../src/ui.c:53
 msgid ""
 "Gcolor3 is distributed in the hope that it will be useful but WITHOUT ANY "
 "WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS "
@@ -64,36 +66,60 @@ msgid ""
 "details."
 msgstr ""
 
-#: ../src/ui.c:58
+#: ../src/ui.c:57
 msgid ""
 "You should have received a copy of the GNU General Public License along with "
 "this program. If not, see http://www.gnu.org/licenses/."
 msgstr ""
 
-#: ../src/ui.c:78
+#: ../src/ui.c:74
 msgid "translator-credits"
 msgstr "Jente Hidskes"
 
-#: ../src/ui.c:79
+#: ../src/ui.c:75
 msgid "Contributors"
 msgstr "Bijdragen door"
 
-#: ../src/ui.c:80
+#: ../src/ui.c:76
 msgid "Website"
 msgstr "Webpagina"
 
-#: ../src/ui.c:100
+#: ../src/ui.c:93
 msgid "Save a color"
 msgstr "Kleur opslaan"
 
-#: ../src/ui.c:154
-msgid "Show saved colors"
-msgstr "Kleuren weergeven"
+#: ../src/ui.c:107 ../src/ui.c:161
+msgid "Save"
+msgstr "Opslaan"
 
-#: ../src/ui.c:175
+#: ../src/ui.c:113
+msgid "Cancel"
+msgstr "Annuleren"
+
+#: ../src/ui.c:162
+msgid "Delete"
+msgstr "Verwijderen"
+
+#: ../src/ui.c:172
 msgid "Color"
 msgstr "Kleur"
 
-#: ../src/ui.c:186
+#: ../src/ui.c:183
 msgid "Name"
 msgstr "Naam"
+
+#: ../src/ui.c:187
+msgid "About"
+msgstr "Over"
+
+#: ../src/ui.c:191
+msgid "Color chooser"
+msgstr "Kleurenwiel"
+
+#: ../src/ui.c:197
+#, fuzzy
+msgid "Saved colors"
+msgstr "Kleur opslaan"
+
+#~ msgid "Show saved colors"
+#~ msgstr "Kleuren weergeven"

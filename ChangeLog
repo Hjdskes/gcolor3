@@ -1,3 +1,6 @@
+v1.2: Moved to GTK 3.10
+      Implemented a headerbar, a stack and a stackswitcher
+
 v1.1: Code cleanup
       All dialogs are now now modal dialogs
 
