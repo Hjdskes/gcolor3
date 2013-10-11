@@ -29,9 +29,11 @@ Edit the `LINGUAS` file and add your language code. Please keep the list alphabe
 Lastly, open the .po file you just generated and translate all the strings. Don't forget to fill in the information in the header!
 
 When a translation needs updating, firstly create the `gcolor3.pot` file as explained above, then run the following: 
+
 	$ intltool-update --dist --gettext-package=gcolor3 --output-file=<language code>2.po <language code>
 
 Then, make the necessary changes and overwrite the old .po file:
+
 	$ mv <language code>2.po <language code>.po
 
 Bugs
