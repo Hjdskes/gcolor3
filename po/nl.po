@@ -119,7 +119,7 @@ msgstr "Kleurenwiel"
 #: ../src/ui.c:197
 #, fuzzy
 msgid "Saved colors"
-msgstr "Kleur opslaan"
+msgstr "Opgeslagen kleuren"
 
 #~ msgid "Show saved colors"
 #~ msgstr "Kleuren weergeven"
