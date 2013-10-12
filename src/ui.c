@@ -146,6 +146,7 @@ GtkWidget *create_window (void) {
 	gtk_header_bar_set_show_close_button (GTK_HEADER_BAR (header_bar), TRUE);
 
 	stack = gtk_stack_new ();
+	gtk_stack_set_transition_type (GTK_STACK (stack), GTK_STACK_TRANSITION_TYPE_SLIDE_LEFT_RIGHT);
 	stackswitcher = gtk_stack_switcher_new ();
 	gtk_stack_switcher_set_stack (GTK_STACK_SWITCHER (stackswitcher), GTK_STACK (stack));
 
@@ -199,8 +200,8 @@ GtkWidget *create_window (void) {
 	gtk_header_bar_pack_start (GTK_HEADER_BAR (header_bar), stackswitcher);
 	gtk_header_bar_pack_end (GTK_HEADER_BAR (header_bar), button_about);
 
-	g_signal_connect (G_OBJECT (selection), "changed", G_CALLBACK (on_list_selection_changed), NULL);
-	g_signal_connect ((gpointer) color_chooser, "color_changed", G_CALLBACK (on_colorselection_color_changed), NULL);
+	g_signal_connect (selection, "changed", G_CALLBACK (on_list_selection_changed), NULL);
+	g_signal_connect (color_chooser, "color-changed", G_CALLBACK (on_colorselection_color_changed), NULL);
 	g_signal_connect (button_save, "clicked", G_CALLBACK (on_save_button_clicked), NULL);
 	g_signal_connect (button_delete, "clicked", G_CALLBACK (on_delete_button_clicked), NULL);
 	g_signal_connect (button_about, "clicked", G_CALLBACK (about_dialog_open), NULL);

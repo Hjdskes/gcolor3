@@ -39,12 +39,12 @@ int main (void) {
 	window = create_window ();
 	gtk_widget_show_all (window);
 
-	user_filename = g_build_filename(g_getenv("HOME"), ".rgb.txt", NULL);
+	user_filename = g_build_filename (g_getenv ("HOME"), ".rgb.txt", NULL);
 	add_rgb_file (user_filename);
 
 	gtk_main ();
 
-	g_free(user_filename);
+	g_free (user_filename);
 
 	return 0;
 }
