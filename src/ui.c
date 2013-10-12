@@ -190,7 +190,6 @@ GtkWidget *create_window (void) {
 	gtk_box_pack_start (GTK_BOX (box_all), header_bar, FALSE, FALSE, 0);
 	gtk_box_pack_start (GTK_BOX (box_color_chooser), color_chooser, FALSE, FALSE, 0);
 	gtk_stack_add_titled (GTK_STACK (stack), box_color_chooser, "color chooser", _("Color chooser"));
-	gtk_box_pack_end (GTK_BOX (save_box_buttons), button_save, FALSE, FALSE, 0);
 	gtk_box_pack_start (GTK_BOX (save_box_buttons), button_delete, FALSE, FALSE, 0);
 	gtk_box_pack_start (GTK_BOX (save_box_all), save_box_buttons, FALSE, FALSE, 0);
 	gtk_container_add (GTK_CONTAINER (scroll), tree);
@@ -198,6 +197,7 @@ GtkWidget *create_window (void) {
 	gtk_stack_add_titled (GTK_STACK (stack), save_box_all, "saved colors", _("Saved colors"));
 	gtk_container_add (GTK_CONTAINER (box_all), stack);
 	gtk_header_bar_pack_start (GTK_HEADER_BAR (header_bar), stackswitcher);
+	gtk_header_bar_pack_end (GTK_HEADER_BAR (header_bar), button_save);
 	gtk_header_bar_pack_end (GTK_HEADER_BAR (header_bar), button_about);
 
 	g_signal_connect (selection, "changed", G_CALLBACK (on_list_selection_changed), NULL);
