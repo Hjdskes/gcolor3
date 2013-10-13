@@ -64,7 +64,7 @@ void about_dialog_open (void) {
 	gtk_window_set_modal (GTK_WINDOW (about_dialog), TRUE);
 
 	gtk_about_dialog_set_program_name (GTK_ABOUT_DIALOG (about_dialog), "Gcolor3");
-	gtk_about_dialog_set_version (GTK_ABOUT_DIALOG (about_dialog), "1.0");
+	gtk_about_dialog_set_version (GTK_ABOUT_DIALOG (about_dialog), "1.2");
 	gtk_about_dialog_set_comments (GTK_ABOUT_DIALOG (about_dialog), _("A simple color selection dialog in GTK3")),
 	gtk_about_dialog_set_copyright (GTK_ABOUT_DIALOG (about_dialog), "Copyright \xc2\xa9 2013 Jente Hidskes");
 	gtk_about_dialog_set_license (GTK_ABOUT_DIALOG (about_dialog), license_trans);
