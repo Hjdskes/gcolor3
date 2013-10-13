@@ -109,11 +109,11 @@ msgstr "Farbe speichern"
 
 #: ../src/ui.c:113
 msgid "Cancel"
-msgstr ""
+msgstr "Abbrechen"
 
 #: ../src/ui.c:159
 msgid "About"
-msgstr ""
+msgstr "Über"
 
 #: ../src/ui.c:168
 msgid "Color"
@@ -125,10 +125,10 @@ msgstr "Name"
 
 #: ../src/ui.c:185
 msgid "Color chooser"
-msgstr ""
+msgstr "Farbauswahl"
 
 #: ../src/ui.c:187
 msgid "Saved colors"
-msgstr "Farbe speichern"
+msgstr "Gespeicherte Farben"
 
 #, fuzzy
