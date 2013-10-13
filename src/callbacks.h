@@ -34,8 +34,8 @@ void on_colorselection_color_changed (void);
 void on_save_entry_changed (void);
 void on_list_selection_changed (void);
 void on_stack_page_change (void);
-void on_save_button_clicked (void);
-void on_delete_button_clicked (void);
+void on_sd_button_clicked (void);
+void open_save_dialog (void);
 
 G_END_DECLS
 

@@ -220,20 +220,44 @@ void on_list_selection_changed (void) {
 		gtk_color_selection_set_current_color (GTK_COLOR_SELECTION (color_chooser), &new_color);
 		g_free (color);
 
-		gtk_widget_set_sensitive (button_delete, TRUE);
+		gtk_widget_set_sensitive (button_save, TRUE);
 	} else
-		gtk_widget_set_sensitive (button_delete, FALSE);
+		gtk_widget_set_sensitive (button_save, FALSE);
 }
 
 void on_stack_page_change (void) {
-	if (gtk_revealer_get_child_revealed (GTK_REVEALER (revealer)))
-		gtk_revealer_set_reveal_child (GTK_REVEALER (revealer), FALSE);
-	else
-		gtk_revealer_set_reveal_child (GTK_REVEALER (revealer), TRUE);
+	const gchar *page;
 
+	page = gtk_stack_get_visible_child_name (GTK_STACK (stack));
+	if (g_strcmp0 (page, "scroll") == 0) {
+		gtk_button_set_label (GTK_BUTTON (button_save), _("Delete"));
+		if (gtk_tree_selection_get_selected (selection, NULL, &selection_iter))
+			gtk_widget_set_sensitive (button_save, TRUE);
+		else
+			gtk_widget_set_sensitive (button_save, FALSE);
+	} else {
+		gtk_button_set_label (GTK_BUTTON (button_save), _("Save"));
+		gtk_widget_set_sensitive (button_save, TRUE);
+	}
 }
 
-void on_save_button_clicked (void) {
+void on_sd_button_clicked (void) {
+	const gchar *type;
+
+	type = gtk_button_get_label (GTK_BUTTON (button_save));
+	if (g_strcmp0 (type, _("Save")) == 0)
+		open_save_dialog ();
+	else {
+		gchar *color_value;
+
+		gtk_tree_model_get (gtk_tree_view_get_model (GTK_TREE_VIEW (tree)), &selection_iter, COLOR_NAME, &colorname, COLOR_VALUE, &color_value, -1);
+		if (delete_color (user_filename, colorname, color_value))
+			gtk_list_store_remove (GTK_LIST_STORE (gtk_tree_view_get_model (GTK_TREE_VIEW (tree))), &selection_iter);
+		g_free (color_value);
+	}
+}
+
+void open_save_dialog (void) {
 	gchar *labeltext;
 	gint result;
 
@@ -255,13 +279,4 @@ void on_save_button_clicked (void) {
 			break;
 	}
 	gtk_widget_destroy (save_dialog);
-}
-
-void on_delete_button_clicked (void) {
-	gchar *color_value;
-
-	gtk_tree_model_get (gtk_tree_view_get_model (GTK_TREE_VIEW (tree)), &selection_iter, COLOR_NAME, &colorname, COLOR_VALUE, &color_value, -1);
-	if (delete_color (user_filename, colorname, color_value))
-		gtk_list_store_remove (GTK_LIST_STORE (gtk_tree_view_get_model (GTK_TREE_VIEW (tree))), &selection_iter);
-	g_free(color_value);
 }
