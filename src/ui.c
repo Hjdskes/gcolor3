@@ -147,8 +147,6 @@ GtkWidget *create_window (void) {
 	gtk_stack_set_transition_type (GTK_STACK (stack), GTK_STACK_TRANSITION_TYPE_SLIDE_LEFT_RIGHT);
 	stackswitcher = gtk_stack_switcher_new ();
 	gtk_stack_switcher_set_stack (GTK_STACK_SWITCHER (stackswitcher), GTK_STACK (stack));
-	revealer = gtk_revealer_new ();
-	gtk_revealer_set_transition_type (GTK_REVEALER (revealer), GTK_REVEALER_TRANSITION_TYPE_CROSSFADE);
 
 	box_color_chooser = gtk_box_new (GTK_ORIENTATION_VERTICAL, 5);
 	color_chooser = gtk_color_selection_new ();
