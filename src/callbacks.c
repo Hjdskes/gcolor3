@@ -225,6 +225,14 @@ void on_list_selection_changed (void) {
 		gtk_widget_set_sensitive (button_delete, FALSE);
 }
 
+void on_stack_page_change (void) {
+	if (gtk_revealer_get_child_revealed (GTK_REVEALER (revealer)))
+		gtk_revealer_set_reveal_child (GTK_REVEALER (revealer), FALSE);
+	else
+		gtk_revealer_set_reveal_child (GTK_REVEALER (revealer), TRUE);
+
+}
+
 void on_save_button_clicked (void) {
 	gchar *labeltext;
 	gint result;

@@ -149,6 +149,8 @@ GtkWidget *create_window (void) {
 	gtk_stack_set_transition_type (GTK_STACK (stack), GTK_STACK_TRANSITION_TYPE_SLIDE_LEFT_RIGHT);
 	stackswitcher = gtk_stack_switcher_new ();
 	gtk_stack_switcher_set_stack (GTK_STACK_SWITCHER (stackswitcher), GTK_STACK (stack));
+	revealer = gtk_revealer_new ();
+	gtk_revealer_set_transition_type (GTK_REVEALER (revealer), GTK_REVEALER_TRANSITION_TYPE_CROSSFADE);
 
 	box_color_chooser = gtk_box_new (GTK_ORIENTATION_VERTICAL, 5);
 	color_chooser = gtk_color_selection_new ();
@@ -191,16 +193,19 @@ GtkWidget *create_window (void) {
 	gtk_box_pack_start (GTK_BOX (box_color_chooser), color_chooser, FALSE, FALSE, 0);
 	gtk_stack_add_titled (GTK_STACK (stack), box_color_chooser, "color chooser", _("Color chooser"));
 	gtk_box_pack_start (GTK_BOX (save_box_buttons), button_delete, FALSE, FALSE, 0);
-	gtk_box_pack_start (GTK_BOX (save_box_all), save_box_buttons, FALSE, FALSE, 0);
+	gtk_box_pack_start (GTK_BOX (save_box_buttons), button_save, FALSE, FALSE, 0);
+	/*gtk_box_pack_start (GTK_BOX (save_box_all), save_box_buttons, FALSE, FALSE, 0);*/
+	gtk_container_add (GTK_CONTAINER (revealer), save_box_buttons);
 	gtk_container_add (GTK_CONTAINER (scroll), tree);
 	gtk_box_pack_start (GTK_BOX (save_box_all), scroll, TRUE, TRUE, 0);
 	gtk_stack_add_titled (GTK_STACK (stack), save_box_all, "saved colors", _("Saved colors"));
 	gtk_container_add (GTK_CONTAINER (box_all), stack);
 	gtk_header_bar_pack_start (GTK_HEADER_BAR (header_bar), stackswitcher);
-	gtk_header_bar_pack_end (GTK_HEADER_BAR (header_bar), button_save);
+	gtk_header_bar_pack_end (GTK_HEADER_BAR (header_bar), revealer);
 	gtk_header_bar_pack_end (GTK_HEADER_BAR (header_bar), button_about);
 
 	g_signal_connect (selection, "changed", G_CALLBACK (on_list_selection_changed), NULL);
+	g_signal_connect (stack, "notify::visible-child", G_CALLBACK (on_stack_page_change), NULL);
 	g_signal_connect (color_chooser, "color-changed", G_CALLBACK (on_colorselection_color_changed), NULL);
 	g_signal_connect (button_save, "clicked", G_CALLBACK (on_save_button_clicked), NULL);
 	g_signal_connect (button_delete, "clicked", G_CALLBACK (on_delete_button_clicked), NULL);

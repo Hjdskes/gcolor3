@@ -33,6 +33,7 @@ void add_list_color (gchar *spec, gboolean is_new_color);
 void on_colorselection_color_changed (void);
 void on_save_entry_changed (void);
 void on_list_selection_changed (void);
+void on_stack_page_change (void);
 void on_save_button_clicked (void);
 void on_delete_button_clicked (void);
 

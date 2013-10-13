@@ -38,6 +38,7 @@ int main (void) {
 
 	window = create_window ();
 	gtk_widget_show_all (window);
+	gtk_revealer_set_reveal_child (GTK_REVEALER (revealer), FALSE);
 
 	user_filename = g_build_filename (g_getenv ("HOME"), ".rgb.txt", NULL);
 	add_rgb_file (user_filename);
