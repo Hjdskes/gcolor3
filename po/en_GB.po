@@ -117,6 +117,7 @@ msgid "Color chooser"
 msgstr "Color chooser"
 
 #: ../src/ui.c:187
-#, fuzzy
 msgid "Saved colors"
 msgstr "Save a colour"
+
+#, fuzzy

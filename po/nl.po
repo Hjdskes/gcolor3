@@ -118,6 +118,7 @@ msgid "Color chooser"
 msgstr "Kleurenwiel"
 
 #: ../src/ui.c:187
-#, fuzzy
 msgid "Saved colors"
 msgstr "Opgeslagen kleuren"
+
+#, fuzzy
