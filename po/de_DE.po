@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-12 01:14+0200\n"
+"POT-Creation-Date: 2013-10-13 09:13+0200\n"
 "PO-Revision-Date: 2013-06-11 13:21+0200\n"
 "Last-Translator: Jens John <asterisk@2ion.de>\n"
 "Language-Team: German Translations\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../data/gcolor3.desktop.in.h:1 ../src/ui.c:68 ../src/ui.c:145
+#: ../data/gcolor3.desktop.in.h:1 ../src/ui.c:68 ../src/ui.c:143
 msgid "A simple color selection dialog in GTK3"
 msgstr "Ein einfacher Farbauswahldialog in GTK3"
 
@@ -33,7 +33,16 @@ msgstr "Lese"
 msgid "write"
 msgstr "Schreibe"
 
-#: ../src/callbacks.c:235
+#: ../src/callbacks.c:233
+msgid "Delete"
+msgstr ""
+
+#: ../src/callbacks.c:239 ../src/callbacks.c:248 ../src/ui.c:107
+#: ../src/ui.c:158
+msgid "Save"
+msgstr ""
+
+#: ../src/callbacks.c:267
 #, c-format
 msgid "Enter a color name for %s:"
 msgstr "Geben Sie einen Farbnamen für %s ein:"
@@ -98,38 +107,27 @@ msgstr "Webseite"
 msgid "Save a color"
 msgstr "Farbe speichern"
 
-#: ../src/ui.c:107 ../src/ui.c:161
-msgid "Save"
-msgstr ""
-
 #: ../src/ui.c:113
 msgid "Cancel"
 msgstr ""
 
-#: ../src/ui.c:162
-msgid "Delete"
-msgstr ""
-
-#: ../src/ui.c:172
-msgid "Color"
-msgstr "Farbe"
-
-#: ../src/ui.c:183
-msgid "Name"
-msgstr "Name"
-
-#: ../src/ui.c:187
+#: ../src/ui.c:159
 msgid "About"
 msgstr ""
 
-#: ../src/ui.c:191
+#: ../src/ui.c:168
+msgid "Color"
+msgstr "Farbe"
+
+#: ../src/ui.c:179
+msgid "Name"
+msgstr "Name"
+
+#: ../src/ui.c:185
 msgid "Color chooser"
 msgstr ""
 
-#: ../src/ui.c:197
+#: ../src/ui.c:187
 #, fuzzy
 msgid "Saved colors"
 msgstr "Farbe speichern"
-
-#~ msgid "Show saved colors"
-#~ msgstr "Gespeicherte Farben anzeigen"
