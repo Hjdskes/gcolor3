@@ -114,7 +114,7 @@ msgstr "Namn"
 
 #: ../src/ui.c:185
 msgid "Color chooser"
-msgstr ""
+msgstr "Färgpallet"
 
 #: ../src/ui.c:187
 msgid "Saved colors"
