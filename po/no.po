@@ -35,12 +35,12 @@ msgstr "skrive"
 
 #: ../src/callbacks.c:233
 msgid "Delete"
-msgstr ""
+msgstr "Slett"
 
 #: ../src/callbacks.c:239 ../src/callbacks.c:248 ../src/ui.c:107
 #: ../src/ui.c:158
 msgid "Save"
-msgstr ""
+msgstr "Lagre"
 
 #: ../src/callbacks.c:267
 #, c-format
@@ -98,11 +98,11 @@ msgstr "Lagre en farge"
 
 #: ../src/ui.c:113
 msgid "Cancel"
-msgstr ""
+msgstr "Avbryt"
 
 #: ../src/ui.c:159
 msgid "About"
-msgstr ""
+msgstr "Om"
 
 #: ../src/ui.c:168
 msgid "Color"
@@ -114,7 +114,7 @@ msgstr "Navn"
 
 #: ../src/ui.c:185
 msgid "Color chooser"
-msgstr ""
+msgstr "Fargevelger"
 
 #: ../src/ui.c:187
 msgid "Saved colors"
