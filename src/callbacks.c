@@ -227,25 +227,30 @@ void on_list_selection_changed (void) {
 
 void on_stack_page_change (void) {
 	const gchar *page;
+	GtkWidget *image_delete, *image_save;
 
 	page = gtk_stack_get_visible_child_name (GTK_STACK (stack));
 	if (g_strcmp0 (page, "scroll") == 0) {
-		gtk_button_set_label (GTK_BUTTON (button_save), _("Delete"));
+		image_delete = gtk_image_new_from_icon_name ("stock_delete", GTK_ICON_SIZE_MENU);
+		gtk_button_set_image (GTK_BUTTON (button_save), image_delete);
 		if (gtk_tree_selection_get_selected (selection, NULL, &selection_iter))
 			gtk_widget_set_sensitive (button_save, TRUE);
 		else
 			gtk_widget_set_sensitive (button_save, FALSE);
 	} else {
-		gtk_button_set_label (GTK_BUTTON (button_save), _("Save"));
+		image_save = gtk_image_new_from_icon_name ("stock_save", GTK_ICON_SIZE_MENU);
+		gtk_button_set_image (GTK_BUTTON (button_save), image_save);
 		gtk_widget_set_sensitive (button_save, TRUE);
 	}
 }
 
 void on_sd_button_clicked (void) {
-	const gchar *type;
+	const gchar *type = NULL;
+	GtkWidget *image;
 
-	type = gtk_button_get_label (GTK_BUTTON (button_save));
-	if (g_strcmp0 (type, _("Save")) == 0)
+	image = gtk_button_get_image (GTK_BUTTON (button_save));
+	gtk_image_get_icon_name (GTK_IMAGE (image), &type, NULL);
+	if (g_strcmp0 (type, "stock_save") == 0)
 		open_save_dialog ();
 	else {
 		gchar *color_value;

@@ -126,7 +126,7 @@ GtkWidget *save_dialog_open (void) {
 }
 
 GtkWidget *create_window (void) {
-	GtkWidget *box_all, *header_bar, *stackswitcher, *box_color_chooser, *scroll, *button_about;
+	GtkWidget *box_all, *header_bar, *stackswitcher, *box_color_chooser, *scroll, *button_about, *image_about;
 	GtkTreeViewColumn *column;
 	GtkCellRenderer *renderer;
 
@@ -139,8 +139,6 @@ GtkWidget *create_window (void) {
 	gtk_container_set_border_width (GTK_CONTAINER (box_all), 5);
 
 	header_bar = gtk_header_bar_new ();
-	gtk_header_bar_set_title (GTK_HEADER_BAR (header_bar), "Gcolor3");
-	gtk_header_bar_set_subtitle (GTK_HEADER_BAR (header_bar), _("A simple color selection dialog in GTK3"));
 	gtk_header_bar_set_show_close_button (GTK_HEADER_BAR (header_bar), TRUE);
 
 	stack = gtk_stack_new ();
@@ -155,8 +153,10 @@ GtkWidget *create_window (void) {
 	gtk_scrolled_window_set_policy (GTK_SCROLLED_WINDOW (scroll), GTK_POLICY_AUTOMATIC, GTK_POLICY_AUTOMATIC);
 	gtk_scrolled_window_set_shadow_type (GTK_SCROLLED_WINDOW (scroll), GTK_SHADOW_IN);
 
-	button_save = gtk_button_new_with_label (_("Save"));
-	button_about = gtk_button_new_with_label (_("About"));
+	button_save = gtk_button_new ();
+	button_about = gtk_button_new ();
+	image_about = gtk_image_new_from_icon_name ("help-about", GTK_ICON_SIZE_MENU);
+	gtk_button_set_image (GTK_BUTTON (button_about), image_about);
 
 	liststore = gtk_list_store_new (N_COLUMNS, GDK_TYPE_PIXBUF, G_TYPE_STRING, G_TYPE_STRING, G_TYPE_STRING);
 	tree = gtk_tree_view_new_with_model(GTK_TREE_MODEL (liststore));
@@ -180,6 +180,7 @@ GtkWidget *create_window (void) {
 	gtk_tree_view_column_set_sort_column_id (column, COLOR_NAME);
 	gtk_tree_view_append_column (GTK_TREE_VIEW (tree), column);
 
+	gtk_window_set_titlebar (GTK_WINDOW (window), header_bar);
 	gtk_box_pack_start (GTK_BOX (box_all), header_bar, FALSE, FALSE, 0);
 	gtk_box_pack_start (GTK_BOX (box_color_chooser), color_chooser, FALSE, FALSE, 0);
 	gtk_stack_add_titled (GTK_STACK (stack), box_color_chooser, "color chooser", _("Color chooser"));
