@@ -37,6 +37,7 @@ int main (void) {
 	colorvalue.red = colorvalue.green = colorvalue.blue = 65535;
 
 	window = create_window ();
+	gtk_window_set_decorated (GTK_WINDOW (window), FALSE);
 	gtk_widget_show_all (window);
 
 	user_filename = g_build_filename (g_getenv ("HOME"), ".rgb.txt", NULL);
