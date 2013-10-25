@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-13 09:13+0200\n"
+"POT-Creation-Date: 2013-10-26 01:15+0200\n"
 "PO-Revision-Date: 2013-10-11 13:05+0200\n"
 "Last-Translator: Jente Hidskes <jthidskes@outlook.com>\n"
 "Language-Team: Dutch\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../data/gcolor3.desktop.in.h:1 ../src/ui.c:68 ../src/ui.c:143
+#: ../data/gcolor3.desktop.in.h:1 ../src/ui.c:68
 msgid "A simple color selection dialog in GTK3"
 msgstr "Een simpele dialoog voor kleurselectie in GTK3"
 
@@ -33,16 +33,7 @@ msgstr "lees"
 msgid "write"
 msgstr "schrijf"
 
-#: ../src/callbacks.c:233
-msgid "Delete"
-msgstr "Verwijderen"
-
-#: ../src/callbacks.c:239 ../src/callbacks.c:248 ../src/ui.c:107
-#: ../src/ui.c:158
-msgid "Save"
-msgstr "Opslaan"
-
-#: ../src/callbacks.c:267
+#: ../src/callbacks.c:272
 #, c-format
 msgid "Enter a color name for %s:"
 msgstr "Voer een naam in voor %s:"
@@ -97,13 +88,13 @@ msgstr "Webpagina"
 msgid "Save a color"
 msgstr "Kleur opslaan"
 
+#: ../src/ui.c:107
+msgid "Save"
+msgstr "Opslaan"
+
 #: ../src/ui.c:113
 msgid "Cancel"
 msgstr "Annuleren"
-
-#: ../src/ui.c:159
-msgid "About"
-msgstr "Over"
 
 #: ../src/ui.c:168
 msgid "Color"
@@ -113,12 +104,10 @@ msgstr "Kleur"
 msgid "Name"
 msgstr "Naam"
 
-#: ../src/ui.c:185
+#: ../src/ui.c:186
 msgid "Color chooser"
 msgstr "Kleurenwiel"
 
-#: ../src/ui.c:187
+#: ../src/ui.c:188
 msgid "Saved colors"
 msgstr "Opgeslagen kleuren"
-
-#, fuzzy

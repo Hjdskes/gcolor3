@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-13 09:13+0200\n"
+"POT-Creation-Date: 2013-10-26 01:15+0200\n"
 "PO-Revision-Date: 2013-06-11 13:24+0200\n"
 "Last-Translator: Angelica Ankarberg\n"
 "Language-Team: Swedish\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../data/gcolor3.desktop.in.h:1 ../src/ui.c:68 ../src/ui.c:143
+#: ../data/gcolor3.desktop.in.h:1 ../src/ui.c:68
 msgid "A simple color selection dialog in GTK3"
 msgstr "En simpel färgvals ruta i GTK3"
 
@@ -33,16 +33,7 @@ msgstr "läs"
 msgid "write"
 msgstr "skriv"
 
-#: ../src/callbacks.c:233
-msgid "Delete"
-msgstr "Radera"
-
-#: ../src/callbacks.c:239 ../src/callbacks.c:248 ../src/ui.c:107
-#: ../src/ui.c:158
-msgid "Save"
-msgstr "Spara"
-
-#: ../src/callbacks.c:267
+#: ../src/callbacks.c:272
 #, c-format
 msgid "Enter a color name for %s:"
 msgstr "Ange ett färgnamn för %s:"
@@ -96,13 +87,13 @@ msgstr "Hemsida"
 msgid "Save a color"
 msgstr "Spara en färg"
 
+#: ../src/ui.c:107
+msgid "Save"
+msgstr "Spara"
+
 #: ../src/ui.c:113
 msgid "Cancel"
 msgstr "Avbryta"
-
-#: ../src/ui.c:159
-msgid "About"
-msgstr "Om"
 
 #: ../src/ui.c:168
 msgid "Color"
@@ -112,12 +103,10 @@ msgstr "Färg"
 msgid "Name"
 msgstr "Namn"
 
-#: ../src/ui.c:185
+#: ../src/ui.c:186
 msgid "Color chooser"
 msgstr "Färgpallet"
 
-#: ../src/ui.c:187
+#: ../src/ui.c:188
 msgid "Saved colors"
 msgstr "Spara en färg"
-
-#, fuzzy
