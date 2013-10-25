@@ -1,3 +1,7 @@
+v1.2.1: Use buttons with images
+        Remove title and subtitle from headerbar
+        Use client side decorations
+
 v1.2: Moved to GTK 3.10
       Implemented a headerbar, a stack and a stackswitcher
 
