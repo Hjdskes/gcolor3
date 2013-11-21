@@ -34,10 +34,6 @@ void show_file_error (gchar *file, gchar *type) {
 	gtk_widget_destroy (GTK_WIDGET (error_dialog));
 }
 
-void about_dialog_close (GtkWidget *about_dialog) {
-	gtk_widget_destroy (GTK_WIDGET (about_dialog));
-}
-
 void about_dialog_open (void) {
 	GtkWidget *about_dialog;
 	gchar *license_trans;
@@ -77,11 +73,11 @@ void about_dialog_open (void) {
 	gtk_about_dialog_set_website (GTK_ABOUT_DIALOG (about_dialog), "http://unia.github.io/gcolor3");
 	gtk_about_dialog_set_logo_icon_name (GTK_ABOUT_DIALOG (about_dialog), "gcolor3");
 
-	g_signal_connect (GTK_DIALOG (about_dialog), "response", G_CALLBACK (about_dialog_close), NULL);
+	g_signal_connect (GTK_DIALOG (about_dialog), "response", G_CALLBACK (gtk_widget_destroy), about_dialog);
 
 	gtk_widget_show (about_dialog);
 
-	g_free(license_trans);
+	g_free (license_trans);
 }
 
 GtkWidget *save_dialog_open (void) {
@@ -159,7 +155,8 @@ GtkWidget *create_window (void) {
 	gtk_button_set_image (GTK_BUTTON (button_about), image_about);
 
 	liststore = gtk_list_store_new (N_COLUMNS, GDK_TYPE_PIXBUF, G_TYPE_STRING, G_TYPE_STRING, G_TYPE_STRING);
-	tree = gtk_tree_view_new_with_model(GTK_TREE_MODEL (liststore));
+	tree = gtk_tree_view_new_with_model (GTK_TREE_MODEL (liststore));
+	g_object_unref (liststore);
 	gtk_tree_view_set_search_column (GTK_TREE_VIEW (tree), COLOR_NAME);
 	selection = gtk_tree_view_get_selection (GTK_TREE_VIEW (tree));
 	gtk_tree_selection_set_mode (selection, GTK_SELECTION_SINGLE);
