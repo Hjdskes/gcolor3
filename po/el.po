@@ -1,7 +1,7 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Greek translation for Gcolor3.
+# Copyright (C) 2014 Konstantinos Thermos <info@subdee.org>
+# This file is distributed under the same license as the Gcolor3 package.
+# Konstantinos Thermos <info@subdee.org>, 2014.
 #
 msgid ""
 msgstr ""
@@ -9,8 +9,8 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-03-14 16:25+0100\n"
 "PO-Revision-Date: 2014-03-14 16:34+0100\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: subdee <info@subdee.org>\n"
+"Last-Translator: Konstantinos Thermos <info@subdee.org>\n"
+"Language-Team: Greek\n"
 "Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
