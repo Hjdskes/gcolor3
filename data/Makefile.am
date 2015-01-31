@@ -1,13 +1,16 @@
+-include $(top_srcdir)/common.mk
+
 SUBDIRS = icons
 
-desktopdir = $(datadir)/applications
-desktop_in_files = gcolor3.desktop.in
-desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
 @INTLTOOL_DESKTOP_RULE@
+DESKTOP_IN_FILES = gcolor3.desktop.in.in
+DESKTOP_FILES = $(DESKTOP_IN_FILES:.desktop.in.in=.desktop)
 
-UPDATE_DESKTOP = update-desktop-database $(datadir)/applications || :
+desktopdir = $(datadir)/applications
+desktop_DATA = $(DESKTOP_FILES)
 
-install-data-hook: 
-	$(UPDATE_DESKTOP)
-uninstall-hook: 
-	$(UPDATE_DESKTOP)
+EXTRA_DIST = \
+	gcolor3-app-menu.xml
+
+DISTCLEANFILES = \
+	$(DESKTOP_FILES)

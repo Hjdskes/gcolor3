@@ -1,45 +1,36 @@
-dnl Process this file with autoconf to produce a configure script.
-dnl Created by Anjuta application wizard.
-
-AC_INIT(gcolor3, 1.2)
-
-AC_CONFIG_HEADERS([config.h])
-
-AM_INIT_AUTOMAKE([1.11])
-
+AC_INIT([gcolor 3], 2.0, [hjdskes@gmail.com], [gcolor3],
+	[https://github.com/Unia/gcolor3/])
+AM_INIT_AUTOMAKE([1.11 -Wno-portability no-dist-gzip dist-xz foreign subdir-objects])
 AM_SILENT_RULES([yes])
 
 AC_PROG_CC
+AC_PROG_CC_STDC
+AC_CONFIG_HEADERS([config.h])
+AC_CONFIG_MACRO_DIR([m4])
+AC_PREFIX_DEFAULT(/usr/local)
+AC_PATH_PROG([GLIB_COMPILE_RESOURCES], [glib-compile-resources])
 
+LT_PREREQ(2.2)
+LT_INIT([disable-static])
 
+# Support silencing the build output if supported (automake-1.11+)
+m4_ifdef([AM_SILENT_RULES],[AM_SILENT_RULES([yes])])
 
-
-dnl ***************************************************************************
-dnl Internationalization
-dnl ***************************************************************************
+# Internationalization
+AM_GLIB_GNU_GETTEXT
 IT_PROG_INTLTOOL([0.35.0])
 
-GETTEXT_PACKAGE=gcolor3
+GETTEXT_PACKAGE=AC_PACKAGE_NAME
 AC_SUBST(GETTEXT_PACKAGE)
-AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE,"$GETTEXT_PACKAGE", [GETTEXT package name])
+AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE,"$GETTEXT_PACKAGE", [Gettext package.])
 
-AM_GLIB_GNU_GETTEXT
+# Package requirements
+PKG_CHECK_MODULES([GTK3], [gtk+-3.0 >= 3.10.0])
 
+AC_CONFIG_FILES(Makefile
+		data/Makefile
+		data/icons/Makefile
+		src/Makefile
+		po/Makefile.in)
 
-
-LT_INIT
-
-
-
-PKG_CHECK_MODULES(GCOLOR3, [gtk+-3.0 gtk+-3.0])
-
-
-
-
-AC_OUTPUT([
-Makefile
-data/Makefile
-data/icons/Makefile
-src/Makefile
-po/Makefile.in
-])
+AC_OUTPUT

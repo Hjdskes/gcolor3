@@ -1,0 +1,12 @@
+[Desktop Entry]
+_Name=Color picker
+_Comment=Choose colors from the palette of the screen
+TryExec=gcolor3
+Exec=gcolor3
+Icon=gcolor3
+StartupNotify=true
+Terminal=false
+Type=Application
+Categories=GNOME;GTK;Graphics;
+# Extra keywords that can be used to search for Gcolor3 in GNOME Shell and Unity
+_Keywords=Color;Picker;Palette;

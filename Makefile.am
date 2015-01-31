@@ -1,32 +1,26 @@
-## Process this file with automake to produce Makefile.in
-## Created by Anjuta
+ACLOCAL_AMFLAGS = -I m4 ${ACLOCAL_FLAGS}
+AM_CFLAGS = 
+
+EXTRA_DIST = \
+	${top_srcdir}/AUTHORS \
+	${top_srcdir}/LICENSE \
+	${top_srcdir}/README.md
+
+DISTCLEANFILES = \
+	intltool-extract \
+	intltool-merge \
+	intltool-update
+
+MAINTAINERCLEANFILES = \
+	$(srcdir)/aclocal.m4 \
+	$(srcdir)/config.guess \
+	$(srcdir)/config.h.in \
+	$(srcdir)/config.sub \
+	$(srcdir)/depcomp \
+	$(srcdir)/gtk-doc.make \
+	$(srcdir)/install-sh \
+	$(srcdir)/ltmain.sh \
+	$(srcdir)/missing \
+	$(srcdir)/mkinstalldirs
 
 SUBDIRS = src po data
-
-gcolor3docdir = ${prefix}/doc/gcolor3
-gcolor3doc_DATA = \
-	README\
-	COPYING\
-	AUTHORS\
-	ChangeLog\
-	INSTALL\
-	NEWS
-
-INTLTOOL_FILES = intltool-extract.in \
-	intltool-merge.in \
-	intltool-update.in
-
-EXTRA_DIST = $(gcolor3doc_DATA) \
-	$(INTLTOOL_FILES) \
-	$(desktop_DATA) \
-	$(pixmaps_DATA)
-
-DISTCLEANFILES = intltool-extract \
-	intltool-merge \
-	intltool-update \
-	po/.intltool-merge-cache
-
-
-# Remove doc directory on uninstall
-uninstall-local:
-	-rm -r $(gcolor3docdir)
