@@ -73,7 +73,7 @@ gcolor3_application_init_app_menu (GtkApplication *application)
 					 app_entries, G_N_ELEMENTS (app_entries),
 					 application);
 
-	builder = gtk_builder_new_from_resource ("/org/unia/gcolor3/ui/gcolor3-app-menu.xml");
+	builder = gtk_builder_new_from_resource ("/org/unia/gcolor3/ui/gcolor3-app-menu.ui");
 	builder_object = gtk_builder_get_object (builder, "app-menu");
 	gtk_application_set_app_menu (application, G_MENU_MODEL (builder_object));
 
