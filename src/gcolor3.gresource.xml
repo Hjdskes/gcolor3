@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <gresources>
   <gresource prefix="/org/unia/gcolor3/ui">
-    <file compressed="true" preprocess="xml-stripblanks">gcolor3-app-menu.xml</file>
+    <file compressed="true" preprocess="xml-stripblanks">gcolor3-app-menu.ui</file>
     <file compressed="true" preprocess="xml-stripblanks">gcolor3-window.ui</file>
   </gresource>
 </gresources>
