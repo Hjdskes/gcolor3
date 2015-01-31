@@ -1,19 +1,19 @@
 2013-10-12: v1.2: New save, cancel, delete, about and color chooser buttons to translate
 
 2013-06-08: v0.1: Added Dutch translation
-                  Added Swedish translation
+		  Added Swedish translation
 
 2013-06-09: v0.1: Added British English translation
-                  Added Norwegian translation
-                  Enabled translation of .desktop file
-                  Enabled translation of "read" and "write" upon file error
+		  Added Norwegian translation
+		  Enabled translation of .desktop file
+		  Enabled translation of "read" and "write" upon file error
 
 2013-06-10: v0.1: Added German translation
-                  Finished Norwegian translation
+		  Finished Norwegian translation
 
 2013-06-11: v0.1: Revised About Dialog has more strings to be translated
-                  Updated .desktop file comment
-                  Updated Dutch translation
-                  Updated British English translation
-                  "Website" in About Dialog can now also be translated
-                  Updated Dutch and British English translations
+		  Updated .desktop file comment
+		  Updated Dutch translation
+		  Updated British English translation
+		  "Website" in About Dialog can now also be translated
+		  Updated Dutch and British English translations

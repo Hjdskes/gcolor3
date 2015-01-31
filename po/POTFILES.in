@@ -1,6 +1,5 @@
 # List of source files containing translatable strings.
-
-data/gcolor3.desktop.in
+# Please keep this list sorted alphabetically.
+data/gcolor3.desktop.in.in
 src/main.c
-src/callbacks.c
-src/ui.c
+src/gcolor3-application.c
