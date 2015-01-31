@@ -6,7 +6,7 @@ bin_PROGRAMS = \
 gcolor3_SOURCES = \
 	main.c \
 	gcolor3-application.c \
-	gcolor3-application.h \
+	gcolor3-window.c \
 	$(BUILT_SOURCES)
 
 gcolor3_CFLAGS = \

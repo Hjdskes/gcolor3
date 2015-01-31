@@ -27,8 +27,9 @@
 #include <glib/gi18n.h>
 
 #include "gcolor3-application.h"
+#include "gcolor3-window.h"
 
-G_DEFINE_TYPE (Gcolor3Application, gcolor3_application, GTK_TYPE_APPLICATION)
+G_DEFINE_TYPE (Gcolor3Application, gcolor3_application, GTK_TYPE_APPLICATION);
 
 static void
 gcolor3_application_action_about (GSimpleAction *action,
@@ -141,12 +142,12 @@ gboolean
 gcolor3_application_open_window (Gcolor3Application *application,
 				 guint32             timestamp)
 {
-	GtkWidget *window = NULL;
+	Gcolor3Window *window = NULL;
 
 	g_return_val_if_fail (GCOLOR3_IS_APPLICATION (application), FALSE);
 
-	//window = gcolor3_window_new ();
-	//gtk_window_present_with_time (window, timestamp);
+	window = gcolor3_window_new (application);
+	gtk_window_present_with_time (GTK_WINDOW (window), timestamp);
 
 	return TRUE;
 }
