@@ -58,7 +58,7 @@ main (int argc, char **argv)
 	bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
 	textdomain (GETTEXT_PACKAGE);
 
-	context = g_option_context_new (_("Pick a color from the palette of the screen"));
+	context = g_option_context_new (_("Pick a color from the palette or the screen"));
 	g_option_context_add_main_entries (context, options, GETTEXT_PACKAGE);
 	/* This initialises GTK during parsing. */
 	g_option_context_add_group (context, gtk_get_option_group (FALSE));
