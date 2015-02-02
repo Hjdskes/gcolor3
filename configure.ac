@@ -13,22 +13,20 @@ AC_PATH_PROG([GLIB_COMPILE_RESOURCES], [glib-compile-resources])
 LT_PREREQ(2.2)
 LT_INIT([disable-static])
 
-# Support silencing the build output if supported (automake-1.11+)
-m4_ifdef([AM_SILENT_RULES],[AM_SILENT_RULES([yes])])
-
 # Internationalization
 AM_GLIB_GNU_GETTEXT
 IT_PROG_INTLTOOL([0.35.0])
 
 GETTEXT_PACKAGE=AC_PACKAGE_NAME
 AC_SUBST(GETTEXT_PACKAGE)
-AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE,"$GETTEXT_PACKAGE", [Gettext package.])
+AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE, "$GETTEXT_PACKAGE", [Gettext package.])
 
 # Package requirements
 PKG_CHECK_MODULES([GTK3], [gtk+-3.0 >= 3.10.0])
 
 AC_CONFIG_FILES(Makefile
 		data/Makefile
+		data/gcolor3.desktop.in
 		data/icons/Makefile
 		src/Makefile
 		po/Makefile.in)
