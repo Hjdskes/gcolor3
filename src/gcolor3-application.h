@@ -27,8 +27,9 @@
 
 G_BEGIN_DECLS
 
-typedef struct _Gcolor3Application      Gcolor3Application;
-typedef struct _Gcolor3ApplicationClass Gcolor3ApplicationClass;
+typedef struct _Gcolor3Application        Gcolor3Application;
+typedef struct _Gcolor3ApplicationClass   Gcolor3ApplicationClass;
+typedef struct _Gcolor3ApplicationPrivate Gcolor3ApplicationPrivate;
 
 #define GCOLOR3_TYPE_APPLICATION            (gcolor3_application_get_type ())
 #define GCOLOR3_APPLICATION(obj)            (G_TYPE_CHECK_INSTANCE_CAST((obj), GCOLOR3_TYPE_APPLICATION, Gcolor3Application))
@@ -45,14 +46,13 @@ struct _Gcolor3ApplicationClass {
 	GtkApplicationClass parent_class;
 };
 
-GType               gcolor3_application_get_type     (void) G_GNUC_CONST;
+GType               gcolor3_application_get_type (void) G_GNUC_CONST;
 
-Gcolor3Application *gcolor3_application_new          ();
+Gcolor3Application *gcolor3_application_new ();
 
-// FIXME: make private?
-gboolean            gcolor3_application_open_window  (Gcolor3Application *application,
-						      guint               timestamp);
+GKeyFile           *gcolor3_application_get_colors (Gcolor3Application *application);
 
 G_END_DECLS
 
 #endif /* __GCOLOR3_APPLICATION_H__ */
+

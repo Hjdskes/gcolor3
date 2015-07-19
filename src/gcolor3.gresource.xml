@@ -2,6 +2,5 @@
 <gresources>
   <gresource prefix="/org/unia/gcolor3/ui">
     <file compressed="true" preprocess="xml-stripblanks">gcolor3-app-menu.ui</file>
-    <file compressed="true" preprocess="xml-stripblanks">gcolor3-window.ui</file>
   </gresource>
 </gresources>

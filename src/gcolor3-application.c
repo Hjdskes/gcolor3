@@ -29,20 +29,31 @@
 #include "gcolor3-application.h"
 #include "gcolor3-window.h"
 
-G_DEFINE_TYPE (Gcolor3Application, gcolor3_application, GTK_TYPE_APPLICATION);
+struct _Gcolor3ApplicationPrivate {
+	GKeyFile *colors;
+};
+
+G_DEFINE_TYPE_WITH_PRIVATE (Gcolor3Application, gcolor3_application, GTK_TYPE_APPLICATION);
+
+static void gcolor3_application_shutdown (GApplication *app);
+
+static gchar *
+get_user_file (void)
+{
+	return g_build_filename (g_get_home_dir (), ".rgb.ini", NULL);
+}
 
 static void
 gcolor3_application_action_about (GSimpleAction *action,
 				  GVariant      *parameter,
 				  gpointer       user_data)
 {
-	//GtkWindow *window;
+	GtkWindow *window;
 
-	//window = gtk_application_get_active_window (GTK_APPLICATION (user_data));
-	//g_return_if_fail (GCOLOR3_IS_WINDOW (window));
+	window = gtk_application_get_active_window (GTK_APPLICATION (user_data));
+	g_return_if_fail (GCOLOR3_IS_WINDOW (window));
 
-	//gcolor3_window_show_about_dialog (GCOLOR3_WINDOW (window));
-	g_print ("About");
+	gcolor3_window_show_about_dialog (GCOLOR3_WINDOW (window));
 }
 
 static void
@@ -50,12 +61,11 @@ gcolor3_application_action_quit (GSimpleAction *action,
 				 GVariant      *parameter,
 				 gpointer       user_data)
 {
-	//GList *windows;
+	GList *windows;
 
-	//windows = gtk_application_get_windows (GTK_APPLICATION (user_data));
+	windows = gtk_application_get_windows (GTK_APPLICATION (user_data));
 
-	//g_list_foreach (windows, (GFunc) gcolor3_window_close, NULL);
-	g_print ("Quit");
+	g_list_foreach (windows, (GFunc) gcolor3_window_close, NULL);
 }
 
 static GActionEntry app_entries[] = {
@@ -91,14 +101,50 @@ gcolor3_application_init_accelerators (GtkApplication *application)
 	 * This gchar* array simulates an action<->accels mapping.
 	 * Enter the action name followed by the accelerator strings
 	 * and terminate the entry with a NULL-string.*/
-	static const gchar * const accelmap[] = {
+	static const gchar *const accelmap[] = {
+		"win.save", "<Ctrl>s", NULL,
+		"win.delete", "<Shift>Delete", NULL,
+		"win.change-page", "F9", NULL,
 		NULL /* Terminating NULL */
 	};
 
-	const gchar *const *it = accelmap;
+	const gchar *const *it;
 	for (it = accelmap; it[0]; it += g_strv_length ((gchar **)it) + 1) {
-		gtk_application_set_accels_for_action(application, it[0], &it[1]);
+		gtk_application_set_accels_for_action (application, it[0], &it[1]);
 	}
+}
+
+static void
+gcolor3_application_load_colors (Gcolor3Application *app) {
+	Gcolor3ApplicationPrivate *priv;
+	gchar *file;
+	GError *error = NULL;
+
+	g_return_if_fail (GCOLOR3_IS_APPLICATION (app));
+	priv = gcolor3_application_get_instance_private (app);
+
+	priv->colors = g_key_file_new ();
+	file = get_user_file ();
+	if (!(g_key_file_load_from_file (priv->colors,
+					 file,
+					 G_KEY_FILE_KEEP_COMMENTS | G_KEY_FILE_KEEP_TRANSLATIONS,
+					 &error))) {
+		if (error->code == G_KEY_FILE_ERROR_NOT_FOUND) {
+			g_warning ("%s%s\n", error->message,
+				   _(". Reading in colors will fail."));
+			g_clear_error (&error);
+		} else {
+			g_warning ("%s%s%s\n", _("Error opening file: "),
+				   error->message, _(". Exiting..."));
+			g_clear_error (&error);
+			g_free (file);
+			g_key_file_free (priv->colors);
+			priv->colors = NULL;
+			gcolor3_application_shutdown (G_APPLICATION (app));
+		}
+	}
+
+	g_free (file);
 }
 
 static void
@@ -113,13 +159,42 @@ gcolor3_application_startup (GApplication *application)
 
 	gcolor3_application_init_app_menu (GTK_APPLICATION (app));
 	gcolor3_application_init_accelerators (GTK_APPLICATION (app));
+
+	gcolor3_application_load_colors (app);
 }
 
 static void
 gcolor3_application_activate (GApplication *application)
 {
-	gcolor3_application_open_window (GCOLOR3_APPLICATION (application),
-					 GDK_CURRENT_TIME);
+	Gcolor3Window *window;
+
+	window = gcolor3_window_new (GCOLOR3_APPLICATION (application));
+	gcolor3_window_add_colors (window);
+	gtk_window_present_with_time (GTK_WINDOW (window), GDK_CURRENT_TIME);
+}
+
+static void
+gcolor3_application_shutdown (GApplication *application)
+{
+	Gcolor3ApplicationPrivate *priv;
+	GError *error = NULL;
+	gchar *file;
+
+	g_return_if_fail (GCOLOR3_IS_APPLICATION (application));
+	priv = gcolor3_application_get_instance_private (GCOLOR3_APPLICATION (application));
+
+	if (priv->colors != NULL) {
+		// TODO: possibly only write to disk if contents changed?
+		file = get_user_file ();
+		if (!(g_key_file_save_to_file (priv->colors, file, &error))) {
+			g_warning ("%s%s", _("Error writing file: "), error->message);
+			g_clear_error (&error);
+		}
+		g_free (file);
+		g_key_file_free (priv->colors);
+	}
+
+	G_APPLICATION_CLASS (gcolor3_application_parent_class)->shutdown (application);
 }
 
 static void
@@ -131,6 +206,7 @@ gcolor3_application_class_init (Gcolor3ApplicationClass *gcolor3_application_cla
 
 	application_class->startup = gcolor3_application_startup;
 	application_class->activate = gcolor3_application_activate;
+	application_class->shutdown = gcolor3_application_shutdown;
 }
 
 static void
@@ -138,22 +214,9 @@ gcolor3_application_init (Gcolor3Application *application)
 {
 }
 
-gboolean
-gcolor3_application_open_window (Gcolor3Application *application,
-				 guint32             timestamp)
-{
-	Gcolor3Window *window = NULL;
-
-	g_return_val_if_fail (GCOLOR3_IS_APPLICATION (application), FALSE);
-
-	window = gcolor3_window_new (application);
-	gtk_window_present_with_time (GTK_WINDOW (window), timestamp);
-
-	return TRUE;
-}
-
 Gcolor3Application *
-gcolor3_application_new (void) {
+gcolor3_application_new (void)
+{
 	GObject *application;
 
 	application = g_object_new (GCOLOR3_TYPE_APPLICATION,
@@ -163,3 +226,15 @@ gcolor3_application_new (void) {
 
 	return GCOLOR3_APPLICATION (application);
 }
+
+GKeyFile *
+gcolor3_application_get_colors (Gcolor3Application *application)
+{
+	Gcolor3ApplicationPrivate *priv;
+
+	g_return_val_if_fail (GCOLOR3_IS_APPLICATION (application), NULL);
+	priv = gcolor3_application_get_instance_private (application);
+
+	return priv->colors;
+}
+

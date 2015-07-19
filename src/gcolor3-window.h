@@ -52,6 +52,13 @@ GType          gcolor3_window_get_type (void) G_GNUC_CONST;
 
 Gcolor3Window *gcolor3_window_new (Gcolor3Application *application);
 
+void           gcolor3_window_show_about_dialog (Gcolor3Window *window);
+
+void           gcolor3_window_close (Gcolor3Window *window);
+
+void           gcolor3_window_add_colors (Gcolor3Window *window);
+
 G_END_DECLS
 
 #endif /* __GCOLOR3_WINDOW_H__ */
+

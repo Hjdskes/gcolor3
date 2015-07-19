@@ -11,7 +11,6 @@ desktop_DATA = $(DESKTOP_FILES)
 
 EXTRA_DIST = \
 	gcolor3-app-menu.xml \
-	gcolor3-window.ui \
 	$(DESKTOP_IN_FILES)
 
 DISTCLEANFILES = \
