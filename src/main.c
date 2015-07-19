@@ -58,7 +58,7 @@ main (int argc, char **argv)
 	bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
 	textdomain (GETTEXT_PACKAGE);
 
-	context = g_option_context_new (_("Pick a color from the palette or the screen"));
+	context = g_option_context_new (_("- pick a color from the palette or the screen"));
 	g_option_context_add_main_entries (context, options, GETTEXT_PACKAGE);
 	/* This initialises GTK during parsing. */
 	g_option_context_add_group (context, gtk_get_option_group (FALSE));
@@ -68,10 +68,10 @@ main (int argc, char **argv)
 
 		help = g_strdup_printf (_("Run '%s --help' to see a full "
 					"list of available command line "
-					"options."), argv[0]);
+					"options"), argv[0]);
 		g_printerr ("%s\n%s\n", error->message, help);
 
-		g_error_free (error);
+		g_clear_error (&error);
 		g_free (help);
 		g_option_context_free (context);
 
