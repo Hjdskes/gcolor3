@@ -3,3 +3,4 @@
 data/gcolor3.desktop.in.in
 src/main.c
 src/gcolor3-application.c
+src/gcolor3-window.c
