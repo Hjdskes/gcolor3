@@ -48,7 +48,7 @@ struct _Gcolor3ApplicationClass {
 
 GType               gcolor3_application_get_type (void) G_GNUC_CONST;
 
-Gcolor3Application *gcolor3_application_new ();
+Gcolor3Application *gcolor3_application_new (void);
 
 GKeyFile           *gcolor3_application_get_colors (Gcolor3Application *application);
 

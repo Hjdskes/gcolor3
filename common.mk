@@ -1,4 +1,4 @@
-M_CFLAGS = -fstack-protector -Wall -pedantic \
+AM_CFLAGS = -fstack-protector -Wall \
 	-Wstrict-prototypes -Wundef -fno-common \
 	-Werror-implicit-function-declaration \
 	-Wformat -Wformat-security -Werror=format-security \
