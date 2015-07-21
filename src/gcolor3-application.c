@@ -129,19 +129,8 @@ gcolor3_application_load_colors (Gcolor3Application *app) {
 					 file,
 					 G_KEY_FILE_KEEP_COMMENTS | G_KEY_FILE_KEEP_TRANSLATIONS,
 					 &error))) {
-		if (error->code == G_KEY_FILE_ERROR_NOT_FOUND) {
-			g_warning ("%s%s\n", error->message,
-				   _(". Reading in colors will fail."));
-			g_clear_error (&error);
-		} else {
-			g_warning ("%s%s%s\n", _("Error opening file: "),
-				   error->message, _(". Exiting..."));
-			g_clear_error (&error);
-			g_free (file);
-			g_key_file_free (priv->colors);
-			priv->colors = NULL;
-			gcolor3_application_shutdown (G_APPLICATION (app));
-		}
+		g_warning ("%s%s\n", _("Error opening file: "), error->message);
+		g_clear_error (&error);
 	}
 
 	g_free (file);
