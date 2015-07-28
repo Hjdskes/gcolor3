@@ -76,18 +76,17 @@ static GActionEntry app_entries[] = {
 static void
 gcolor3_application_init_app_menu (GtkApplication *application)
 {
-	GtkBuilder *builder;
-	GObject *builder_object;
+	GMenu *menu;
 
 	g_action_map_add_action_entries (G_ACTION_MAP (application),
 					 app_entries, G_N_ELEMENTS (app_entries),
 					 application);
 
-	builder = gtk_builder_new_from_resource ("/org/unia/gcolor3/ui/gcolor3-app-menu.ui");
-	builder_object = gtk_builder_get_object (builder, "app-menu");
-	gtk_application_set_app_menu (application, G_MENU_MODEL (builder_object));
-
-	g_object_unref (builder);
+	menu = g_menu_new ();
+	g_menu_append (menu, _("About"), "app.about");
+	g_menu_append (menu, _("Quit"), "app.quit");
+	gtk_application_set_app_menu (application, G_MENU_MODEL (menu));
+	g_object_unref (menu);
 }
 
 static void

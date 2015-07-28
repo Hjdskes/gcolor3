@@ -8,7 +8,6 @@ AC_PROG_CC_STDC
 AC_CONFIG_HEADERS([config.h])
 AC_CONFIG_MACRO_DIR([m4])
 AC_PREFIX_DEFAULT(/usr/local)
-AC_PATH_PROG([GLIB_COMPILE_RESOURCES], [glib-compile-resources])
 
 LT_PREREQ(2.2)
 LT_INIT([disable-static])
