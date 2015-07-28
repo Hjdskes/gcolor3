@@ -1,112 +1,95 @@
 # British English translation for Gcolor3.
-# Copyright (C) 2013 Jente Hidskes <jthidskes@outlook.com>
+# Copyright (C) 2013-2015 Jente Hidskes <hjdskes@gmail.com>
 # This file is distributed under the same license as the Gcolor3 package.
-# Jente Hidskes <jthidskes@outlook.com>, 2013.
+# Jente Hidskes <hjdskes@gmail.com>, 2013.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: 0.1\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-26 01:15+0200\n"
+"Project-Id-Version: 2.0\n"
+"Report-Msgid-Bugs-To: hjdskes@gmail.com\n"
+"POT-Creation-Date: 2015-07-28 18:17+0200\n"
 "PO-Revision-Date: 2013-06-11 13:09+0200\n"
-"Last-Translator: Jente Hidskes <jthidskes@outlook.com>\n"
+"Last-Translator: Jente Hidskes <hjdskes@gmail.com>\n"
 "Language-Team: British English\n"
 "Language: en_GB\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../data/gcolor3.desktop.in.h:1 ../src/ui.c:68
-msgid "A simple color selection dialog in GTK3"
-msgstr "A simple colour selection dialog in GTK3"
+#: ../data/gcolor3.desktop.in.in.h:1 ../src/main.c:39
+#: ../src/gcolor3-application.c:146
+msgid "Color picker"
+msgstr "Color picker"
 
-#: ../data/gcolor3.desktop.in.h:2
+#: ../data/gcolor3.desktop.in.in.h:2 ../src/gcolor3-window.c:507
 msgid "Choose colors from the palette or the screen"
 msgstr "Choose colours from the palette or the screen"
 
-#: ../src/callbacks.c:51 ../src/callbacks.c:53 ../src/callbacks.c:78
-msgid "read"
-msgstr "read"
+#. Extra keywords that can be used to search for Gcolor3 in GNOME Shell and Unity
+#: ../data/gcolor3.desktop.in.in.h:4
+msgid "Color;Picker;Palette;"
+msgstr "Colour;Picker;Palette"
 
-#: ../src/callbacks.c:60 ../src/callbacks.c:105
-msgid "write"
-msgstr "write"
+#: ../src/main.c:45
+msgid "Show the application's version"
+msgstr "Show the application's version"
 
-#: ../src/callbacks.c:272
+#: ../src/main.c:61
+msgid "- pick a color from the palette or the screen"
+msgstr "- pick a colour from the palette or the screen"
+
+#: ../src/main.c:69
 #, c-format
-msgid "Enter a color name for %s:"
-msgstr "Enter a colour name for %s:"
+msgid "Run '%s --help' to see a full list of available command line options"
+msgstr "Run '%s --help' to see a full list of available command line options"
 
-#: ../src/ui.c:32
-#, c-format
-msgid ""
-"An error occurred trying to open file \"%s\" for %s access!\n"
-"\n"
-"Please check the file permissions and try again."
-msgstr ""
-"An error occurred trying to open file \"%s\" for %s access!\n"
-"\n"
-"Please check the file permissions and try again."
+#: ../src/gcolor3-application.c:86
+msgid "About"
+msgstr "About"
 
-#: ../src/ui.c:49
-msgid ""
-"Gcolor3 is free software: you can redistribute it and/or modify it under the "
-"terms of the GNU General Public License as published by the Free Software "
-"Foundation, either version 3 of the License, or (at your option) any later "
-"version."
-msgstr ""
+#: ../src/gcolor3-application.c:87
+msgid "Quit"
+msgstr "Quit"
 
-#: ../src/ui.c:53
-msgid ""
-"Gcolor3 is distributed in the hope that it will be useful but WITHOUT ANY "
-"WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS "
-"FOR A PARTICULAR PURPOSE. See the GNU General Public License for more "
-"details."
-msgstr ""
+#: ../src/gcolor3-application.c:131
+msgid "Error opening file: "
+msgstr "Error opening file: "
 
-#: ../src/ui.c:57
-msgid ""
-"You should have received a copy of the GNU General Public License along with "
-"this program. If not, see http://www.gnu.org/licenses/."
-msgstr ""
+#: ../src/gcolor3-application.c:178
+msgid "Error writing file: "
+msgstr "Error writing file: "
 
-#: ../src/ui.c:74
-msgid "translator-credits"
-msgstr "Jente Hidskes"
+#: ../src/gcolor3-window.c:129
+msgid "Error deleting key: "
+msgstr "Error deleting key: "
 
-#: ../src/ui.c:75
-msgid "Contributors"
-msgstr "Contributors"
+#: ../src/gcolor3-window.c:385
+msgid "Palette"
+msgstr "Palette"
 
-#: ../src/ui.c:76
-msgid "Website"
-msgstr "Website"
+#: ../src/gcolor3-window.c:398
+msgid "Saved colors"
+msgstr "Saved colours"
 
-#: ../src/ui.c:93
-msgid "Save a color"
-msgstr "Save a colour"
-
-#: ../src/ui.c:107
-msgid "Save"
-msgstr "Save"
-
-#: ../src/ui.c:113
-msgid "Cancel"
-msgstr "Cancel"
-
-#: ../src/ui.c:168
+#: ../src/gcolor3-window.c:413
 msgid "Color"
 msgstr "Colour"
 
-#: ../src/ui.c:179
+#: ../src/gcolor3-window.c:428
 msgid "Name"
 msgstr "Name"
 
-#: ../src/ui.c:186
-msgid "Color chooser"
-msgstr "Color chooser"
+#. Translators: translate this to give yourself credits.
+#: ../src/gcolor3-window.c:511
+msgid "translator-credits"
+msgstr "Jente Hidskes"
 
-#: ../src/ui.c:188
-msgid "Saved colors"
-msgstr "Save a colour"
+#: ../src/gcolor3-window.c:512
+msgid "Website"
+msgstr "Website"
+
+#: ../src/gcolor3-window.c:546
+msgid "Error reading keys: "
+msgstr "Error reading keys: "
+
