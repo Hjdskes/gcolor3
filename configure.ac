@@ -22,7 +22,7 @@ AC_SUBST(GETTEXT_PACKAGE)
 AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE, "$GETTEXT_PACKAGE", [Gettext package.])
 
 # Package requirements
-PKG_CHECK_MODULES([GTK3], [gtk+-3.0 >= 3.10.0])
+PKG_CHECK_MODULES([GTK3], [gtk+-3.0 >= 3.12.0])
 
 AC_CONFIG_FILES(Makefile
 		data/Makefile
