@@ -24,7 +24,7 @@ msgstr "Kleurenkiezer"
 
 #: ../data/gcolor3.desktop.in.in.h:2 ../src/gcolor3-window.c:507
 msgid "Choose colors from the palette or the screen"
-msgstr "Kies kleuren van het palet of het scherm"
+msgstr "Kies kleuren van het palet of van het scherm"
 
 #. Extra keywords that can be used to search for Gcolor3 in GNOME Shell and Unity
 #: ../data/gcolor3.desktop.in.in.h:4
@@ -37,7 +37,7 @@ msgstr "Toon versienummer van de applicatie"
 
 #: ../src/main.c:61
 msgid "- pick a color from the palette or the screen"
-msgstr "- kies een kleur van het palet of het scherm"
+msgstr "- kies een kleur van het palet of van het scherm"
 
 #: ../src/main.c:69
 #, c-format
@@ -92,3 +92,4 @@ msgstr "Webpagina"
 #: ../src/gcolor3-window.c:545
 msgid "Error reading keys: "
 msgstr "Fout bij het lezen van sleutels: "
+
