@@ -507,6 +507,7 @@ gcolor3_window_show_about_dialog (Gcolor3Window *window)
 			       "comments", _("Choose colors from the palette or the screen"),
 			       "authors", authors,
 			       "artists", artists,
+			       /* Translators: translate this to give yourself credits. */
 			       "translator-credits", _("translator-credits"),
 			       "website-label", _("Website"),
 			       "website", "https://unia.github.io/gcolor3",

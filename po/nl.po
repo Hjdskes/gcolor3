@@ -80,6 +80,7 @@ msgstr "Kleur"
 msgid "Name"
 msgstr "Naam"
 
+#. Translators: translate this to give yourself credits.
 #: ../src/gcolor3-window.c:510
 msgid "translator-credits"
 msgstr "Jente Hidskes"
