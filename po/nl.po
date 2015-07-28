@@ -1,113 +1,93 @@
 # Dutch translation for Gcolor3.
-# Copyright (C) 2013 Jente Hidskes <jthidskes@outlook.com>
+# Copyright (C) 2013-2015 Jente Hidskes <hjdskes@gmail.com>
 # This file is distributed under the same license as the Gcolor3 package.
-# Jente Hidskes <jthidskes@outlook.com>, 2013.
+# Jente Hidskes <hjdskes@gmail.com>, 2013.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: 0.1\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-26 01:15+0200\n"
-"PO-Revision-Date: 2013-10-11 13:05+0200\n"
-"Last-Translator: Jente Hidskes <jthidskes@outlook.com>\n"
+"Project-Id-Version: 2.0\n"
+"Report-Msgid-Bugs-To: hjdskes@gmail.com\n"
+"POT-Creation-Date: 2015-07-28 12:20+0200\n"
+"PO-Revision-Date: 2015-07-28 11:17+0200\n"
+"Last-Translator: Jente Hidskes <hjdskes@gmail.com>\n"
 "Language-Team: Dutch\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../data/gcolor3.desktop.in.h:1 ../src/ui.c:68
-msgid "A simple color selection dialog in GTK3"
-msgstr "Een simpele dialoog voor kleurselectie in GTK3"
+#: ../data/gcolor3.desktop.in.in.h:1 ../src/main.c:39
+#: ../src/gcolor3-application.c:155
+msgid "Color picker"
+msgstr "Kleurenkiezer"
 
-#: ../data/gcolor3.desktop.in.h:2
+#: ../data/gcolor3.desktop.in.in.h:2 ../src/gcolor3-window.c:507
 msgid "Choose colors from the palette or the screen"
 msgstr "Kies kleuren van het palet of het scherm"
 
-#: ../src/callbacks.c:51 ../src/callbacks.c:53 ../src/callbacks.c:78
-msgid "read"
-msgstr "lees"
+#. Extra keywords that can be used to search for Gcolor3 in GNOME Shell and Unity
+#: ../data/gcolor3.desktop.in.in.h:4
+msgid "Color;Picker;Palette;"
+msgstr "Kleur;Kiezer;Palet;"
 
-#: ../src/callbacks.c:60 ../src/callbacks.c:105
-msgid "write"
-msgstr "schrijf"
+#: ../src/main.c:45
+msgid "Show the application's version"
+msgstr "Toon versienummer van de applicatie"
 
-#: ../src/callbacks.c:272
+#: ../src/main.c:61
+msgid "- pick a color from the palette or the screen"
+msgstr "- kies een kleur van het palet of het scherm"
+
+#: ../src/main.c:69
 #, c-format
-msgid "Enter a color name for %s:"
-msgstr "Voer een naam in voor %s:"
+msgid "Run '%s --help' to see a full list of available command line options"
+msgstr "Voer '%s --help' uit om alle mogelijke opdracht-opties te zien"
 
-#: ../src/ui.c:32
-#, c-format
-msgid ""
-"An error occurred trying to open file \"%s\" for %s access!\n"
-"\n"
-"Please check the file permissions and try again."
-msgstr ""
-"Er is een fout opgetreden bij het openen van bestand \"%s\" voor %s "
-"toegang!\n"
-"\n"
-"Controleer de bestandsrechten en probeer het opnieuw."
+#: ../src/gcolor3-application.c:95
+msgid "About"
+msgstr "Over"
 
-#: ../src/ui.c:49
-msgid ""
-"Gcolor3 is free software: you can redistribute it and/or modify it under the "
-"terms of the GNU General Public License as published by the Free Software "
-"Foundation, either version 3 of the License, or (at your option) any later "
-"version."
-msgstr ""
+#: ../src/gcolor3-application.c:96
+msgid "Quit"
+msgstr "Afsluiten"
 
-#: ../src/ui.c:53
-msgid ""
-"Gcolor3 is distributed in the hope that it will be useful but WITHOUT ANY "
-"WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS "
-"FOR A PARTICULAR PURPOSE. See the GNU General Public License for more "
-"details."
-msgstr ""
+#: ../src/gcolor3-application.c:140
+msgid "Error opening file: "
+msgstr "Fout bij het openen van bestand: "
 
-#: ../src/ui.c:57
-msgid ""
-"You should have received a copy of the GNU General Public License along with "
-"this program. If not, see http://www.gnu.org/licenses/."
-msgstr ""
+#: ../src/gcolor3-application.c:187
+msgid "Error writing file: "
+msgstr "Fout bij het schrijven van bestand: "
 
-#: ../src/ui.c:74
-msgid "translator-credits"
-msgstr "Jente Hidskes"
+#: ../src/gcolor3-window.c:129
+msgid "Error deleting key: "
+msgstr "Fout bij het verwijderen van sleutel: "
 
-#: ../src/ui.c:75
-msgid "Contributors"
-msgstr "Bijdragen door"
+#: ../src/gcolor3-window.c:385
+msgid "Palette"
+msgstr "Palet"
 
-#: ../src/ui.c:76
-msgid "Website"
-msgstr "Webpagina"
+#: ../src/gcolor3-window.c:398
+msgid "Saved colors"
+msgstr "Opgeslagen kleuren"
 
-#: ../src/ui.c:93
-msgid "Save a color"
-msgstr "Kleur opslaan"
-
-#: ../src/ui.c:107
-msgid "Save"
-msgstr "Opslaan"
-
-#: ../src/ui.c:113
-msgid "Cancel"
-msgstr "Annuleren"
-
-#: ../src/ui.c:168
+#: ../src/gcolor3-window.c:413
 msgid "Color"
 msgstr "Kleur"
 
-#: ../src/ui.c:179
+#: ../src/gcolor3-window.c:428
 msgid "Name"
 msgstr "Naam"
 
-#: ../src/ui.c:186
-msgid "Color chooser"
-msgstr "Kleurenwiel"
+#: ../src/gcolor3-window.c:510
+msgid "translator-credits"
+msgstr "Jente Hidskes"
 
-#: ../src/ui.c:188
-msgid "Saved colors"
-msgstr "Opgeslagen kleuren"
+#: ../src/gcolor3-window.c:511
+msgid "Website"
+msgstr "Webpagina"
+
+#: ../src/gcolor3-window.c:545
+msgid "Error reading keys: "
+msgstr "Fout bij het lezen van sleutels: "
