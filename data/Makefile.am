@@ -10,7 +10,7 @@ desktopdir = $(datadir)/applications
 desktop_DATA = $(DESKTOP_FILES)
 
 EXTRA_DIST = \
-	gcolor3-app-menu.xml \
+	gcolor3-app-menu.ui \
 	$(DESKTOP_IN_FILES)
 
 DISTCLEANFILES = \

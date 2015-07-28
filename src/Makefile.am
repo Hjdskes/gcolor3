@@ -10,10 +10,9 @@ gcolor3_SOURCES = \
 	$(BUILT_SOURCES)
 
 gcolor3_CFLAGS = \
-	-DLOCALE_DIR=\""$(localedir)"\" \
-	-DSRC_DIR=\""$(srcdir)"\" \
-	-DPKG_DATA_DIR=\""$(pkgdatadir)"\" \
-	-DDATA_DIR=\""$(datadir)"\" \
+	-DLOCALE_DIR=\"$(localedir)\" \
+	-DDATA_DIR=\"$(datadir)\" \
+	-DGETTEXT_PACKAGE=\"$(GETTEXT_PACKAGE)\" \
 	$(GTK3_CFLAGS) \
 	$(AM_CFLAGS)
 
