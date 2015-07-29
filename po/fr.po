@@ -1,123 +1,93 @@
-# French (fr) translation for Gcolor3.
-# Copyright (C) 2013 Nicolas Gaulard-Querol <nicolas.gquerol@gmail.com>
+# French translation for Gcolor3.
+# Copyright (C) 2013-2015 Nicolas Gaulard-Querol <nicolas.gquerol@gmail.com>
 # This file is distributed under the same license as the Gcolor3 package.
 # Nicolas Gaulard-Querol <nicolas.gquerol@gmail.com>, 2013.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: 0.1\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-26 01:15+0200\n"
-"PO-Revision-Date: 2013-10-14 19:19+0100\n"
-"Last-Translator: Nicolas Gaulard-Querol <nicolas.gquerol@gmail.com>\n"
-"Language-Team: French Translations\n"
-"Language: fr\n"
+"Project-Id-Version: 2.0\n"
+"Report-Msgid-Bugs-To: hjdskes@gmail.com\n"
+"POT-Creation-Date: 2015-07-28 18:17+0200\n"
+"PO-Revision-Date: 2015-07-29 21:54+0200\n"
+"Language-Team: French\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.7\n"
+"Last-Translator: Nicolas Gaulard-Querol <nicolas.gqquerol@gmail.com>\n"
+"Language: fr\n"
 
-#: ../data/gcolor3.desktop.in.h:1 ../src/ui.c:68
-msgid "A simple color selection dialog in GTK3"
-msgstr "Un sélecteur de couleur simple en GTK3"
+#: ../data/gcolor3.desktop.in.in.h:1 ../src/main.c:39
+#: ../src/gcolor3-application.c:146
+msgid "Color picker"
+msgstr "Sélecteur de couleur"
 
-#: ../data/gcolor3.desktop.in.h:2
+#: ../data/gcolor3.desktop.in.in.h:2 ../src/gcolor3-window.c:507
 msgid "Choose colors from the palette or the screen"
-msgstr "Choisissez des couleurs depuis la palette ou l'écran"
+msgstr "Choisissez les couleurs depuis la palette ou l’écran"
 
-#: ../src/callbacks.c:51 ../src/callbacks.c:53 ../src/callbacks.c:78
-msgid "read"
-msgstr "lecture"
+#. Extra keywords that can be used to search for Gcolor3 in GNOME Shell and Unity
+#: ../data/gcolor3.desktop.in.in.h:4
+msgid "Color;Picker;Palette;"
+msgstr "Couleur;Sélecteur;Palette"
 
-#: ../src/callbacks.c:60 ../src/callbacks.c:105
-msgid "write"
-msgstr "écriture"
+#: ../src/main.c:45
+msgid "Show the application's version"
+msgstr "Afficher la version de l’application"
 
-#: ../src/callbacks.c:272
+#: ../src/main.c:61
+msgid "- pick a color from the palette or the screen"
+msgstr "- choisir une couleur depuis la palette ou l’écran"
+
+#: ../src/main.c:69
 #, c-format
-msgid "Enter a color name for %s:"
-msgstr "Entrez un nom de couleur pour %s :"
+msgid "Run '%s --help' to see a full list of available command line options"
+msgstr "Utilisez '%s --help' pour voir une liste complète des options de ligne de commande disponibles"
 
-#: ../src/ui.c:32
-#, c-format
-msgid ""
-"An error occurred trying to open file \"%s\" for %s access!\n"
-"\n"
-"Please check the file permissions and try again."
-msgstr ""
-"Une erreur est survenue lors de l'ouverture du fichier \"%s\" pour un accès "
-"en %s !\n"
-"\n"
-"Veuillez vérifier les permissions du fichier puis réessayer."
+#: ../src/gcolor3-application.c:86
+msgid "About"
+msgstr "À propos"
 
-#: ../src/ui.c:49
-msgid ""
-"Gcolor3 is free software: you can redistribute it and/or modify it under the "
-"terms of the GNU General Public License as published by the Free Software "
-"Foundation, either version 3 of the License, or (at your option) any later "
-"version."
-msgstr ""
-"Gcolor3 est un logiciel libre ; vous pouvez le redistribuer ou le modifier "
-"suivant les termes de la GNU General Public License telle que publiée par la "
-"Free Software Foundation , soit la version 3 de la Licence, soit (à votre "
-"gré) toute version ultérieure."
+#: ../src/gcolor3-application.c:87
+msgid "Quit"
+msgstr "Quitter"
 
-#: ../src/ui.c:53
-msgid ""
-"Gcolor3 is distributed in the hope that it will be useful but WITHOUT ANY "
-"WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS "
-"FOR A PARTICULAR PURPOSE. See the GNU General Public License for more "
-"details."
-msgstr ""
-"Gcolor3 est distribué dans l'espoir qu'il sera utile, mais SANS AUCUNE "
-"GARANTIE : sans même la garantie implicite de COMMERCIALISABILITÉ ni "
-"d'ADÉQUATION À UN OBJECTIF PARTICULIER. Consultez la GNU General Public "
-"License pour plus de détails."
+#: ../src/gcolor3-application.c:131
+msgid "Error opening file: "
+msgstr "Erreur lors de l’ouverture du fichier :"
 
-#: ../src/ui.c:57
-msgid ""
-"You should have received a copy of the GNU General Public License along with "
-"this program. If not, see http://www.gnu.org/licenses/."
-msgstr ""
-"Vous devriez avoir reçu une copie de la GNU General Public License avec ce "
-"programme ; si ce n'est pas le cas, consultez : http://www.gnu.org/licenses/."
+#: ../src/gcolor3-application.c:178
+msgid "Error writing file: "
+msgstr "Erreur lors de l’écriture du fichier :"
 
-#: ../src/ui.c:74
-msgid "translator-credits"
-msgstr "Nicolas Gaulard-Querol"
+#: ../src/gcolor3-window.c:129
+msgid "Error deleting key: "
+msgstr "Erreur lors de la suppression de la clé :"
 
-#: ../src/ui.c:75
-msgid "Contributors"
-msgstr "Contributeurs"
+#: ../src/gcolor3-window.c:385
+msgid "Palette"
+msgstr "Palette"
 
-#: ../src/ui.c:76
-msgid "Website"
-msgstr "Site web"
+#: ../src/gcolor3-window.c:398
+msgid "Saved colors"
+msgstr "Couleurs sauvegardées"
 
-#: ../src/ui.c:93
-msgid "Save a color"
-msgstr "Sauvegarder une couleur"
-
-#: ../src/ui.c:107
-msgid "Save"
-msgstr "Sauvegarder"
-
-#: ../src/ui.c:113
-msgid "Cancel"
-msgstr "Annuler"
-
-#: ../src/ui.c:168
+#: ../src/gcolor3-window.c:413
 msgid "Color"
 msgstr "Couleur"
 
-#: ../src/ui.c:179
+#: ../src/gcolor3-window.c:428
 msgid "Name"
 msgstr "Nom"
 
-#: ../src/ui.c:186
-msgid "Color chooser"
-msgstr "Sélecteur de couleur"
+#. Translators: translate this to give yourself credits.
+#: ../src/gcolor3-window.c:511
+msgid "translator-credits"
+msgstr "Nicolas Gaulard-Querol"
 
-#: ../src/ui.c:188
-msgid "Saved colors"
-msgstr "Couleurs sauvegardées"
+#: ../src/gcolor3-window.c:512
+msgid "Website"
+msgstr "Site web"
+
+#: ../src/gcolor3-window.c:546
+msgid "Error reading keys: "
+msgstr "Erreur lors de la lecture des clés :"
