@@ -1,20 +1,17 @@
-AC_INIT([gcolor3], 2.0, [hjdskes@gmail.com], [gcolor3],
-	[https://github.com/Unia/gcolor3/])
-AM_INIT_AUTOMAKE([1.11 -Wno-portability no-dist-gzip dist-xz foreign subdir-objects])
+AC_INIT([Gcolor3], 2.0, [hjdskes@gmail.com], [gcolor3], [https://unia.github.io/gcolor3])
+AM_INIT_AUTOMAKE([1.11 foreign dist-xz no-dist-gzip subdir-objects -Wno-portability])
 AM_SILENT_RULES([yes])
 
 AC_PROG_CC
 AC_PROG_CC_STDC
 AC_CONFIG_HEADERS([config.h])
-AC_CONFIG_MACRO_DIR([m4])
-AC_PREFIX_DEFAULT(/usr/local)
 
-LT_PREREQ(2.2)
+LT_PREREQ([2.2.6])
 LT_INIT([disable-static])
 
 # Internationalization
 AM_GLIB_GNU_GETTEXT
-IT_PROG_INTLTOOL([0.35.0])
+IT_PROG_INTLTOOL([0.50.1])
 
 GETTEXT_PACKAGE=AC_PACKAGE_NAME
 AC_SUBST(GETTEXT_PACKAGE)
@@ -31,3 +28,19 @@ AC_CONFIG_FILES(Makefile
 		po/Makefile.in)
 
 AC_OUTPUT
+
+AC_MSG_RESULT([
+        $PACKAGE $VERSION
+        ========
+
+        prefix:                 ${prefix}
+        libdir:                 ${libdir}
+        sysconfdir:             ${sysconfdir}
+        exec_prefix:            ${exec_prefix}
+        bindir:                 ${bindir}
+        datarootdir:            ${datarootdir}
+
+        compiler:               ${CC}
+        cflags:                 ${CFLAGS}
+        ldflags:                ${LDFLAGS}
+])

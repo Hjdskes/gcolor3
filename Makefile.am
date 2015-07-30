@@ -1,5 +1,7 @@
-ACLOCAL_AMFLAGS = -I m4 ${ACLOCAL_FLAGS}
-AM_CFLAGS = 
+SUBDIRS = \
+	data \
+	po \
+	src
 
 EXTRA_DIST = \
 	${top_srcdir}/AUTHORS \
@@ -12,15 +14,20 @@ DISTCLEANFILES = \
 	intltool-update
 
 MAINTAINERCLEANFILES = \
-	$(srcdir)/aclocal.m4 \
-	$(srcdir)/config.guess \
-	$(srcdir)/config.h.in \
-	$(srcdir)/config.sub \
-	$(srcdir)/depcomp \
-	$(srcdir)/gtk-doc.make \
-	$(srcdir)/install-sh \
-	$(srcdir)/ltmain.sh \
-	$(srcdir)/missing \
-	$(srcdir)/mkinstalldirs
+	${srcdir}/aclocal.m4 \
+	${srcdir}/compile \
+	${srcdir}/config.guess \
+	${srcdir}/config.h.in \
+	${srcdir}/config.h.in~ \
+	${srcdir}/config.log \
+	${srcdir}/config.status \
+	${srcdir}/config.sub \
+	${srcdir}/depcomp \
+	${srcdir}/gtk-doc.make \
+	${srcdir}/install-sh \
+	${srcdir}/libtool \
+	${srcdir}/ltmain.sh \
+	${srcdir}/missing \
+	${srcdir}/mkinstalldirs \
+	${srcdir}/stamp-h1
 
-SUBDIRS = src po data

@@ -1,9 +1,9 @@
 [Desktop Entry]
 _Name=Color picker
 _Comment=Choose colors from the palette or the screen
-TryExec=gcolor3
-Exec=gcolor3
-Icon=gcolor3
+TryExec=@PACKAGE@
+Exec=@PACKAGE@
+Icon=@PACKAGE@
 StartupNotify=true
 Terminal=false
 Type=Application

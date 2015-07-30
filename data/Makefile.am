@@ -1,5 +1,3 @@
--include $(top_srcdir)/common.mk
-
 SUBDIRS = icons
 
 @INTLTOOL_DESKTOP_RULE@

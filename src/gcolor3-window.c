@@ -61,8 +61,7 @@ struct _Gcolor3WindowPrivate {
 	GdkColor current;
 };
 
-G_DEFINE_TYPE_WITH_PRIVATE (Gcolor3Window, gcolor3_window,
-			    GTK_TYPE_APPLICATION_WINDOW);
+G_DEFINE_TYPE_WITH_PRIVATE (Gcolor3Window, gcolor3_window, GTK_TYPE_APPLICATION_WINDOW);
 
 static void gcolor3_window_add_color_to_list (Gcolor3Window *window,
 					      const gchar *name,
@@ -148,11 +147,9 @@ gcolor3_window_action_change_page (GSimpleAction *action,
 
 	page = gtk_stack_get_visible_child_name (GTK_STACK (priv->stack));
 	if (g_strcmp0 (page, "saved-colors") == 0) {
-		gtk_stack_set_visible_child_name (GTK_STACK (priv->stack),
-						  "palette");
+		gtk_stack_set_visible_child_name (GTK_STACK (priv->stack), "palette");
 	} else {
-		gtk_stack_set_visible_child_name (GTK_STACK (priv->stack),
-						  "saved-colors");
+		gtk_stack_set_visible_child_name (GTK_STACK (priv->stack), "saved-colors");
 	}
 }
 
@@ -250,31 +247,25 @@ gcolor3_window_stack_changed (GtkStack   *stack,
 	g_return_if_fail (GCOLOR3_IS_WINDOW (user_data));
 	priv = gcolor3_window_get_instance_private (GCOLOR3_WINDOW (user_data));
 
-	save_action = g_action_map_lookup_action (G_ACTION_MAP (user_data),
-						  "save");
-	delete_action = g_action_map_lookup_action (G_ACTION_MAP (user_data),
-						    "delete");
+	save_action = g_action_map_lookup_action (G_ACTION_MAP (user_data), "save");
+	delete_action = g_action_map_lookup_action (G_ACTION_MAP (user_data), "delete");
 
 	page = gtk_stack_get_visible_child_name (stack);
 	if (g_strcmp0 (page, "saved-colors") == 0) {
-		image = gtk_image_new_from_icon_name ("edit-delete-symbolic",
-						      GTK_ICON_SIZE_MENU);
+		image = gtk_image_new_from_icon_name ("edit-delete-symbolic", GTK_ICON_SIZE_MENU);
 		if (gtk_tree_selection_get_selected (priv->selection, NULL, NULL)) {
 			gtk_widget_set_sensitive (priv->button, TRUE);
 		} else {
 			gtk_widget_set_sensitive (priv->button, FALSE);
 		}
-		gtk_actionable_set_action_name (GTK_ACTIONABLE (priv->button),
-						"win.delete");
+		gtk_actionable_set_action_name (GTK_ACTIONABLE (priv->button), "win.delete");
 		g_simple_action_set_enabled (G_SIMPLE_ACTION (save_action), FALSE);
 		g_simple_action_set_enabled (G_SIMPLE_ACTION (delete_action), TRUE);
 		gtk_revealer_set_reveal_child (GTK_REVEALER (priv->revealer), FALSE);
 	} else {
-		image = gtk_image_new_from_icon_name ("document-save-symbolic",
-						      GTK_ICON_SIZE_MENU);
+		image = gtk_image_new_from_icon_name ("document-save-symbolic", GTK_ICON_SIZE_MENU);
 		gtk_widget_set_sensitive (priv->button, TRUE);
-		gtk_actionable_set_action_name (GTK_ACTIONABLE (priv->button),
-						"win.save");
+		gtk_actionable_set_action_name (GTK_ACTIONABLE (priv->button), "win.save");
 		g_simple_action_set_enabled (G_SIMPLE_ACTION (save_action), TRUE);
 		g_simple_action_set_enabled (G_SIMPLE_ACTION (delete_action), FALSE);
 		gtk_revealer_set_reveal_child (GTK_REVEALER (priv->revealer), TRUE);
@@ -284,8 +275,7 @@ gcolor3_window_stack_changed (GtkStack   *stack,
 }
 
 static void
-gcolor3_window_selection_changed (GtkTreeSelection *selection,
-				  gpointer          user_data)
+gcolor3_window_selection_changed (GtkTreeSelection *selection, gpointer user_data)
 {
 	Gcolor3WindowPrivate *priv;
 	GdkColor new, current;
@@ -331,8 +321,7 @@ gcolor3_window_construct_ui (Gcolor3Window *window)
 
 	headerbar = gtk_header_bar_new ();
 	gtk_header_bar_set_show_close_button (GTK_HEADER_BAR (headerbar), TRUE);
-	gtk_header_bar_set_title (GTK_HEADER_BAR (headerbar),
-				  g_get_application_name ());
+	gtk_header_bar_set_title (GTK_HEADER_BAR (headerbar), g_get_application_name ());
 	gtk_window_set_titlebar (GTK_WINDOW (window), headerbar);
 	gtk_widget_show (headerbar);
 
@@ -345,8 +334,7 @@ gcolor3_window_construct_ui (Gcolor3Window *window)
 	gtk_widget_show (priv->button);
 
 	priv->revealer = gtk_revealer_new ();
-	gtk_revealer_set_transition_duration (GTK_REVEALER (priv->revealer),
-					      REVEALER_DURATION);
+	gtk_revealer_set_transition_duration (GTK_REVEALER (priv->revealer), REVEALER_DURATION);
 	gtk_revealer_set_transition_type (GTK_REVEALER (priv->revealer),
 					  GTK_REVEALER_TRANSITION_TYPE_SLIDE_LEFT);
 	gtk_header_bar_pack_end (GTK_HEADER_BAR (headerbar), priv->revealer);
@@ -367,8 +355,7 @@ gcolor3_window_construct_ui (Gcolor3Window *window)
 	gtk_widget_show (priv->stack);
 
 	switcher = gtk_stack_switcher_new ();
-	gtk_stack_switcher_set_stack (GTK_STACK_SWITCHER (switcher),
-				      GTK_STACK (priv->stack));
+	gtk_stack_switcher_set_stack (GTK_STACK_SWITCHER (switcher), GTK_STACK (priv->stack));
 	gtk_header_bar_pack_start (GTK_HEADER_BAR (headerbar), switcher);
 	gtk_widget_show (switcher);
 
@@ -377,12 +364,8 @@ gcolor3_window_construct_ui (Gcolor3Window *window)
 			  G_CALLBACK (gcolor3_window_palette_changed), window);
 	/* Call the above callback to initialise the GtkEntry and to prevent
 	 * saving #000000 when saving the white color right away. */
-	gcolor3_window_palette_changed (GTK_COLOR_SELECTION (priv->palette),
-					window);
-	gtk_stack_add_titled (GTK_STACK (priv->stack),
-			      priv->palette,
-			      "palette",
-			      _("Palette"));
+	gcolor3_window_palette_changed (GTK_COLOR_SELECTION (priv->palette), window);
+	gtk_stack_add_titled (GTK_STACK (priv->stack), priv->palette, "palette", _("Palette"));
 	gtk_widget_show (priv->palette);
 
 	scroll = gtk_scrolled_window_new (NULL, NULL);
@@ -392,10 +375,7 @@ gcolor3_window_construct_ui (Gcolor3Window *window)
 					GTK_POLICY_AUTOMATIC);
 	gtk_scrolled_window_set_shadow_type (GTK_SCROLLED_WINDOW (scroll),
 					     GTK_SHADOW_IN);
-	gtk_stack_add_titled (GTK_STACK (priv->stack),
-			      scroll,
-			      "saved-colors",
-			      _("Saved colors"));
+	gtk_stack_add_titled (GTK_STACK (priv->stack), scroll, "saved-colors", _("Saved colors"));
 	gtk_widget_show (scroll);
 
 	liststore = gtk_list_store_new (N_COLUMNS,
@@ -502,7 +482,7 @@ gcolor3_window_show_about_dialog (Gcolor3Window *window)
 
 	gtk_show_about_dialog (GTK_WINDOW (window),
 			       "program-name", g_get_application_name (),
-			       "version", VERSION,
+			       "version", PACKAGE_VERSION,
 			       "copyright", "Copyright \xc2\xa9 "COPYRIGHT" Jente Hidskes",
 			       "comments", _("Choose colors from the palette or the screen"),
 			       "authors", authors,
@@ -510,7 +490,7 @@ gcolor3_window_show_about_dialog (Gcolor3Window *window)
 			       /* Translators: translate this to give yourself credits. */
 			       "translator-credits", _("translator-credits"),
 			       "website-label", _("Website"),
-			       "website", "https://unia.github.io/gcolor3",
+			       "website", PACKAGE_URL,
 			       "logo-icon-name", "gcolor3",
 			       "wrap-license", TRUE,
 			       "license-type", GTK_LICENSE_GPL_2_0,

@@ -36,7 +36,7 @@ _print_version_and_exit (const gchar *name,
 			 gpointer     user_data,
 			 GError     **error)
 {
-	g_print ("%s %s\n", _("Color picker"), VERSION);
+	g_print ("%s %s\n", _("Color picker"), PACKAGE_VERSION);
 	exit (EXIT_SUCCESS);
 	return TRUE;
 }
