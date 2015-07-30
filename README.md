@@ -3,7 +3,8 @@ Gcolor3
 
 **A simple color chooser dialog written in GTK3, much alike Gcolor2.**
 
-![Screenshot](https://github.com/Unia/gcolor3/raw/master/comparison.png "comparison")
+![Gcolor3-screenshot](https://github.com/Unia/gcolor3/raw/master/gcolor3.png "gcolor3")
+![Gcolor2-screenshot](https://github.com/Unia/gcolor3/raw/master/gcolor2.png "gcolor2")
 
 Installation
 ------------
