@@ -46,24 +46,22 @@ static const GOptionEntry options[] = {
 	{ NULL }
 };
 
-int
-main (int argc, char **argv)
+static gboolean
+_parse_options (int argc, char **argv)
 {
-	Gcolor3Application *application;
 	GOptionContext *context;
 	GError *error = NULL;
-	int status;
-
-	bindtextdomain (GETTEXT_PACKAGE, LOCALE_DIR);
-	bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
-	textdomain (GETTEXT_PACKAGE);
+	gboolean succes;
 
 	context = g_option_context_new (_("- pick a color from the palette or the screen"));
 	g_option_context_add_main_entries (context, options, GETTEXT_PACKAGE);
 	/* This initialises GTK during parsing. */
 	g_option_context_add_group (context, gtk_get_option_group (FALSE));
 
-	if (!g_option_context_parse (context, &argc, &argv, &error)) {
+	succes = g_option_context_parse (context, &argc, &argv, &error);
+	g_option_context_free (context);
+
+	if (!succes) {
 		gchar *help;
 
 		help = g_strdup_printf (_("Run '%s --help' to see a full "
@@ -73,12 +71,26 @@ main (int argc, char **argv)
 
 		g_clear_error (&error);
 		g_free (help);
-		g_option_context_free (context);
 
-		return 1;
+		return FALSE;
 	}
 
-	g_option_context_free (context);
+	return TRUE;
+}
+
+int
+main (int argc, char **argv)
+{
+	Gcolor3Application *application;
+	int status;
+
+	bindtextdomain (GETTEXT_PACKAGE, LOCALE_DIR);
+	bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
+	textdomain (GETTEXT_PACKAGE);
+
+	if (!_parse_options (argc, argv)) {
+		return EXIT_FAILURE;
+	}
 
 	application = gcolor3_application_new ();
 	status = g_application_run (G_APPLICATION (application), argc, argv);
