@@ -24,7 +24,7 @@ You can help translate Gcolor3 to your language! To do so, simply follow these s
 
 	$ cd po
 	$ intltool-update --pot
-	$ mv gcolor3.pot <language code>.po
+	$ mv Gcolor3.pot <language code>.po
 
 Where `<language code>` is the code of your language (e.g. `nl` for Dutch, `fr` for French, `en_GB` for British English...).
 Edit the [LINGUAS](https://github.com/Unia/gcolor3/blob/master/po/LINGUAS) file and add your language code. Please keep the list sorted alphabetically.
@@ -34,7 +34,7 @@ When a translation needs updating, execute the following commands:
 
 	$ cd po
 	$ intltool-update --pot
-	$ intltool-update --dist --gettext-package=gcolor3 --output-file=<language code>_new.po <language code>
+	$ intltool-update --dist --gettext-package=Gcolor3 --output-file=<language code>_new.po <language code>
 
 Then make the necessary changes and overwrite the old `.po` file:
 
