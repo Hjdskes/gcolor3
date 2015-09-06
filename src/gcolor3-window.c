@@ -89,15 +89,11 @@ gcolor3_window_action_save (GSimpleAction *action,
 	g_return_if_fail (priv->colors != NULL);
 
 	key = gtk_entry_get_text (GTK_ENTRY (priv->entry));
-	if (strlen (key) == 0) {
-		key = gtk_entry_get_placeholder_text (GTK_ENTRY (priv->entry));
-	}
-
 	if (!g_key_file_has_key (priv->colors, "Colors", key, NULL)) {
 		gchar *hex;
 
 		hex = hex_value (&priv->current);
-		g_key_file_set_string (priv->colors, "Colors", key, hex);
+		g_key_file_set_string (priv->colors, "Colors", strlen (key) == 0 ? hex : key, hex);
 		gcolor3_window_add_color_to_list (GCOLOR3_WINDOW (user_data),
 						  key, hex, TRUE);
 		g_free (hex);
@@ -218,17 +214,11 @@ static void
 gcolor3_window_palette_changed (GtkColorSelection *palette, gpointer user_data)
 {
 	Gcolor3WindowPrivate *priv;
-	gchar *hex;
 
 	g_return_if_fail (GCOLOR3_IS_WINDOW (user_data));
 	priv = gcolor3_window_get_instance_private (GCOLOR3_WINDOW (user_data));
 
-	gtk_color_selection_get_current_color (GTK_COLOR_SELECTION (palette),
-					       &priv->current);
-
-	hex = hex_value (&priv->current);
-	gtk_entry_set_placeholder_text (GTK_ENTRY (priv->entry), hex);
-	g_free (hex);
+	gtk_color_selection_get_current_color (GTK_COLOR_SELECTION (palette), &priv->current);
 }
 
 /* FIXME: delete button is sensitive when switching to saved colors,
@@ -343,6 +333,7 @@ gcolor3_window_construct_ui (Gcolor3Window *window)
 	priv->entry = gtk_entry_new ();
 	/* Activate default widget on enter, set above. */
 	gtk_entry_set_activates_default (GTK_ENTRY (priv->entry), TRUE);
+	gtk_entry_set_placeholder_text (GTK_ENTRY (priv->entry), _("Color name..."));
 	gtk_container_add (GTK_CONTAINER (priv->revealer), priv->entry);
 	gtk_widget_show (priv->entry);
 
