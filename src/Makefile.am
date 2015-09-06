@@ -10,11 +10,11 @@ gcolor3_SOURCES = \
 
 gcolor3_CFLAGS = \
 	-DLOCALE_DIR=\"$(localedir)\" \
-	$(GTK3_CFLAGS) \
+	$(GCOLOR3_CFLAGS) \
 	$(AM_CFLAGS)
 
 gcolor3_LDADD = \
-	$(GTK3_LIBS)
+	$(GCOLOR3_LIBS)
 
 gcolor3_LDFLAGS = \
 	-export-dynamic -no-undefined

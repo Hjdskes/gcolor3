@@ -4,9 +4,9 @@ SUBDIRS = \
 	src
 
 EXTRA_DIST = \
-	${top_srcdir}/AUTHORS \
-	${top_srcdir}/LICENSE \
-	${top_srcdir}/README.md
+	${srcdir}/AUTHORS \
+	${srcdir}/LICENSE \
+	${srcdir}/README.md
 
 DISTCLEANFILES = \
 	intltool-extract \
