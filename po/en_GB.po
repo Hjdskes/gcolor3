@@ -7,8 +7,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 2.0\n"
-"Report-Msgid-Bugs-To: hjdskes@gmail.com\n"
-"POT-Creation-Date: 2015-07-28 18:17+0200\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-09-06 16:04+0200\n"
 "PO-Revision-Date: 2013-06-11 13:09+0200\n"
 "Last-Translator: Jente Hidskes <hjdskes@gmail.com>\n"
 "Language-Team: British English\n"
@@ -20,9 +20,9 @@ msgstr ""
 #: ../data/gcolor3.desktop.in.in.h:1 ../src/main.c:39
 #: ../src/gcolor3-application.c:146
 msgid "Color picker"
-msgstr "Color picker"
+msgstr "Colour picker"
 
-#: ../data/gcolor3.desktop.in.in.h:2 ../src/gcolor3-window.c:507
+#: ../data/gcolor3.desktop.in.in.h:2 ../src/gcolor3-window.c:478
 msgid "Choose colors from the palette or the screen"
 msgstr "Choose colours from the palette or the screen"
 
@@ -35,11 +35,11 @@ msgstr "Colour;Picker;Palette"
 msgid "Show the application's version"
 msgstr "Show the application's version"
 
-#: ../src/main.c:61
+#: ../src/main.c:56
 msgid "- pick a color from the palette or the screen"
 msgstr "- pick a colour from the palette or the screen"
 
-#: ../src/main.c:69
+#: ../src/main.c:67
 #, c-format
 msgid "Run '%s --help' to see a full list of available command line options"
 msgstr "Run '%s --help' to see a full list of available command line options"
@@ -60,36 +60,39 @@ msgstr "Error opening file: "
 msgid "Error writing file: "
 msgstr "Error writing file: "
 
-#: ../src/gcolor3-window.c:129
+#: ../src/gcolor3-window.c:124
 msgid "Error deleting key: "
 msgstr "Error deleting key: "
 
-#: ../src/gcolor3-window.c:385
+#: ../src/gcolor3-window.c:336
+msgid "Color name..."
+msgstr "Colour name..."
+
+#: ../src/gcolor3-window.c:359
 msgid "Palette"
 msgstr "Palette"
 
-#: ../src/gcolor3-window.c:398
+#: ../src/gcolor3-window.c:369
 msgid "Saved colors"
 msgstr "Saved colours"
 
-#: ../src/gcolor3-window.c:413
+#: ../src/gcolor3-window.c:384
 msgid "Color"
 msgstr "Colour"
 
-#: ../src/gcolor3-window.c:428
+#: ../src/gcolor3-window.c:399
 msgid "Name"
 msgstr "Name"
 
 #. Translators: translate this to give yourself credits.
-#: ../src/gcolor3-window.c:511
+#: ../src/gcolor3-window.c:482
 msgid "translator-credits"
 msgstr "Jente Hidskes"
 
-#: ../src/gcolor3-window.c:512
+#: ../src/gcolor3-window.c:483
 msgid "Website"
 msgstr "Website"
 
-#: ../src/gcolor3-window.c:546
+#: ../src/gcolor3-window.c:517
 msgid "Error reading keys: "
 msgstr "Error reading keys: "
-

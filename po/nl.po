@@ -7,8 +7,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 2.0\n"
-"Report-Msgid-Bugs-To: hjdskes@gmail.com\n"
-"POT-Creation-Date: 2015-07-28 12:20+0200\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-09-06 16:04+0200\n"
 "PO-Revision-Date: 2015-07-28 11:17+0200\n"
 "Last-Translator: Jente Hidskes <hjdskes@gmail.com>\n"
 "Language-Team: Dutch\n"
@@ -18,11 +18,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../data/gcolor3.desktop.in.in.h:1 ../src/main.c:39
-#: ../src/gcolor3-application.c:155
+#: ../src/gcolor3-application.c:146
 msgid "Color picker"
 msgstr "Kleurenkiezer"
 
-#: ../data/gcolor3.desktop.in.in.h:2 ../src/gcolor3-window.c:507
+#: ../data/gcolor3.desktop.in.in.h:2 ../src/gcolor3-window.c:478
 msgid "Choose colors from the palette or the screen"
 msgstr "Kies kleuren van het palet of van het scherm"
 
@@ -35,61 +35,64 @@ msgstr "Kleur;Kiezer;Palet;"
 msgid "Show the application's version"
 msgstr "Toon versienummer van de applicatie"
 
-#: ../src/main.c:61
+#: ../src/main.c:56
 msgid "- pick a color from the palette or the screen"
 msgstr "- kies een kleur van het palet of van het scherm"
 
-#: ../src/main.c:69
+#: ../src/main.c:67
 #, c-format
 msgid "Run '%s --help' to see a full list of available command line options"
 msgstr "Voer '%s --help' uit om alle mogelijke opdracht-opties te zien"
 
-#: ../src/gcolor3-application.c:95
+#: ../src/gcolor3-application.c:86
 msgid "About"
 msgstr "Over"
 
-#: ../src/gcolor3-application.c:96
+#: ../src/gcolor3-application.c:87
 msgid "Quit"
 msgstr "Afsluiten"
 
-#: ../src/gcolor3-application.c:140
+#: ../src/gcolor3-application.c:131
 msgid "Error opening file: "
 msgstr "Fout bij het openen van bestand: "
 
-#: ../src/gcolor3-application.c:187
+#: ../src/gcolor3-application.c:178
 msgid "Error writing file: "
 msgstr "Fout bij het schrijven van bestand: "
 
-#: ../src/gcolor3-window.c:129
+#: ../src/gcolor3-window.c:124
 msgid "Error deleting key: "
 msgstr "Fout bij het verwijderen van sleutel: "
 
-#: ../src/gcolor3-window.c:385
+#: ../src/gcolor3-window.c:336
+msgid "Color name..."
+msgstr "Kleurnaam..."
+
+#: ../src/gcolor3-window.c:359
 msgid "Palette"
 msgstr "Palet"
 
-#: ../src/gcolor3-window.c:398
+#: ../src/gcolor3-window.c:369
 msgid "Saved colors"
 msgstr "Opgeslagen kleuren"
 
-#: ../src/gcolor3-window.c:413
+#: ../src/gcolor3-window.c:384
 msgid "Color"
 msgstr "Kleur"
 
-#: ../src/gcolor3-window.c:428
+#: ../src/gcolor3-window.c:399
 msgid "Name"
 msgstr "Naam"
 
 #. Translators: translate this to give yourself credits.
-#: ../src/gcolor3-window.c:510
+#: ../src/gcolor3-window.c:482
 msgid "translator-credits"
 msgstr "Jente Hidskes"
 
-#: ../src/gcolor3-window.c:511
+#: ../src/gcolor3-window.c:483
 msgid "Website"
 msgstr "Webpagina"
 
-#: ../src/gcolor3-window.c:545
+#: ../src/gcolor3-window.c:517
 msgid "Error reading keys: "
 msgstr "Fout bij het lezen van sleutels: "
-

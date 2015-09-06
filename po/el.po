@@ -2,20 +2,30 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-07-29 19:02+0200\n"
+"POT-Creation-Date: 2015-09-06 16:04+0200\n"
 "PO-Revision-Date: Wed Jul 29 2015 19:07:48 GMT+0200 (CEST)\n"
 "Last-Translator: Konstantinos Thermos <info@subdee.org>\n"
 "Language-Team: Greek\n"
 "Language: el\n"
-"Plural-Forms: nplurals=2; plural=n != 1\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Loco-Source-Locale: en_US\n"
 "X-Generator: Loco - https://localise.biz/\n"
 "X-Loco-Parser: loco_parse_po\n"
-"X-Loco-Target-Locale: el_GR"
+"X-Loco-Target-Locale: el_GR\n"
+
+#: ../data/gcolor3.desktop.in.in.h:1 ../src/main.c:39
+#: ../src/gcolor3-application.c:146
+#, fuzzy
+msgid "Color picker"
+msgstr "Επιλογέας χρώματος"
+
+#: ../data/gcolor3.desktop.in.in.h:2 ../src/gcolor3-window.c:478
+msgid "Choose colors from the palette or the screen"
+msgstr "Επιλέξτε χρώματα απο την παλέτα ή απο την οθόνη"
 
 #. Extra keywords that can be used to search for Gcolor3 in GNOME Shell and Unity
 #: ../data/gcolor3.desktop.in.in.h:4
@@ -26,7 +36,12 @@ msgstr "Χρώμα;Επιλογέας;Παλέτα;"
 msgid "Show the application's version"
 msgstr "Εμφάνιση έκδοσης εφαρμογής"
 
-#: ../src/main.c:69
+#: ../src/main.c:56
+#, fuzzy
+msgid "- pick a color from the palette or the screen"
+msgstr "- επιλέξτε χρώματα απο την παλέτα ή απο την οθόνη"
+
+#: ../src/main.c:67
 #, c-format
 msgid "Run '%s --help' to see a full list of available command line options"
 msgstr ""
@@ -49,50 +64,39 @@ msgstr "Σφάλμα στο άνοιγμα του αρχείου: "
 msgid "Error writing file: "
 msgstr "Σφάλμα στην αποθήκευση στο αρχείο: "
 
-#: ../src/gcolor3-window.c:129
+#: ../src/gcolor3-window.c:124
 msgid "Error deleting key: "
 msgstr "Σφάλμα στη διαγραφή του κλειδιού: "
 
-#: ../src/gcolor3-window.c:385
+#: ../src/gcolor3-window.c:336
+msgid "Color name..."
+msgstr "Το όνομά χρώμα..."
+
+#: ../src/gcolor3-window.c:359
 msgid "Palette"
 msgstr "Παλέτα"
 
-#. Translators: translate this to give yourself credits.
-#: ../src/gcolor3-window.c:511
-msgid "translator-credits"
-msgstr "Κωνσταντίνος Θερμός"
-
-#: ../src/gcolor3-window.c:546
-msgid "Error reading keys: "
-msgstr "Σφάλμα στην ανάγνωση των κλειδιών: "
-
-#: ../data/gcolor3.desktop.in.in.h:1 ../src/main.c:39
-#: ../src/gcolor3-application.c:146
-#, fuzzy
-msgid "Color picker"
-msgstr "Επιλογέας χρώματος"
-
-#: ../src/main.c:61
-#, fuzzy
-msgid "- pick a color from the palette or the screen"
-msgstr "Επιλέξτε χρώματα απο την παλέτα ή απο την οθόνη"
-
-#: ../data/gcolor3.desktop.in.in.h:2 ../src/gcolor3-window.c:507
-msgid "Choose colors from the palette or the screen"
-msgstr "Επιλέξτε χρώματα απο την παλέτα ή απο την οθόνη"
-
-#: ../src/gcolor3-window.c:398
+#: ../src/gcolor3-window.c:369
 msgid "Saved colors"
 msgstr "Αποθηκευμένα χρώματα"
 
-#: ../src/gcolor3-window.c:413
+#: ../src/gcolor3-window.c:384
 msgid "Color"
 msgstr "Χρώμα"
 
-#: ../src/gcolor3-window.c:428
+#: ../src/gcolor3-window.c:399
 msgid "Name"
 msgstr "Όνομα"
 
-#: ../src/gcolor3-window.c:512
+#. Translators: translate this to give yourself credits.
+#: ../src/gcolor3-window.c:482
+msgid "translator-credits"
+msgstr "Κωνσταντίνος Θερμός"
+
+#: ../src/gcolor3-window.c:483
 msgid "Website"
 msgstr "Ιστοσελίδα"
+
+#: ../src/gcolor3-window.c:517
+msgid "Error reading keys: "
+msgstr "Σφάλμα στην ανάγνωση των κλειδιών: "

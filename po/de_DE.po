@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 2.0\n"
-"Report-Msgid-Bugs-To: hjdskes@gmail.com\n"
-"POT-Creation-Date: 2015-07-29 19:33+0200\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-09-06 16:04+0200\n"
 "PO-Revision-Date: 2015-07-29 19:38+0200\n"
 "Last-Translator: Jens John <dev@2ion.de>\n"
 "Language-Team: German Translations\n"
@@ -21,7 +21,7 @@ msgstr ""
 msgid "Color picker"
 msgstr "Farbpalette"
 
-#: ../data/gcolor3.desktop.in.in.h:2 ../src/gcolor3-window.c:507
+#: ../data/gcolor3.desktop.in.in.h:2 ../src/gcolor3-window.c:478
 msgid "Choose colors from the palette or the screen"
 msgstr "Wählen Sie eine Farbe von Palette oder Bildschirm"
 
@@ -34,12 +34,12 @@ msgstr "Farbe;Farbauswahl;Farbpalette;"
 msgid "Show the application's version"
 msgstr "Programmversion anzeigen"
 
-#: ../src/main.c:61
+#: ../src/main.c:56
 #, fuzzy
 msgid "- pick a color from the palette or the screen"
 msgstr "- wählen Sie eine Farbe von Palette oder Bildschirm"
 
-#: ../src/main.c:69
+#: ../src/main.c:67
 #, c-format
 msgid "Run '%s --help' to see a full list of available command line options"
 msgstr "'%s --help' ausführen, um die vollständige Parameterliste anzuzeigen"
@@ -60,36 +60,39 @@ msgstr "Fehler beim Öffnen der Datei: "
 msgid "Error writing file: "
 msgstr "Fehler beim Schreiben der Datei: "
 
-#: ../src/gcolor3-window.c:129
+#: ../src/gcolor3-window.c:124
 msgid "Error deleting key: "
 msgstr "Fehler beim Löschen des Schlüssels: "
 
-#: ../src/gcolor3-window.c:385
+#: ../src/gcolor3-window.c:336
+msgid "Color name..."
+msgstr "Farbnamen..."
+
+#: ../src/gcolor3-window.c:359
 msgid "Palette"
 msgstr "Palette"
 
-#: ../src/gcolor3-window.c:398
+#: ../src/gcolor3-window.c:369
 msgid "Saved colors"
 msgstr "Gespeicherte Farben"
 
-#: ../src/gcolor3-window.c:413
+#: ../src/gcolor3-window.c:384
 msgid "Color"
 msgstr "Farbe"
 
-#: ../src/gcolor3-window.c:428
+#: ../src/gcolor3-window.c:399
 msgid "Name"
 msgstr "Name"
 
 #. Translators: translate this to give yourself credits.
-#: ../src/gcolor3-window.c:511
+#: ../src/gcolor3-window.c:482
 msgid "translator-credits"
 msgstr "Jens John"
 
-#: ../src/gcolor3-window.c:512
+#: ../src/gcolor3-window.c:483
 msgid "Website"
 msgstr "Webseite"
 
-#: ../src/gcolor3-window.c:546
+#: ../src/gcolor3-window.c:517
 msgid "Error reading keys: "
 msgstr "Fehler beim Lesen der Schlüssel: "
-

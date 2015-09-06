@@ -6,22 +6,22 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 2.0\n"
-"Report-Msgid-Bugs-To: hjdskes@gmail.com\n"
-"POT-Creation-Date: 2015-07-28 18:17+0200\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-09-06 16:04+0200\n"
 "PO-Revision-Date: 2015-07-29 21:54+0200\n"
+"Last-Translator: Nicolas Gaulard-Querol <nicolas.gqquerol@gmail.com>\n"
 "Language-Team: French\n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Last-Translator: Nicolas Gaulard-Querol <nicolas.gqquerol@gmail.com>\n"
-"Language: fr\n"
 
 #: ../data/gcolor3.desktop.in.in.h:1 ../src/main.c:39
 #: ../src/gcolor3-application.c:146
 msgid "Color picker"
 msgstr "Sélecteur de couleur"
 
-#: ../data/gcolor3.desktop.in.in.h:2 ../src/gcolor3-window.c:507
+#: ../data/gcolor3.desktop.in.in.h:2 ../src/gcolor3-window.c:478
 msgid "Choose colors from the palette or the screen"
 msgstr "Choisissez les couleurs depuis la palette ou l’écran"
 
@@ -34,14 +34,16 @@ msgstr "Couleur;Sélecteur;Palette"
 msgid "Show the application's version"
 msgstr "Afficher la version de l’application"
 
-#: ../src/main.c:61
+#: ../src/main.c:56
 msgid "- pick a color from the palette or the screen"
 msgstr "- choisir une couleur depuis la palette ou l’écran"
 
-#: ../src/main.c:69
+#: ../src/main.c:67
 #, c-format
 msgid "Run '%s --help' to see a full list of available command line options"
-msgstr "Utilisez '%s --help' pour voir une liste complète des options de ligne de commande disponibles"
+msgstr ""
+"Utilisez '%s --help' pour voir une liste complète des options de ligne de "
+"commande disponibles"
 
 #: ../src/gcolor3-application.c:86
 msgid "About"
@@ -59,35 +61,39 @@ msgstr "Erreur lors de l’ouverture du fichier: "
 msgid "Error writing file: "
 msgstr "Erreur lors de l’écriture du fichier: "
 
-#: ../src/gcolor3-window.c:129
+#: ../src/gcolor3-window.c:124
 msgid "Error deleting key: "
 msgstr "Erreur lors de la suppression de la clé: "
 
-#: ../src/gcolor3-window.c:385
+#: ../src/gcolor3-window.c:336
+msgid "Color name..."
+msgstr "Nom de la couleur..."
+
+#: ../src/gcolor3-window.c:359
 msgid "Palette"
 msgstr "Palette"
 
-#: ../src/gcolor3-window.c:398
+#: ../src/gcolor3-window.c:369
 msgid "Saved colors"
 msgstr "Couleurs sauvegardées"
 
-#: ../src/gcolor3-window.c:413
+#: ../src/gcolor3-window.c:384
 msgid "Color"
 msgstr "Couleur"
 
-#: ../src/gcolor3-window.c:428
+#: ../src/gcolor3-window.c:399
 msgid "Name"
 msgstr "Nom"
 
 #. Translators: translate this to give yourself credits.
-#: ../src/gcolor3-window.c:511
+#: ../src/gcolor3-window.c:482
 msgid "translator-credits"
 msgstr "Nicolas Gaulard-Querol"
 
-#: ../src/gcolor3-window.c:512
+#: ../src/gcolor3-window.c:483
 msgid "Website"
 msgstr "Site web"
 
-#: ../src/gcolor3-window.c:546
+#: ../src/gcolor3-window.c:517
 msgid "Error reading keys: "
 msgstr "Erreur lors de la lecture des clés: "
