@@ -188,9 +188,7 @@ gcolor3_application_shutdown (GApplication *application)
 static void
 gcolor3_application_class_init (Gcolor3ApplicationClass *gcolor3_application_class)
 {
-	GApplicationClass *application_class;
-
-	application_class = (GApplicationClass *) gcolor3_application_class;
+	GApplicationClass *application_class = G_APPLICATION_CLASS (gcolor3_application_class);
 
 	application_class->startup = gcolor3_application_startup;
 	application_class->activate = gcolor3_application_activate;

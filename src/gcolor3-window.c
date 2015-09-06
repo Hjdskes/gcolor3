@@ -437,7 +437,7 @@ gcolor3_window_constructor (GType type,
 static void
 gcolor3_window_class_init (Gcolor3WindowClass *gcolor3_window_class)
 {
-	GObjectClass *object_class = (GObjectClass *) gcolor3_window_class;
+	GObjectClass *object_class = G_OBJECT_CLASS (gcolor3_window_class);
 
 	object_class->constructor = gcolor3_window_constructor;
 }
