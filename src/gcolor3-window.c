@@ -83,21 +83,26 @@ gcolor3_window_action_save (GSimpleAction *action,
 {
 	Gcolor3WindowPrivate *priv;
 	const gchar *key;
+	gchar *hex;
 
 	g_return_if_fail (GCOLOR3_IS_WINDOW (user_data));
 	priv = gcolor3_window_get_instance_private (GCOLOR3_WINDOW (user_data));
 	g_return_if_fail (priv->colors != NULL);
 
 	key = gtk_entry_get_text (GTK_ENTRY (priv->entry));
-	if (!g_key_file_has_key (priv->colors, "Colors", key, NULL)) {
-		gchar *hex;
-
-		hex = hex_value (&priv->current);
-		g_key_file_set_string (priv->colors, "Colors", strlen (key) == 0 ? hex : key, hex);
-		gcolor3_window_add_color_to_list (GCOLOR3_WINDOW (user_data),
-						  key, hex, TRUE);
-		g_free (hex);
+	hex = hex_value (&priv->current);
+	if (strlen (key) == 0) {
+		/* If using `hex` as key, do not save the first character (e.g., `#`)
+		 * because GKeyFile will see these as (and subsequently ignore) comments. */
+		key = hex + 1;
 	}
+
+	if (!g_key_file_has_key (priv->colors, "Colors", key, NULL)) {
+		g_key_file_set_string (priv->colors, "Colors", key, hex);
+		gcolor3_window_add_color_to_list (GCOLOR3_WINDOW (user_data), key, hex, TRUE);
+	}
+
+	g_free (hex);
 }
 
 static void
@@ -482,7 +487,7 @@ gcolor3_window_show_about_dialog (Gcolor3Window *window)
 			       "translator-credits", _("translator-credits"),
 			       "website-label", _("Website"),
 			       "website", PACKAGE_URL,
-			       "logo-icon-name", "gcolor3",
+			       "logo-icon-name", gtk_window_get_default_icon_name (),
 			       "wrap-license", TRUE,
 			       "license-type", GTK_LICENSE_GPL_2_0,
 			       NULL);
