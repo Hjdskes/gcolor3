@@ -16,6 +16,8 @@ Once the ridiculous amount of dependencies is installed, just run these commands
 	$ ./autogen.sh
 	$ make
 	# make clean install
+	
+**Note :** There is a [copr repository](https://copr.fedoraproject.org/coprs/fnux/GColor3/) for Fedora.	
 
 Translations
 ------------
