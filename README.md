@@ -9,6 +9,17 @@ Gcolor3
 Installation
 ------------
 
+### Distribution packages
+
+Gcolor3 is packaged for some distributions. This should be your preferred method of installation, if
+your distribution is listed below:
+
+* **Arch Linux:** There are AUR packages for the [latest stable release](https://aur.archlinux.org/packages/gcolor3/) and for the [git version](https://aur.archlinux.org/packages/gcolor3-git/).
+* **Fedora:** There is a [copr repository](https://copr.fedoraproject.org/coprs/fnux/GColor3/) to
+  install Gcolor3. Please see the instructions there.
+
+### Compile from source
+
 The only dependency required to build and run Gcolor3, is GTK3.
 
 Once the ridiculous amount of dependencies is installed, just run these commands to build and install Gcolor3:
