@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-06 16:04+0200\n"
+"POT-Creation-Date: 2015-09-12 19:19+0200\n"
 "PO-Revision-Date: 2015-07-28 11:17+0200\n"
 "Last-Translator: Jente Hidskes <hjdskes@gmail.com>\n"
 "Language-Team: Dutch\n"
@@ -22,9 +22,9 @@ msgstr ""
 msgid "Color picker"
 msgstr "Kleurenkiezer"
 
-#: ../data/gcolor3.desktop.in.in.h:2 ../src/gcolor3-window.c:478
-msgid "Choose colors from the palette or the screen"
-msgstr "Kies kleuren van het palet of van het scherm"
+#: ../data/gcolor3.desktop.in.in.h:2 ../src/gcolor3-window.c:499
+msgid "Choose colors from the picker or the screen"
+msgstr "Kies kleuren van de kiezer of van het scherm"
 
 #. Extra keywords that can be used to search for Gcolor3 in GNOME Shell and Unity
 #: ../data/gcolor3.desktop.in.in.h:4
@@ -36,8 +36,8 @@ msgid "Show the application's version"
 msgstr "Toon versienummer van de applicatie"
 
 #: ../src/main.c:56
-msgid "- pick a color from the palette or the screen"
-msgstr "- kies een kleur van het palet of van het scherm"
+msgid "- pick a color from the picker or the screen"
+msgstr "- kies een kleur van de kiezer of van het scherm"
 
 #: ../src/main.c:67
 #, c-format
@@ -60,39 +60,40 @@ msgstr "Fout bij het openen van bestand: "
 msgid "Error writing file: "
 msgstr "Fout bij het schrijven van bestand: "
 
-#: ../src/gcolor3-window.c:124
+#: ../src/gcolor3-window.c:129
 msgid "Error deleting key: "
 msgstr "Fout bij het verwijderen van sleutel: "
 
-#: ../src/gcolor3-window.c:336
+#: ../src/gcolor3-window.c:341
 msgid "Color name..."
 msgstr "Kleurnaam..."
 
-#: ../src/gcolor3-window.c:359
-msgid "Palette"
-msgstr "Palet"
+#: ../src/gcolor3-window.c:364
+msgid "Picker"
+msgstr "Kiezer"
 
-#: ../src/gcolor3-window.c:369
+#: ../src/gcolor3-window.c:374
 msgid "Saved colors"
 msgstr "Opgeslagen kleuren"
 
-#: ../src/gcolor3-window.c:384
+#: ../src/gcolor3-window.c:389
 msgid "Color"
 msgstr "Kleur"
 
-#: ../src/gcolor3-window.c:399
+#: ../src/gcolor3-window.c:404
 msgid "Name"
 msgstr "Naam"
 
 #. Translators: translate this to give yourself credits.
-#: ../src/gcolor3-window.c:482
+#: ../src/gcolor3-window.c:503
 msgid "translator-credits"
 msgstr "Jente Hidskes"
 
-#: ../src/gcolor3-window.c:483
+#: ../src/gcolor3-window.c:504
 msgid "Website"
 msgstr "Webpagina"
 
-#: ../src/gcolor3-window.c:517
+#: ../src/gcolor3-window.c:538
 msgid "Error reading keys: "
 msgstr "Fout bij het lezen van sleutels: "
+

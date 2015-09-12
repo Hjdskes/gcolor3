@@ -1,3 +1,5 @@
+2015-07-28: v2.0.1: Renamed `palette` to `picker`
+
 2015-07-28: v2.0: Rewritten user interface. There are now several new (straightforward)
 		  translations, with a few old translations removed.
 

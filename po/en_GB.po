@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-06 16:04+0200\n"
+"POT-Creation-Date: 2015-09-12 19:19+0200\n"
 "PO-Revision-Date: 2013-06-11 13:09+0200\n"
 "Last-Translator: Jente Hidskes <hjdskes@gmail.com>\n"
 "Language-Team: British English\n"
@@ -22,9 +22,9 @@ msgstr ""
 msgid "Color picker"
 msgstr "Colour picker"
 
-#: ../data/gcolor3.desktop.in.in.h:2 ../src/gcolor3-window.c:478
-msgid "Choose colors from the palette or the screen"
-msgstr "Choose colours from the palette or the screen"
+#: ../data/gcolor3.desktop.in.in.h:2 ../src/gcolor3-window.c:499
+msgid "Choose colors from the picker or the screen"
+msgstr "Choose colours from the picker or the screen"
 
 #. Extra keywords that can be used to search for Gcolor3 in GNOME Shell and Unity
 #: ../data/gcolor3.desktop.in.in.h:4
@@ -36,8 +36,8 @@ msgid "Show the application's version"
 msgstr "Show the application's version"
 
 #: ../src/main.c:56
-msgid "- pick a color from the palette or the screen"
-msgstr "- pick a colour from the palette or the screen"
+msgid "- pick a color from the picker or the screen"
+msgstr "- pick a colour from the picker or the screen"
 
 #: ../src/main.c:67
 #, c-format
@@ -60,39 +60,40 @@ msgstr "Error opening file: "
 msgid "Error writing file: "
 msgstr "Error writing file: "
 
-#: ../src/gcolor3-window.c:124
+#: ../src/gcolor3-window.c:129
 msgid "Error deleting key: "
 msgstr "Error deleting key: "
 
-#: ../src/gcolor3-window.c:336
+#: ../src/gcolor3-window.c:341
 msgid "Color name..."
 msgstr "Colour name..."
 
-#: ../src/gcolor3-window.c:359
-msgid "Palette"
-msgstr "Palette"
+#: ../src/gcolor3-window.c:364
+msgid "Picker"
+msgstr "Picker"
 
-#: ../src/gcolor3-window.c:369
+#: ../src/gcolor3-window.c:374
 msgid "Saved colors"
 msgstr "Saved colours"
 
-#: ../src/gcolor3-window.c:384
+#: ../src/gcolor3-window.c:389
 msgid "Color"
 msgstr "Colour"
 
-#: ../src/gcolor3-window.c:399
+#: ../src/gcolor3-window.c:404
 msgid "Name"
 msgstr "Name"
 
 #. Translators: translate this to give yourself credits.
-#: ../src/gcolor3-window.c:482
+#: ../src/gcolor3-window.c:503
 msgid "translator-credits"
 msgstr "Jente Hidskes"
 
-#: ../src/gcolor3-window.c:483
+#: ../src/gcolor3-window.c:504
 msgid "Website"
 msgstr "Website"
 
-#: ../src/gcolor3-window.c:517
+#: ../src/gcolor3-window.c:538
 msgid "Error reading keys: "
 msgstr "Error reading keys: "
+
