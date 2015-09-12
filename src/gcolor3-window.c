@@ -53,7 +53,7 @@ struct _Gcolor3WindowPrivate {
 	GtkWidget *revealer;
 	GtkWidget *entry;
 	GtkWidget *stack;
-	GtkWidget *palette;
+	GtkWidget *picker;
 	GtkWidget *tree;
 
 	GKeyFile *colors; /* Do not free: owned by Gcolor3Application! */
@@ -148,7 +148,7 @@ gcolor3_window_action_change_page (GSimpleAction *action,
 
 	page = gtk_stack_get_visible_child_name (GTK_STACK (priv->stack));
 	if (g_strcmp0 (page, "saved-colors") == 0) {
-		gtk_stack_set_visible_child_name (GTK_STACK (priv->stack), "palette");
+		gtk_stack_set_visible_child_name (GTK_STACK (priv->stack), "picker");
 	} else {
 		gtk_stack_set_visible_child_name (GTK_STACK (priv->stack), "saved-colors");
 	}
@@ -216,14 +216,14 @@ gcolor3_window_add_color_to_list (Gcolor3Window *window,
 }
 
 static void
-gcolor3_window_palette_changed (GtkColorSelection *palette, gpointer user_data)
+gcolor3_window_picker_changed (GtkColorSelection *picker, gpointer user_data)
 {
 	Gcolor3WindowPrivate *priv;
 
 	g_return_if_fail (GCOLOR3_IS_WINDOW (user_data));
 	priv = gcolor3_window_get_instance_private (GCOLOR3_WINDOW (user_data));
 
-	gtk_color_selection_get_current_color (GTK_COLOR_SELECTION (palette), &priv->current);
+	gtk_color_selection_get_current_color (GTK_COLOR_SELECTION (picker), &priv->current);
 }
 
 /* FIXME: delete button is sensitive when switching to saved colors,
@@ -286,13 +286,13 @@ gcolor3_window_selection_changed (GtkTreeSelection *selection, gpointer user_dat
 		gdk_color_parse (color, &new);
 		g_free (color);
 
-		/* Save the old color in the palette. */
+		/* Save the old color in the picker. */
 		gtk_color_selection_get_current_color (
-			GTK_COLOR_SELECTION (priv->palette), &current);
+			GTK_COLOR_SELECTION (priv->picker), &current);
 		gtk_color_selection_set_previous_color (
-			GTK_COLOR_SELECTION (priv->palette), &current);
+			GTK_COLOR_SELECTION (priv->picker), &current);
 		gtk_color_selection_set_current_color (
-			GTK_COLOR_SELECTION (priv->palette), &new);
+			GTK_COLOR_SELECTION (priv->picker), &new);
 
 		gtk_widget_set_sensitive (priv->button, TRUE);
 	} else {
@@ -355,14 +355,14 @@ gcolor3_window_construct_ui (Gcolor3Window *window)
 	gtk_header_bar_pack_start (GTK_HEADER_BAR (headerbar), switcher);
 	gtk_widget_show (switcher);
 
-	priv->palette = gtk_color_selection_new ();
-	g_signal_connect (priv->palette, "color-changed",
-			  G_CALLBACK (gcolor3_window_palette_changed), window);
+	priv->picker = gtk_color_selection_new ();
+	g_signal_connect (priv->picker, "color-changed",
+			  G_CALLBACK (gcolor3_window_picker_changed), window);
 	/* Call the above callback to initialise the GtkEntry and to prevent
 	 * saving #000000 when saving the white color right away. */
-	gcolor3_window_palette_changed (GTK_COLOR_SELECTION (priv->palette), window);
-	gtk_stack_add_titled (GTK_STACK (priv->stack), priv->palette, "palette", _("Palette"));
-	gtk_widget_show (priv->palette);
+	gcolor3_window_picker_changed (GTK_COLOR_SELECTION (priv->picker), window);
+	gtk_stack_add_titled (GTK_STACK (priv->stack), priv->picker, "picker", _("Picker"));
+	gtk_widget_show (priv->picker);
 
 	scroll = gtk_scrolled_window_new (NULL, NULL);
 	gtk_widget_set_vexpand (scroll, TRUE);
@@ -496,7 +496,7 @@ gcolor3_window_show_about_dialog (Gcolor3Window *window)
 			       "program-name", g_get_application_name (),
 			       "version", PACKAGE_VERSION,
 			       "copyright", "Copyright \xc2\xa9 "COPYRIGHT" Jente Hidskes",
-			       "comments", _("Choose colors from the palette or the screen"),
+			       "comments", _("Choose colors from the picker or the screen"),
 			       "authors", authors,
 			       "artists", artists,
 			       /* Translators: translate this to give yourself credits. */

@@ -53,7 +53,7 @@ _parse_options (int argc, char **argv)
 	GError *error = NULL;
 	gboolean succes;
 
-	context = g_option_context_new (_("- pick a color from the palette or the screen"));
+	context = g_option_context_new (_("- pick a color from the picker or the screen"));
 	g_option_context_add_main_entries (context, options, GETTEXT_PACKAGE);
 	/* This initialises GTK during parsing. */
 	g_option_context_add_group (context, gtk_get_option_group (FALSE));

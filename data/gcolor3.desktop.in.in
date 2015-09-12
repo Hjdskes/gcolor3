@@ -1,6 +1,6 @@
 [Desktop Entry]
 _Name=Color picker
-_Comment=Choose colors from the palette or the screen
+_Comment=Choose colors from the picker or the screen
 TryExec=@PACKAGE@
 Exec=@PACKAGE@
 Icon=@PACKAGE@
