@@ -431,11 +431,27 @@ gcolor3_window_constructor (GType type,
 }
 
 static void
+gcolor3_window_finalize (GObject *object)
+{
+	Gcolor3WindowPrivate *priv;
+	gchar *hex;
+
+	priv = gcolor3_window_get_instance_private (GCOLOR3_WINDOW (object));
+
+	hex = hex_value (&priv->current);
+	g_printf ("%s\n", hex);
+	g_free (hex);
+
+	G_OBJECT_CLASS (gcolor3_window_parent_class)->finalize (object);
+}
+
+static void
 gcolor3_window_class_init (Gcolor3WindowClass *gcolor3_window_class)
 {
 	GObjectClass *object_class = G_OBJECT_CLASS (gcolor3_window_class);
 
 	object_class->constructor = gcolor3_window_constructor;
+	object_class->finalize = gcolor3_window_finalize;
 }
 
 static void
