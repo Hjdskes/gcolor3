@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-09-17 16:31+0200\n"
-"PO-Revision-Date: 2015-09-17 16:35+0200\n"
+"PO-Revision-Date: 2015-09-18 19:05+0200\n"
 "Last-Translator: Марко М. Костић (Marko M. Kostić) "
 "<marko.m.kostic@gmail.com>\n"
 "Language-Team: Serbian\n"
@@ -58,15 +58,15 @@ msgstr "Изађи"
 
 #: ../src/gcolor3-application.c:131
 msgid "Error opening file: "
-msgstr "Грешка приликом отварања датотеке:"
+msgstr "Грешка приликом отварања датотеке: "
 
 #: ../src/gcolor3-application.c:178
 msgid "Error writing file: "
-msgstr "Грешка приликом уписивања у датотеку:"
+msgstr "Грешка приликом уписивања у датотеку: "
 
 #: ../src/gcolor3-window.c:129
 msgid "Error deleting key: "
-msgstr "Грешка приликом брисања кључа:"
+msgstr "Грешка приликом брисања кључа: "
 
 #: ../src/gcolor3-window.c:341
 msgid "Color name..."
@@ -99,4 +99,4 @@ msgstr "Веб страница"
 
 #: ../src/gcolor3-window.c:538
 msgid "Error reading keys: "
-msgstr "Грешка приликом читања кључева:"
+msgstr "Грешка приликом читања кључева: "
