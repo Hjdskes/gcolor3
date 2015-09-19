@@ -22,7 +22,6 @@ msgid "Color picker"
 msgstr "Sélecteur de couleur"
 
 #: ../data/gcolor3.desktop.in.in.h:2 ../src/gcolor3-window.c:499
-#, fuzzy
 msgid "Choose colors from the picker or the screen"
 msgstr "Choisissez les couleurs depuis le sélecteur ou l’écran"
 
@@ -36,7 +35,6 @@ msgid "Show the application's version"
 msgstr "Afficher la version de l’application"
 
 #: ../src/main.c:56
-#, fuzzy
 msgid "- pick a color from the picker or the screen"
 msgstr "- choisir une couleur depuis le sélecteur ou l’écran"
 
@@ -90,7 +88,7 @@ msgstr "Nom"
 #. Translators: translate this to give yourself credits.
 #: ../src/gcolor3-window.c:503
 msgid "translator-credits"
-msgstr "Timothée Floure"
+msgstr "Nicolas Gaulard-Querol & Timothée Floure"
 
 #: ../src/gcolor3-window.c:504
 msgid "Website"
@@ -99,6 +97,3 @@ msgstr "Site web"
 #: ../src/gcolor3-window.c:538
 msgid "Error reading keys: "
 msgstr "Erreur lors de la lecture des clés: "
-
-#~ msgid "Palette"
-#~ msgstr "Palette"
