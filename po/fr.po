@@ -1,15 +1,15 @@
 # French translation for Gcolor3.
 # Copyright (C) 2013-2015 Nicolas Gaulard-Querol <nicolas.gquerol@gmail.com>
+# Copyright (C) 2015 Timothée Floure <timothee.floure@fnux.ch>
 # This file is distributed under the same license as the Gcolor3 package.
-# Nicolas Gaulard-Querol <nicolas.gquerol@gmail.com>, 2013.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: 2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-06 16:04+0200\n"
+"POT-Creation-Date: 2015-09-19 18:53+0000\n"
 "PO-Revision-Date: 2015-07-29 21:54+0200\n"
-"Last-Translator: Nicolas Gaulard-Querol <nicolas.gqquerol@gmail.com>\n"
+"Last-Translator: Timothée Floure <timothee.floure@fnux.ch>\n"
 "Language-Team: French\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
@@ -21,9 +21,9 @@ msgstr ""
 msgid "Color picker"
 msgstr "Sélecteur de couleur"
 
-#: ../data/gcolor3.desktop.in.in.h:2 ../src/gcolor3-window.c:478
-msgid "Choose colors from the palette or the screen"
-msgstr "Choisissez les couleurs depuis la palette ou l’écran"
+#: ../data/gcolor3.desktop.in.in.h:2 ../src/gcolor3-window.c:499
+msgid "Choose colors from the picker or the screen"
+msgstr "Choisissez les couleurs depuis le sélecteur ou l’écran"
 
 #. Extra keywords that can be used to search for Gcolor3 in GNOME Shell and Unity
 #: ../data/gcolor3.desktop.in.in.h:4
@@ -35,15 +35,15 @@ msgid "Show the application's version"
 msgstr "Afficher la version de l’application"
 
 #: ../src/main.c:56
-msgid "- pick a color from the palette or the screen"
-msgstr "- choisir une couleur depuis la palette ou l’écran"
+msgid "- pick a color from the picker or the screen"
+msgstr "- choisir une couleur depuis le sélecteur ou l’écran"
 
 #: ../src/main.c:67
 #, c-format
 msgid "Run '%s --help' to see a full list of available command line options"
 msgstr ""
-"Utilisez '%s --help' pour voir une liste complète des options de ligne de "
-"commande disponibles"
+"Utilisez '%s --help' pour voir une liste complète des options disponibles en "
+"ligne de commande"
 
 #: ../src/gcolor3-application.c:86
 msgid "About"
@@ -61,39 +61,39 @@ msgstr "Erreur lors de l’ouverture du fichier: "
 msgid "Error writing file: "
 msgstr "Erreur lors de l’écriture du fichier: "
 
-#: ../src/gcolor3-window.c:124
+#: ../src/gcolor3-window.c:129
 msgid "Error deleting key: "
 msgstr "Erreur lors de la suppression de la clé: "
 
-#: ../src/gcolor3-window.c:336
+#: ../src/gcolor3-window.c:341
 msgid "Color name..."
 msgstr "Nom de la couleur..."
 
-#: ../src/gcolor3-window.c:359
-msgid "Palette"
-msgstr "Palette"
+#: ../src/gcolor3-window.c:364
+msgid "Picker"
+msgstr "Sélecteur"
 
-#: ../src/gcolor3-window.c:369
+#: ../src/gcolor3-window.c:374
 msgid "Saved colors"
 msgstr "Couleurs sauvegardées"
 
-#: ../src/gcolor3-window.c:384
+#: ../src/gcolor3-window.c:389
 msgid "Color"
 msgstr "Couleur"
 
-#: ../src/gcolor3-window.c:399
+#: ../src/gcolor3-window.c:404
 msgid "Name"
 msgstr "Nom"
 
 #. Translators: translate this to give yourself credits.
-#: ../src/gcolor3-window.c:482
+#: ../src/gcolor3-window.c:503
 msgid "translator-credits"
-msgstr "Nicolas Gaulard-Querol"
+msgstr "Nicolas Gaulard-Querol & Timothée Floure"
 
-#: ../src/gcolor3-window.c:483
+#: ../src/gcolor3-window.c:504
 msgid "Website"
 msgstr "Site web"
 
-#: ../src/gcolor3-window.c:517
+#: ../src/gcolor3-window.c:538
 msgid "Error reading keys: "
 msgstr "Erreur lors de la lecture des clés: "
