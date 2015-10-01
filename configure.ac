@@ -1,4 +1,4 @@
-AC_INIT([Gcolor3], 2.0, [hjdskes@gmail.com], [gcolor3], [https://unia.github.io/gcolor3])
+AC_INIT([Gcolor3], 2.1, [hjdskes@gmail.com], [gcolor3], [https://unia.github.io/gcolor3])
 AM_INIT_AUTOMAKE([1.11 foreign dist-xz no-dist-gzip subdir-objects -Wno-portability])
 AM_SILENT_RULES([yes])
 
