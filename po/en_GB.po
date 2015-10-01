@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-12 19:19+0200\n"
+"POT-Creation-Date: 2015-10-01 14:04+0200\n"
 "PO-Revision-Date: 2013-06-11 13:09+0200\n"
 "Last-Translator: Jente Hidskes <hjdskes@gmail.com>\n"
 "Language-Team: British English\n"
@@ -17,8 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../data/gcolor3.desktop.in.in.h:1 ../src/main.c:39
-#: ../src/gcolor3-application.c:146
+#: ../data/gcolor3.desktop.in.in.h:1 ../src/gcolor3-application.c:146
 msgid "Color picker"
 msgstr "Colour picker"
 
@@ -96,4 +95,3 @@ msgstr "Website"
 #: ../src/gcolor3-window.c:538
 msgid "Error reading keys: "
 msgstr "Error reading keys: "
-
