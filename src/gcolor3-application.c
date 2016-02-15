@@ -1,6 +1,6 @@
 /* Gcolor3Application
  *
- * Copyright (C) 2015 Jente Hidskes
+ * Copyright (C) 2015-2016 Jente Hidskes
  *
  * Author: Jente Hidskes <hjdskes@gmail.com>
  *

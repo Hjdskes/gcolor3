@@ -1,6 +1,6 @@
 /* Gcolor3Window
  *
- * Copyright (C) 2015 Jente Hidskes
+ * Copyright (C) 2015-2016 Jente Hidskes
  *
  * Author: Jente Hidskes <hjdskes@gmail.com>
  *
@@ -33,7 +33,7 @@
 #pragma GCC diagnostic ignored "-Wdeprecated-declarations"
 
 /* Copyright years. */
-#define COPYRIGHT "2013-2015"
+#define COPYRIGHT "2013-2016"
 
 /* The duration of the revealer's animation. */
 #define REVEALER_DURATION 400

@@ -61,7 +61,7 @@ License
 
 Please see [LICENSE](https://github.com/Unia/gcolor3/blob/master/LICENSE) on [GitHub][github].
 
-**Copyright © 2013 - 2015** Jente Hidskes &lt;hjdskes@gmail.com&gt;
+**Copyright © 2013 - 2016** Jente Hidskes &lt;hjdskes@gmail.com&gt;
 
   [github]: https://github.com/Unia/gcolor3
 

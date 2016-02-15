@@ -1,6 +1,6 @@
 /* Gcolor3 main
  *
- * Copyright (C) 2015 Jente Hidskes <hjdskes@gmail.com>
+ * Copyright (C) 2015-2016 Jente Hidskes <hjdskes@gmail.com>
  *
  * Author: Jente Hidskes <hjdskes@gmail.com>
  *
