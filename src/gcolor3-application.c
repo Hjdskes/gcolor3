@@ -35,8 +35,6 @@ struct _Gcolor3ApplicationPrivate {
 
 G_DEFINE_TYPE_WITH_PRIVATE (Gcolor3Application, gcolor3_application, GTK_TYPE_APPLICATION);
 
-static void gcolor3_application_shutdown (GApplication *app);
-
 static gchar *
 get_user_file (void)
 {
@@ -65,7 +63,7 @@ gcolor3_application_action_quit (UNUSED GSimpleAction *action,
 
 	windows = gtk_application_get_windows (GTK_APPLICATION (user_data));
 
-	g_list_foreach (windows, (GFunc) gcolor3_window_close, NULL);
+	g_list_foreach (windows, (GFunc) gtk_widget_destroy, NULL);
 }
 
 static GActionEntry app_entries[] = {
@@ -119,7 +117,6 @@ gcolor3_application_load_colors (Gcolor3Application *app) {
 	gchar *file;
 	GError *error = NULL;
 
-	g_return_if_fail (GCOLOR3_IS_APPLICATION (app));
 	priv = gcolor3_application_get_instance_private (app);
 
 	priv->colors = g_key_file_new ();
@@ -168,7 +165,6 @@ gcolor3_application_shutdown (GApplication *application)
 	GError *error = NULL;
 	gchar *file;
 
-	g_return_if_fail (GCOLOR3_IS_APPLICATION (application));
 	priv = gcolor3_application_get_instance_private (GCOLOR3_APPLICATION (application));
 
 	if (priv->colors != NULL) {

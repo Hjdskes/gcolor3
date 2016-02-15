@@ -85,7 +85,6 @@ gcolor3_window_action_save (UNUSED GSimpleAction *action,
 	const gchar *key;
 	gchar *hex;
 
-	g_return_if_fail (GCOLOR3_IS_WINDOW (user_data));
 	priv = gcolor3_window_get_instance_private (GCOLOR3_WINDOW (user_data));
 	g_return_if_fail (priv->colors != NULL);
 
@@ -116,7 +115,6 @@ gcolor3_window_action_delete (UNUSED GSimpleAction *action,
 	GError *error = NULL;
 	gchar *key;
 
-	g_return_if_fail (GCOLOR3_IS_WINDOW (user_data));
 	priv = gcolor3_window_get_instance_private (GCOLOR3_WINDOW (user_data));
 	g_return_if_fail (priv->colors != NULL);
 
@@ -143,7 +141,6 @@ gcolor3_window_action_change_page (UNUSED GSimpleAction *action,
 	Gcolor3WindowPrivate *priv;
 	const gchar *page;
 
-	g_return_if_fail (GCOLOR3_IS_WINDOW (user_data));
 	priv = gcolor3_window_get_instance_private (GCOLOR3_WINDOW (user_data));
 
 	page = gtk_stack_get_visible_child_name (GTK_STACK (priv->stack));
@@ -220,7 +217,6 @@ gcolor3_window_picker_changed (GtkColorSelection *picker, gpointer user_data)
 {
 	Gcolor3WindowPrivate *priv;
 
-	g_return_if_fail (GCOLOR3_IS_WINDOW (user_data));
 	priv = gcolor3_window_get_instance_private (GCOLOR3_WINDOW (user_data));
 
 	gtk_color_selection_get_current_color (GTK_COLOR_SELECTION (picker), &priv->current);
@@ -239,7 +235,6 @@ gcolor3_window_stack_changed (GtkStack          *stack,
 	GAction *save_action;
 	GAction *delete_action;
 
-	g_return_if_fail (GCOLOR3_IS_WINDOW (user_data));
 	priv = gcolor3_window_get_instance_private (GCOLOR3_WINDOW (user_data));
 
 	save_action = g_action_map_lookup_action (G_ACTION_MAP (user_data), "save");
@@ -278,7 +273,6 @@ gcolor3_window_selection_changed (GtkTreeSelection *selection, gpointer user_dat
 	GtkTreeModel *model;
 	gchar *color;
 
-	g_return_if_fail (GCOLOR3_IS_WINDOW (user_data));
 	priv = gcolor3_window_get_instance_private (GCOLOR3_WINDOW (user_data));
 
 	if (gtk_tree_selection_get_selected (selection, &model, &iter)) {
@@ -311,7 +305,6 @@ gcolor3_window_construct_ui (Gcolor3Window *window)
 	GtkWidget *switcher;
 	GtkWidget *scroll;
 
-	g_return_if_fail (GCOLOR3_IS_WINDOW (window));
 	priv = gcolor3_window_get_instance_private (window);
 
 	headerbar = gtk_header_bar_new ();
@@ -507,13 +500,6 @@ gcolor3_window_show_about_dialog (Gcolor3Window *window)
 			       "wrap-license", TRUE,
 			       "license-type", GTK_LICENSE_GPL_2_0,
 			       NULL);
-}
-
-void
-gcolor3_window_close (Gcolor3Window *window)
-{
-	g_return_if_fail (GCOLOR3_IS_WINDOW (window));
-	gtk_widget_destroy (GTK_WIDGET (window));
 }
 
 void
