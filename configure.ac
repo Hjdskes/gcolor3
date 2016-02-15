@@ -1,24 +1,33 @@
-AC_INIT([Gcolor3], 2.1, [hjdskes@gmail.com], [gcolor3], [https://unia.github.io/gcolor3])
-AM_INIT_AUTOMAKE([1.11 foreign dist-xz no-dist-gzip subdir-objects -Wno-portability])
-AM_SILENT_RULES([yes])
+AC_PREREQ(2.63.2)
 
+AC_INIT([Gcolor3], 2.1, [hjdskes@gmail.com], [gcolor3], [https://unia.github.io/gcolor3])
+
+# Dependencies
+GTK_REQUIRED=3.12.0
+
+AC_CONFIG_HEADERS(config.h)
+AC_DEFINE_UNQUOTED(UNUSED, [__attribute__ ((unused))], [Wrapper over __attribue__ ((unused))])
+
+AM_INIT_AUTOMAKE([1.11 foreign dist-xz no-dist-gzip subdir-objects -Wno-portability])
+AM_SILENT_RULES(yes)
+
+# Check for programs
 AC_PROG_CC
 AC_PROG_CC_STDC
-AC_CONFIG_HEADERS([config.h])
 
-LT_PREREQ([2.2.6])
-LT_INIT([disable-static])
+# Initialize libtool
+LT_PREREQ(2.2.6)
+LT_INIT(disable-static)
 
 # Internationalization
+IT_PROG_INTLTOOL(0.50.1)
 AM_GLIB_GNU_GETTEXT
-IT_PROG_INTLTOOL([0.50.1])
 
-GETTEXT_PACKAGE=AC_PACKAGE_NAME
-AC_SUBST(GETTEXT_PACKAGE)
+AC_SUBST(GETTEXT_PACKAGE, AC_PACKAGE_NAME)
 AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE, "$GETTEXT_PACKAGE", [Gettext package.])
 
 # Package requirements
-PKG_CHECK_MODULES([GCOLOR3], [gtk+-3.0 >= 3.12.0])
+PKG_CHECK_MODULES([GCOLOR3], [gtk+-3.0 >= GTK_REQUIRED])
 
 AC_CONFIG_FILES(Makefile
 		data/Makefile
@@ -44,3 +53,4 @@ AC_MSG_RESULT([
         cflags:                 ${CFLAGS}
         ldflags:                ${LDFLAGS}
 ])
+

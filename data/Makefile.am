@@ -1,14 +1,16 @@
 SUBDIRS = icons
 
+# Desktop file
 @INTLTOOL_DESKTOP_RULE@
-DESKTOP_IN_FILES = gcolor3.desktop.in.in
-DESKTOP_FILES = $(DESKTOP_IN_FILES:.desktop.in.in=.desktop)
-
+desktop_in_files = gcolor3.desktop.in.in
 desktopdir = $(datadir)/applications
-desktop_DATA = $(DESKTOP_FILES)
+desktop_DATA = $(desktop_in_files:.desktop.in.in=.desktop)
 
 EXTRA_DIST = \
-	$(DESKTOP_IN_FILES)
+	$(desktop_in_files)
 
 DISTCLEANFILES = \
-	$(DESKTOP_FILES)
+	$(desktop_DATA)
+
+-include $(top_srcdir)/git.mk
+

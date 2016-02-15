@@ -31,10 +31,10 @@
 #include "gcolor3-application.h"
 
 static gboolean
-_print_version_and_exit (const gchar *name,
-			 const gchar *value,
-			 gpointer     user_data,
-			 GError     **error)
+_print_version_and_exit (UNUSED const gchar *name,
+			 UNUSED const gchar *value,
+			 UNUSED gpointer     user_data,
+			 UNUSED GError     **error)
 {
 	g_print ("%s %s\n", PACKAGE_NAME, PACKAGE_VERSION);
 	exit (EXIT_SUCCESS);

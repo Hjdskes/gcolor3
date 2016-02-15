@@ -77,9 +77,9 @@ hex_value (GdkColor *color) {
 }
 
 static void
-gcolor3_window_action_save (GSimpleAction *action,
-			    GVariant      *parameter,
-			    gpointer       user_data)
+gcolor3_window_action_save (UNUSED GSimpleAction *action,
+			    UNUSED GVariant      *parameter,
+			    gpointer              user_data)
 {
 	Gcolor3WindowPrivate *priv;
 	const gchar *key;
@@ -106,9 +106,9 @@ gcolor3_window_action_save (GSimpleAction *action,
 }
 
 static void
-gcolor3_window_action_delete (GSimpleAction *action,
-			      GVariant      *parameter,
-			      gpointer       user_data)
+gcolor3_window_action_delete (UNUSED GSimpleAction *action,
+			      UNUSED GVariant      *parameter,
+			      gpointer              user_data)
 {
 	Gcolor3WindowPrivate *priv;
 	GtkTreeIter iter;
@@ -136,9 +136,9 @@ gcolor3_window_action_delete (GSimpleAction *action,
 }
 
 static void
-gcolor3_window_action_change_page (GSimpleAction *action,
-				   GVariant      *parameter,
-				   gpointer       user_data)
+gcolor3_window_action_change_page (UNUSED GSimpleAction *action,
+				   UNUSED GVariant      *parameter,
+				   gpointer              user_data)
 {
 	Gcolor3WindowPrivate *priv;
 	const gchar *page;
@@ -229,9 +229,9 @@ gcolor3_window_picker_changed (GtkColorSelection *picker, gpointer user_data)
 /* FIXME: delete button is sensitive when switching to saved colors,
  * even though there are none. */
 static void
-gcolor3_window_stack_changed (GtkStack   *stack,
-			      GParamSpec *pspec,
-			      gpointer    user_data)
+gcolor3_window_stack_changed (GtkStack          *stack,
+			      UNUSED GParamSpec *pspec,
+			      gpointer           user_data)
 {
 	Gcolor3WindowPrivate *priv;
 	GtkWidget *image;
@@ -540,7 +540,7 @@ gcolor3_window_add_colors (Gcolor3Window *window)
 		return;
 	}
 
-	for (int i = 0; i < length; i++) {
+	for (guint i = 0; i < length; i++) {
 		gchar *key = *(keys + i);
 		gchar *value;
 

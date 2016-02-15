@@ -44,9 +44,9 @@ get_user_file (void)
 }
 
 static void
-gcolor3_application_action_about (GSimpleAction *action,
-				  GVariant      *parameter,
-				  gpointer       user_data)
+gcolor3_application_action_about (UNUSED GSimpleAction *action,
+				  UNUSED GVariant      *parameter,
+				  gpointer              user_data)
 {
 	GtkWindow *window;
 
@@ -57,9 +57,9 @@ gcolor3_application_action_about (GSimpleAction *action,
 }
 
 static void
-gcolor3_application_action_quit (GSimpleAction *action,
-				 GVariant      *parameter,
-				 gpointer       user_data)
+gcolor3_application_action_quit (UNUSED GSimpleAction *action,
+				 UNUSED GVariant      *parameter,
+				 gpointer              user_data)
 {
 	GList *windows;
 
@@ -196,7 +196,7 @@ gcolor3_application_class_init (Gcolor3ApplicationClass *gcolor3_application_cla
 }
 
 static void
-gcolor3_application_init (Gcolor3Application *application)
+gcolor3_application_init (UNUSED Gcolor3Application *application)
 {
 }
 
