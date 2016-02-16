@@ -19,6 +19,9 @@ AC_PROG_CC_STDC
 LT_PREREQ(2.2.6)
 LT_INIT(disable-static)
 
+# Resources
+AC_PATH_PROG(GLIB_COMPILE_RESOURCES, glib-compile-resources)
+
 # Internationalization
 IT_PROG_INTLTOOL(0.50.1)
 AM_GLIB_GNU_GETTEXT

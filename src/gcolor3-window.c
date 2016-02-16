@@ -35,12 +35,6 @@
 /* Copyright years. */
 #define COPYRIGHT "2013-2016"
 
-/* The duration of the revealer's animation. */
-#define REVEALER_DURATION 400
-
-/* The border inside the window. */
-#define BORDER_WIDTH 6
-
 enum {
 	COLOR_PIXBUF,
 	COLOR_VALUE,
@@ -49,15 +43,16 @@ enum {
 };
 
 struct _Gcolor3WindowPrivate {
+	GtkWidget *headerbar;
 	GtkWidget *button;
 	GtkWidget *revealer;
 	GtkWidget *entry;
 	GtkWidget *stack;
 	GtkWidget *picker;
 	GtkWidget *tree;
+	GtkTreeSelection *selection;
 
 	GKeyFile *colors; /* Do not free: owned by Gcolor3Application! */
-	GtkTreeSelection *selection;
 	GdkColor current;
 };
 
@@ -295,135 +290,6 @@ gcolor3_window_selection_changed (GtkTreeSelection *selection, gpointer user_dat
 }
 
 static void
-gcolor3_window_construct_ui (Gcolor3Window *window)
-{
-	Gcolor3WindowPrivate *priv;
-	GtkListStore *liststore;
-	GtkTreeViewColumn *column;
-	GtkCellRenderer *renderer;
-	GtkWidget *headerbar;
-	GtkWidget *switcher;
-	GtkWidget *scroll;
-
-	priv = gcolor3_window_get_instance_private (window);
-
-	headerbar = gtk_header_bar_new ();
-	gtk_header_bar_set_show_close_button (GTK_HEADER_BAR (headerbar), TRUE);
-	gtk_header_bar_set_title (GTK_HEADER_BAR (headerbar), g_get_application_name ());
-	gtk_window_set_titlebar (GTK_WINDOW (window), headerbar);
-	gtk_widget_show (headerbar);
-
-	priv->button = gtk_button_new ();
-	gtk_header_bar_pack_end (GTK_HEADER_BAR (headerbar), priv->button);
-	gtk_actionable_set_action_name (GTK_ACTIONABLE (priv->button), "win.save");
-	/* Make default, so that the GtkEntry later on can use it. */
-	gtk_widget_set_can_default (priv->button, TRUE);
-	gtk_widget_grab_default (priv->button);
-	gtk_widget_show (priv->button);
-
-	priv->revealer = gtk_revealer_new ();
-	gtk_revealer_set_transition_duration (GTK_REVEALER (priv->revealer), REVEALER_DURATION);
-	gtk_revealer_set_transition_type (GTK_REVEALER (priv->revealer),
-					  GTK_REVEALER_TRANSITION_TYPE_SLIDE_LEFT);
-	gtk_header_bar_pack_end (GTK_HEADER_BAR (headerbar), priv->revealer);
-	gtk_widget_show (priv->revealer);
-
-	priv->entry = gtk_entry_new ();
-	/* Activate default widget on enter, set above. */
-	gtk_entry_set_activates_default (GTK_ENTRY (priv->entry), TRUE);
-	gtk_entry_set_placeholder_text (GTK_ENTRY (priv->entry), _("Color name..."));
-	gtk_container_add (GTK_CONTAINER (priv->revealer), priv->entry);
-	gtk_widget_show (priv->entry);
-
-	priv->stack = gtk_stack_new ();
-	gtk_stack_set_transition_type (GTK_STACK (priv->stack),
-				       GTK_STACK_TRANSITION_TYPE_SLIDE_LEFT_RIGHT);
-	g_signal_connect (priv->stack, "notify::visible-child",
-			  G_CALLBACK (gcolor3_window_stack_changed), window);
-	gtk_container_add (GTK_CONTAINER (window), priv->stack);
-	gtk_widget_show (priv->stack);
-
-	switcher = gtk_stack_switcher_new ();
-	gtk_stack_switcher_set_stack (GTK_STACK_SWITCHER (switcher), GTK_STACK (priv->stack));
-	gtk_header_bar_pack_start (GTK_HEADER_BAR (headerbar), switcher);
-	gtk_widget_show (switcher);
-
-	priv->picker = gtk_color_selection_new ();
-	g_signal_connect (priv->picker, "color-changed",
-			  G_CALLBACK (gcolor3_window_picker_changed), window);
-	/* Call the above callback to initialise the GtkEntry and to prevent
-	 * saving #000000 when saving the white color right away. */
-	gcolor3_window_picker_changed (GTK_COLOR_SELECTION (priv->picker), window);
-	gtk_stack_add_titled (GTK_STACK (priv->stack), priv->picker, "picker", _("Picker"));
-	gtk_widget_show (priv->picker);
-
-	scroll = gtk_scrolled_window_new (NULL, NULL);
-	gtk_widget_set_vexpand (scroll, TRUE);
-	gtk_scrolled_window_set_policy (GTK_SCROLLED_WINDOW (scroll),
-					GTK_POLICY_AUTOMATIC,
-					GTK_POLICY_AUTOMATIC);
-	gtk_scrolled_window_set_shadow_type (GTK_SCROLLED_WINDOW (scroll),
-					     GTK_SHADOW_IN);
-	gtk_stack_add_titled (GTK_STACK (priv->stack), scroll, "saved-colors", _("Saved colors"));
-	gtk_widget_show (scroll);
-
-	liststore = gtk_list_store_new (N_COLUMNS,
-					GDK_TYPE_PIXBUF,
-					G_TYPE_STRING,
-					G_TYPE_STRING,
-					G_TYPE_STRING);
-	priv->tree = gtk_tree_view_new_with_model (GTK_TREE_MODEL (liststore));
-	g_object_unref (liststore);
-	gtk_tree_view_set_search_column (GTK_TREE_VIEW (priv->tree), COLOR_NAME);
-	gtk_container_add (GTK_CONTAINER (scroll), priv->tree);
-	gtk_widget_show (priv->tree);
-
-	renderer = gtk_cell_renderer_pixbuf_new ();
-	column = gtk_tree_view_column_new_with_attributes (_("Color"),
-							   renderer,
-							   "pixbuf",
-							   COLOR_PIXBUF,
-							   NULL);
-	renderer = gtk_cell_renderer_text_new ();
-	gtk_tree_view_column_pack_start (column, renderer, TRUE);
-	gtk_tree_view_column_set_attributes (column,
-					     renderer,
-					     "text",
-					     COLOR_VALUE,
-					     NULL);
-	gtk_tree_view_column_set_sort_column_id (column, COLOR_VALUE);
-	gtk_tree_view_append_column (GTK_TREE_VIEW (priv->tree), column);
-
-	column = gtk_tree_view_column_new_with_attributes (_("Name"),
-							   renderer,
-							   "text",
-							   COLOR_NAME,
-							   NULL);
-	gtk_tree_view_column_set_sort_column_id (column, COLOR_NAME);
-	gtk_tree_view_append_column (GTK_TREE_VIEW (priv->tree), column);
-
-	priv->selection = gtk_tree_view_get_selection (GTK_TREE_VIEW (priv->tree));
-	gtk_tree_selection_set_mode (priv->selection, GTK_SELECTION_SINGLE);
-	g_signal_connect (priv->selection, "changed",
-			  G_CALLBACK (gcolor3_window_selection_changed), window);
-}
-
-static GObject *
-gcolor3_window_constructor (GType type,
-			    guint n_construct_properties,
-			    GObjectConstructParam *construct_params)
-{
-	GObject *object;
-
-	object = G_OBJECT_CLASS (gcolor3_window_parent_class)->constructor
-		(type, n_construct_properties, construct_params);
-
-	gcolor3_window_construct_ui (GCOLOR3_WINDOW (object));
-
-	return object;
-}
-
-static void
 gcolor3_window_finalize (GObject *object)
 {
 	Gcolor3WindowPrivate *priv;
@@ -442,22 +308,81 @@ static void
 gcolor3_window_class_init (Gcolor3WindowClass *gcolor3_window_class)
 {
 	GObjectClass *object_class = G_OBJECT_CLASS (gcolor3_window_class);
+	GtkWidgetClass *widget_class = GTK_WIDGET_CLASS (gcolor3_window_class);
 
-	object_class->constructor = gcolor3_window_constructor;
 	object_class->finalize = gcolor3_window_finalize;
+
+	gtk_widget_class_set_template_from_resource (widget_class, "/org/unia/gcolor3/window.ui");
+
+	gtk_widget_class_bind_template_child_private (widget_class, Gcolor3Window, headerbar);
+	gtk_widget_class_bind_template_child_private (widget_class, Gcolor3Window, button);
+	gtk_widget_class_bind_template_child_private (widget_class, Gcolor3Window, revealer);
+	gtk_widget_class_bind_template_child_private (widget_class, Gcolor3Window, entry);
+	gtk_widget_class_bind_template_child_private (widget_class, Gcolor3Window, stack);
+	gtk_widget_class_bind_template_child_private (widget_class, Gcolor3Window, picker);
+	gtk_widget_class_bind_template_child_private (widget_class, Gcolor3Window, tree);
+	gtk_widget_class_bind_template_child_private (widget_class, Gcolor3Window, selection);
+
+	gtk_widget_class_bind_template_callback (widget_class, gcolor3_window_stack_changed);
+	gtk_widget_class_bind_template_callback (widget_class, gcolor3_window_picker_changed);
+	gtk_widget_class_bind_template_callback (widget_class, gcolor3_window_selection_changed);
+}
+
+static void
+gcolor3_window_setup_tree_view (Gcolor3Window *window)
+{
+	Gcolor3WindowPrivate *priv;
+	GtkCellRenderer *renderer;
+	GtkTreeViewColumn *column;
+
+	priv = gcolor3_window_get_instance_private (window);
+
+	renderer = gtk_cell_renderer_pixbuf_new ();
+	column = gtk_tree_view_column_new_with_attributes (_("Color"),
+							   renderer,
+							   "pixbuf",
+							   COLOR_PIXBUF,
+							   NULL);
+
+	renderer = gtk_cell_renderer_text_new ();
+	gtk_tree_view_column_pack_start (column, renderer, TRUE);
+	gtk_tree_view_column_set_attributes (column,
+					     renderer,
+					     "text",
+					     COLOR_VALUE,
+					     NULL);
+	gtk_tree_view_column_set_sort_column_id (column, COLOR_VALUE);
+	gtk_tree_view_append_column (GTK_TREE_VIEW (priv->tree), column);
+
+	column = gtk_tree_view_column_new_with_attributes (_("Name"),
+							   renderer,
+							   "text",
+							   COLOR_NAME,
+							   NULL);
+	gtk_tree_view_column_set_sort_column_id (column, COLOR_NAME);
+	gtk_tree_view_append_column (GTK_TREE_VIEW (priv->tree), column);
 }
 
 static void
 gcolor3_window_init (Gcolor3Window *window)
 {
-	gtk_container_set_border_width (GTK_CONTAINER (window), BORDER_WIDTH);
-	gtk_window_set_resizable (GTK_WINDOW (window), FALSE);
-	gtk_window_set_position (GTK_WINDOW (window), GTK_WIN_POS_CENTER);
+	Gcolor3WindowPrivate *priv;
+
+	priv = gcolor3_window_get_instance_private (window);
+
+	gtk_widget_init_template (GTK_WIDGET (window));
+	gtk_header_bar_set_title (GTK_HEADER_BAR (priv->headerbar), g_get_application_name ());
+
+	/* Call the callback to initialise the GtkEntry and to prevent
+	 * saving #000000 when saving the white color right away. */
+	gcolor3_window_picker_changed (GTK_COLOR_SELECTION (priv->picker), window);
 
 	g_action_map_add_action_entries (G_ACTION_MAP (window),
 					 window_actions,
 					 G_N_ELEMENTS (window_actions),
 					 window);
+
+	gcolor3_window_setup_tree_view (window);
 }
 
 Gcolor3Window *

@@ -1,6 +1,9 @@
 # List of source files containing translatable strings.
 # Please keep this list sorted alphabetically.
+[encoding: UTF-8]
 data/gcolor3.desktop.in.in
+[type: gettext/glade]data/menus.ui
+[type: gettext/glade]data/window.ui
 src/main.c
 src/gcolor3-application.c
 src/gcolor3-window.c

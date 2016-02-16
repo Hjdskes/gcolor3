@@ -72,22 +72,6 @@ static GActionEntry app_entries[] = {
 };
 
 static void
-gcolor3_application_init_app_menu (GtkApplication *application)
-{
-	GMenu *menu;
-
-	g_action_map_add_action_entries (G_ACTION_MAP (application),
-					 app_entries, G_N_ELEMENTS (app_entries),
-					 application);
-
-	menu = g_menu_new ();
-	g_menu_append (menu, _("About"), "app.about");
-	g_menu_append (menu, _("Quit"), "app.quit");
-	gtk_application_set_app_menu (application, G_MENU_MODEL (menu));
-	g_object_unref (menu);
-}
-
-static void
 gcolor3_application_init_accelerators (GtkApplication *application)
 {
 	/* Taken from eog, which in turn has this based on a simular
@@ -142,7 +126,10 @@ gcolor3_application_startup (GApplication *application)
 	gtk_window_set_default_icon_name ("gcolor3");
 	g_set_application_name (_("Color picker"));
 
-	gcolor3_application_init_app_menu (GTK_APPLICATION (app));
+	g_action_map_add_action_entries (G_ACTION_MAP (application),
+					 app_entries, G_N_ELEMENTS (app_entries),
+					 application);
+
 	gcolor3_application_init_accelerators (GTK_APPLICATION (app));
 
 	gcolor3_application_load_colors (app);

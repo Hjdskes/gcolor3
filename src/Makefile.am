@@ -4,7 +4,9 @@
 bin_PROGRAMS = \
 	gcolor3
 
+# FIXME: make dist fails on resources if Gcolor3 hasn't been make'd yet.
 gcolor3_SOURCES = \
+	../data/gcolor3-resources.c \
 	main.c \
 	gcolor3-application.c \
 	gcolor3-window.c \
