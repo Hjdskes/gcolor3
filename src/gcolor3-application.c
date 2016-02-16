@@ -30,6 +30,9 @@
 #include "gcolor3-color-store.h"
 #include "gcolor3-window.h"
 
+/* Copyright years. */
+#define COPYRIGHT "2013-2016"
+
 struct _Gcolor3ApplicationPrivate {
 	Gcolor3ColorStore *colors;
 };
@@ -41,12 +44,31 @@ gcolor3_application_action_about (UNUSED GSimpleAction *action,
 				  UNUSED GVariant      *parameter,
 				  gpointer              user_data)
 {
-	GtkWindow *window;
+	static const char *authors[] = {
+		"Jente Hidskes <hjdskes@gmail.com>",
+		NULL,
+	};
 
-	window = gtk_application_get_active_window (GTK_APPLICATION (user_data));
-	g_return_if_fail (GCOLOR3_IS_WINDOW (window));
+	static const char *artists[] = {
+		"hhh",
+		NULL,
+	};
 
-	gcolor3_window_show_about_dialog (GCOLOR3_WINDOW (window));
+	gtk_show_about_dialog (gtk_application_get_active_window (GTK_APPLICATION (user_data)),
+			       "program-name", g_get_application_name (),
+			       "version", PACKAGE_VERSION,
+			       "copyright", "Copyright \xc2\xa9 "COPYRIGHT" Jente Hidskes",
+			       "comments", _("Choose colors from the picker or the screen"),
+			       "authors", authors,
+			       "artists", artists,
+			       /* Translators: translate this to give yourself credits. */
+			       "translator-credits", _("translator-credits"),
+			       "website-label", _("Website"),
+			       "website", PACKAGE_URL,
+			       "logo-icon-name", gtk_window_get_default_icon_name (),
+			       "wrap-license", TRUE,
+			       "license-type", GTK_LICENSE_GPL_2_0,
+			       NULL);
 }
 
 static void

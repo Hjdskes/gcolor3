@@ -33,9 +33,6 @@
 /* I know GtkColorSelection is deprecated... */
 #pragma GCC diagnostic ignored "-Wdeprecated-declarations"
 
-/* Copyright years. */
-#define COPYRIGHT "2013-2016"
-
 enum {
 	COLOR_PIXBUF,
 	COLOR_VALUE,
@@ -508,37 +505,5 @@ gcolor3_window_new (Gcolor3Application *application, Gcolor3ColorStore *store)
 			     "application", application,
 			     "color-store", store,
 			     NULL);
-}
-
-void
-gcolor3_window_show_about_dialog (Gcolor3Window *window)
-{
-	g_return_if_fail (GCOLOR3_IS_WINDOW (window));
-
-	static const char *authors[] = {
-		"Jente Hidskes <hjdskes@gmail.com>",
-		NULL,
-	};
-
-	static const char *artists[] = {
-		"hhh",
-		NULL,
-	};
-
-	gtk_show_about_dialog (GTK_WINDOW (window),
-			       "program-name", g_get_application_name (),
-			       "version", PACKAGE_VERSION,
-			       "copyright", "Copyright \xc2\xa9 "COPYRIGHT" Jente Hidskes",
-			       "comments", _("Choose colors from the picker or the screen"),
-			       "authors", authors,
-			       "artists", artists,
-			       /* Translators: translate this to give yourself credits. */
-			       "translator-credits", _("translator-credits"),
-			       "website-label", _("Website"),
-			       "website", PACKAGE_URL,
-			       "logo-icon-name", gtk_window_get_default_icon_name (),
-			       "wrap-license", TRUE,
-			       "license-type", GTK_LICENSE_GPL_2_0,
-			       NULL);
 }
 
