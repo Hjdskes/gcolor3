@@ -26,6 +26,7 @@
 #include <glib.h>
 
 #include "gcolor3-application.h"
+#include "gcolor3-color-store.h"
 
 G_BEGIN_DECLS
 
@@ -50,11 +51,9 @@ struct _Gcolor3WindowClass {
 
 GType          gcolor3_window_get_type (void) G_GNUC_CONST;
 
-Gcolor3Window *gcolor3_window_new (Gcolor3Application *application);
+Gcolor3Window *gcolor3_window_new (Gcolor3Application *application, Gcolor3ColorStore *store);
 
 void           gcolor3_window_show_about_dialog (Gcolor3Window *window);
-
-void           gcolor3_window_add_colors (Gcolor3Window *window);
 
 G_END_DECLS
 

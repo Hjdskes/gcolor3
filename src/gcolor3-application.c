@@ -27,19 +27,14 @@
 #include <glib/gi18n.h>
 
 #include "gcolor3-application.h"
+#include "gcolor3-color-store.h"
 #include "gcolor3-window.h"
 
 struct _Gcolor3ApplicationPrivate {
-	GKeyFile *colors;
+	Gcolor3ColorStore *colors;
 };
 
 G_DEFINE_TYPE_WITH_PRIVATE (Gcolor3Application, gcolor3_application, GTK_TYPE_APPLICATION);
-
-static gchar *
-get_user_file (void)
-{
-	return g_build_filename (g_get_home_dir (), ".rgb.ini", NULL);
-}
 
 static void
 gcolor3_application_action_about (UNUSED GSimpleAction *action,
@@ -96,27 +91,6 @@ gcolor3_application_init_accelerators (GtkApplication *application)
 }
 
 static void
-gcolor3_application_load_colors (Gcolor3Application *app) {
-	Gcolor3ApplicationPrivate *priv;
-	gchar *file;
-	GError *error = NULL;
-
-	priv = gcolor3_application_get_instance_private (app);
-
-	priv->colors = g_key_file_new ();
-	file = get_user_file ();
-	if (!(g_key_file_load_from_file (priv->colors,
-					 file,
-					 G_KEY_FILE_KEEP_COMMENTS | G_KEY_FILE_KEEP_TRANSLATIONS,
-					 &error))) {
-		g_warning ("%s%s\n", _("Error opening file: "), error->message);
-		g_clear_error (&error);
-	}
-
-	g_free (file);
-}
-
-static void
 gcolor3_application_startup (GApplication *application)
 {
 	Gcolor3Application *app = GCOLOR3_APPLICATION (application);
@@ -131,79 +105,60 @@ gcolor3_application_startup (GApplication *application)
 					 application);
 
 	gcolor3_application_init_accelerators (GTK_APPLICATION (app));
-
-	gcolor3_application_load_colors (app);
 }
 
 static void
 gcolor3_application_activate (GApplication *application)
 {
+	Gcolor3ApplicationPrivate *priv;
 	Gcolor3Window *window;
 
-	window = gcolor3_window_new (GCOLOR3_APPLICATION (application));
-	gcolor3_window_add_colors (window);
+	priv = gcolor3_application_get_instance_private (GCOLOR3_APPLICATION (application));
+
+	window = gcolor3_window_new (GCOLOR3_APPLICATION (application), priv->colors);
 	gtk_window_present_with_time (GTK_WINDOW (window), GDK_CURRENT_TIME);
 }
 
 static void
-gcolor3_application_shutdown (GApplication *application)
+gcolor3_application_dispose (GObject *object)
 {
 	Gcolor3ApplicationPrivate *priv;
-	GError *error = NULL;
-	gchar *file;
 
-	priv = gcolor3_application_get_instance_private (GCOLOR3_APPLICATION (application));
+	priv = gcolor3_application_get_instance_private (GCOLOR3_APPLICATION (object));
 
-	if (priv->colors != NULL) {
-		// TODO: possibly only write to disk if contents changed?
-		file = get_user_file ();
-		if (!(g_key_file_save_to_file (priv->colors, file, &error))) {
-			g_warning ("%s%s", _("Error writing file: "), error->message);
-			g_clear_error (&error);
-		}
-		g_free (file);
-		g_key_file_free (priv->colors);
-	}
+	g_clear_object (&priv->colors);
 
-	G_APPLICATION_CLASS (gcolor3_application_parent_class)->shutdown (application);
+	G_OBJECT_CLASS (gcolor3_application_parent_class)->dispose (object);
 }
 
 static void
 gcolor3_application_class_init (Gcolor3ApplicationClass *gcolor3_application_class)
 {
+	GObjectClass *object_class = G_OBJECT_CLASS (gcolor3_application_class);
 	GApplicationClass *application_class = G_APPLICATION_CLASS (gcolor3_application_class);
+
+	object_class->dispose = gcolor3_application_dispose;
 
 	application_class->startup = gcolor3_application_startup;
 	application_class->activate = gcolor3_application_activate;
-	application_class->shutdown = gcolor3_application_shutdown;
 }
 
 static void
-gcolor3_application_init (UNUSED Gcolor3Application *application)
+gcolor3_application_init (Gcolor3Application *application)
 {
+	Gcolor3ApplicationPrivate *priv;
+
+	priv = gcolor3_application_get_instance_private (application);
+
+	priv->colors = gcolor3_color_store_new ();
 }
 
 Gcolor3Application *
 gcolor3_application_new (void)
 {
-	GObject *application;
-
-	application = g_object_new (GCOLOR3_TYPE_APPLICATION,
-				    "application-id", "org.unia.gcolor3",
-				    "flags", G_APPLICATION_FLAGS_NONE,
-				    NULL);
-
-	return GCOLOR3_APPLICATION (application);
-}
-
-GKeyFile *
-gcolor3_application_get_colors (Gcolor3Application *application)
-{
-	Gcolor3ApplicationPrivate *priv;
-
-	g_return_val_if_fail (GCOLOR3_IS_APPLICATION (application), NULL);
-	priv = gcolor3_application_get_instance_private (application);
-
-	return priv->colors;
+	return g_object_new (GCOLOR3_TYPE_APPLICATION,
+			     "application-id", "org.unia.gcolor3",
+			     "flags", G_APPLICATION_FLAGS_NONE,
+			     NULL);
 }
 

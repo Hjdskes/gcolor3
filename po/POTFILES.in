@@ -6,4 +6,5 @@ data/gcolor3.desktop.in.in
 [type: gettext/glade]data/window.ui
 src/main.c
 src/gcolor3-application.c
+src/gcolor3-color-store.c
 src/gcolor3-window.c

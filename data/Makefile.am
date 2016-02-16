@@ -14,12 +14,23 @@ gcolor3_resource_deps = $(call GRESDEPS,gcolor3.gresource.xml)
 gcolor3-resources.c: $(gcolor3_resource_deps)
 	$(GRESGEN)
 
-BUILT_SOURCES = gcolor3-resources.c
+# Marshals
+gcolor3-marshalers.c: gcolor3-marshalers.list
+	$(AM_V_GEN) $(GLIB_GENMARSHAL) --prefix=_gcolor3_marshal $< --body > $@
+
+gcolor3-marshalers.h: gcolor3-marshalers.list
+	$(AM_V_GEN) $(GLIB_GENMARSHAL) --prefix=_gcolor3_marshal $< --header > $@
+
+BUILT_SOURCES = \
+	gcolor3-resources.c \
+	gcolor3-marshalers.c \
+	gcolor3-marshalers.h
 
 EXTRA_DIST = \
 	$(desktop_in_files) \
 	gcolor3.gresource.xml \
-	$(gcolor3_resource_deps)
+	$(gcolor3_resource_deps) \
+	gcolor3-marshalers.list
 
 CLEANFILES = \
 	$(BUILT_SOURCES)

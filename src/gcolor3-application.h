@@ -1,6 +1,6 @@
 /* Gcolor3Application
  *
- * Copyright (C) 2015 Jente Hidskes
+ * Copyright (C) 2015-2016 Jente Hidskes
  *
  * Author: Jente Hidskes <hjdskes@gmail.com>
  *
@@ -49,8 +49,6 @@ struct _Gcolor3ApplicationClass {
 GType               gcolor3_application_get_type (void) G_GNUC_CONST;
 
 Gcolor3Application *gcolor3_application_new (void);
-
-GKeyFile           *gcolor3_application_get_colors (Gcolor3Application *application);
 
 G_END_DECLS
 

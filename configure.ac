@@ -22,6 +22,9 @@ LT_INIT(disable-static)
 # Resources
 AC_PATH_PROG(GLIB_COMPILE_RESOURCES, glib-compile-resources)
 
+# Marshals
+AC_PATH_PROG(GLIB_GENMARSHAL, glib-genmarshal)
+
 # Internationalization
 IT_PROG_INTLTOOL(0.50.1)
 AM_GLIB_GNU_GETTEXT
