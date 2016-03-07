@@ -1,0 +1,116 @@
+# English translations for gcolor package.
+# Copyright (C) 2016 THE gcolor'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the gcolor package.
+# Fran <frandieguez@gnome.org>, 2016.
+# Fran Dieguez <frandieguez@gnome.org>, 2016.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gcolor 3\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-07 10:34+0100\n"
+"PO-Revision-Date: 2016-03-07 10:51+0100\n"
+"Last-Translator: Fran Dieguez <frandieguez@gnome.org>\n"
+"Language-Team: Galician <gnome-l10n-gl@gnome.org>\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Gtranslator 2.91.7\n"
+
+#: ../data/gcolor3.desktop.in.in.h:1 ../src/gcolor3-application.c:123
+msgid "Color picker"
+msgstr "Selector de cor"
+
+#: ../data/gcolor3.desktop.in.in.h:2 ../src/gcolor3-application.c:61
+msgid "Choose colors from the picker or the screen"
+msgstr "Escolla cores desde o selectro ou na pantalla"
+
+#. Extra keywords that can be used to search for Gcolor3 in GNOME Shell and Unity
+#: ../data/gcolor3.desktop.in.in.h:4
+msgid "Color;Picker;Palette;"
+msgstr "Cor;Selector;Paleta;"
+
+#: ../data/menus.ui.h:1
+msgid "_About"
+msgstr "_Sobre"
+
+#: ../data/menus.ui.h:2
+msgid "_Quit"
+msgstr "_Saír"
+
+#: ../data/window.ui.h:1
+msgid "Picker"
+msgstr "Selector"
+
+#: ../data/window.ui.h:2
+msgid "Saved Colors"
+msgstr "Cores gardadas"
+
+#: ../data/window.ui.h:3
+msgid "Color name..."
+msgstr "Nome da cor…"
+
+#: ../src/main.c:45
+msgid "Show the application's version"
+msgstr "Mostrar a versión do aplicativo"
+
+#: ../src/main.c:56
+msgid "- pick a color from the picker or the screen"
+msgstr "- escolla unha cor desde o selector ou desde a pantalla"
+
+#: ../src/main.c:67
+#, c-format
+msgid "Run '%s --help' to see a full list of available command line options"
+msgstr ""
+"Execute '%s --help' para ver a lista completa de opcións por liña de ordes "
+"dispoñíbeis"
+
+#. Translators: translate this to give yourself credits.
+#: ../src/gcolor3-application.c:65
+msgid "translator-credits"
+msgstr "Fran Dieguez <frandieguez@gnome.org>, 2016."
+
+#: ../src/gcolor3-application.c:66
+msgid "Website"
+msgstr "Sitio web"
+
+#: ../src/gcolor3-color-store.c:64
+#, c-format
+msgid "Error writing file: %s\n"
+msgstr "Produciuse un erro ao escribir o ficheiro: %s\n"
+
+#: ../src/gcolor3-color-store.c:116
+#, c-format
+msgid "Error opening file: %s. Colors likely won't be saved.\n"
+msgstr ""
+"Produciuse un erro ao escribir o ficheiro: %s. É posíbel que as cores non se "
+"garden.\n"
+
+#: ../src/gcolor3-color-store.c:141
+#, c-format
+msgid "There is already a color name: %s\n"
+msgstr "Xa hai un nome de cor: %s\n"
+
+#: ../src/gcolor3-color-store.c:162
+#, c-format
+msgid "Error deleting key: %s\n"
+msgstr "Produciuse un erro ao eliminar a chave: %s\n"
+
+#: ../src/gcolor3-color-store.c:185
+#, c-format
+msgid "Error reading keys: %s\n"
+msgstr "Produciuse un erro ao ler as chaves: %s\n"
+
+#: ../src/gcolor3-window.c:307
+msgid "The model is empty; there are no colors to remove\n"
+msgstr "O modelo está baleiro; non hai cores para eliminar\n"
+
+#: ../src/gcolor3-window.c:451
+msgid "Color"
+msgstr "Core"
+
+#: ../src/gcolor3-window.c:467
+msgid "Name"
+msgstr "Nome"
