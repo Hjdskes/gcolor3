@@ -98,7 +98,7 @@ msgstr "Помилка вилучення ключа: %s\n"
 #: ../src/gcolor3-color-store.c:185
 #, c-format
 msgid "Error reading keys: %s\n"
-msgstr "Помилка читання ключа: %s"
+msgstr "Помилка читання ключа: %s\n"
 
 #: ../src/gcolor3-window.c:307
 msgid "The model is empty; there are no colors to remove\n"
