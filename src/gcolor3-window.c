@@ -75,6 +75,15 @@ hex_value (GdkColor *color) {
 				color->blue / 256);
 }
 
+static void
+set_color_in_clipboard (const gchar *color)
+{
+	GtkClipboard *clipboard;
+
+	clipboard = gtk_clipboard_get (GDK_SELECTION_CLIPBOARD);
+	gtk_clipboard_set_text (clipboard, color, -1);
+}
+
 static GdkPixbuf *
 create_pixbuf_from_xpm (const gchar *hex)
 {
@@ -101,6 +110,27 @@ create_pixbuf_from_xpm (const gchar *hex)
 	g_sprintf (colorline, ".      c %s", hex);
 	xpm[1] = colorline;
 	return gdk_pixbuf_new_from_xpm_data ((gchar const **) xpm);
+}
+
+static void
+gcolor3_window_action_copy (UNUSED GSimpleAction *action,
+			     UNUSED GVariant      *parameter,
+			     gpointer              user_data)
+{
+	Gcolor3WindowPrivate *priv;
+	GtkTreeIter iter;
+	GtkTreeModel *model;
+	gchar *hex;
+
+	priv = gcolor3_window_get_instance_private (GCOLOR3_WINDOW (user_data));
+
+	if (!gtk_tree_selection_get_selected (priv->selection, &model, &iter)) {
+		return;
+	}
+
+	gtk_tree_model_get (model, &iter, COLOR_VALUE, &hex, -1);
+	set_color_in_clipboard (hex);
+	g_free (hex);
 }
 
 static void
@@ -170,6 +200,7 @@ gcolor3_window_action_change_page (UNUSED GSimpleAction *action,
 }
 
 static const GActionEntry window_actions[] = {
+	{ "copy", gcolor3_window_action_copy, NULL, NULL, NULL },
 	{ "save", gcolor3_window_action_save, NULL, NULL, NULL },
 	{ "delete", gcolor3_window_action_delete, NULL, NULL, NULL },
 	{ "change-page", gcolor3_window_action_change_page, NULL, NULL, NULL },
