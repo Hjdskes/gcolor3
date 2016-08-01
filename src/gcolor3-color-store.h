@@ -61,6 +61,10 @@ gboolean           gcolor3_color_store_add_color (Gcolor3ColorStore *store,
 gboolean           gcolor3_color_store_remove_color (Gcolor3ColorStore *store,
 						     const gchar       *key);
 
+gboolean           gcolor3_color_store_rename_color (Gcolor3ColorStore *store,
+						     const gchar *old_name,
+						     const gchar *new_name);
+
 void               gcolor3_color_store_foreach (Gcolor3ColorStore           *store,
 						Gcolor3ColorStoreForeachFunc func,
 						gpointer                     user_data);

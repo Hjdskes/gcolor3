@@ -64,7 +64,7 @@ ensure_user_dir (void)
 
 	dir = get_user_dir ();
 	ret = g_mkdir_with_parents (dir, 0700);
-	g_free(dir);
+	g_free (dir);
 
 	if (ret < 0) {
 		g_warning (_("Error creating config directory: %s"), g_strerror (errno));
@@ -162,7 +162,7 @@ gcolor3_color_store_add_color (Gcolor3ColorStore *store, const gchar *key, const
 	priv = gcolor3_color_store_get_instance_private (store);
 
 	if (g_key_file_has_key (priv->colors, "Colors", key, NULL)) {
-		g_warning (_("There is already a color name: %s\n"), key);
+		g_warning (_("There is already a color named `%s`\n"), key);
 		return FALSE;
 	}
 
@@ -192,6 +192,52 @@ gcolor3_color_store_remove_color (Gcolor3ColorStore *store, const gchar *key)
 	return TRUE;
 }
 
+gboolean
+gcolor3_color_store_rename_color (Gcolor3ColorStore *store,
+				  const gchar *old_name,
+				  const gchar *new_name)
+{
+	Gcolor3ColorStorePrivate *priv;
+	gchar *hex;
+	GError *error = NULL;
+
+	g_return_val_if_fail (GCOLOR3_IS_COLOR_STORE (store), FALSE);
+	g_return_val_if_fail (old_name != NULL && new_name != NULL, FALSE);
+
+	priv = gcolor3_color_store_get_instance_private (store);
+
+	if (strlen (new_name) <= 0 || !g_strcmp0 (old_name, new_name)) {
+		return FALSE;
+	}
+
+	if (!(g_key_file_has_key (priv->colors, "Colors", old_name, NULL))) {
+		g_warning (_("Cannot rename unexisting color `%s`\n"), old_name);
+		return FALSE;
+	}
+
+	if (g_key_file_has_key (priv->colors, "Colors", new_name, NULL)) {
+		g_warning (_("There is already a color named `%s`\n"), new_name);
+		return FALSE;
+	}
+
+	if (!(hex = g_key_file_get_string (priv->colors, "Colors", old_name, &error))) {
+		g_warning (_("Cannot retrieve hex value belonging to `%s`: %s\n"), old_name, error->message);
+		g_clear_error (&error);
+		return FALSE;
+	}
+
+	if (!(g_key_file_remove_key (priv->colors, "Colors", old_name, &error))) {
+		g_warning (_("Error deleting old name `%s`: %s\n"), old_name, error->message);
+		g_clear_error (&error);
+		g_free (hex);
+		return FALSE;
+	}
+
+	g_key_file_set_string (priv->colors, "Colors", new_name, hex);
+	g_free (hex);
+	return TRUE;
+}
+
 void
 gcolor3_color_store_foreach (Gcolor3ColorStore           *store,
 			     Gcolor3ColorStoreForeachFunc func,
@@ -214,11 +260,12 @@ gcolor3_color_store_foreach (Gcolor3ColorStore           *store,
 	for (guint i = 0; i < length; i++) {
 		gchar *value;
 
-		if (!(value = g_key_file_get_value (priv->colors, "Colors", keys[i], NULL))) {
+		if (!(value = g_key_file_get_string (priv->colors, "Colors", keys[i], NULL))) {
 			continue;
 		}
 
 		func (keys[i], value, user_data);
+		g_free (value);
 	}
 
 	g_strfreev (keys);

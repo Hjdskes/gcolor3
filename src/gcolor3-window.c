@@ -328,6 +328,35 @@ gcolor3_window_color_removed (UNUSED Gcolor3ColorStore *store, UNUSED const gcha
 }
 
 static void
+gcolor3_window_color_renamed (UNUSED GtkCellRendererText *renderer,
+			      gchar                      *path,
+			      gchar                      *new_text,
+			      gpointer                    user_data)
+{
+	Gcolor3WindowPrivate *priv;
+	GtkTreeModel *model;
+	GtkTreeIter iter;
+	gchar *old_text;
+	gboolean success;
+
+	priv = gcolor3_window_get_instance_private (GCOLOR3_WINDOW (user_data));
+	model = gtk_tree_view_get_model (GTK_TREE_VIEW (priv->tree));
+
+	success = gtk_tree_model_get_iter_from_string (model, &iter, path);
+	if (!success) {
+		g_warning (_("Cannot update color: invalid path"));
+		return;
+	}
+
+	gtk_tree_model_get (model, &iter, COLOR_NAME, &old_text, -1);
+	if (gcolor3_color_store_rename_color (priv->store, old_text, new_text)) {
+		gtk_list_store_set (GTK_LIST_STORE (model), &iter, COLOR_NAME, new_text, -1);
+	}
+
+	g_free (old_text);
+}
+
+static void
 gcolor3_window_set_property (GObject      *object,
 			     guint         prop_id,
 			     const GValue *value,
@@ -442,30 +471,36 @@ static void
 gcolor3_window_setup_tree_view (Gcolor3Window *window)
 {
 	Gcolor3WindowPrivate *priv;
-	GtkCellRenderer *renderer;
+	GtkCellRenderer *pixbuf_renderer;
+	GtkCellRenderer *hex_renderer;
+	GtkCellRenderer *name_renderer;
 	GtkTreeViewColumn *column;
 
 	priv = gcolor3_window_get_instance_private (window);
 
-	renderer = gtk_cell_renderer_pixbuf_new ();
+	pixbuf_renderer = gtk_cell_renderer_pixbuf_new ();
 	column = gtk_tree_view_column_new_with_attributes (_("Color"),
-							   renderer,
+							   pixbuf_renderer,
 							   "pixbuf",
 							   COLOR_PIXBUF,
 							   NULL);
 
-	renderer = gtk_cell_renderer_text_new ();
-	gtk_tree_view_column_pack_start (column, renderer, TRUE);
+	hex_renderer = gtk_cell_renderer_text_new ();
+	gtk_tree_view_column_pack_start (column, hex_renderer, TRUE);
 	gtk_tree_view_column_set_attributes (column,
-					     renderer,
+					     hex_renderer,
 					     "text",
 					     COLOR_VALUE,
 					     NULL);
 	gtk_tree_view_column_set_sort_column_id (column, COLOR_VALUE);
 	gtk_tree_view_append_column (GTK_TREE_VIEW (priv->tree), column);
 
+	name_renderer = gtk_cell_renderer_text_new ();
+	g_object_set (name_renderer, "editable", TRUE, NULL);
+	g_signal_connect (name_renderer, "edited",
+			  G_CALLBACK (gcolor3_window_color_renamed), window);
 	column = gtk_tree_view_column_new_with_attributes (_("Name"),
-							   renderer,
+							   name_renderer,
 							   "text",
 							   COLOR_NAME,
 							   NULL);
