@@ -23,6 +23,7 @@
 #include "config.h"
 #endif
 
+#include <errno.h>
 #include <glib.h>
 #include <glib/gi18n.h>
 
@@ -46,7 +47,30 @@ G_DEFINE_TYPE_WITH_PRIVATE (Gcolor3ColorStore, gcolor3_color_store, G_TYPE_OBJEC
 static inline gchar *
 get_user_file (void)
 {
-	return g_build_filename (g_get_home_dir (), ".rgb.ini", NULL);
+	return g_build_filename (g_get_user_config_dir (), "gcolor3", "config.ini", NULL);
+}
+
+static inline gchar *
+get_user_dir (void)
+{
+	return g_build_filename (g_get_user_config_dir (), "gcolor3", NULL);
+}
+
+static gboolean
+ensure_user_dir (void)
+{
+	gchar *dir;
+	int ret;
+
+	dir = get_user_dir ();
+	ret = g_mkdir_with_parents (dir, 0700);
+	g_free(dir);
+
+	if (ret < 0) {
+		g_warning (_("Error creating config directory: %s"), g_strerror (errno));
+		return FALSE;
+	}
+	return TRUE;
 }
 
 static void
@@ -60,7 +84,7 @@ gcolor3_color_store_dispose (GObject *object)
 
 	// TODO: possibly only write to disk if contents changed?
 	file = get_user_file ();
-	if (!(g_key_file_save_to_file (priv->colors, file, &error))) {
+	if ((ensure_user_dir ()) && !(g_key_file_save_to_file (priv->colors, file, &error))) {
 		g_warning (_("Error writing file: %s\n"), error->message);
 		g_clear_error (&error);
 	}
