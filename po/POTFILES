@@ -4,6 +4,7 @@ data/nl.hjdskes.gcolor3.desktop.in
 data/nl.hjdskes.gcolor3.appdata.xml.in
 data/color-row.ui
 data/menus.ui
+data/shortcuts.ui
 data/window.ui
 src/main.c
 src/gcolor3-application.c

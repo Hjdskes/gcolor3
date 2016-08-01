@@ -7,7 +7,7 @@ project('gcolor3', 'c', version: '2.2',
   ]
 )
 
-dep_gtk = dependency('gtk+-3.0', version: '>= 3.12.0', required: true)
+dep_gtk = dependency('gtk+-3.0', version: '>= 3.20.0', required: true)
 cc = meson.get_compiler('c')
 dep_lm = cc.find_library('m', required: true)
 
