@@ -35,6 +35,34 @@ struct _Gcolor3ApplicationPrivate {
 G_DEFINE_TYPE_WITH_PRIVATE (Gcolor3Application, gcolor3_application, GTK_TYPE_APPLICATION);
 
 static void
+gcolor3_application_action_shortcuts (UNUSED GSimpleAction *action,
+				      UNUSED GVariant      *parameter,
+				      gpointer              user_data)
+{
+	static GtkWindow *overlay = NULL;
+	GtkBuilder *builder;
+	GtkWindow *window;
+
+	if (!overlay) {
+		builder = gtk_builder_new_from_resource ("/nl/hjdskes/gcolor3/shortcuts.ui");
+		overlay = GTK_WINDOW (gtk_builder_get_object (builder, "shortcuts-gcolor3"));
+		g_object_unref (builder);
+		g_object_set (overlay, "view-name", NULL, NULL);
+
+		g_signal_connect (overlay, "delete-event",
+				  G_CALLBACK (gtk_widget_hide_on_delete), NULL);
+
+		window = gtk_application_get_active_window (GTK_APPLICATION (user_data));
+
+		gtk_window_set_modal (overlay, TRUE);
+		gtk_window_set_transient_for (overlay, window);
+		gtk_window_set_destroy_with_parent (overlay, TRUE);
+	}
+
+	gtk_window_present (overlay);
+}
+
+static void
 gcolor3_application_action_about (UNUSED GSimpleAction *action,
 				  UNUSED GVariant      *parameter,
 				  gpointer              user_data)
@@ -79,6 +107,7 @@ gcolor3_application_action_quit (UNUSED GSimpleAction *action,
 }
 
 static GActionEntry app_entries[] = {
+	{ "shortcuts", gcolor3_application_action_shortcuts, NULL, NULL, NULL },
 	{ "about", gcolor3_application_action_about, NULL, NULL, NULL },
 	{ "quit",  gcolor3_application_action_quit,  NULL, NULL, NULL },
 };

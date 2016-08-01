@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gresources>
   <gresource prefix="/nl/hjdskes/gcolor3/">
+    <file alias="shortcuts.ui" preprocess="xml-stripblanks">shortcuts.ui</file>
     <!-- Using this alias, GtkApplication will automatically pick it up for us. -->
     <file alias="gtk/menus.ui" preprocess="xml-stripblanks">menus.ui</file>
     <file alias="color-row.ui" preprocess="xml-stripblanks">color-row.ui</file>
