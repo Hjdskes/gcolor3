@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Generated with glade 3.19.0 -->
+<!-- Generated with glade 3.20.0 -->
 <interface>
   <requires lib="gtk+" version="3.16"/>
   <object class="GtkImage" id="button_startup">
@@ -22,7 +22,6 @@
     <property name="height_request">274</property>
     <property name="can_focus">False</property>
     <property name="border_width">6</property>
-    <property name="resizable">False</property>
     <property name="window_position">center</property>
     <child>
       <object class="GtkStack" id="stack">
@@ -34,6 +33,8 @@
           <object class="GtkColorSelection" id="picker">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
+            <property name="halign">center</property>
+            <property name="valign">center</property>
             <property name="orientation">vertical</property>
             <signal name="color-changed" handler="gcolor3_window_picker_changed" object="Gcolor3Window" swapped="no"/>
           </object>
