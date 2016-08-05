@@ -6,6 +6,12 @@ desktop_in_files = gcolor3.desktop.in.in
 desktopdir = $(datadir)/applications
 desktop_DATA = $(desktop_in_files:.desktop.in.in=.desktop)
 
+# AppData file
+@INTLTOOL_XML_RULE@
+appdata_in_files = gcolor3.appdata.xml.in
+appdatadir = $(datadir)/appdata
+appdata_DATA = $(appdata_in_files:.xml.in=.xml)
+
 # Resource files
 GRESDEPS = $1 $(shell $(GLIB_COMPILE_RESOURCES) --generate-dependencies --sourcedir $(dir $1) $1)
 GRESGEN = $(AM_V_GEN) $(GLIB_COMPILE_RESOURCES) --target="$@" --sourcedir="$(dir $<)" --generate-source "$<"
@@ -28,6 +34,7 @@ BUILT_SOURCES = \
 
 EXTRA_DIST = \
 	$(desktop_in_files) \
+	$(appdata_in_files) \
 	gcolor3.gresource.xml \
 	$(gcolor3_resource_deps) \
 	gcolor3-marshalers.list
@@ -37,6 +44,7 @@ CLEANFILES = \
 
 DISTCLEANFILES = \
 	$(desktop_DATA) \
+	$(appdata_DATA) \
 	$(BUILT_SOURCES)
 
 -include $(top_srcdir)/git.mk

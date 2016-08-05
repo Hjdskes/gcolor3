@@ -2,6 +2,7 @@
 # Please keep this list sorted alphabetically.
 [encoding: UTF-8]
 data/gcolor3.desktop.in.in
+data/gcolor3.appdata.xml.in
 [type: gettext/glade]data/menus.ui
 [type: gettext/glade]data/window.ui
 src/main.c
