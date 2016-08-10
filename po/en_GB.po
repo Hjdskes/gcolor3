@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 2.0\n"
 "Report-Msgid-Bugs-To: hjdskes@gmail.com\n"
-"POT-Creation-Date: 2016-08-10 10:40+0200\n"
+"POT-Creation-Date: 2016-08-10 11:31+0200\n"
 "PO-Revision-Date: 2013-06-11 13:09+0200\n"
 "Last-Translator: Jente Hidskes <hjdskes@gmail.com>\n"
 "Language-Team: British English\n"
@@ -46,8 +46,8 @@ msgid ""
 "When you have found the perfect combination of colors, naturally you want to "
 "save them. Gcolor3 allows you to conveniently save and retrieve colors."
 msgstr ""
-"When you have found the perfect combination of colours, naturally you want to "
-"save them. Gcolor3 allows you to conveniently save and retrieve colours."
+"When you have found the perfect combination of colours, naturally you want "
+"to save them. Gcolor3 allows you to conveniently save and retrieve colours."
 
 #: ../data/gcolor3.appdata.xml.in.h:5
 msgid ""
@@ -114,41 +114,40 @@ msgid "Error creating config directory: %s"
 msgstr "Error creating config directory: %s"
 
 #: ../src/gcolor3-color-store.c:88
-msgid "Error writing file: %s\n"
-msgstr "Error writing file: %s\n"
+msgid "Error writing file: %s"
+msgstr "Error writing file: %s"
 
 #: ../src/gcolor3-color-store.c:140
-msgid "Error opening file: %s. Colors likely won't be saved.\n"
-msgstr "Error opening file: %s. Colours likely won't be saved.\n"
+msgid "Error opening file: %s. Colors likely won't be saved"
+msgstr "Error opening file: %s. Colours likely won't be saved"
 
 #: ../src/gcolor3-color-store.c:165 ../src/gcolor3-color-store.c:219
-#, c-format
-msgid "There is already a color named `%s`\n"
-msgstr "There is already a colour named `%s`\n"
+msgid "There is already a color named `%s`"
+msgstr "There is already a colour named `%s`"
 
 #: ../src/gcolor3-color-store.c:186
-msgid "Error deleting key: %s\n"
-msgstr "Error deleting key: %s\n"
+msgid "Error deleting key: %s"
+msgstr "Error deleting key: %s"
 
 #: ../src/gcolor3-color-store.c:214
-msgid "Cannot rename unexisting color `%s`\n"
-msgstr "Cannot rename unexisting colour `%s`\n"
+msgid "Cannot rename unexisting color `%s`"
+msgstr "Cannot rename unexisting colour `%s`"
 
 #: ../src/gcolor3-color-store.c:224
-msgid "Cannot retrieve hex value belonging to `%s`: %s\n"
-msgstr "Cannot retrieve hex value belonging to `%s`: %s\n"
+msgid "Cannot retrieve hex value belonging to `%s`: %s"
+msgstr "Cannot retrieve hex value belonging to `%s`: %s"
 
 #: ../src/gcolor3-color-store.c:230
-msgid "Error deleting old name `%s`: %s\n"
-msgstr "Error deleting old name `%s`: %s\n"
+msgid "Error deleting old name `%s`: %s"
+msgstr "Error deleting old name `%s`: %s"
 
 #: ../src/gcolor3-color-store.c:255
-msgid "Error reading keys: %s\n"
-msgstr "Error reading keys: %s\n"
+msgid "Error reading keys: %s"
+msgstr "Error reading keys: %s"
 
 #: ../src/gcolor3-window.c:338
-msgid "The model is empty; there are no colors to remove\n"
-msgstr "The model is empty; there are no colours to remove\n"
+msgid "The model is empty; there are no colors to remove"
+msgstr "The model is empty; there are no colours to remove"
 
 #: ../src/gcolor3-window.c:378
 msgid "Cannot update color: invalid path"
