@@ -1,14 +1,13 @@
 # British English translation for Gcolor3.
-# Copyright (C) 2013-2015 Jente Hidskes <hjdskes@gmail.com>
+# Copyright (C) 2013-2016 Jente Hidskes <hjdskes@gmail.com>
 # This file is distributed under the same license as the Gcolor3 package.
-# Jente Hidskes <hjdskes@gmail.com>, 2013.
+# Jente Hidskes <hjdskes@gmail.com>, 2016.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: 2.0\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-10-01 14:04+0200\n"
+"Report-Msgid-Bugs-To: hjdskes@gmail.com\n"
+"POT-Creation-Date: 2016-08-10 10:40+0200\n"
 "PO-Revision-Date: 2013-06-11 13:09+0200\n"
 "Last-Translator: Jente Hidskes <hjdskes@gmail.com>\n"
 "Language-Team: British English\n"
@@ -17,11 +16,13 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../data/gcolor3.desktop.in.in.h:1 ../src/gcolor3-application.c:146
+#: ../data/gcolor3.desktop.in.in.h:1 ../data/gcolor3.appdata.xml.in.h:1
+#: ../src/gcolor3-application.c:124
 msgid "Color picker"
 msgstr "Colour picker"
 
-#: ../data/gcolor3.desktop.in.in.h:2 ../src/gcolor3-window.c:499
+#: ../data/gcolor3.desktop.in.in.h:2 ../data/gcolor3.appdata.xml.in.h:2
+#: ../src/gcolor3-application.c:61
 msgid "Choose colors from the picker or the screen"
 msgstr "Choose colours from the picker or the screen"
 
@@ -29,6 +30,62 @@ msgstr "Choose colours from the picker or the screen"
 #: ../data/gcolor3.desktop.in.in.h:4
 msgid "Color;Picker;Palette;"
 msgstr "Colour;Picker;Palette"
+
+#: ../data/gcolor3.appdata.xml.in.h:3
+msgid ""
+"Ever wanted to know the value of that color on your screen? Gcolor3 enables "
+"you to pick the color from any pixel on your screen. It also offers a "
+"palette, so that you can easily mix and match a couple of colors together."
+msgstr ""
+"Ever wanted to know the value of that colour on your screen? Gcolor3 enables "
+"you to pick the colour from any pixel on your screen. It also offers a "
+"palette, so that you can easily mix and match a couple of colours together."
+
+#: ../data/gcolor3.appdata.xml.in.h:4
+msgid ""
+"When you have found the perfect combination of colors, naturally you want to "
+"save them. Gcolor3 allows you to conveniently save and retrieve colors."
+msgstr ""
+"When you have found the perfect combination of colours, naturally you want to "
+"save them. Gcolor3 allows you to conveniently save and retrieve colours."
+
+#: ../data/gcolor3.appdata.xml.in.h:5
+msgid ""
+"Gcolor3 is a color selection dialog written in GTK+ 3. It is much alike "
+"Gcolor2, but uses the newer GTK+ version and other modernisations to better "
+"integrate into your modern desktop."
+msgstr ""
+"Gcolor3 is a colour selection dialog written in GTK+ 3. It is much alike "
+"Gcolor2, but uses the newer GTK+ version and other modernizations to better "
+"integrate into your modern desktop."
+
+#: ../data/gcolor3.appdata.xml.in.h:6
+msgid "The picker and the color palette"
+msgstr "The picker and the colour palette"
+
+#: ../data/gcolor3.appdata.xml.in.h:7
+msgid "The list of saved colors"
+msgstr "The list of saved colours"
+
+#: ../data/menus.ui.h:1
+msgid "_About"
+msgstr "_About"
+
+#: ../data/menus.ui.h:2
+msgid "_Quit"
+msgstr "_Quit"
+
+#: ../data/window.ui.h:1
+msgid "Picker"
+msgstr "Picker"
+
+#: ../data/window.ui.h:2
+msgid "Saved Colors"
+msgstr "Saved colours"
+
+#: ../data/window.ui.h:3
+msgid "Color name..."
+msgstr "Colour name..."
 
 #: ../src/main.c:45
 msgid "Show the application's version"
@@ -43,55 +100,64 @@ msgstr "- pick a colour from the picker or the screen"
 msgid "Run '%s --help' to see a full list of available command line options"
 msgstr "Run '%s --help' to see a full list of available command line options"
 
-#: ../src/gcolor3-application.c:86
-msgid "About"
-msgstr "About"
-
-#: ../src/gcolor3-application.c:87
-msgid "Quit"
-msgstr "Quit"
-
-#: ../src/gcolor3-application.c:131
-msgid "Error opening file: "
-msgstr "Error opening file: "
-
-#: ../src/gcolor3-application.c:178
-msgid "Error writing file: "
-msgstr "Error writing file: "
-
-#: ../src/gcolor3-window.c:129
-msgid "Error deleting key: "
-msgstr "Error deleting key: "
-
-#: ../src/gcolor3-window.c:341
-msgid "Color name..."
-msgstr "Colour name..."
-
-#: ../src/gcolor3-window.c:364
-msgid "Picker"
-msgstr "Picker"
-
-#: ../src/gcolor3-window.c:374
-msgid "Saved colors"
-msgstr "Saved colours"
-
-#: ../src/gcolor3-window.c:389
-msgid "Color"
-msgstr "Colour"
-
-#: ../src/gcolor3-window.c:404
-msgid "Name"
-msgstr "Name"
-
 #. Translators: translate this to give yourself credits.
-#: ../src/gcolor3-window.c:503
+#: ../src/gcolor3-application.c:65
 msgid "translator-credits"
 msgstr "Jente Hidskes"
 
-#: ../src/gcolor3-window.c:504
+#: ../src/gcolor3-application.c:66
 msgid "Website"
 msgstr "Website"
 
-#: ../src/gcolor3-window.c:538
-msgid "Error reading keys: "
-msgstr "Error reading keys: "
+#: ../src/gcolor3-color-store.c:70
+msgid "Error creating config directory: %s"
+msgstr "Error creating config directory: %s"
+
+#: ../src/gcolor3-color-store.c:88
+msgid "Error writing file: %s\n"
+msgstr "Error writing file: %s\n"
+
+#: ../src/gcolor3-color-store.c:140
+msgid "Error opening file: %s. Colors likely won't be saved.\n"
+msgstr "Error opening file: %s. Colours likely won't be saved.\n"
+
+#: ../src/gcolor3-color-store.c:165 ../src/gcolor3-color-store.c:219
+#, c-format
+msgid "There is already a color named `%s`\n"
+msgstr "There is already a colour named `%s`\n"
+
+#: ../src/gcolor3-color-store.c:186
+msgid "Error deleting key: %s\n"
+msgstr "Error deleting key: %s\n"
+
+#: ../src/gcolor3-color-store.c:214
+msgid "Cannot rename unexisting color `%s`\n"
+msgstr "Cannot rename unexisting colour `%s`\n"
+
+#: ../src/gcolor3-color-store.c:224
+msgid "Cannot retrieve hex value belonging to `%s`: %s\n"
+msgstr "Cannot retrieve hex value belonging to `%s`: %s\n"
+
+#: ../src/gcolor3-color-store.c:230
+msgid "Error deleting old name `%s`: %s\n"
+msgstr "Error deleting old name `%s`: %s\n"
+
+#: ../src/gcolor3-color-store.c:255
+msgid "Error reading keys: %s\n"
+msgstr "Error reading keys: %s\n"
+
+#: ../src/gcolor3-window.c:338
+msgid "The model is empty; there are no colors to remove\n"
+msgstr "The model is empty; there are no colours to remove\n"
+
+#: ../src/gcolor3-window.c:378
+msgid "Cannot update color: invalid path"
+msgstr "Cannot update colour: invalid path"
+
+#: ../src/gcolor3-window.c:513
+msgid "Color"
+msgstr "Colour"
+
+#: ../src/gcolor3-window.c:533
+msgid "Name"
+msgstr "Name"
