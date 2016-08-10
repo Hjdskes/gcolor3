@@ -85,7 +85,7 @@ gcolor3_color_store_dispose (GObject *object)
 	// TODO: possibly only write to disk if contents changed?
 	file = get_user_file ();
 	if ((ensure_user_dir ()) && !(g_key_file_save_to_file (priv->colors, file, &error))) {
-		g_warning (_("Error writing file: %s\n"), error->message);
+		g_warning (_("Error writing file: %s"), error->message);
 		g_clear_error (&error);
 	}
 	g_free (file);
@@ -137,7 +137,7 @@ gcolor3_color_store_init (Gcolor3ColorStore *store)
 					 file,
 					 G_KEY_FILE_KEEP_COMMENTS | G_KEY_FILE_KEEP_TRANSLATIONS,
 					 &error))) {
-		g_warning (_("Error opening file: %s. Colors likely won't be saved.\n"),
+		g_warning (_("Error opening file: %s. Colors likely won't be saved"),
 			   error->message);
 		g_clear_error (&error);
 	}
@@ -162,7 +162,7 @@ gcolor3_color_store_add_color (Gcolor3ColorStore *store, const gchar *key, const
 	priv = gcolor3_color_store_get_instance_private (store);
 
 	if (g_key_file_has_key (priv->colors, "Colors", key, NULL)) {
-		g_warning (_("There is already a color named `%s`\n"), key);
+		g_warning (_("There is already a color named `%s`"), key);
 		return FALSE;
 	}
 
@@ -183,7 +183,7 @@ gcolor3_color_store_remove_color (Gcolor3ColorStore *store, const gchar *key)
 	priv = gcolor3_color_store_get_instance_private (store);
 
 	if (!(g_key_file_remove_key (priv->colors, "Colors", key, &error))) {
-		g_warning (_("Error deleting key: %s\n"), error->message);
+		g_warning (_("Error deleting key: %s"), error->message);
 		g_clear_error (&error);
 		return FALSE;
 	}
@@ -211,23 +211,23 @@ gcolor3_color_store_rename_color (Gcolor3ColorStore *store,
 	}
 
 	if (!(g_key_file_has_key (priv->colors, "Colors", old_name, NULL))) {
-		g_warning (_("Cannot rename unexisting color `%s`\n"), old_name);
+		g_warning (_("Cannot rename unexisting color `%s`"), old_name);
 		return FALSE;
 	}
 
 	if (g_key_file_has_key (priv->colors, "Colors", new_name, NULL)) {
-		g_warning (_("There is already a color named `%s`\n"), new_name);
+		g_warning (_("There is already a color named `%s`"), new_name);
 		return FALSE;
 	}
 
 	if (!(hex = g_key_file_get_string (priv->colors, "Colors", old_name, &error))) {
-		g_warning (_("Cannot retrieve hex value belonging to `%s`: %s\n"), old_name, error->message);
+		g_warning (_("Cannot retrieve hex value belonging to `%s`: %s"), old_name, error->message);
 		g_clear_error (&error);
 		return FALSE;
 	}
 
 	if (!(g_key_file_remove_key (priv->colors, "Colors", old_name, &error))) {
-		g_warning (_("Error deleting old name `%s`: %s\n"), old_name, error->message);
+		g_warning (_("Error deleting old name `%s`: %s"), old_name, error->message);
 		g_clear_error (&error);
 		g_free (hex);
 		return FALSE;
@@ -252,7 +252,7 @@ gcolor3_color_store_foreach (Gcolor3ColorStore           *store,
 	priv = gcolor3_color_store_get_instance_private (store);
 
 	if (!(keys = g_key_file_get_keys (priv->colors, "Colors", &length, &error))) {
-		g_warning (_("Error reading keys: %s\n"), error->message);
+		g_warning (_("Error reading keys: %s"), error->message);
 		g_clear_error (&error);
 		return;
 	}

@@ -335,7 +335,7 @@ gcolor3_window_color_removed (UNUSED Gcolor3ColorStore *store, UNUSED const gcha
 	model = gtk_tree_view_get_model (GTK_TREE_VIEW (priv->tree));
 
 	if (!gtk_tree_model_get_iter_first (model, &iter)) {
-		g_warning (_("The model is empty; there are no colors to remove\n"));
+		g_warning (_("The model is empty; there are no colors to remove"));
 		return;
 	}
 
