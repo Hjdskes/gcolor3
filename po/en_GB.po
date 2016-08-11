@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 2.0\n"
 "Report-Msgid-Bugs-To: hjdskes@gmail.com\n"
-"POT-Creation-Date: 2016-08-10 11:31+0200\n"
+"POT-Creation-Date: 2016-08-11 11:01+0200\n"
 "PO-Revision-Date: 2013-06-11 13:09+0200\n"
 "Last-Translator: Jente Hidskes <hjdskes@gmail.com>\n"
 "Language-Team: British English\n"
@@ -80,7 +80,7 @@ msgid "Picker"
 msgstr "Picker"
 
 #: ../data/window.ui.h:2
-msgid "Saved Colors"
+msgid "Saved colors"
 msgstr "Saved colours"
 
 #: ../data/window.ui.h:3
@@ -96,7 +96,6 @@ msgid "- pick a color from the picker or the screen"
 msgstr "- pick a colour from the picker or the screen"
 
 #: ../src/main.c:67
-#, c-format
 msgid "Run '%s --help' to see a full list of available command line options"
 msgstr "Run '%s --help' to see a full list of available command line options"
 

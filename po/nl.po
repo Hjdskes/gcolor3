@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 2.0\n"
 "Report-Msgid-Bugs-To: hjdskes@gmail.com\n"
-"POT-Creation-Date: 2016-08-10 11:31+0200\n"
+"POT-Creation-Date: 2016-08-11 11:01+0200\n"
 "PO-Revision-Date: 2015-07-28 11:17+0200\n"
 "Last-Translator: Jente Hidskes <hjdskes@gmail.com>\n"
 "Language-Team: Dutch\n"
@@ -80,7 +80,7 @@ msgid "Picker"
 msgstr "Kiezer"
 
 #: ../data/window.ui.h:2
-msgid "Saved Colors"
+msgid "Saved colors"
 msgstr "Opgeslagen kleuren"
 
 #: ../data/window.ui.h:3
