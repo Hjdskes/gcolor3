@@ -1,28 +1,20 @@
 Gcolor3
 =======
 
-**A simple color chooser dialog written in GTK3, much alike Gcolor2.**
+**Choose colors from the picker or the screen**
 
-![Gcolor3-screenshot](https://github.com/Unia/gcolor3/raw/master/gcolor3.png "gcolor3")
-![Gcolor2-screenshot](https://github.com/Unia/gcolor3/raw/master/gcolor2.png "gcolor2")
+This README is only relevant for development resources and instructions. For a
+description of Gcolor3, screenshots and installation instructions for end-users,
+please see the [website](https://unia.github.io/projects/gcolor3/).
 
-Installation
+Compile from source
 ------------
 
-### Distribution packages
+To compile Gcolor3, you need the GTK+ 3 development packages and your
+distribution's package containing the tools to compile packages.
 
-Gcolor3 is packaged for some distributions. This should be your preferred method of installation, if
-your distribution is listed below:
-
-* **Arch Linux:** There are AUR packages for the [latest stable release](https://aur.archlinux.org/packages/gcolor3/) and for the [git version](https://aur.archlinux.org/packages/gcolor3-git/).
-* **Fedora:** There is a [copr repository](https://copr.fedoraproject.org/coprs/fnux/GColor3/) to
-  install Gcolor3. Please see the instructions there.
-
-### Compile from source
-
-The only dependency required to build and run Gcolor3, is GTK3.
-
-Once the ridiculous amount of dependencies is installed, just run these commands to build and install Gcolor3:
+When the build- and runtime dependencies of Gcolor3 have been installed, run the
+following commands to build and install Gcolor3:
 
 	$ ./autogen.sh
 	$ make
@@ -31,30 +23,37 @@ Once the ridiculous amount of dependencies is installed, just run these commands
 Translations
 ------------
 
-You can help translate Gcolor3 to your language! To do so, simply follow these steps:
+You can help translating Gcolor3 to your own language! Currently, Gcolor3 is
+available in Dutch, American and British English, French, Galician, German,
+Greek, Serbian, Swedish and Ukrainian.
+
+New translations are always welcome! To do so, simply follow these steps:
 
 	$ cd po
 	$ intltool-update --pot
-	$ mv Gcolor3.pot <language code>.po
+	$ mv Gcolor3.pot xx.po
 
-Where `<language code>` is the code of your language (e.g. `nl` for Dutch, `fr` for French, `en_GB` for British English...).
-Edit the [LINGUAS](https://github.com/Unia/gcolor3/blob/master/po/LINGUAS) file and add your language code. Please keep the list sorted alphabetically.
-Lastly, open the `.po` file you just generated and translate all the strings. Don't forget to fill in the information in the header!
+Where `xx` is the code of your language (e.g. `nl` for Dutch or `en_GB` for
+British English). Edit the
+[LINGUAS](https://github.com/Unia/gcolor3/blob/master/po/LINGUAS) file and add
+your language code. Please keep the list sorted alphabetically. Lastly, open
+the `.po` file you just generated and translate all the strings. Don't forget to
+fill in the information in the header!
 
 When a translation needs updating, execute the following commands:
 
 	$ cd po
 	$ intltool-update --pot
-	$ intltool-update --dist --gettext-package=Gcolor3 --output-file=<language code>_new.po <language code>
+	$ intltool-update --dist --gettext-package=Gcolor3 --output-file=xx.po xx
 
-Then make the necessary changes and overwrite the old `.po` file:
-
-	$ mv <language code>_new.po <language code>.po
+When you are done translating, either make a pull request on [GitHub][github] or send me
+the file via [email](mailto:hjdskes@gmail.com).
 
 Bugs
 ----
 
-For any bug or request [fill an issue](https://github.com/Unia/gcolor3/issues) on [GitHub][github].
+For any bug or request, please [create an
+issue](https://github.com/Unia/gcolor3/issues/new) on [GitHub][github].
 
 License
 -------
