@@ -29,15 +29,15 @@
   </kudos>
   <screenshots>
     <screenshot type="default">
-      <image>https://raw.githubusercontent.com/Unia/gcolor3/appdata/screenshots/picker.png</image>
+      <image>https://raw.githubusercontent.com/Unia/unia.github.io/hugo/static/images/projects/gcolor3/picker.png</image>
       <_caption>The picker and the color palette</_caption>
     </screenshot>
     <screenshot>
-      <image>https://raw.githubusercontent.com/Unia/gcolor3/appdata/screenshots/saved.png</image>
+      <image>https://raw.githubusercontent.com/Unia/unia.github.io/hugo/static/images/projects/gcolor3/saved.png</image>
       <_caption>The list of saved colors</_caption>
     </screenshot>
   </screenshots>
-  <url type="homepage">http://unia.github.io/gcolor3/</url>
+  <url type="homepage">https://unia.github.io/projects/gcolor3/</url>
   <url type="bugtracker">https://github.com/Unia/gcolor3/issues</url>
   <url type="help">https://github.com/Unia/gcolor3/issues</url>
   <developer_name>Jente Hidskes</developer_name>
