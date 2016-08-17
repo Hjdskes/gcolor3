@@ -140,7 +140,7 @@ msgstr "Помилка вилучення ключа: %s"
 
 #: ../src/gcolor3-color-store.c:214
 #, c-format
-msgid "Cannot rename unexisting color `%s`"
+msgid "Cannot rename nonexisting color `%s`"
 msgstr "Неможливо перейменувати колір «%s», якого немає."
 
 #: ../src/gcolor3-color-store.c:224

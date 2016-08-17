@@ -129,8 +129,8 @@ msgid "Error deleting key: %s"
 msgstr "Error deleting key: %s"
 
 #: ../src/gcolor3-color-store.c:214
-msgid "Cannot rename unexisting color `%s`"
-msgstr "Cannot rename unexisting colour `%s`"
+msgid "Cannot rename nonexisting color `%s`"
+msgstr "Cannot rename nonexisting colour `%s`"
 
 #: ../src/gcolor3-color-store.c:224
 msgid "Cannot retrieve hex value belonging to `%s`: %s"

@@ -138,7 +138,7 @@ msgstr "Fehler beim Löschen des Schlüssels: %s"
 
 #: ../src/gcolor3-color-store.c:214
 #, c-format
-msgid "Cannot rename unexisting color `%s`"
+msgid "Cannot rename nonexisting color `%s`"
 msgstr "Farbe `%s` konnte nicht umbenannt werden."
 
 #: ../src/gcolor3-color-store.c:224

@@ -129,7 +129,7 @@ msgstr "Erreur lors de la suppression de la clé: %s"
 
 #: ../src/gcolor3-color-store.c:214
 #, c-format
-msgid "Cannot rename unexisting color `%s`"
+msgid "Cannot rename nonexisting color `%s`"
 msgstr "Impossible de renommer `%s` : couleur inexistante"
 
 #: ../src/gcolor3-color-store.c:224

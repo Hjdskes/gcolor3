@@ -129,7 +129,7 @@ msgid "Error deleting key: %s"
 msgstr "Fel vid radering av nyckel: %s"
 
 #: ../src/gcolor3-color-store.c:214
-msgid "Cannot rename unexisting color `%s`"
+msgid "Cannot rename nonexisting color `%s`"
 msgstr "Kan inte namge obefintlig färg `%s`"
 
 #: ../src/gcolor3-color-store.c:224
