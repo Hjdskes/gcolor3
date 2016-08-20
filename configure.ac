@@ -6,6 +6,7 @@ AC_INIT([Gcolor3], 2.1, [hjdskes@gmail.com], [gcolor3], [https://unia.github.io/
 GTK_REQUIRED=3.12.0
 
 AC_CONFIG_HEADERS(config.h)
+AC_DEFINE_UNQUOTED(COPYRIGHT, ["2013 - 2016"], [Copyright years])
 AC_DEFINE_UNQUOTED(UNUSED, [__attribute__ ((unused))], [Wrapper over __attribute__ ((unused))])
 
 AM_INIT_AUTOMAKE([1.11 foreign dist-xz no-dist-gzip subdir-objects -Wno-portability])

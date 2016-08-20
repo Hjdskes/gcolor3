@@ -30,9 +30,6 @@
 #include "gcolor3-color-store.h"
 #include "gcolor3-window.h"
 
-/* Copyright years. */
-#define COPYRIGHT "2013-2016"
-
 struct _Gcolor3ApplicationPrivate {
 	Gcolor3ColorStore *colors;
 };
