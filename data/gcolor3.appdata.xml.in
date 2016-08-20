@@ -44,20 +44,21 @@
   <update_contact>hjdskes_at_gmail.com</update_contact>
   <translation type="gettext">gcolor3</translation>
   <!-- Validate with `appstream-util validate gcolor3.appdata.xml.in`. -->
-  <!--releases>
-    <release version="" date="">
+  <releases>
+    <release version="2.2" date="2016-08-20">
       <description>
         <p>
+          <ul>
+            <li>Centrally manage colors between several running instances;</li>
+            <li>Follow the XDG directory specification for the configuration file.
+                This means that the configuration file has moved from `~/.rgb.ini` to `$XDG_CONFIG_HOME/gcolor3/config.ini`;</li>
+            <li>Copy the selected color's hex value from the tree view using Ctrl-C;</li>
+            <li>Make the main window resizable;</li>
+            <li>Translation updates.</li>
+          </ul>
+          For more information, see the release notes on Gcolor3's GitHub page.
         </p>
-        <ul>
-          <li></li>
-        </ul>
-        <p>The following bugs are also fixed:</p>
-        <ul>
-          <li></li>
-        </ul>
-        <p>This release also updates translations.</p>
       </description>
     </release>
-  </releases-->
+  </releases>
 </component>
