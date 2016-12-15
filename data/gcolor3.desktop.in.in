@@ -10,3 +10,6 @@ Type=Application
 Categories=GNOME;GTK;Graphics;
 # Extra keywords that can be used to search for Gcolor3 in GNOME Shell and Unity
 _Keywords=Color;Picker;Palette;
+
+# Required for Unity to show the application name.
+X-Ubuntu-Gettext-Domain=@PACKAGE@
