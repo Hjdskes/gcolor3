@@ -1,6 +1,6 @@
 AC_PREREQ(2.63.2)
 
-AC_INIT([Gcolor3], 2.2, [hjdskes@gmail.com], [gcolor3], [https://unia.github.io/projects/gcolor3/])
+AC_INIT([Gcolor3], 2.2, [hjdskes@gmail.com], [gcolor3], [https://hjdskes.github.io/projects/gcolor3/])
 
 # Dependencies
 GTK_REQUIRED=3.12.0

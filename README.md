@@ -5,7 +5,7 @@ Gcolor3
 
 This README is only relevant for development resources and instructions. For a
 description of Gcolor3, screenshots and installation instructions for end-users,
-please see the [website](https://unia.github.io/projects/gcolor3/).
+please see the [website](https://hjdskes.github.io/projects/gcolor3/).
 
 Compile from source
 ------------
@@ -35,7 +35,7 @@ New translations are always welcome! To do so, simply follow these steps:
 
 Where `xx` is the code of your language (e.g. `nl` for Dutch or `en_GB` for
 British English). Edit the
-[LINGUAS](https://github.com/Unia/gcolor3/blob/master/po/LINGUAS) file and add
+[LINGUAS](https://github.com/Hjdskes/gcolor3/blob/master/po/LINGUAS) file and add
 your language code. Please keep the list sorted alphabetically. Lastly, open
 the `.po` file you just generated and translate all the strings. Don't forget to
 fill in the information in the header!
@@ -53,14 +53,14 @@ Bugs
 ----
 
 For any bug or request, please [create an
-issue](https://github.com/Unia/gcolor3/issues/new) on [GitHub][github].
+issue](https://github.com/Hjdskes/gcolor3/issues/new) on [GitHub][github].
 
 License
 -------
 
-Please see [LICENSE](https://github.com/Unia/gcolor3/blob/master/LICENSE) on [GitHub][github].
+Please see [LICENSE](https://github.com/Hjdskes/gcolor3/blob/master/LICENSE) on [GitHub][github].
 
 **Copyright © 2013 - 2016** Jente Hidskes &lt;hjdskes@gmail.com&gt;
 
-  [github]: https://github.com/Unia/gcolor3
+  [github]: https://github.com/Hjdskes/gcolor3
 
