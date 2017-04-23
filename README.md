@@ -19,6 +19,8 @@ following commands to build and install Gcolor3:
 	$ ./autogen.sh
 	$ make
 	# make clean install
+	
+**Note :** There is a [copr repository](https://copr.fedoraproject.org/coprs/fnux/GColor3/) for Fedora.	
 
 Translations
 ------------
