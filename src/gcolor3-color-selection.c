@@ -36,6 +36,7 @@
 
 #include <math.h>
 #include <string.h>
+#include <gdk/gdkwayland.h>
 #include <gtk/gtk.h>
 #include <glib/gi18n.h>
 
@@ -427,9 +428,25 @@ gcolor3_color_selection_init (Gcolor3ColorSelection *colorsel)
   gtk_widget_show (GTK_WIDGET (picker_image));
   gtk_box_pack_end (GTK_BOX (hbox), button, FALSE, FALSE, 0);
 
-  gtk_widget_set_tooltip_text (button,
-                        _("Click the eyedropper, then click a color "
-                          "anywhere on your screen to select that color."));
+#ifdef GDK_WINDOWING_WAYLAND
+  if (GDK_IS_WAYLAND_DISPLAY (gdk_display_get_default()))
+    {
+      gtk_widget_set_sensitive (button, FALSE);
+      gtk_widget_set_tooltip_text (button,
+				   _("Picking a color is currently not supported on "
+                                   "Wayland."));
+    }
+#else
+  if (FALSE)
+    {
+    }
+#endif
+  else
+    {
+      gtk_widget_set_tooltip_text (button,
+                                   _("Click the eyedropper, then click a color "
+                                   "anywhere on your screen to select that color."));
+    }
 
   top_right_vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
   gtk_box_pack_start (GTK_BOX (top_hbox), top_right_vbox, FALSE, FALSE, 0);
