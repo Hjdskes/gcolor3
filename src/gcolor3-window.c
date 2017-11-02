@@ -27,11 +27,9 @@
 #include <glib/gprintf.h>
 #include <glib/gi18n.h>
 
+#include "gcolor3-color-selection.h"
 #include "gcolor3-color-store.h"
 #include "gcolor3-window.h"
-
-/* I know GtkColorSelection is deprecated... */
-#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
 
 enum {
 	COLOR_PIXBUF,
@@ -57,7 +55,7 @@ struct _Gcolor3WindowPrivate {
 
 	Gcolor3ColorStore *store;
 
-	GdkColor current;
+	GdkRGBA current;
 };
 
 static void gcolor3_window_color_added (UNUSED Gcolor3ColorStore *store,
@@ -68,11 +66,11 @@ static void gcolor3_window_color_added (UNUSED Gcolor3ColorStore *store,
 G_DEFINE_TYPE_WITH_PRIVATE (Gcolor3Window, gcolor3_window, GTK_TYPE_APPLICATION_WINDOW)
 
 static inline gchar *
-hex_value (GdkColor *color) {
+hex_value (GdkRGBA *color) {
 	return g_strdup_printf ("#%.2X%.2X%.2X",
-				color->red / 256,
-				color->green / 256,
-				color->blue / 256);
+				(unsigned int) color->red * 256,
+				(unsigned int) color->green * 256,
+				(unsigned int) color->blue * 256);
 }
 
 static void
@@ -218,13 +216,13 @@ gcolor3_window_add_existing_color (const gchar *key, const gchar *hex, gpointer 
 }
 
 static void
-gcolor3_window_picker_changed (GtkColorSelection *picker, gpointer user_data)
+gcolor3_window_picker_changed (Gcolor3ColorSelection *picker, gpointer user_data)
 {
 	Gcolor3WindowPrivate *priv;
 
 	priv = gcolor3_window_get_instance_private (GCOLOR3_WINDOW (user_data));
 
-	gtk_color_selection_get_current_color (GTK_COLOR_SELECTION (picker), &priv->current);
+	gcolor3_color_selection_get_current_color (GCOLOR3_COLOR_SELECTION (picker), &priv->current);
 }
 
 /* FIXME: delete button is sensitive when switching to saved colors, even though there are none. */
@@ -272,7 +270,7 @@ static void
 gcolor3_window_selection_changed (GtkTreeSelection *selection, gpointer user_data)
 {
 	Gcolor3WindowPrivate *priv;
-	GdkColor new, current;
+	GdkRGBA new, current;
 	GtkTreeIter iter;
 	GtkTreeModel *model;
 	gchar *color;
@@ -281,16 +279,16 @@ gcolor3_window_selection_changed (GtkTreeSelection *selection, gpointer user_dat
 
 	if (gtk_tree_selection_get_selected (selection, &model, &iter)) {
 		gtk_tree_model_get (model, &iter, COLOR_VALUE, &color, -1);
-		gdk_color_parse (color, &new);
+		gdk_rgba_parse (&new, color);
 		g_free (color);
 
 		/* Save the old color in the picker. */
-		gtk_color_selection_get_current_color (
-			GTK_COLOR_SELECTION (priv->picker), &current);
-		gtk_color_selection_set_previous_color (
-			GTK_COLOR_SELECTION (priv->picker), &current);
-		gtk_color_selection_set_current_color (
-			GTK_COLOR_SELECTION (priv->picker), &new);
+		gcolor3_color_selection_get_current_color (
+			GCOLOR3_COLOR_SELECTION (priv->picker), &current);
+		gcolor3_color_selection_set_previous_color (
+			GCOLOR3_COLOR_SELECTION (priv->picker), &current);
+		gcolor3_color_selection_set_current_color (
+			GCOLOR3_COLOR_SELECTION (priv->picker), &new);
 
 		gtk_widget_set_sensitive (priv->button, TRUE);
 	} else {
@@ -489,7 +487,6 @@ gcolor3_window_class_init (Gcolor3WindowClass *gcolor3_window_class)
 	gtk_widget_class_bind_template_child_private (widget_class, Gcolor3Window, revealer);
 	gtk_widget_class_bind_template_child_private (widget_class, Gcolor3Window, entry);
 	gtk_widget_class_bind_template_child_private (widget_class, Gcolor3Window, stack);
-	gtk_widget_class_bind_template_child_private (widget_class, Gcolor3Window, picker);
 	gtk_widget_class_bind_template_child_private (widget_class, Gcolor3Window, tree);
 	gtk_widget_class_bind_template_child_private (widget_class, Gcolor3Window, selection);
 
@@ -549,9 +546,19 @@ gcolor3_window_init (Gcolor3Window *window)
 	gtk_widget_init_template (GTK_WIDGET (window));
 	gtk_header_bar_set_title (GTK_HEADER_BAR (priv->headerbar), g_get_application_name ());
 
+	/* Add the custom color selection widget. */
+	priv->picker = gcolor3_color_selection_new ();
+	gtk_widget_set_valign (priv->picker, GTK_ALIGN_CENTER);
+	gtk_widget_set_halign (priv->picker, GTK_ALIGN_CENTER);
+	g_signal_connect (priv->picker, "color-changed",
+			  G_CALLBACK (gcolor3_window_picker_changed), window);
+	gtk_stack_add_titled (GTK_STACK (priv->stack), priv->picker, "picker", _("Picker"));
+	gtk_container_child_set (GTK_CONTAINER (priv->stack), priv->picker, "position", 0, NULL);
+	gtk_widget_set_visible (priv->picker, TRUE);
+
 	/* Call the callback to initialise the GtkEntry and to prevent
 	 * saving #000000 when saving the white color right away. */
-	gcolor3_window_picker_changed (GTK_COLOR_SELECTION (priv->picker), window);
+	gcolor3_window_picker_changed (GCOLOR3_COLOR_SELECTION (priv->picker), window);
 
 	g_action_map_add_action_entries (G_ACTION_MAP (window),
 					 window_actions,
@@ -559,6 +566,9 @@ gcolor3_window_init (Gcolor3Window *window)
 					 window);
 
 	gcolor3_window_setup_tree_view (window);
+
+	/* Finally, make the color picker the visible stack page. */
+	gtk_stack_set_visible_child_name (GTK_STACK (priv->stack), "picker");
 }
 
 Gcolor3Window *

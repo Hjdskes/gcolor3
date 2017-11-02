@@ -10,6 +10,7 @@ gcolor3_SOURCES = \
 	../data/gcolor3-marshalers.c \
 	main.c \
 	gcolor3-application.c \
+	gcolor3-color-selection.c \
 	gcolor3-color-store.c \
 	gcolor3-window.c \
 	$(gcolor3_NOINST_H_FILES)
@@ -18,6 +19,7 @@ gcolor3_SOURCES = \
 gcolor3_NOINST_H_FILES = \
 	../data/gcolor3-marshalers.h \
 	gcolor3-application.h \
+	gcolor3-color-selection.h \
 	gcolor3-color-store.h \
 	gcolor3-window.h
 

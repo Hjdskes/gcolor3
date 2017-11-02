@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Generated with glade 3.20.0 -->
+<!-- Generated with glade 3.20.1 -->
 <interface>
   <requires lib="gtk+" version="3.16"/>
   <object class="GtkImage" id="button_startup">
@@ -30,20 +30,6 @@
         <property name="transition_type">slide-left-right</property>
         <signal name="notify::visible-child" handler="gcolor3_window_stack_changed" object="Gcolor3Window" swapped="no"/>
         <child>
-          <object class="GtkColorSelection" id="picker">
-            <property name="visible">True</property>
-            <property name="can_focus">False</property>
-            <property name="halign">center</property>
-            <property name="valign">center</property>
-            <property name="orientation">vertical</property>
-            <signal name="color-changed" handler="gcolor3_window_picker_changed" object="Gcolor3Window" swapped="no"/>
-          </object>
-          <packing>
-            <property name="name">picker</property>
-            <property name="title" translatable="yes">Picker</property>
-          </packing>
-        </child>
-        <child>
           <object class="GtkScrolledWindow" id="scroll">
             <property name="visible">True</property>
             <property name="can_focus">True</property>
@@ -67,7 +53,6 @@
           <packing>
             <property name="name">saved-colors</property>
             <property name="title" translatable="yes">Saved colors</property>
-            <property name="position">1</property>
           </packing>
         </child>
       </object>
