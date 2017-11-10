@@ -1,0 +1,47 @@
+{
+    "app-id": "org.unia.gcolor3",
+
+    "runtime": "org.gnome.Platform",
+    "runtime-version": "3.26",
+    "sdk": "org.gnome.Sdk",
+
+    "command": "gcolor3",
+
+    "rename-icon": "gcolor3",
+    "rename-desktop-file": "gcolor3.desktop",
+    "rename-appdata-file": "gcolor3.appdata.xml",
+
+    "finish-args": [
+        "--share=ipc",
+        "--socket=x11",
+        "--socket=wayland",
+
+        "--filesystem=xdg-config/gcolor3/config.ini:ro"
+    ],
+    
+    "build-options": {
+        "cflags": "-O2 -g"
+    },
+    
+    "cleanup": [
+        "*.la",
+        "*.a",
+        "/include",
+        "/lib/pkgconfig",
+        "/share/man"
+    ],
+    
+    "modules": [
+        {
+            "name": "gcolor3",
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/Hjdskes/gcolor3.git",
+                    "branch": "v2.2",
+                    "commit": "890d82aba1e08b880dc075c4923ec3c52f99e203"
+                }
+            ]
+        }
+    ]
+}
