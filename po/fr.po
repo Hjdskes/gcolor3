@@ -1,6 +1,5 @@
 # French translation for Gcolor3.
 # Copyright (C) 2013-2015 Nicolas Gaulard-Querol <nicolas.gquerol@gmail.com>
-# Copyright (C) 2015-2016 Timothée Floure <timothee.floure@fnux.ch>
 # This file is distributed under the same license as the Gcolor3 package.
 #
 msgid ""
