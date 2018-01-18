@@ -1,36 +1,74 @@
-# English translations for gcolor package.
-# Copyright (C) 2016 THE gcolor'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the gcolor package.
-# Fran <frandieguez@gnome.org>, 2016.
+# Galician translations for gcolor package.
+# Copyright (C) 2013-2016 Jente Hidskes <hjdskes@gmail.com>
+# This file is distributed under the same license as the Gcolor3 package.
 # Fran Dieguez <frandieguez@gnome.org>, 2016.
+# Xoan Sampaiño <xoansampainho@gmail.com>, 2018.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gcolor 3\n"
+"Project-Id-Version: 2.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-03-07 10:34+0100\n"
-"PO-Revision-Date: 2016-03-07 10:51+0100\n"
-"Last-Translator: Fran Dieguez <frandieguez@gnome.org>\n"
+"POT-Creation-Date: 2018-01-18 11:54+0100\n"
+"PO-Revision-Date: 2018-01-18 12:15+0100\n"
+"Last-Translator: Xoan Sampaiño <xoansampainho@gmail.com>\n"
 "Language-Team: Galician <gnome-l10n-gl@gnome.org>\n"
-"Language: en_US\n"
+"Language: gl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Gtranslator 2.91.7\n"
+"X-Generator: Poedit 2.0.5\n"
 
-#: ../data/gcolor3.desktop.in.in.h:1 ../src/gcolor3-application.c:123
+#: ../data/gcolor3.desktop.in.in.h:1 ../data/gcolor3.appdata.xml.in.h:1
+#: ../src/gcolor3-application.c:121
 msgid "Color picker"
 msgstr "Selector de cor"
 
-#: ../data/gcolor3.desktop.in.in.h:2 ../src/gcolor3-application.c:61
+#: ../data/gcolor3.desktop.in.in.h:2 ../data/gcolor3.appdata.xml.in.h:2
+#: ../src/gcolor3-application.c:58
 msgid "Choose colors from the picker or the screen"
-msgstr "Escolla cores desde o selectro ou na pantalla"
+msgstr "Escolla cores desde o selector ou desde a pantalla"
 
 #. Extra keywords that can be used to search for Gcolor3 in GNOME Shell and Unity
 #: ../data/gcolor3.desktop.in.in.h:4
 msgid "Color;Picker;Palette;"
 msgstr "Cor;Selector;Paleta;"
+
+#: ../data/gcolor3.appdata.xml.in.h:3
+msgid ""
+"Ever wanted to know the value of that color on your screen? Gcolor3 enables "
+"you to pick the color from any pixel on your screen. It also offers a "
+"palette, so that you can easily mix and match a couple of colors together."
+msgstr ""
+"Algunha vez quixo saber o valor desa cor na pantalla? Gcolor3 permítelle "
+"escoller a cor desde calquera píxel na pantalla. Tamén ofrece unha paleta, "
+"para que poida mesturar facilmente e combinar un par de cores xuntos."
+
+#: ../data/gcolor3.appdata.xml.in.h:4
+msgid ""
+"When you have found the perfect combination of colors, naturally you want to "
+"save them. Gcolor3 allows you to conveniently save and retrieve colors."
+msgstr ""
+"Cando atopa a combinación perfecta de cores, seguramente quererá gardalos. "
+"Gcolor3 permítelle gardar e recuperar cores comodamente."
+
+#: ../data/gcolor3.appdata.xml.in.h:5
+msgid ""
+"Gcolor3 is a color selection dialog written in GTK+ 3. It is much alike "
+"Gcolor2, but uses the newer GTK+ version and other modernisations to better "
+"integrate into your modern desktop."
+msgstr ""
+"Gcolor3 é un diálogo de selección de cor escrito en GTK+ 3. É moi parecido a "
+"Gcolor2, pero usa a nova versión de GTK+ e outras modernizacións para "
+"integrarse mellor no seu escritorio moderno."
+
+#: ../data/gcolor3.appdata.xml.in.h:6
+msgid "The picker and the color palette"
+msgstr "O selector e a paleta de cores"
+
+#: ../data/gcolor3.appdata.xml.in.h:7
+msgid "The list of saved colors"
+msgstr "A lista de cores gardadas"
 
 #: ../data/menus.ui.h:1
 msgid "_About"
@@ -41,14 +79,10 @@ msgid "_Quit"
 msgstr "_Saír"
 
 #: ../data/window.ui.h:1
-msgid "Picker"
-msgstr "Selector"
-
-#: ../data/window.ui.h:2
-msgid "Saved Colors"
+msgid "Saved colors"
 msgstr "Cores gardadas"
 
-#: ../data/window.ui.h:3
+#: ../data/window.ui.h:2
 msgid "Color name..."
 msgstr "Nome da cor…"
 
@@ -68,49 +102,79 @@ msgstr ""
 "dispoñíbeis"
 
 #. Translators: translate this to give yourself credits.
-#: ../src/gcolor3-application.c:65
+#: ../src/gcolor3-application.c:62
 msgid "translator-credits"
-msgstr "Fran Dieguez <frandieguez@gnome.org>, 2016."
+msgstr ""
+"Fran Dieguez <frandieguez@gnome.org>, 2016.\n"
+"Xoan Sampaiño <xoansampainho@gmail.com>, 2018."
 
-#: ../src/gcolor3-application.c:66
+#: ../src/gcolor3-application.c:63
 msgid "Website"
 msgstr "Sitio web"
 
-#: ../src/gcolor3-color-store.c:64
+#: ../src/gcolor3-color-store.c:70
 #, c-format
-msgid "Error writing file: %s\n"
-msgstr "Produciuse un erro ao escribir o ficheiro: %s\n"
+msgid "Error creating config directory: %s"
+msgstr "Produciuse un erro ao crear o cartafol de configuración: %s"
 
-#: ../src/gcolor3-color-store.c:116
+#: ../src/gcolor3-color-store.c:88
 #, c-format
-msgid "Error opening file: %s. Colors likely won't be saved.\n"
+msgid "Error writing file: %s"
+msgstr "Produciuse un erro ao escribir o ficheiro: %s"
+
+#: ../src/gcolor3-color-store.c:140
+#, c-format
+msgid "Error opening file: %s. Colors likely won't be saved"
 msgstr ""
 "Produciuse un erro ao escribir o ficheiro: %s. É posíbel que as cores non se "
-"garden.\n"
+"garden"
 
-#: ../src/gcolor3-color-store.c:141
+#: ../src/gcolor3-color-store.c:165 ../src/gcolor3-color-store.c:219
 #, c-format
-msgid "There is already a color name: %s\n"
-msgstr "Xa hai un nome de cor: %s\n"
+msgid "There is already a color named `%s`"
+msgstr "Xa hai unha cor chamada «%s»"
 
-#: ../src/gcolor3-color-store.c:162
+#: ../src/gcolor3-color-store.c:186
 #, c-format
-msgid "Error deleting key: %s\n"
-msgstr "Produciuse un erro ao eliminar a chave: %s\n"
+msgid "Error deleting key: %s"
+msgstr "Produciuse un erro ao eliminar a chave: %s"
 
-#: ../src/gcolor3-color-store.c:185
+#: ../src/gcolor3-color-store.c:214
 #, c-format
-msgid "Error reading keys: %s\n"
-msgstr "Produciuse un erro ao ler as chaves: %s\n"
+msgid "Cannot rename nonexisting color `%s`"
+msgstr "Non se puido renomear a cor «%s» non existente"
 
-#: ../src/gcolor3-window.c:307
-msgid "The model is empty; there are no colors to remove\n"
-msgstr "O modelo está baleiro; non hai cores para eliminar\n"
+#: ../src/gcolor3-color-store.c:224
+#, c-format
+msgid "Cannot retrieve hex value belonging to `%s`: %s"
+msgstr "Non se puido recuperar o valor hexadecimal pertencente a «%s»: %s"
 
-#: ../src/gcolor3-window.c:451
+#: ../src/gcolor3-color-store.c:230
+#, c-format
+msgid "Error deleting old name `%s`: %s"
+msgstr "Produciuse un erro ao eliminar o nome antigo «%s»: %s"
+
+#: ../src/gcolor3-color-store.c:255
+#, c-format
+msgid "Error reading keys: %s"
+msgstr "Produciuse un erro ao ler as chaves: %s"
+
+#: ../src/gcolor3-window.c:336
+msgid "The model is empty; there are no colors to remove"
+msgstr "O modelo está baleiro; non hai cores para eliminar"
+
+#: ../src/gcolor3-window.c:376
+msgid "Cannot update color: invalid path"
+msgstr "Non se puido actualizar a cor: ruta non válida"
+
+#: ../src/gcolor3-window.c:510
 msgid "Color"
-msgstr "Core"
+msgstr "Cor"
 
-#: ../src/gcolor3-window.c:467
+#: ../src/gcolor3-window.c:530
 msgid "Name"
 msgstr "Nome"
+
+#: ../src/gcolor3-window.c:555
+msgid "Picker"
+msgstr "Selector"
