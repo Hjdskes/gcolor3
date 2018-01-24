@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gresources>
-  <gresource prefix="/org/unia/gcolor3/">
+  <gresource prefix="/org/hjdskes/gcolor3/">
     <!-- Using this alias, GtkApplication will automatically pick it up for us. -->
     <file alias="gtk/menus.ui" preprocess="xml-stripblanks">menus.ui</file>
     <file alias="window.ui" preprocess="xml-stripblanks">window.ui</file>

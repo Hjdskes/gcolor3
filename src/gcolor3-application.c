@@ -1,6 +1,6 @@
 /* Gcolor3Application
  *
- * Copyright (C) 2015-2016 Jente Hidskes
+ * Copyright (C) 2015-2016, 2018 Jente Hidskes
  *
  * Author: Jente Hidskes <hjdskes@gmail.com>
  *
@@ -177,7 +177,7 @@ Gcolor3Application *
 gcolor3_application_new (void)
 {
 	return g_object_new (GCOLOR3_TYPE_APPLICATION,
-			     "application-id", "org.unia.gcolor3",
+			     "application-id", "org.hjdskes.gcolor3",
 			     "flags", G_APPLICATION_FLAGS_NONE,
 			     NULL);
 }
