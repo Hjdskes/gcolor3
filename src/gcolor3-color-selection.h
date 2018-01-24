@@ -22,7 +22,7 @@
  * files for a list of changes.  These files are distributed with
  * GTK+ at ftp://ftp.gtk.org/pub/gtk/.
  *
- * Updated and adapted for inclusion in Gcolor3 by Jente Hidskes 2016.
+ * Updated and adapted for inclusion in Gcolor3 by Jente Hidskes 2017.
  */
 
 #ifndef __GCOLOR3_COLOR_SELECTION_H__
