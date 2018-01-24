@@ -12,6 +12,7 @@ gcolor3_SOURCES = \
 	gcolor3-application.c \
 	gcolor3-color-selection.c \
 	gcolor3-color-store.c \
+	gcolor3-hsv.c \
 	gcolor3-window.c \
 	$(gcolor3_NOINST_H_FILES)
 
@@ -21,6 +22,7 @@ gcolor3_NOINST_H_FILES = \
 	gcolor3-application.h \
 	gcolor3-color-selection.h \
 	gcolor3-color-store.h \
+	gcolor3-hsv.h \
 	gcolor3-window.h
 
 gcolor3_CPPFLAGS = \

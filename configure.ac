@@ -20,6 +20,9 @@ AC_PROG_CC_STDC
 LT_PREREQ(2.2.6)
 LT_INIT(disable-static)
 
+# Headers
+AC_SEARCH_LIBS([atan], [m])
+
 # Resources
 AC_PATH_PROG(GLIB_COMPILE_RESOURCES, glib-compile-resources)
 
