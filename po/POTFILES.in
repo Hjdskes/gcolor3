@@ -1,8 +1,8 @@
 # List of source files containing translatable strings.
 # Please keep this list sorted alphabetically.
 [encoding: UTF-8]
-data/gcolor3.desktop.in.in
-data/gcolor3.appdata.xml.in
+data/org.hjdskes.gcolor3.desktop.in.in
+data/org.hjdskes.gcolor3.appdata.xml.in
 [type: gettext/glade]data/menus.ui
 [type: gettext/glade]data/window.ui
 src/main.c

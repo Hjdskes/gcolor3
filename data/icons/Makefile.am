@@ -1,5 +1,5 @@
 appiconsdir = $(datadir)/icons/hicolor/scalable/apps
-dist_appicons_DATA = gcolor3.svg
+dist_appicons_DATA = org.hjdskes.gcolor3.svg
 
 gtk_update_icon_cache = gtk-update-icon-cache -t -f $(datadir)/icons/hicolor || :
 

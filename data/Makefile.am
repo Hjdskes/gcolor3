@@ -2,13 +2,13 @@ SUBDIRS = icons
 
 # Desktop file
 @INTLTOOL_DESKTOP_RULE@
-desktop_in_files = gcolor3.desktop.in.in
+desktop_in_files = org.hjdskes.gcolor3.desktop.in.in
 desktopdir = $(datadir)/applications
 desktop_DATA = $(desktop_in_files:.desktop.in.in=.desktop)
 
 # AppData file
 @INTLTOOL_XML_RULE@
-appdata_in_files = gcolor3.appdata.xml.in
+appdata_in_files = org.hjdskes.gcolor3.appdata.xml.in
 appdatadir = $(datadir)/appdata
 appdata_DATA = $(appdata_in_files:.xml.in=.xml)
 

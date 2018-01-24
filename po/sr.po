@@ -18,22 +18,22 @@ msgstr ""
 "10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Generator: Virtaal 0.7.1\n"
 
-#: ../data/gcolor3.desktop.in.in.h:1 ../data/gcolor3.appdata.xml.in.h:1
+#: ../data/org.hjdskes.gcolor3.desktop.in.in.h:1 ../data/org.hjdskes.gcolor3.appdata.xml.in.h:1
 #: ../src/gcolor3-application.c:124
 msgid "Color picker"
 msgstr "Бирач боја"
 
-#: ../data/gcolor3.desktop.in.in.h:2 ../data/gcolor3.appdata.xml.in.h:2
+#: ../data/org.hjdskes.gcolor3.desktop.in.in.h:2 ../data/org.hjdskes.gcolor3.appdata.xml.in.h:2
 #: ../src/gcolor3-application.c:61
 msgid "Choose colors from the picker or the screen"
 msgstr "Изаберите боју из бирача или са екрана"
 
 #. Extra keywords that can be used to search for Gcolor3 in GNOME Shell and Unity
-#: ../data/gcolor3.desktop.in.in.h:4
+#: ../data/org.hjdskes.gcolor3.desktop.in.in.h:4
 msgid "Color;Picker;Palette;"
 msgstr "Боја;Бирач;Палета;Color;Picker;Pallete;Boja:Birač;Paleta"
 
-#: ../data/gcolor3.appdata.xml.in.h:3
+#: ../data/org.hjdskes.gcolor3.appdata.xml.in.h:3
 msgid ""
 "Ever wanted to know the value of that color on your screen? Gcolor3 enables "
 "you to pick the color from any pixel on your screen. It also offers a "
@@ -44,7 +44,7 @@ msgstr ""
 "на вашем екрану. Такође вам нуди палету са којом можете лако мешати и "
 "тражити одговарајуће нијансе."
 
-#: ../data/gcolor3.appdata.xml.in.h:4
+#: ../data/org.hjdskes.gcolor3.appdata.xml.in.h:4
 msgid ""
 "When you have found the perfect combination of colors, naturally you want to "
 "save them. Gcolor3 allows you to conveniently save and retrieve colors."
@@ -53,7 +53,7 @@ msgstr ""
 "Gcolor3 вам омогућава да чувате тренутно изабране боје и користите већ "
 "сачуване боје."
 
-#: ../data/gcolor3.appdata.xml.in.h:5
+#: ../data/org.hjdskes.gcolor3.appdata.xml.in.h:5
 msgid ""
 "Gcolor3 is a color selection dialog written in GTK+ 3. It is much alike "
 "Gcolor2, but uses the newer GTK+ version and other modernisations to better "
@@ -63,11 +63,11 @@ msgstr ""
 "Слична је програму Gcolor2 али користи новије издање ГТК+-а и друге модерне "
 "елементе да би се боље уклопио у ваш модеран начин коришћења рачунара."
 
-#: ../data/gcolor3.appdata.xml.in.h:6
+#: ../data/org.hjdskes.gcolor3.appdata.xml.in.h:6
 msgid "The picker and the color palette"
 msgstr "Бирач и палета боја"
 
-#: ../data/gcolor3.appdata.xml.in.h:7
+#: ../data/org.hjdskes.gcolor3.appdata.xml.in.h:7
 msgid "The list of saved colors"
 msgstr "Списак сачуваних боја"
 

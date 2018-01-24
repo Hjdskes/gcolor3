@@ -7,10 +7,6 @@
 
     "command": "gcolor3",
 
-    "rename-icon": "gcolor3",
-    "rename-desktop-file": "gcolor3.desktop",
-    "rename-appdata-file": "gcolor3.appdata.xml",
-
     "finish-args": [
         "--share=ipc",
         "--socket=x11",

@@ -17,18 +17,18 @@ msgstr ""
 "X-Loco-Parser: loco_parse_po\n"
 "X-Loco-Target-Locale: el_GR\n"
 
-#: ../data/gcolor3.desktop.in.in.h:1 ../src/gcolor3-application.c:146
+#: ../data/org.hjdskes.gcolor3.desktop.in.in.h:1 ../src/gcolor3-application.c:146
 #, fuzzy
 msgid "Color picker"
 msgstr "Επιλογέας χρώματος"
 
-#: ../data/gcolor3.desktop.in.in.h:2 ../src/gcolor3-window.c:499
+#: ../data/org.hjdskes.gcolor3.desktop.in.in.h:2 ../src/gcolor3-window.c:499
 #, fuzzy
 msgid "Choose colors from the picker or the screen"
 msgstr "Επιλέξτε χρώματα απο την παλέτα ή απο την οθόνη"
 
 #. Extra keywords that can be used to search for Gcolor3 in GNOME Shell and Unity
-#: ../data/gcolor3.desktop.in.in.h:4
+#: ../data/org.hjdskes.gcolor3.desktop.in.in.h:4
 msgid "Color;Picker;Palette;"
 msgstr "Χρώμα;Επιλογέας;Παλέτα;"
 

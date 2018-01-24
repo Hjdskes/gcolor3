@@ -41,7 +41,7 @@ PKG_CHECK_MODULES([GCOLOR3], [gtk+-3.0 >= GTK_REQUIRED])
 
 AC_CONFIG_FILES(Makefile
 		data/Makefile
-		data/gcolor3.desktop.in
+		data/org.hjdskes.gcolor3.desktop.in
 		data/icons/Makefile
 		src/Makefile
 		po/Makefile.in)

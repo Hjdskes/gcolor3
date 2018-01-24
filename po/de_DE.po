@@ -19,22 +19,22 @@ msgstr ""
 "X-Generator: Gtranslator 2.91.7\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../data/gcolor3.desktop.in.in.h:1 ../data/gcolor3.appdata.xml.in.h:1
+#: ../data/org.hjdskes.gcolor3.desktop.in.in.h:1 ../data/org.hjdskes.gcolor3.appdata.xml.in.h:1
 #: ../src/gcolor3-application.c:124
 msgid "Color picker"
 msgstr "Farbwähler"
 
-#: ../data/gcolor3.desktop.in.in.h:2 ../data/gcolor3.appdata.xml.in.h:2
+#: ../data/org.hjdskes.gcolor3.desktop.in.in.h:2 ../data/org.hjdskes.gcolor3.appdata.xml.in.h:2
 #: ../src/gcolor3-application.c:61
 msgid "Choose colors from the picker or the screen"
 msgstr "Wählen Sie Farben vom Farbrad oder dem Bildschirm"
 
 #. Extra keywords that can be used to search for Gcolor3 in GNOME Shell and Unity
-#: ../data/gcolor3.desktop.in.in.h:4
+#: ../data/org.hjdskes.gcolor3.desktop.in.in.h:4
 msgid "Color;Picker;Palette;"
 msgstr "Farbe;Farbauswahl;Farbpalette;"
 
-#: ../data/gcolor3.appdata.xml.in.h:3
+#: ../data/org.hjdskes.gcolor3.appdata.xml.in.h:3
 msgid ""
 "Ever wanted to know the value of that color on your screen? Gcolor3 enables "
 "you to pick the color from any pixel on your screen. It also offers a "
@@ -44,7 +44,7 @@ msgstr ""
 "aufzunehmen. Weiterhin wird eine Farbpalette zur Abstimmung von "
 "Farbkombinationen bereitgestellt."
 
-#: ../data/gcolor3.appdata.xml.in.h:4
+#: ../data/org.hjdskes.gcolor3.appdata.xml.in.h:4
 msgid ""
 "When you have found the perfect combination of colors, naturally you want to "
 "save them. Gcolor3 allows you to conveniently save and retrieve colors."
@@ -52,7 +52,7 @@ msgstr ""
 "Gcolor3 ermöglicht in bequemer Weise Abspeichern und Wiederverwenden Ihrer "
 "Lieblingsfarben."
 
-#: ../data/gcolor3.appdata.xml.in.h:5
+#: ../data/org.hjdskes.gcolor3.appdata.xml.in.h:5
 msgid ""
 "Gcolor3 is a color selection dialog written in GTK+ 3. It is much alike "
 "Gcolor2, but uses the newer GTK+ version and other modernisations to better "
@@ -61,11 +61,11 @@ msgstr ""
 "Gcolor3 ist ein Farbwahlprogramm basierend auf GTK+ 3. Zur Funktionalität "
 "von Gcolor2 bietet es eine modernisierte Benutzeroberfläche. "
 
-#: ../data/gcolor3.appdata.xml.in.h:6
+#: ../data/org.hjdskes.gcolor3.appdata.xml.in.h:6
 msgid "The picker and the color palette"
 msgstr "Der Farbwähler und die Farbpalette"
 
-#: ../data/gcolor3.appdata.xml.in.h:7
+#: ../data/org.hjdskes.gcolor3.appdata.xml.in.h:7
 msgid "The list of saved colors"
 msgstr "Liste der gespeicherten Farben"
 

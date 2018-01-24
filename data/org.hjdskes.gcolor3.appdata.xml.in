@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Copyright 2016 Jente Hidskes <hjdskes@gmail.com> -->
+<!-- Copyright 2016, 2018 Jente Hidskes <hjdskes@gmail.com> -->
 <component type="desktop">
-  <id>gcolor3.desktop</id>
+  <id>org.hjdskes.gcolor3.desktop</id>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-2.0+</project_license>
   <_name>Color picker</_name>
@@ -43,7 +43,7 @@
   <developer_name>Jente Hidskes</developer_name>
   <update_contact>hjdskes_at_gmail.com</update_contact>
   <translation type="gettext">gcolor3</translation>
-  <!-- Validate with `appstream-util validate gcolor3.appdata.xml.in`. -->
+  <!-- Validate with `appstream-util validate org.hjdskes.gcolor3.appdata.xml.in`. -->
   <releases>
     <release version="2.2" date="2016-08-20">
       <description>

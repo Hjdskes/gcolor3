@@ -16,22 +16,22 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../data/gcolor3.desktop.in.in.h:1 ../data/gcolor3.appdata.xml.in.h:1
+#: ../data/org.hjdskes.gcolor3.desktop.in.in.h:1 ../data/org.hjdskes.gcolor3.appdata.xml.in.h:1
 #: ../src/gcolor3-application.c:121
 msgid "Color picker"
 msgstr "Fargevelger"
 
-#: ../data/gcolor3.desktop.in.in.h:2 ../data/gcolor3.appdata.xml.in.h:2
+#: ../data/org.hjdskes.gcolor3.desktop.in.in.h:2 ../data/org.hjdskes.gcolor3.appdata.xml.in.h:2
 #: ../src/gcolor3-application.c:58
 msgid "Choose colors from the picker or the screen"
 msgstr "Velg farger enten fra velgeren eller fra skjermen"
 
 #. Extra keywords that can be used to search for Gcolor3 in GNOME Shell and Unity
-#: ../data/gcolor3.desktop.in.in.h:4
+#: ../data/org.hjdskes.gcolor3.desktop.in.in.h:4
 msgid "Color;Picker;Palette;"
 msgstr "Farge;Velger;Palett"
 
-#: ../data/gcolor3.appdata.xml.in.h:3
+#: ../data/org.hjdskes.org.hjdskes.gcolor3.appdata.xml.in.h:3
 msgid ""
 "Ever wanted to know the value of that color on your screen? Gcolor3 enables "
 "you to pick the color from any pixel on your screen. It also offers a "
@@ -41,7 +41,7 @@ msgstr ""
 "lar deg hente ut fargen til en hvilken som helst piksel på skjermen. Den tilbyr"
 "også en palett å velge fra, slik at du ekelt kan mikse og matche flere farger."
 
-#: ../data/gcolor3.appdata.xml.in.h:4
+#: ../data/org.hjdskes.gcolor3.appdata.xml.in.h:4
 msgid ""
 "When you have found the perfect combination of colors, naturally you want to "
 "save them. Gcolor3 allows you to conveniently save and retrieve colors."
@@ -49,7 +49,7 @@ msgstr ""
 "Når du har funnet den perfekte kombinasjonen av farger vil du naturligvis ha "
 "muligheten til å lagre de. Gcolor3 lar deg enkelt lagre og hente inn farger."
 
-#: ../data/gcolor3.appdata.xml.in.h:5
+#: ../data/org.hjdskes.gcolor3.appdata.xml.in.h:5
 msgid ""
 "Gcolor3 is a color selection dialog written in GTK+ 3. It is much alike "
 "Gcolor2, but uses the newer GTK+ version and other modernisations to better "
@@ -59,11 +59,11 @@ msgstr ""
 "men bruker en nyere GTK+ versjon og andre moderniseringer slik at den"
 "integrerer bedre med moderne desktops."
 
-#: ../data/gcolor3.appdata.xml.in.h:6
+#: ../data/org.hjdskes.gcolor3.appdata.xml.in.h:6
 msgid "The picker and the color palette"
 msgstr "Fargevelgeren og fargepaletten"
 
-#: ../data/gcolor3.appdata.xml.in.h:7
+#: ../data/org.hjdskes.gcolor3.appdata.xml.in.h:7
 msgid "The list of saved colors"
 msgstr "Listen over lagrede farger"
 
