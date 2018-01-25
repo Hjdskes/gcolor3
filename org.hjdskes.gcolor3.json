@@ -16,7 +16,7 @@
         "--socket=x11",
         "--socket=wayland",
 
-        "--filesystem=xdg-config/gcolor3/config.ini:ro"
+        "--filesystem=xdg-config/gcolor3/config.ini:rw"
     ],
     
     "build-options": {
