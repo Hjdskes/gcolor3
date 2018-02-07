@@ -1678,7 +1678,6 @@ grab_color_at_pointer (GdkScreen *screen,
   guchar *pixels;
   Gcolor3ColorSelection *colorsel = data;
   Gcolor3ColorSelectionPrivate *priv;
-  GdkRGBA color;
   GdkWindow *root_window = gdk_screen_get_root_window (screen);
 
   priv = colorsel->private_data;
@@ -1699,14 +1698,10 @@ grab_color_at_pointer (GdkScreen *screen,
         return;
     }
   pixels = gdk_pixbuf_get_pixels (pixbuf);
-  color.red = pixels[0] * 0x101;
-  color.green = pixels[1] * 0x101;
-  color.blue = pixels[2] * 0x101;
+  priv->color[COLORSEL_RED] = SCALE(pixels[0] * 0x101);
+  priv->color[COLORSEL_GREEN] = SCALE(pixels[1] * 0x101);
+  priv->color[COLORSEL_BLUE] = SCALE(pixels[2] * 0x101);
   g_object_unref (pixbuf);
-
-  priv->color[COLORSEL_RED] = color.red;
-  priv->color[COLORSEL_GREEN] = color.green;
-  priv->color[COLORSEL_BLUE] = color.blue;
 
   gtk_rgb_to_hsv (priv->color[COLORSEL_RED],
                   priv->color[COLORSEL_GREEN],
