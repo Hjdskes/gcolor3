@@ -1704,9 +1704,9 @@ grab_color_at_pointer (GdkScreen *screen,
   color.blue = pixels[2] * 0x101;
   g_object_unref (pixbuf);
 
-  priv->color[COLORSEL_RED] = color.red;
-  priv->color[COLORSEL_GREEN] = color.green;
-  priv->color[COLORSEL_BLUE] = color.blue;
+  priv->color[COLORSEL_RED] =  SCALE(color.red);
+  priv->color[COLORSEL_GREEN] =  SCALE(color.green);
+  priv->color[COLORSEL_BLUE] =  SCALE(color.blue);
 
   gtk_rgb_to_hsv (priv->color[COLORSEL_RED],
                   priv->color[COLORSEL_GREEN],
