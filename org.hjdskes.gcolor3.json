@@ -1,0 +1,46 @@
+{
+    "app-id": "org.hjdskes.gcolor3",
+
+    "runtime": "org.gnome.Platform",
+    "runtime-version": "3.26",
+    "sdk": "org.gnome.Sdk",
+
+    "command": "gcolor3",
+
+    "rename-icon": "gcolor3",
+    "rename-desktop-file": "gcolor3.desktop",
+    "rename-appdata-file": "gcolor3.appdata.xml",
+
+    "finish-args": [
+        "--share=ipc",
+        "--socket=x11",
+        "--socket=wayland",
+
+        "--filesystem=xdg-config/gcolor3/config.ini:rw"
+    ],
+    
+    "build-options": {
+        "cflags": "-O2 -g"
+    },
+    
+    "cleanup": [
+        "*.la",
+        "*.a",
+        "/include",
+        "/lib/pkgconfig",
+        "/share/man"
+    ],
+    
+    "modules": [
+        {
+            "name": "gcolor3",
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://github.com/Hjdskes/gcolor3/archive/v2.2.tar.gz",
+                    "sha256": "a3f67108ef7524b424b774b4b68332e45371703f61d659ce7ca1da47c7fb5590"
+                }
+            ]
+        }
+    ]
+}
