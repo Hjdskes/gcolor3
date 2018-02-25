@@ -34,6 +34,7 @@
 
 #include "gcolor3-color-selection.h"
 #include "gcolor3-hsv.h"
+#include "utils.h"
 
 #include <math.h>
 #include <string.h>
@@ -84,7 +85,7 @@
 #define BIG_STEP 20
 
 /* Conversion between 0->1 double and and guint16. See
- * scale_round() below for more general conversions
+ * scale_round() in utils.c for more general conversions
  */
 #define SCALE(i) (i / 65535.)
 #define UNSCALE(d) ((guint16)(d * 65535 + 0.5))
@@ -2168,15 +2169,6 @@ set_selected_palette (Gcolor3ColorSelection *colorsel, int x, int y)
   Gcolor3ColorSelectionPrivate *priv = colorsel->private_data;
 
   gtk_widget_grab_focus (priv->custom_palette[x][y]);
-}
-
-static double
-scale_round (double val, double factor)
-{
-  val = floor (val * factor + 0.5);
-  val = MAX (val, 0);
-  val = MIN (val, factor);
-  return val;
 }
 
 static void

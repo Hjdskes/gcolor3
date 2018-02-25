@@ -30,6 +30,7 @@
 #include "gcolor3-color-selection.h"
 #include "gcolor3-color-store.h"
 #include "gcolor3-window.h"
+#include "utils.h"
 
 enum {
 	COLOR_PIXBUF,
@@ -64,14 +65,6 @@ static void gcolor3_window_color_added (UNUSED Gcolor3ColorStore *store,
 					gpointer                  user_data);
 
 G_DEFINE_TYPE_WITH_PRIVATE (Gcolor3Window, gcolor3_window, GTK_TYPE_APPLICATION_WINDOW)
-
-static inline gchar *
-hex_value (GdkRGBA *color) {
-	return g_strdup_printf ("#%.2X%.2X%.2X",
-				(unsigned int) color->red * 256,
-				(unsigned int) color->green * 256,
-				(unsigned int) color->blue * 256);
-}
 
 static void
 set_color_in_clipboard (const gchar *color)

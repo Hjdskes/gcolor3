@@ -9,6 +9,7 @@ gcolor3_SOURCES = \
 	../data/gcolor3-resources.c \
 	../data/gcolor3-marshalers.c \
 	main.c \
+	utils.c \
 	gcolor3-application.c \
 	gcolor3-color-selection.c \
 	gcolor3-color-store.c \
@@ -19,6 +20,7 @@ gcolor3_SOURCES = \
 # FIXME: make dist fails on data files if Gcolor3 hasn't been make'd yet.
 gcolor3_NOINST_H_FILES = \
 	../data/gcolor3-marshalers.h \
+	utils.h \
 	gcolor3-application.h \
 	gcolor3-color-selection.h \
 	gcolor3-color-store.h \
