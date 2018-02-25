@@ -766,7 +766,6 @@ set_color_icon (GdkDragContext *context,
   pixbuf = gdk_pixbuf_new (GDK_COLORSPACE_RGB, FALSE,
                            8, 48, 32);
 
-  // FIXME: still needed?
   pixel = (((UNSCALE (colors[COLORSEL_RED])   & 0xff00) << 16) |
            ((UNSCALE (colors[COLORSEL_GREEN]) & 0xff00) << 8) |
            ((UNSCALE (colors[COLORSEL_BLUE])  & 0xff00)));
@@ -2505,7 +2504,6 @@ gcolor3_color_selection_set_current_alpha (Gcolor3ColorSelection *colorsel,
 
   priv = colorsel->private_data;
   priv->changing = TRUE;
-  // FIXME: still needed?
   priv->color[COLORSEL_OPACITY] = SCALE (alpha);
   if (priv->default_alpha_set == FALSE)
     {
@@ -2554,7 +2552,6 @@ gcolor3_color_selection_get_current_alpha (Gcolor3ColorSelection *colorsel)
   g_return_val_if_fail (GCOLOR3_IS_COLOR_SELECTION (colorsel), 0);
 
   priv = colorsel->private_data;
-  // FIXME: still needed?
   return priv->has_opacity ? UNSCALE (priv->color[COLORSEL_OPACITY]) : 65535;
 }
 
@@ -2615,7 +2612,6 @@ gcolor3_color_selection_set_previous_alpha (Gcolor3ColorSelection *colorsel,
 
   priv = colorsel->private_data;
   priv->changing = TRUE;
-  // FIXME: still needed?
   priv->old_color[COLORSEL_OPACITY] = SCALE (alpha);
   color_sample_update_samples (colorsel);
   priv->default_alpha_set = TRUE;
@@ -2661,7 +2657,6 @@ gcolor3_color_selection_get_previous_alpha (Gcolor3ColorSelection *colorsel)
   g_return_val_if_fail (GCOLOR3_IS_COLOR_SELECTION (colorsel), 0);
 
   priv = colorsel->private_data;
-  // FIXME: still needed?
   return priv->has_opacity ? UNSCALE (priv->old_color[COLORSEL_OPACITY]) : 65535;
 }
 
