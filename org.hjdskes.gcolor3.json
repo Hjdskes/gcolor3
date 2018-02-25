@@ -32,9 +32,8 @@
             "name": "gcolor3",
             "sources": [
                 {
-                    "type": "archive",
-                    "url": "https://github.com/Hjdskes/gcolor3/archive/v2.2.tar.gz",
-                    "sha256": "a3f67108ef7524b424b774b4b68332e45371703f61d659ce7ca1da47c7fb5590"
+                    "type": "git",
+                    "url": "git://github.com/Hjdskes/gcolor3.git"
                 }
             ]
         }
