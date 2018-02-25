@@ -19,9 +19,7 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
 
-#ifdef HAVE_CONFIG_H
 #include "config.h"
-#endif
 
 #include <gtk/gtk.h>
 #include <glib/gi18n.h>
@@ -62,7 +60,7 @@ gcolor3_application_action_about (UNUSED GSimpleAction *action,
 			       "translator-credits", _("translator-credits"),
 			       "website-label", _("Website"),
 			       "website", PACKAGE_URL,
-			       "logo-icon-name", gtk_window_get_default_icon_name (),
+			       "logo-icon-name", "org.hjdskes.gcolor3",
 			       "wrap-license", TRUE,
 			       "license-type", GTK_LICENSE_GPL_2_0,
 			       NULL);

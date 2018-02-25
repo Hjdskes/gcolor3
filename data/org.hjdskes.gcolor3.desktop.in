@@ -1,15 +1,14 @@
 [Desktop Entry]
-_Name=Color picker
-_Comment=Choose colors from the picker or the screen
-TryExec=@PACKAGE@
-Exec=@PACKAGE@
-Icon=org.hjdskes.@PACKAGE@
+Name=Color picker
+Comment=Choose colors from the picker or the screen
+Exec=gcolor3
+Icon=org.hjdskes.gcolor3
 StartupNotify=true
 Terminal=false
 Type=Application
 Categories=GNOME;GTK;Graphics;
 # Extra keywords that can be used to search for Gcolor3 in GNOME Shell and Unity
-_Keywords=Color;Picker;Palette;
+Keywords=Color;Picker;Palette;
 
 # Required for Unity to show the application name.
-X-Ubuntu-Gettext-Domain=@PACKAGE@
+X-Ubuntu-Gettext-Domain=gcolor3

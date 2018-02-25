@@ -4,23 +4,23 @@
   <id>org.hjdskes.gcolor3.desktop</id>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-2.0+</project_license>
-  <_name>Color picker</_name>
-  <_summary>Choose colors from the picker or the screen</_summary>
+  <name>Color picker</name>
+  <summary>Choose colors from the picker or the screen</summary>
   <description>
-    <_p>
+    <p>
     Ever wanted to know the value of that color on your screen? Gcolor3 enables
     you to pick the color from any pixel on your screen. It also offers a
     palette, so that you can easily mix and match a couple of colors together.
-    </_p>
-    <_p>
+    </p>
+    <p>
     When you have found the perfect combination of colors, naturally you want
     to save them. Gcolor3 allows you to conveniently save and retrieve colors.
-    </_p>
-    <_p>
+    </p>
+    <p>
     Gcolor3 is a color selection dialog written in GTK+ 3. It is much alike
     Gcolor2, but uses the newer GTK+ version and other modernisations to better
     integrate into your modern desktop.
-    </_p>
+    </p>
   </description>
   <kudos>
     <kudo>AppMenu</kudo>
@@ -30,11 +30,11 @@
   <screenshots>
     <screenshot type="default">
       <image>https://raw.githubusercontent.com/Hjdskes/gcolor3/0d41086dd845e3ed01f04511902aae2e84c836f1/picker.png</image>
-      <_caption>The picker and the color palette</_caption>
+      <caption>The picker and the color palette</caption>
     </screenshot>
     <screenshot>
       <image>https://raw.githubusercontent.com/Hjdskes/gcolor3/0d41086dd845e3ed01f04511902aae2e84c836f1/saved.png</image>
-      <_caption>The list of saved colors</_caption>
+      <caption>The list of saved colors</caption>
     </screenshot>
   </screenshots>
   <url type="homepage">https://hjdskes.github.io/projects/gcolor3/</url>
