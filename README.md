@@ -12,13 +12,14 @@ Compile from source
 
 To compile Gcolor3, you need the GTK+ 3 development packages and your
 distribution's package containing the tools to compile packages.
+You also need the [meson](http://mesonbuild.com) build system.
 
 When the build- and runtime dependencies of Gcolor3 have been installed, run the
 following commands to build and install Gcolor3:
 
-	$ ./autogen.sh
-	$ make
-	# make clean install
+	$ meson build
+	$ ninja -C build
+	# ninja -C build install
 
 Translations
 ------------
@@ -29,9 +30,9 @@ Greek, Norwegian Bokmål, Serbian, Spanish, Swedish and Ukrainian.
 
 New translations are always welcome! To do so, simply follow these steps:
 
-	$ cd po
-	$ intltool-update --pot
-	$ mv Gcolor3.pot xx.po
+	$ meson build
+	$ ninja -C build gcolor3-pot
+	$ mv po/Gcolor3.pot po/xx.po
 
 Where `xx` is the code of your language (e.g. `nl` for Dutch or `en_GB` for
 British English). Edit the
@@ -42,9 +43,8 @@ fill in the information in the header!
 
 When a translation needs updating, execute the following commands:
 
-	$ cd po
-	$ intltool-update --pot
-	$ intltool-update --dist --gettext-package=Gcolor3 --output-file=xx.po xx
+	$ meson build
+	$ ninja -C build gcolor3-update-po
 
 When you are done translating, either make a pull request on [GitHub][github] or send me
 the file via [email](mailto:hjdskes@gmail.com).
@@ -60,7 +60,7 @@ License
 
 Please see [LICENSE](https://github.com/Hjdskes/gcolor3/blob/master/LICENSE) on [GitHub][github].
 
-**Copyright © 2013 - 2016** Jente Hidskes &lt;hjdskes@gmail.com&gt;
+**Copyright © 2013 - 2018** Jente Hidskes &lt;hjdskes@gmail.com&gt;
 
   [github]: https://github.com/Hjdskes/gcolor3
 

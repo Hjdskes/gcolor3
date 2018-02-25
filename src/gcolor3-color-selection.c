@@ -25,9 +25,7 @@
  * Updated and adapted for inclusion in Gcolor3 by Jente Hidskes 2017.
  */
 
-#ifdef HAVE_CONFIG_H
 #include "config.h"
-#endif
 
 // TODO: get rid of all deprecated API
 #define GDK_DISABLE_DEPRECATION_WARNINGS
