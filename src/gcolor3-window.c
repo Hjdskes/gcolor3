@@ -216,7 +216,6 @@ gcolor3_window_picker_changed (Gcolor3ColorSelection *picker, gpointer user_data
 	gcolor3_color_selection_get_current_color (GCOLOR3_COLOR_SELECTION (picker), &priv->current);
 }
 
-/* FIXME: delete button is sensitive when switching to saved colors, even though there are none. */
 static void
 gcolor3_window_stack_changed (GtkStack          *stack,
 			      UNUSED GParamSpec *pspec,
@@ -245,8 +244,13 @@ gcolor3_window_stack_changed (GtkStack          *stack,
 		}
 		gtk_actionable_set_action_name (GTK_ACTIONABLE (priv->button), "win.delete");
 		g_simple_action_set_enabled (G_SIMPLE_ACTION (save_action), FALSE);
-		g_simple_action_set_enabled (G_SIMPLE_ACTION (copy_action), TRUE);
-		g_simple_action_set_enabled (G_SIMPLE_ACTION (delete_action), TRUE);
+		if (gtk_tree_selection_get_selected (priv->selection, NULL, NULL)) {
+			g_simple_action_set_enabled (G_SIMPLE_ACTION (copy_action), TRUE);
+			g_simple_action_set_enabled (G_SIMPLE_ACTION (delete_action), TRUE);
+		} else {
+			g_simple_action_set_enabled (G_SIMPLE_ACTION (copy_action), FALSE);
+			g_simple_action_set_enabled (G_SIMPLE_ACTION (delete_action), FALSE);
+		}
 		gtk_revealer_set_reveal_child (GTK_REVEALER (priv->revealer), FALSE);
 	} else {
 		image = gtk_image_new_from_icon_name ("document-save-symbolic", GTK_ICON_SIZE_MENU);
@@ -268,9 +272,13 @@ gcolor3_window_selection_changed (GtkTreeSelection *selection, gpointer user_dat
 	GdkRGBA new, current;
 	GtkTreeIter iter;
 	GtkTreeModel *model;
+	GAction *copy_action;
+	GAction *delete_action;
 	gchar *color;
 
 	priv = gcolor3_window_get_instance_private (GCOLOR3_WINDOW (user_data));
+	delete_action = g_action_map_lookup_action (G_ACTION_MAP (user_data), "delete");
+	copy_action = g_action_map_lookup_action (G_ACTION_MAP (user_data), "copy");
 
 	if (gtk_tree_selection_get_selected (selection, &model, &iter)) {
 		gtk_tree_model_get (model, &iter, COLOR_VALUE, &color, -1);
@@ -286,8 +294,12 @@ gcolor3_window_selection_changed (GtkTreeSelection *selection, gpointer user_dat
 			GCOLOR3_COLOR_SELECTION (priv->picker), &new);
 
 		gtk_widget_set_sensitive (priv->button, TRUE);
+		g_simple_action_set_enabled (G_SIMPLE_ACTION (copy_action), TRUE);
+		g_simple_action_set_enabled (G_SIMPLE_ACTION (delete_action), TRUE);
 	} else {
 		gtk_widget_set_sensitive (priv->button, FALSE);
+		g_simple_action_set_enabled (G_SIMPLE_ACTION (copy_action), FALSE);
+		g_simple_action_set_enabled (G_SIMPLE_ACTION (delete_action), FALSE);
 	}
 }
 
