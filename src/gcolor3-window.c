@@ -226,12 +226,14 @@ gcolor3_window_stack_changed (GtkStack          *stack,
 	GtkWidget *image;
 	const gchar *page;
 	GAction *save_action;
+	GAction *copy_action;
 	GAction *delete_action;
 
 	priv = gcolor3_window_get_instance_private (GCOLOR3_WINDOW (user_data));
 
 	save_action = g_action_map_lookup_action (G_ACTION_MAP (user_data), "save");
 	delete_action = g_action_map_lookup_action (G_ACTION_MAP (user_data), "delete");
+	copy_action = g_action_map_lookup_action (G_ACTION_MAP (user_data), "copy");
 
 	page = gtk_stack_get_visible_child_name (stack);
 	if (g_strcmp0 (page, "saved-colors") == 0) {
@@ -243,6 +245,7 @@ gcolor3_window_stack_changed (GtkStack          *stack,
 		}
 		gtk_actionable_set_action_name (GTK_ACTIONABLE (priv->button), "win.delete");
 		g_simple_action_set_enabled (G_SIMPLE_ACTION (save_action), FALSE);
+		g_simple_action_set_enabled (G_SIMPLE_ACTION (copy_action), TRUE);
 		g_simple_action_set_enabled (G_SIMPLE_ACTION (delete_action), TRUE);
 		gtk_revealer_set_reveal_child (GTK_REVEALER (priv->revealer), FALSE);
 	} else {
@@ -250,6 +253,7 @@ gcolor3_window_stack_changed (GtkStack          *stack,
 		gtk_widget_set_sensitive (priv->button, TRUE);
 		gtk_actionable_set_action_name (GTK_ACTIONABLE (priv->button), "win.save");
 		g_simple_action_set_enabled (G_SIMPLE_ACTION (save_action), TRUE);
+		g_simple_action_set_enabled (G_SIMPLE_ACTION (copy_action), FALSE);
 		g_simple_action_set_enabled (G_SIMPLE_ACTION (delete_action), FALSE);
 		gtk_revealer_set_reveal_child (GTK_REVEALER (priv->revealer), TRUE);
 	}
