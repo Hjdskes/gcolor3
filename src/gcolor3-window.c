@@ -237,11 +237,6 @@ gcolor3_window_stack_changed (GtkStack          *stack,
 	page = gtk_stack_get_visible_child_name (stack);
 	if (g_strcmp0 (page, "saved-colors") == 0) {
 		image = gtk_image_new_from_icon_name ("edit-delete-symbolic", GTK_ICON_SIZE_MENU);
-		if (gtk_tree_selection_get_selected (priv->selection, NULL, NULL)) {
-			gtk_widget_set_sensitive (priv->button, TRUE);
-		} else {
-			gtk_widget_set_sensitive (priv->button, FALSE);
-		}
 		gtk_actionable_set_action_name (GTK_ACTIONABLE (priv->button), "win.delete");
 		g_simple_action_set_enabled (G_SIMPLE_ACTION (save_action), FALSE);
 		if (gtk_tree_selection_get_selected (priv->selection, NULL, NULL)) {
@@ -254,7 +249,6 @@ gcolor3_window_stack_changed (GtkStack          *stack,
 		gtk_revealer_set_reveal_child (GTK_REVEALER (priv->revealer), FALSE);
 	} else {
 		image = gtk_image_new_from_icon_name ("document-save-symbolic", GTK_ICON_SIZE_MENU);
-		gtk_widget_set_sensitive (priv->button, TRUE);
 		gtk_actionable_set_action_name (GTK_ACTIONABLE (priv->button), "win.save");
 		g_simple_action_set_enabled (G_SIMPLE_ACTION (save_action), TRUE);
 		g_simple_action_set_enabled (G_SIMPLE_ACTION (copy_action), FALSE);
@@ -293,11 +287,9 @@ gcolor3_window_selection_changed (GtkTreeSelection *selection, gpointer user_dat
 		gcolor3_color_selection_set_current_color (
 			GCOLOR3_COLOR_SELECTION (priv->picker), &new);
 
-		gtk_widget_set_sensitive (priv->button, TRUE);
 		g_simple_action_set_enabled (G_SIMPLE_ACTION (copy_action), TRUE);
 		g_simple_action_set_enabled (G_SIMPLE_ACTION (delete_action), TRUE);
 	} else {
-		gtk_widget_set_sensitive (priv->button, FALSE);
 		g_simple_action_set_enabled (G_SIMPLE_ACTION (copy_action), FALSE);
 		g_simple_action_set_enabled (G_SIMPLE_ACTION (delete_action), FALSE);
 	}
