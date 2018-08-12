@@ -356,17 +356,53 @@ gcolor3_window_color_removed (UNUSED Gcolor3ColorStore *store, UNUSED const gcha
 }
 
 static void
+gcolor3_window_color_editing_started (UNUSED GtkCellRendererText *renderer,
+			      UNUSED gchar                      *path,
+			      UNUSED gchar                      *new_text,
+			      gpointer                    user_data)
+{
+	GAction *copy_action;
+	GAction *delete_action;
+
+	delete_action = g_action_map_lookup_action (G_ACTION_MAP (user_data), "delete");
+	copy_action = g_action_map_lookup_action (G_ACTION_MAP (user_data), "copy");
+
+	g_simple_action_set_enabled (G_SIMPLE_ACTION (copy_action), FALSE);
+	g_simple_action_set_enabled (G_SIMPLE_ACTION (delete_action), FALSE);
+}
+
+static void
+gcolor3_window_color_editing_canceled (UNUSED GtkCellRendererText *renderer,
+			      UNUSED gchar                      *path,
+			      UNUSED gchar                      *new_text,
+			      gpointer                    user_data)
+{
+	GAction *copy_action;
+	GAction *delete_action;
+
+	delete_action = g_action_map_lookup_action (G_ACTION_MAP (user_data), "delete");
+	copy_action = g_action_map_lookup_action (G_ACTION_MAP (user_data), "copy");
+
+	g_simple_action_set_enabled (G_SIMPLE_ACTION (copy_action), TRUE);
+	g_simple_action_set_enabled (G_SIMPLE_ACTION (delete_action), TRUE);
+}
+
+static void
 gcolor3_window_color_renamed (UNUSED GtkCellRendererText *renderer,
 			      gchar                      *path,
 			      gchar                      *new_text,
 			      gpointer                    user_data)
 {
+	GAction *copy_action;
+	GAction *delete_action;
 	Gcolor3WindowPrivate *priv;
 	GtkTreeModel *model;
 	GtkTreeIter iter;
 	gchar *old_text;
 	gboolean success;
 
+	delete_action = g_action_map_lookup_action (G_ACTION_MAP (user_data), "delete");
+	copy_action = g_action_map_lookup_action (G_ACTION_MAP (user_data), "copy");
 	priv = gcolor3_window_get_instance_private (GCOLOR3_WINDOW (user_data));
 	model = gtk_tree_view_get_model (GTK_TREE_VIEW (priv->tree));
 
@@ -380,6 +416,9 @@ gcolor3_window_color_renamed (UNUSED GtkCellRendererText *renderer,
 	if (gcolor3_color_store_rename_color (priv->store, old_text, new_text)) {
 		gtk_list_store_set (GTK_LIST_STORE (model), &iter, COLOR_NAME, new_text, -1);
 	}
+
+	g_simple_action_set_enabled (G_SIMPLE_ACTION (copy_action), TRUE);
+	g_simple_action_set_enabled (G_SIMPLE_ACTION (delete_action), TRUE);
 
 	g_free (old_text);
 }
@@ -524,6 +563,10 @@ gcolor3_window_setup_tree_view (Gcolor3Window *window)
 
 	name_renderer = gtk_cell_renderer_text_new ();
 	g_object_set (name_renderer, "editable", TRUE, NULL);
+	g_signal_connect (name_renderer, "editing-started",
+			  G_CALLBACK (gcolor3_window_color_editing_started), window);
+	g_signal_connect (name_renderer, "editing-canceled",
+			  G_CALLBACK (gcolor3_window_color_editing_canceled), window);
 	g_signal_connect (name_renderer, "edited",
 			  G_CALLBACK (gcolor3_window_color_renamed), window);
 	column = gtk_tree_view_column_new_with_attributes (_("Name"),
