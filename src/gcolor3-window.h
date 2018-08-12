@@ -52,6 +52,7 @@ struct _Gcolor3WindowClass {
 GType          gcolor3_window_get_type (void) G_GNUC_CONST;
 
 Gcolor3Window *gcolor3_window_new (Gcolor3Application *application, Gcolor3ColorStore *store);
+void           gcolor3_window_destroy (Gcolor3Window *window, gpointer user_data);
 
 G_END_DECLS
 

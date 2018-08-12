@@ -75,7 +75,7 @@ gcolor3_application_action_quit (UNUSED GSimpleAction *action,
 
 	windows = gtk_application_get_windows (GTK_APPLICATION (user_data));
 
-	g_list_foreach (windows, (GFunc) gtk_widget_destroy, NULL);
+	g_list_foreach (windows, (GFunc) gcolor3_window_destroy, NULL);
 }
 
 static GActionEntry app_entries[] = {

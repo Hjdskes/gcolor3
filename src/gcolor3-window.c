@@ -574,3 +574,9 @@ gcolor3_window_new (Gcolor3Application *application, Gcolor3ColorStore *store)
 			     NULL);
 }
 
+void
+gcolor3_window_destroy (Gcolor3Window *window, UNUSED gpointer user_data)
+{
+	g_return_if_fail (window != NULL);
+	gtk_widget_destroy (GTK_WIDGET (window));
+}
