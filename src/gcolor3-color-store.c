@@ -135,7 +135,7 @@ gcolor3_color_store_init (Gcolor3ColorStore *store)
 					 file,
 					 G_KEY_FILE_KEEP_COMMENTS | G_KEY_FILE_KEEP_TRANSLATIONS,
 					 &error))) {
-		g_warning (_("Error opening file: %s. Colors likely won't be saved"),
+		g_warning (_("Error opening file: %s. Colors likely won't be saved, unless this is the first run"),
 			   error->message);
 		g_clear_error (&error);
 	}
@@ -250,7 +250,7 @@ gcolor3_color_store_foreach (Gcolor3ColorStore           *store,
 	priv = gcolor3_color_store_get_instance_private (store);
 
 	if (!(keys = g_key_file_get_keys (priv->colors, "Colors", &length, &error))) {
-		g_warning (_("Error reading keys: %s"), error->message);
+		g_warning (_("Error reading keys: %s. This is harmless if this is the first run"), error->message);
 		g_clear_error (&error);
 		return;
 	}
