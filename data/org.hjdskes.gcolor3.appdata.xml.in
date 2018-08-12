@@ -40,6 +40,7 @@
   <url type="homepage">https://hjdskes.github.io/projects/gcolor3/</url>
   <url type="bugtracker">https://github.com/Hjdskes/gcolor3/issues</url>
   <url type="help">https://github.com/Hjdskes/gcolor3/issues</url>
+  <!-- Translators: please do NOT translate this. -->
   <developer_name>Jente Hidskes</developer_name>
   <update_contact>hjdskes_at_gmail.com</update_contact>
   <translation type="gettext">gcolor3</translation>

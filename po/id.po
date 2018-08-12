@@ -6,36 +6,41 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 2.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-12-10 10:25+0700\n"
+"POT-Creation-Date: 2018-08-12 21:42+0200\n"
 "PO-Revision-Date: 2017-12-10 10:37+0700\n"
+"Last-Translator: Dindin Hernawan <root@dev.xentaos.org>\n"
 "Language-Team: Indonesian\n"
+"Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.8.7.1\n"
-"Last-Translator: Dindin Hernawan <root@dev.xentaos.org>\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"Language: id\n"
 
-#: ../data/gcolor3.desktop.in.in.h:1 ../data/gcolor3.appdata.xml.in.h:1
-#: ../src/gcolor3-application.c:121
+#: data/org.hjdskes.gcolor3.desktop.in:3
+#: data/org.hjdskes.gcolor3.appdata.xml.in:7 src/gcolor3-application.c:119
 #, fuzzy
 msgid "Color picker"
 msgstr "Pemetik warna"
 
-#: ../data/gcolor3.desktop.in.in.h:2 ../data/gcolor3.appdata.xml.in.h:2
-#: ../src/gcolor3-application.c:58
+#: data/org.hjdskes.gcolor3.desktop.in:4
+#: data/org.hjdskes.gcolor3.appdata.xml.in:8 src/gcolor3-application.c:56
 #, fuzzy
 msgid "Choose colors from the picker or the screen"
 msgstr "Pilih warna dari pemetik atau layar"
 
-#. Extra keywords that can be used to search for Gcolor3 in GNOME Shell and Unity
-#: ../data/gcolor3.desktop.in.in.h:4
+#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
+#: data/org.hjdskes.gcolor3.desktop.in:7
+msgid "org.hjdskes.gcolor3"
+msgstr ""
+
+#. Translators: Extra keywords that can be used to search for Gcolor3 in GNOME Shell and Unity
+#: data/org.hjdskes.gcolor3.desktop.in:13
 #, fuzzy
 msgid "Color;Picker;Palette;"
 msgstr "Warna; Pemetik; Palet;"
 
-#: ../data/gcolor3.appdata.xml.in.h:3
+#: data/org.hjdskes.gcolor3.appdata.xml.in:10
 #, fuzzy
 msgid ""
 "Ever wanted to know the value of that color on your screen? Gcolor3 enables "
@@ -47,7 +52,7 @@ msgstr ""
 "sehingga Anda dapat dengan mudah mencampur dan mencocokkan beberapa warna "
 "bersama-sama."
 
-#: ../data/gcolor3.appdata.xml.in.h:4
+#: data/org.hjdskes.gcolor3.appdata.xml.in:15
 #, fuzzy
 msgid ""
 "When you have found the perfect combination of colors, naturally you want to "
@@ -57,7 +62,7 @@ msgstr ""
 "menyimpanya. Gcolor3 memungkinkan Anda menyimpan dan mengambil warna dengan "
 "mudah."
 
-#: ../data/gcolor3.appdata.xml.in.h:5
+#: data/org.hjdskes.gcolor3.appdata.xml.in:19
 #, fuzzy
 msgid ""
 "Gcolor3 is a color selection dialog written in GTK+ 3. It is much alike "
@@ -69,47 +74,75 @@ msgstr ""
 "modernisasi lainnya untuk mengintegrasikannya dengan lebih baik ke dalam "
 "desktop modern Anda."
 
-#: ../data/gcolor3.appdata.xml.in.h:6
+#: data/org.hjdskes.gcolor3.appdata.xml.in:33
 #, fuzzy
 msgid "The picker and the color palette"
 msgstr "Pemetik dan palet warna"
 
-#: ../data/gcolor3.appdata.xml.in.h:7
+#: data/org.hjdskes.gcolor3.appdata.xml.in:37
 #, fuzzy
 msgid "The list of saved colors"
 msgstr "Daftar warna yang disimpan"
 
-#: ../data/menus.ui.h:1
+#. Translators: please do NOT translate this.
+#: data/org.hjdskes.gcolor3.appdata.xml.in:44
+msgid "Jente Hidskes"
+msgstr ""
+
+#: data/org.hjdskes.gcolor3.appdata.xml.in:53
+msgid "Centrally manage colors between several running instances;"
+msgstr ""
+
+#: data/org.hjdskes.gcolor3.appdata.xml.in:54
+msgid ""
+"Follow the XDG directory specification for the configuration file. This "
+"means that the configuration file has moved from `~/.rgb.ini` to `"
+"$XDG_CONFIG_HOME/gcolor3/config.ini`;"
+msgstr ""
+
+#: data/org.hjdskes.gcolor3.appdata.xml.in:56
+msgid "Copy the selected color's hex value from the tree view using Ctrl-C;"
+msgstr ""
+
+#: data/org.hjdskes.gcolor3.appdata.xml.in:57
+msgid "Make the main window resizable;"
+msgstr ""
+
+#: data/org.hjdskes.gcolor3.appdata.xml.in:58
+msgid "Translation updates."
+msgstr ""
+
+#: data/menus.ui:7
 #, fuzzy
 msgid "_About"
 msgstr "_Tentang"
 
-#: ../data/menus.ui.h:2
+#: data/menus.ui:11
 #, fuzzy
 msgid "_Quit"
 msgstr "_Keluar"
 
-#: ../data/window.ui.h:1
+#: data/window.ui:55
 #, fuzzy
 msgid "Saved colors"
 msgstr "Warna tersimpan"
 
-#: ../data/window.ui.h:2
+#: data/window.ui:104
 #, fuzzy
 msgid "Color name..."
 msgstr "Nama warna..."
 
-#: ../src/main.c:45
+#: src/main.c:43
 #, fuzzy
 msgid "Show the application's version"
 msgstr "Tampilkan versi aplikasi"
 
-#: ../src/main.c:56
+#: src/main.c:54
 #, fuzzy
 msgid "- pick a color from the picker or the screen"
 msgstr "- pilih warna dari pemetik atau layar"
 
-#: ../src/main.c:67
+#: src/main.c:65
 #, fuzzy, c-format
 msgid "Run '%s --help' to see a full list of available command line options"
 msgstr ""
@@ -117,83 +150,83 @@ msgstr ""
 "tersedia"
 
 #. Translators: translate this to give yourself credits.
-#: ../src/gcolor3-application.c:62
+#: src/gcolor3-application.c:60
 #, fuzzy
 msgid "translator-credits"
 msgstr "penerjemah-kredit"
 
-#: ../src/gcolor3-application.c:63
+#: src/gcolor3-application.c:61
 #, fuzzy
 msgid "Website"
 msgstr "Situs web"
 
-#: ../src/gcolor3-color-store.c:70
+#: src/gcolor3-color-store.c:68
 #, fuzzy, c-format
 msgid "Error creating config directory: %s"
 msgstr "Kesalahan membuat direktori config:% s"
 
-#: ../src/gcolor3-color-store.c:88
+#: src/gcolor3-color-store.c:86
 #, fuzzy, c-format
 msgid "Error writing file: %s"
 msgstr "Kesalahan saat menulis berkas:% s"
 
-#: ../src/gcolor3-color-store.c:140
+#: src/gcolor3-color-store.c:138
 #, fuzzy, c-format
 msgid "Error opening file: %s. Colors likely won't be saved"
 msgstr ""
 "Kesalahan saat membuka berkas:% s. Warna kemungkinan tidak akan disimpan"
 
-#: ../src/gcolor3-color-store.c:165 ../src/gcolor3-color-store.c:219
+#: src/gcolor3-color-store.c:163 src/gcolor3-color-store.c:217
 #, fuzzy, c-format
 msgid "There is already a color named `%s`"
 msgstr "Sudah ada warna yang bernama `% s`"
 
-#: ../src/gcolor3-color-store.c:186
+#: src/gcolor3-color-store.c:184
 #, fuzzy, c-format
 msgid "Error deleting key: %s"
 msgstr "Kesalahan saat menghapus kunci:% s"
 
-#: ../src/gcolor3-color-store.c:214
+#: src/gcolor3-color-store.c:212
 #, fuzzy, c-format
 msgid "Cannot rename nonexisting color `%s`"
 msgstr "Tidak dapat mengganti nama warna tidak ada `% s`"
 
-#: ../src/gcolor3-color-store.c:224
+#: src/gcolor3-color-store.c:222
 #, fuzzy, c-format
 msgid "Cannot retrieve hex value belonging to `%s`: %s"
 msgstr "Tidak dapat mengambil nilai hex milik `% s`:% s"
 
-#: ../src/gcolor3-color-store.c:230
+#: src/gcolor3-color-store.c:228
 #, fuzzy, c-format
 msgid "Error deleting old name `%s`: %s"
 msgstr "Kesalahan menghapus nama lama `% s`:% s"
 
-#: ../src/gcolor3-color-store.c:255
+#: src/gcolor3-color-store.c:253
 #, fuzzy, c-format
 msgid "Error reading keys: %s"
 msgstr "Kesalahan saat membaca kunci:% s"
 
-#: ../src/gcolor3-window.c:336
+#: src/gcolor3-window.c:327
 #, fuzzy
 msgid "The model is empty; there are no colors to remove"
 msgstr "Modelnya kosong; tidak ada warna untuk dihapus"
 
-#: ../src/gcolor3-window.c:376
+#: src/gcolor3-window.c:367
 #, fuzzy
 msgid "Cannot update color: invalid path"
 msgstr "Tidak dapat memperbarui warna: jalur tidak valid"
 
-#: ../src/gcolor3-window.c:510
+#: src/gcolor3-window.c:501
 #, fuzzy
 msgid "Color"
 msgstr "Warna"
 
-#: ../src/gcolor3-window.c:530
+#: src/gcolor3-window.c:521
 #, fuzzy
 msgid "Name"
 msgstr "Name"
 
-#: ../src/gcolor3-window.c:555
+#: src/gcolor3-window.c:546
 #, fuzzy
 msgid "Picker"
 msgstr "Pemetik"
