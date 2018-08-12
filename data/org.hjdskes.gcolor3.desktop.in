@@ -2,12 +2,13 @@
 Name=Color picker
 Comment=Choose colors from the picker or the screen
 Exec=gcolor3
+# Translators: Do NOT translate or transliterate this text (this is an icon file name)!
 Icon=org.hjdskes.gcolor3
 StartupNotify=true
 Terminal=false
 Type=Application
 Categories=GNOME;GTK;Graphics;
-# Extra keywords that can be used to search for Gcolor3 in GNOME Shell and Unity
+# Translators: Extra keywords that can be used to search for Gcolor3 in GNOME Shell and Unity
 Keywords=Color;Picker;Palette;
 
 # Required for Unity to show the application name.

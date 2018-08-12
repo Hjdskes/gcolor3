@@ -7,32 +7,37 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 2.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-18 09:46+0100\n"
+"POT-Creation-Date: 2018-08-12 21:42+0200\n"
 "PO-Revision-Date: 2018-01-18 10:44+0100\n"
+"Last-Translator: Xoan Sampaiño <xoansampainho@gmail.com>\n"
+"Language-Team: Spanish\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Last-Translator: Xoan Sampaiño <xoansampainho@gmail.com>\n"
-"Language-Team: Spanish\n"
 "X-Generator: Poedit 2.0.5\n"
 
-#: ../data/gcolor3.desktop.in.in.h:1 ../data/gcolor3.appdata.xml.in.h:1
-#: ../src/gcolor3-application.c:121
+#: data/org.hjdskes.gcolor3.desktop.in:3
+#: data/org.hjdskes.gcolor3.appdata.xml.in:7 src/gcolor3-application.c:119
 msgid "Color picker"
 msgstr "Selector de color"
 
-#: ../data/gcolor3.desktop.in.in.h:2 ../data/gcolor3.appdata.xml.in.h:2
-#: ../src/gcolor3-application.c:58
+#: data/org.hjdskes.gcolor3.desktop.in:4
+#: data/org.hjdskes.gcolor3.appdata.xml.in:8 src/gcolor3-application.c:56
 msgid "Choose colors from the picker or the screen"
 msgstr "Elija colores desde un selector o desde la pantalla"
 
-#. Extra keywords that can be used to search for Gcolor3 in GNOME Shell and Unity
-#: ../data/gcolor3.desktop.in.in.h:4
+#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
+#: data/org.hjdskes.gcolor3.desktop.in:7
+msgid "org.hjdskes.gcolor3"
+msgstr ""
+
+#. Translators: Extra keywords that can be used to search for Gcolor3 in GNOME Shell and Unity
+#: data/org.hjdskes.gcolor3.desktop.in:13
 msgid "Color;Picker;Palette;"
 msgstr "Color;Selector;Paleta;"
 
-#: ../data/gcolor3.appdata.xml.in.h:3
+#: data/org.hjdskes.gcolor3.appdata.xml.in:10
 msgid ""
 "Ever wanted to know the value of that color on your screen? Gcolor3 enables "
 "you to pick the color from any pixel on your screen. It also offers a "
@@ -42,7 +47,7 @@ msgstr ""
 "permite elegir el color de cualquier píxel en su pantalla. También ofrece "
 "una paleta, para que pueda mezclar y combinar fácilmente un par de colores."
 
-#: ../data/gcolor3.appdata.xml.in.h:4
+#: data/org.hjdskes.gcolor3.appdata.xml.in:15
 msgid ""
 "When you have found the perfect combination of colors, naturally you want to "
 "save them. Gcolor3 allows you to conveniently save and retrieve colors."
@@ -50,7 +55,7 @@ msgstr ""
 "Cuando haya encontrado la combinación perfecta de colores, seguramente desee "
 "guardarlos. Gcolor3 le permite guardar y recuperar colores cómodamente."
 
-#: ../data/gcolor3.appdata.xml.in.h:5
+#: data/org.hjdskes.gcolor3.appdata.xml.in:19
 msgid ""
 "Gcolor3 is a color selection dialog written in GTK+ 3. It is much alike "
 "Gcolor2, but uses the newer GTK+ version and other modernisations to better "
@@ -60,116 +65,144 @@ msgstr ""
 "mucho a Gcolor2, pero utiliza la versión más nueva de GTK+ y otras "
 "modernizaciones para integrarse mejor en su escritorio moderno."
 
-#: ../data/gcolor3.appdata.xml.in.h:6
+#: data/org.hjdskes.gcolor3.appdata.xml.in:33
 msgid "The picker and the color palette"
 msgstr "El selector y la paleta de colores"
 
-#: ../data/gcolor3.appdata.xml.in.h:7
+#: data/org.hjdskes.gcolor3.appdata.xml.in:37
 msgid "The list of saved colors"
 msgstr "La lista de colores guardados"
 
-#: ../data/menus.ui.h:1
+#. Translators: please do NOT translate this.
+#: data/org.hjdskes.gcolor3.appdata.xml.in:44
+msgid "Jente Hidskes"
+msgstr ""
+
+#: data/org.hjdskes.gcolor3.appdata.xml.in:53
+msgid "Centrally manage colors between several running instances;"
+msgstr ""
+
+#: data/org.hjdskes.gcolor3.appdata.xml.in:54
+msgid ""
+"Follow the XDG directory specification for the configuration file. This "
+"means that the configuration file has moved from `~/.rgb.ini` to `"
+"$XDG_CONFIG_HOME/gcolor3/config.ini`;"
+msgstr ""
+
+#: data/org.hjdskes.gcolor3.appdata.xml.in:56
+msgid "Copy the selected color's hex value from the tree view using Ctrl-C;"
+msgstr ""
+
+#: data/org.hjdskes.gcolor3.appdata.xml.in:57
+msgid "Make the main window resizable;"
+msgstr ""
+
+#: data/org.hjdskes.gcolor3.appdata.xml.in:58
+msgid "Translation updates."
+msgstr ""
+
+#: data/menus.ui:7
 msgid "_About"
 msgstr "A_cerca de"
 
-#: ../data/menus.ui.h:2
+#: data/menus.ui:11
 msgid "_Quit"
 msgstr "_Salir"
 
-#: ../data/window.ui.h:1
+#: data/window.ui:55
 msgid "Saved colors"
 msgstr "Colores guardados"
 
-#: ../data/window.ui.h:2
+#: data/window.ui:104
 msgid "Color name..."
 msgstr "Nombre del color..."
 
-#: ../src/main.c:45
+#: src/main.c:43
 msgid "Show the application's version"
 msgstr "Mostrar información sobre la versión y salir"
 
-#: ../src/main.c:56
+#: src/main.c:54
 msgid "- pick a color from the picker or the screen"
 msgstr "- elija colores desde el selector o desde la pantalla"
 
-#: ../src/main.c:67
+#: src/main.c:65
 #, c-format
 msgid "Run '%s --help' to see a full list of available command line options"
 msgstr ""
 "Ejecute «%s --help» para ver una lista completa de las opciones disponibles"
 
 #. Translators: translate this to give yourself credits.
-#: ../src/gcolor3-application.c:62
+#: src/gcolor3-application.c:60
 msgid "translator-credits"
 msgstr "Xoan Sampaiño <xoansampainho@gmail.com>"
 
-#: ../src/gcolor3-application.c:63
+#: src/gcolor3-application.c:61
 msgid "Website"
 msgstr "Sitio web"
 
-#: ../src/gcolor3-color-store.c:70
+#: src/gcolor3-color-store.c:68
 #, c-format
 msgid "Error creating config directory: %s"
 msgstr "Se ha producido un error al crear el directorio de configuración: %s"
 
-#: ../src/gcolor3-color-store.c:88
+#: src/gcolor3-color-store.c:86
 #, c-format
 msgid "Error writing file: %s"
 msgstr "Se ha producido un error al escribir el fichero: %s"
 
-#: ../src/gcolor3-color-store.c:140
+#: src/gcolor3-color-store.c:138
 #, c-format
 msgid "Error opening file: %s. Colors likely won't be saved"
 msgstr ""
 "Se ha producido un error al abrir el fichero: %s. Probablemente no se "
 "guardarán los colores"
 
-#: ../src/gcolor3-color-store.c:165 ../src/gcolor3-color-store.c:219
+#: src/gcolor3-color-store.c:163 src/gcolor3-color-store.c:217
 #, c-format
 msgid "There is already a color named `%s`"
 msgstr "Ya existe un color llamado «%s»"
 
-#: ../src/gcolor3-color-store.c:186
+#: src/gcolor3-color-store.c:184
 #, c-format
 msgid "Error deleting key: %s"
 msgstr "Se ha producido un error al borrar la clave: %s"
 
-#: ../src/gcolor3-color-store.c:214
+#: src/gcolor3-color-store.c:212
 #, c-format
 msgid "Cannot rename nonexisting color `%s`"
 msgstr "No se ha podido renombrar el color «%s» no existente"
 
-#: ../src/gcolor3-color-store.c:224
+#: src/gcolor3-color-store.c:222
 #, c-format
 msgid "Cannot retrieve hex value belonging to `%s`: %s"
 msgstr "No se ha podido recuperar el valor hexadecimal del color «%s»: %s"
 
-#: ../src/gcolor3-color-store.c:230
+#: src/gcolor3-color-store.c:228
 #, c-format
 msgid "Error deleting old name `%s`: %s"
 msgstr "Se ha producido un error al borrar el nombre antiguo «%s»: %s"
 
-#: ../src/gcolor3-color-store.c:255
+#: src/gcolor3-color-store.c:253
 #, c-format
 msgid "Error reading keys: %s"
 msgstr "Se ha producido un error al leer las claves: %s"
 
-#: ../src/gcolor3-window.c:336
+#: src/gcolor3-window.c:327
 msgid "The model is empty; there are no colors to remove"
 msgstr "El modelo está vacío; no hay colores para eliminar"
 
-#: ../src/gcolor3-window.c:376
+#: src/gcolor3-window.c:367
 msgid "Cannot update color: invalid path"
 msgstr "No se ha podido actualizar el color: ruta no válida"
 
-#: ../src/gcolor3-window.c:510
+#: src/gcolor3-window.c:501
 msgid "Color"
 msgstr "Color"
 
-#: ../src/gcolor3-window.c:530
+#: src/gcolor3-window.c:521
 msgid "Name"
 msgstr "Nombre"
 
-#: ../src/gcolor3-window.c:555
+#: src/gcolor3-window.c:546
 msgid "Picker"
 msgstr "Selector"

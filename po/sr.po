@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gcolor3 master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-11 17:31+0200\n"
+"POT-Creation-Date: 2018-08-12 21:42+0200\n"
 "PO-Revision-Date: 2016-08-11 17:40+0200\n"
 "Last-Translator: Марко М. Костић <marko.m.kostic@gmail.com>\n"
 "Language-Team: Serbian\n"
@@ -14,26 +14,31 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
-"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Generator: Virtaal 0.7.1\n"
 
-#: ../data/org.hjdskes.gcolor3.desktop.in.in.h:1 ../data/org.hjdskes.gcolor3.appdata.xml.in.h:1
-#: ../src/gcolor3-application.c:124
+#: data/org.hjdskes.gcolor3.desktop.in:3
+#: data/org.hjdskes.gcolor3.appdata.xml.in:7 src/gcolor3-application.c:119
 msgid "Color picker"
 msgstr "Бирач боја"
 
-#: ../data/org.hjdskes.gcolor3.desktop.in.in.h:2 ../data/org.hjdskes.gcolor3.appdata.xml.in.h:2
-#: ../src/gcolor3-application.c:61
+#: data/org.hjdskes.gcolor3.desktop.in:4
+#: data/org.hjdskes.gcolor3.appdata.xml.in:8 src/gcolor3-application.c:56
 msgid "Choose colors from the picker or the screen"
 msgstr "Изаберите боју из бирача или са екрана"
 
-#. Extra keywords that can be used to search for Gcolor3 in GNOME Shell and Unity
-#: ../data/org.hjdskes.gcolor3.desktop.in.in.h:4
+#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
+#: data/org.hjdskes.gcolor3.desktop.in:7
+msgid "org.hjdskes.gcolor3"
+msgstr ""
+
+#. Translators: Extra keywords that can be used to search for Gcolor3 in GNOME Shell and Unity
+#: data/org.hjdskes.gcolor3.desktop.in:13
 msgid "Color;Picker;Palette;"
 msgstr "Боја;Бирач;Палета;Color;Picker;Pallete;Boja:Birač;Paleta"
 
-#: ../data/org.hjdskes.gcolor3.appdata.xml.in.h:3
+#: data/org.hjdskes.gcolor3.appdata.xml.in:10
 msgid ""
 "Ever wanted to know the value of that color on your screen? Gcolor3 enables "
 "you to pick the color from any pixel on your screen. It also offers a "
@@ -44,7 +49,7 @@ msgstr ""
 "на вашем екрану. Такође вам нуди палету са којом можете лако мешати и "
 "тражити одговарајуће нијансе."
 
-#: ../data/org.hjdskes.gcolor3.appdata.xml.in.h:4
+#: data/org.hjdskes.gcolor3.appdata.xml.in:15
 msgid ""
 "When you have found the perfect combination of colors, naturally you want to "
 "save them. Gcolor3 allows you to conveniently save and retrieve colors."
@@ -53,7 +58,7 @@ msgstr ""
 "Gcolor3 вам омогућава да чувате тренутно изабране боје и користите већ "
 "сачуване боје."
 
-#: ../data/org.hjdskes.gcolor3.appdata.xml.in.h:5
+#: data/org.hjdskes.gcolor3.appdata.xml.in:19
 msgid ""
 "Gcolor3 is a color selection dialog written in GTK+ 3. It is much alike "
 "Gcolor2, but uses the newer GTK+ version and other modernisations to better "
@@ -63,43 +68,67 @@ msgstr ""
 "Слична је програму Gcolor2 али користи новије издање ГТК+-а и друге модерне "
 "елементе да би се боље уклопио у ваш модеран начин коришћења рачунара."
 
-#: ../data/org.hjdskes.gcolor3.appdata.xml.in.h:6
+#: data/org.hjdskes.gcolor3.appdata.xml.in:33
 msgid "The picker and the color palette"
 msgstr "Бирач и палета боја"
 
-#: ../data/org.hjdskes.gcolor3.appdata.xml.in.h:7
+#: data/org.hjdskes.gcolor3.appdata.xml.in:37
 msgid "The list of saved colors"
 msgstr "Списак сачуваних боја"
 
-#: ../data/menus.ui.h:1
+#. Translators: please do NOT translate this.
+#: data/org.hjdskes.gcolor3.appdata.xml.in:44
+msgid "Jente Hidskes"
+msgstr ""
+
+#: data/org.hjdskes.gcolor3.appdata.xml.in:53
+msgid "Centrally manage colors between several running instances;"
+msgstr ""
+
+#: data/org.hjdskes.gcolor3.appdata.xml.in:54
+msgid ""
+"Follow the XDG directory specification for the configuration file. This "
+"means that the configuration file has moved from `~/.rgb.ini` to `"
+"$XDG_CONFIG_HOME/gcolor3/config.ini`;"
+msgstr ""
+
+#: data/org.hjdskes.gcolor3.appdata.xml.in:56
+msgid "Copy the selected color's hex value from the tree view using Ctrl-C;"
+msgstr ""
+
+#: data/org.hjdskes.gcolor3.appdata.xml.in:57
+msgid "Make the main window resizable;"
+msgstr ""
+
+#: data/org.hjdskes.gcolor3.appdata.xml.in:58
+msgid "Translation updates."
+msgstr ""
+
+#: data/menus.ui:7
 msgid "_About"
 msgstr "_О програму"
 
-#: ../data/menus.ui.h:2
+#: data/menus.ui:11
 msgid "_Quit"
 msgstr "_Изађи"
 
-#: ../data/window.ui.h:1
-msgid "Picker"
-msgstr "Бирач"
-
-#: ../data/window.ui.h:2
+#: data/window.ui:55
 msgid "Saved colors"
 msgstr "Сачуване боје"
 
-#: ../data/window.ui.h:3
+#: data/window.ui:104
 msgid "Color name..."
 msgstr "Име боје..."
 
-#: ../src/main.c:45
+#: src/main.c:43
 msgid "Show the application's version"
 msgstr "Прикажи издање програма"
 
-#: ../src/main.c:56
+#: src/main.c:54
 msgid "- pick a color from the picker or the screen"
 msgstr "- изабери боју из бирача или са екрана"
 
-#: ../src/main.c:67
+#: src/main.c:65
 #, c-format
 msgid "Run '%s --help' to see a full list of available command line options"
 msgstr ""
@@ -107,75 +136,79 @@ msgstr ""
 "терминалу"
 
 #. Translators: translate this to give yourself credits.
-#: ../src/gcolor3-application.c:65
+#: src/gcolor3-application.c:60
 msgid "translator-credits"
 msgstr "Марко М. Костић (Marko M. Kostić) <marko.m.kostic@gmail.com>"
 
-#: ../src/gcolor3-application.c:66
+#: src/gcolor3-application.c:61
 msgid "Website"
 msgstr "Веб страница"
 
-#: ../src/gcolor3-color-store.c:70
+#: src/gcolor3-color-store.c:68
 #, c-format
 msgid "Error creating config directory: %s"
 msgstr "Грешка приликом прављења фасцикле са подешавањима: %s"
 
-#: ../src/gcolor3-color-store.c:88
+#: src/gcolor3-color-store.c:86
 #, c-format
 msgid "Error writing file: %s"
 msgstr "Грешка приликом уписивања у датотеку:%s"
 
-#: ../src/gcolor3-color-store.c:140
+#: src/gcolor3-color-store.c:138
 #, c-format
 msgid "Error opening file: %s. Colors likely won't be saved"
 msgstr ""
 "Грешка приликом отварања датотеке: %s. Боје вероватно неће бити сачуване"
 
-#: ../src/gcolor3-color-store.c:165 ../src/gcolor3-color-store.c:219
+#: src/gcolor3-color-store.c:163 src/gcolor3-color-store.c:217
 #, c-format
 msgid "There is already a color named `%s`"
 msgstr "Већ постоји боја са називом „%s“"
 
-#: ../src/gcolor3-color-store.c:186
+#: src/gcolor3-color-store.c:184
 #, c-format
 msgid "Error deleting key: %s"
 msgstr "Грешка приликом брисања кључа: %s"
 
-#: ../src/gcolor3-color-store.c:214
+#: src/gcolor3-color-store.c:212
 #, c-format
 msgid "Cannot rename nonexisting color `%s`"
 msgstr "Не могу да уклоним непостојећу боју „%s“"
 
-#: ../src/gcolor3-color-store.c:224
+#: src/gcolor3-color-store.c:222
 #, c-format
 msgid "Cannot retrieve hex value belonging to `%s`: %s"
 msgstr "Не могу да прочитам хексадецималну вредност која припада „%s“: %s"
 
-#: ../src/gcolor3-color-store.c:230
+#: src/gcolor3-color-store.c:228
 #, c-format
 msgid "Error deleting old name `%s`: %s"
 msgstr "Грешка приликом брисања старог назива `%s`: %s"
 
-#: ../src/gcolor3-color-store.c:255
+#: src/gcolor3-color-store.c:253
 #, c-format
 msgid "Error reading keys: %s"
 msgstr "Грешка приликом читања кључева: %s"
 
-#: ../src/gcolor3-window.c:338
+#: src/gcolor3-window.c:327
 msgid "The model is empty; there are no colors to remove"
 msgstr "Модел је празан, нема боја које се могу уклонити"
 
-#: ../src/gcolor3-window.c:378
+#: src/gcolor3-window.c:367
 msgid "Cannot update color: invalid path"
 msgstr "Не могу да ажурирам боју: неисправна путања"
 
-#: ../src/gcolor3-window.c:513
+#: src/gcolor3-window.c:501
 msgid "Color"
 msgstr "Боја"
 
-#: ../src/gcolor3-window.c:533
+#: src/gcolor3-window.c:521
 msgid "Name"
 msgstr "Име"
+
+#: src/gcolor3-window.c:546
+msgid "Picker"
+msgstr "Бирач"
 
 #~ msgid "Error opening file: "
 #~ msgstr "Грешка приликом отварања датотеке: "
