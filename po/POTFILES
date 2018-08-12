@@ -1,7 +1,7 @@
 # List of source files containing translatable strings.
 # Please keep this list sorted alphabetically.
-data/org.hjdskes.gcolor3.desktop.in
-data/org.hjdskes.gcolor3.appdata.xml.in
+data/nl.hjdskes.gcolor3.desktop.in
+data/nl.hjdskes.gcolor3.appdata.xml.in
 data/menus.ui
 data/window.ui
 src/main.c

@@ -60,7 +60,7 @@ gcolor3_application_action_about (UNUSED GSimpleAction *action,
 			       "translator-credits", _("translator-credits"),
 			       "website-label", _("Website"),
 			       "website", PACKAGE_URL,
-			       "logo-icon-name", "org.hjdskes.gcolor3",
+			       "logo-icon-name", "nl.hjdskes.gcolor3",
 			       "wrap-license", TRUE,
 			       "license-type", GTK_LICENSE_GPL_2_0,
 			       NULL);
@@ -175,7 +175,7 @@ Gcolor3Application *
 gcolor3_application_new (void)
 {
 	return g_object_new (GCOLOR3_TYPE_APPLICATION,
-			     "application-id", "org.hjdskes.gcolor3",
+			     "application-id", "nl.hjdskes.gcolor3",
 			     "flags", G_APPLICATION_FLAGS_NONE,
 			     NULL);
 }
