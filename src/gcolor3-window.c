@@ -471,7 +471,7 @@ gcolor3_window_class_init (Gcolor3WindowClass *gcolor3_window_class)
 							      G_PARAM_CONSTRUCT_ONLY |
 							      G_PARAM_STATIC_STRINGS));
 
-	gtk_widget_class_set_template_from_resource (widget_class, "/org/hjdskes/gcolor3/window.ui");
+	gtk_widget_class_set_template_from_resource (widget_class, "/nl/hjdskes/gcolor3/window.ui");
 
 	gtk_widget_class_bind_template_child_private (widget_class, Gcolor3Window, headerbar);
 	gtk_widget_class_bind_template_child_private (widget_class, Gcolor3Window, button);

@@ -17,27 +17,27 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 2.0.5\n"
 
-#: data/org.hjdskes.gcolor3.desktop.in:3
-#: data/org.hjdskes.gcolor3.appdata.xml.in:7 src/gcolor3-application.c:119
+#: data/nl.hjdskes.gcolor3.desktop.in:3
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:7 src/gcolor3-application.c:119
 msgid "Color picker"
 msgstr "Selector de color"
 
-#: data/org.hjdskes.gcolor3.desktop.in:4
-#: data/org.hjdskes.gcolor3.appdata.xml.in:8 src/gcolor3-application.c:56
+#: data/nl.hjdskes.gcolor3.desktop.in:4
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:8 src/gcolor3-application.c:56
 msgid "Choose colors from the picker or the screen"
 msgstr "Elija colores desde un selector o desde la pantalla"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
-#: data/org.hjdskes.gcolor3.desktop.in:7
-msgid "org.hjdskes.gcolor3"
+#: data/nl.hjdskes.gcolor3.desktop.in:7
+msgid "nl.hjdskes.gcolor3"
 msgstr ""
 
 #. Translators: Extra keywords that can be used to search for Gcolor3 in GNOME Shell and Unity
-#: data/org.hjdskes.gcolor3.desktop.in:13
+#: data/nl.hjdskes.gcolor3.desktop.in:13
 msgid "Color;Picker;Palette;"
 msgstr "Color;Selector;Paleta;"
 
-#: data/org.hjdskes.gcolor3.appdata.xml.in:10
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:10
 msgid ""
 "Ever wanted to know the value of that color on your screen? Gcolor3 enables "
 "you to pick the color from any pixel on your screen. It also offers a "
@@ -47,7 +47,7 @@ msgstr ""
 "permite elegir el color de cualquier píxel en su pantalla. También ofrece "
 "una paleta, para que pueda mezclar y combinar fácilmente un par de colores."
 
-#: data/org.hjdskes.gcolor3.appdata.xml.in:15
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:15
 msgid ""
 "When you have found the perfect combination of colors, naturally you want to "
 "save them. Gcolor3 allows you to conveniently save and retrieve colors."
@@ -55,7 +55,7 @@ msgstr ""
 "Cuando haya encontrado la combinación perfecta de colores, seguramente desee "
 "guardarlos. Gcolor3 le permite guardar y recuperar colores cómodamente."
 
-#: data/org.hjdskes.gcolor3.appdata.xml.in:19
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:19
 msgid ""
 "Gcolor3 is a color selection dialog written in GTK+ 3. It is much alike "
 "Gcolor2, but uses the newer GTK+ version and other modernisations to better "
@@ -65,39 +65,39 @@ msgstr ""
 "mucho a Gcolor2, pero utiliza la versión más nueva de GTK+ y otras "
 "modernizaciones para integrarse mejor en su escritorio moderno."
 
-#: data/org.hjdskes.gcolor3.appdata.xml.in:33
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:33
 msgid "The picker and the color palette"
 msgstr "El selector y la paleta de colores"
 
-#: data/org.hjdskes.gcolor3.appdata.xml.in:37
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:37
 msgid "The list of saved colors"
 msgstr "La lista de colores guardados"
 
 #. Translators: please do NOT translate this.
-#: data/org.hjdskes.gcolor3.appdata.xml.in:44
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:44
 msgid "Jente Hidskes"
 msgstr ""
 
-#: data/org.hjdskes.gcolor3.appdata.xml.in:53
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:53
 msgid "Centrally manage colors between several running instances;"
 msgstr ""
 
-#: data/org.hjdskes.gcolor3.appdata.xml.in:54
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:54
 msgid ""
 "Follow the XDG directory specification for the configuration file. This "
 "means that the configuration file has moved from `~/.rgb.ini` to `"
 "$XDG_CONFIG_HOME/gcolor3/config.ini`;"
 msgstr ""
 
-#: data/org.hjdskes.gcolor3.appdata.xml.in:56
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:56
 msgid "Copy the selected color's hex value from the tree view using Ctrl-C;"
 msgstr ""
 
-#: data/org.hjdskes.gcolor3.appdata.xml.in:57
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:57
 msgid "Make the main window resizable;"
 msgstr ""
 
-#: data/org.hjdskes.gcolor3.appdata.xml.in:58
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:58
 msgid "Translation updates."
 msgstr ""
 

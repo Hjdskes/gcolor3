@@ -17,30 +17,30 @@ msgstr ""
 "X-Generator: Poedit 1.8.7.1\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: data/org.hjdskes.gcolor3.desktop.in:3
-#: data/org.hjdskes.gcolor3.appdata.xml.in:7 src/gcolor3-application.c:119
+#: data/nl.hjdskes.gcolor3.desktop.in:3
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:7 src/gcolor3-application.c:119
 #, fuzzy
 msgid "Color picker"
 msgstr "Pemetik warna"
 
-#: data/org.hjdskes.gcolor3.desktop.in:4
-#: data/org.hjdskes.gcolor3.appdata.xml.in:8 src/gcolor3-application.c:56
+#: data/nl.hjdskes.gcolor3.desktop.in:4
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:8 src/gcolor3-application.c:56
 #, fuzzy
 msgid "Choose colors from the picker or the screen"
 msgstr "Pilih warna dari pemetik atau layar"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
-#: data/org.hjdskes.gcolor3.desktop.in:7
-msgid "org.hjdskes.gcolor3"
+#: data/nl.hjdskes.gcolor3.desktop.in:7
+msgid "nl.hjdskes.gcolor3"
 msgstr ""
 
 #. Translators: Extra keywords that can be used to search for Gcolor3 in GNOME Shell and Unity
-#: data/org.hjdskes.gcolor3.desktop.in:13
+#: data/nl.hjdskes.gcolor3.desktop.in:13
 #, fuzzy
 msgid "Color;Picker;Palette;"
 msgstr "Warna; Pemetik; Palet;"
 
-#: data/org.hjdskes.gcolor3.appdata.xml.in:10
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:10
 #, fuzzy
 msgid ""
 "Ever wanted to know the value of that color on your screen? Gcolor3 enables "
@@ -52,7 +52,7 @@ msgstr ""
 "sehingga Anda dapat dengan mudah mencampur dan mencocokkan beberapa warna "
 "bersama-sama."
 
-#: data/org.hjdskes.gcolor3.appdata.xml.in:15
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:15
 #, fuzzy
 msgid ""
 "When you have found the perfect combination of colors, naturally you want to "
@@ -62,7 +62,7 @@ msgstr ""
 "menyimpanya. Gcolor3 memungkinkan Anda menyimpan dan mengambil warna dengan "
 "mudah."
 
-#: data/org.hjdskes.gcolor3.appdata.xml.in:19
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:19
 #, fuzzy
 msgid ""
 "Gcolor3 is a color selection dialog written in GTK+ 3. It is much alike "
@@ -74,41 +74,41 @@ msgstr ""
 "modernisasi lainnya untuk mengintegrasikannya dengan lebih baik ke dalam "
 "desktop modern Anda."
 
-#: data/org.hjdskes.gcolor3.appdata.xml.in:33
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:33
 #, fuzzy
 msgid "The picker and the color palette"
 msgstr "Pemetik dan palet warna"
 
-#: data/org.hjdskes.gcolor3.appdata.xml.in:37
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:37
 #, fuzzy
 msgid "The list of saved colors"
 msgstr "Daftar warna yang disimpan"
 
 #. Translators: please do NOT translate this.
-#: data/org.hjdskes.gcolor3.appdata.xml.in:44
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:44
 msgid "Jente Hidskes"
 msgstr ""
 
-#: data/org.hjdskes.gcolor3.appdata.xml.in:53
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:53
 msgid "Centrally manage colors between several running instances;"
 msgstr ""
 
-#: data/org.hjdskes.gcolor3.appdata.xml.in:54
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:54
 msgid ""
 "Follow the XDG directory specification for the configuration file. This "
 "means that the configuration file has moved from `~/.rgb.ini` to `"
 "$XDG_CONFIG_HOME/gcolor3/config.ini`;"
 msgstr ""
 
-#: data/org.hjdskes.gcolor3.appdata.xml.in:56
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:56
 msgid "Copy the selected color's hex value from the tree view using Ctrl-C;"
 msgstr ""
 
-#: data/org.hjdskes.gcolor3.appdata.xml.in:57
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:57
 msgid "Make the main window resizable;"
 msgstr ""
 
-#: data/org.hjdskes.gcolor3.appdata.xml.in:58
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:58
 msgid "Translation updates."
 msgstr ""
 
