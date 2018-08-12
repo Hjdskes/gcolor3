@@ -1,7 +1,5 @@
-# Serbian translation of the Gcolor3 program.
-# Copyright (C) Gcolor3's COPYRIGHT HOLDER
+# Serbian translation for Gcolor3.
 # This file is distributed under the same license as the Gcolor3 package.
-# Марко М. Костић (Marko M. Kostić) <marko.m.kostic@gmail.com>, 2015, 2016.
 msgid ""
 msgstr ""
 "Project-Id-Version: gcolor3 master\n"

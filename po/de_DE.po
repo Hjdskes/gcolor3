@@ -1,9 +1,5 @@
 # German (de_DE) translation for Gcolor3.
-# Copyright (C) 2013-2015 Jens John <dev@2ion.de>
-# Copyright (C) 2015-2016 Vincent Bermel <willovince@openmailbox.org>
 # This file is distributed under the same license as the Gcolor3 package.
-# Vincent Bermel <willovince@openmailbox.org>, 2016.
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: 2.0\n"

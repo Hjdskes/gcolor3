@@ -1,7 +1,5 @@
 # Indonesian translation for Gcolor3.
-# Copyright (C) 2017 Dindin Hernawan <root@dev.xentaos.org>
 # This file is distributed under the same license as the Gcolor3 package.
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: 2.2\n"

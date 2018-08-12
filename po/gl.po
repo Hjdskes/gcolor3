@@ -1,9 +1,5 @@
-# Galician translations for gcolor package.
-# Copyright (C) 2013-2016 Jente Hidskes <hjdskes@gmail.com>
+# Galician translation for Gcolor3.
 # This file is distributed under the same license as the Gcolor3 package.
-# Fran Dieguez <frandieguez@gnome.org>, 2016.
-# Xoan Sampaiño <xoansampainho@gmail.com>, 2018.
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: 2.2\n"

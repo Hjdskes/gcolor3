@@ -1,3 +1,5 @@
+# Greek translation for Gcolor3.
+# This file is distributed under the same license as the Gcolor3 package.
 msgid ""
 msgstr ""
 "Project-Id-Version: 2.0\n"
