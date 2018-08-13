@@ -2,7 +2,12 @@
 <!-- Generated with glade 3.22.1 -->
 <interface>
   <requires lib="gtk+" version="3.16"/>
-  <object class="GtkImage" id="button_startup">
+  <object class="GtkImage" id="button_delete_image">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="icon_name">edit-delete-symbolic</property>
+  </object>
+  <object class="GtkImage" id="button_save_image">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
     <property name="icon_name">document-save-symbolic</property>
@@ -75,15 +80,15 @@
           </packing>
         </child>
         <child>
-          <object class="GtkButton" id="button">
+          <object class="GtkButton" id="button_delete">
             <property name="visible">True</property>
             <property name="can_focus">True</property>
             <property name="can_default">True</property>
             <property name="has_default">True</property>
             <property name="receives_default">False</property>
-            <property name="action_name">win.save</property>
-            <property name="image">button_startup</property>
+            <property name="image">button_delete_image</property>
             <property name="always_show_image">True</property>
+            <signal name="clicked" handler="gcolor3_window_delete_button_clicked" swapped="no"/>
           </object>
           <packing>
             <property name="pack_type">end</property>
@@ -91,24 +96,31 @@
           </packing>
         </child>
         <child>
-          <object class="GtkRevealer" id="revealer">
+          <object class="GtkButton" id="button_save">
             <property name="visible">True</property>
-            <property name="can_focus">False</property>
-            <property name="transition_type">slide-left</property>
-            <property name="transition_duration">400</property>
-            <property name="reveal_child">True</property>
-            <child>
-              <object class="GtkEntry" id="entry">
-                <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="activates_default">True</property>
-                <property name="placeholder_text" translatable="yes">Color name...</property>
-              </object>
-            </child>
+            <property name="can_focus">True</property>
+            <property name="can_default">True</property>
+            <property name="has_default">True</property>
+            <property name="receives_default">False</property>
+            <property name="action_name">win.save</property>
+            <property name="image">button_save_image</property>
+            <property name="always_show_image">True</property>
           </object>
           <packing>
             <property name="pack_type">end</property>
             <property name="position">2</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="entry">
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="activates_default">True</property>
+            <property name="placeholder_text" translatable="yes">Color name...</property>
+          </object>
+          <packing>
+            <property name="pack_type">end</property>
+            <property name="position">3</property>
           </packing>
         </child>
       </object>
