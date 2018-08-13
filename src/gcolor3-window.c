@@ -110,26 +110,37 @@ gcolor3_window_tree_view_key_handler (GtkWidget   *tree_view,
 	Gcolor3WindowPrivate *priv;
 	GtkTreeIter iter;
 	GtkTreeModel *model;
-	gchar *hex;
 
 	if (event->type != GDK_KEY_RELEASE) {
 		return GDK_EVENT_PROPAGATE;
 	}
 
+	priv = gcolor3_window_get_instance_private (GCOLOR3_WINDOW (user_data));
+
 	switch (event->keyval) {
 	case GDK_KEY_c:
 		if ((event->state & GDK_CONTROL_MASK) == GDK_CONTROL_MASK) {
-			priv = gcolor3_window_get_instance_private (GCOLOR3_WINDOW (user_data));
-
 			if (gtk_tree_selection_get_selected (priv->selection, &model, &iter)) {
+				gchar *hex;
 				gtk_tree_model_get (model, &iter, COLOR_VALUE, &hex, -1);
 				set_color_in_clipboard (hex);
 				g_free (hex);
 			}
-
 			return GDK_EVENT_STOP;
 		}
 		break;
+	case GDK_KEY_Delete:
+		if (gtk_tree_selection_get_selected (priv->selection, &model, &iter)) {
+			gchar *key;
+			gtk_tree_model_get (model, &iter, COLOR_NAME, &key, -1);
+			/* This will remove the color from the store,
+			 * which in turn shall emit the signal which
+			 * will trigger the color_removed callback
+			 * below. */
+			gcolor3_color_store_remove_color (priv->store, key);
+			g_free (key);
+		}
+		return GDK_EVENT_STOP;
 	default:
 		break;
 	}
@@ -163,29 +174,6 @@ gcolor3_window_action_save (UNUSED GSimpleAction *action,
 }
 
 static void
-gcolor3_window_action_delete (UNUSED GSimpleAction *action,
-			      UNUSED GVariant      *parameter,
-			      gpointer              user_data)
-{
-	Gcolor3WindowPrivate *priv;
-	GtkTreeIter iter;
-	GtkTreeModel *model;
-	gchar *key;
-
-	priv = gcolor3_window_get_instance_private (GCOLOR3_WINDOW (user_data));
-
-	if (!gtk_tree_selection_get_selected (priv->selection, &model, &iter)) {
-		return;
-	}
-
-	gtk_tree_model_get (model, &iter, COLOR_NAME, &key, -1);
-	/* This will remove the color from the store, which in turn shall emit the signal which
-	 * will trigger the color_removed callback below. */
-	gcolor3_color_store_remove_color (priv->store, key);
-	g_free (key);
-}
-
-static void
 gcolor3_window_action_change_page (UNUSED GSimpleAction *action,
 				   UNUSED GVariant      *parameter,
 				   gpointer              user_data)
@@ -205,7 +193,6 @@ gcolor3_window_action_change_page (UNUSED GSimpleAction *action,
 
 static const GActionEntry window_actions[] = {
 	{ "save", gcolor3_window_action_save, NULL, NULL, NULL },
-	{ "delete", gcolor3_window_action_delete, NULL, NULL, NULL },
 	{ "change-page", gcolor3_window_action_change_page, NULL, NULL, NULL },
 };
 
@@ -240,12 +227,10 @@ gcolor3_window_stack_changed (GtkStack          *stack,
 	GtkWidget *image;
 	const gchar *page;
 	GAction *save_action;
-	GAction *delete_action;
 
 	priv = gcolor3_window_get_instance_private (GCOLOR3_WINDOW (user_data));
 
 	save_action = g_action_map_lookup_action (G_ACTION_MAP (user_data), "save");
-	delete_action = g_action_map_lookup_action (G_ACTION_MAP (user_data), "delete");
 
 	page = gtk_stack_get_visible_child_name (stack);
 	if (g_strcmp0 (page, "saved-colors") == 0) {
@@ -255,16 +240,13 @@ gcolor3_window_stack_changed (GtkStack          *stack,
 		} else {
 			gtk_widget_set_sensitive (priv->button, FALSE);
 		}
-		gtk_actionable_set_action_name (GTK_ACTIONABLE (priv->button), "win.delete");
 		g_simple_action_set_enabled (G_SIMPLE_ACTION (save_action), FALSE);
-		g_simple_action_set_enabled (G_SIMPLE_ACTION (delete_action), TRUE);
 		gtk_revealer_set_reveal_child (GTK_REVEALER (priv->revealer), FALSE);
 	} else {
 		image = gtk_image_new_from_icon_name ("document-save-symbolic", GTK_ICON_SIZE_MENU);
 		gtk_widget_set_sensitive (priv->button, TRUE);
 		gtk_actionable_set_action_name (GTK_ACTIONABLE (priv->button), "win.save");
 		g_simple_action_set_enabled (G_SIMPLE_ACTION (save_action), TRUE);
-		g_simple_action_set_enabled (G_SIMPLE_ACTION (delete_action), FALSE);
 		gtk_revealer_set_reveal_child (GTK_REVEALER (priv->revealer), TRUE);
 	}
 
@@ -342,10 +324,13 @@ gcolor3_window_color_removed (UNUSED Gcolor3ColorStore *store, UNUSED const gcha
 		return;
 	}
 
-	/* Naive way to set iter to the correct row, but the data size shouldn't be so large that
-	 * this will turn noticably slow. Still a sad waste, considering we do have the correct
-	 * iter in action_delete... Note that get_selected cannot be used as it is in action_delete,
-	 * since there might be a secondary instance of Gcolor3 running with a different selection.
+	/* Naive way to set iter to the correct row, but the data size
+	 * shouldn't be so large that this will turn noticably
+	 * slow. Still a sad waste, considering we do have the correct
+	 * iter in the delete key handler... Note that get_selected
+	 * cannot be used as it is in there, since there might be a
+	 * secondary instance of Gcolor3 running with a different
+	 * selection.
 	 */
 	for (;;) {
 		gtk_tree_model_get (model, &iter, COLOR_NAME, &needle, -1);
