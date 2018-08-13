@@ -21,6 +21,7 @@
 
 #include "config.h"
 
+#include <gdk/gdkkeysyms.h>
 #include <gtk/gtk.h>
 #include <glib/gprintf.h>
 #include <glib/gi18n.h>
@@ -101,25 +102,39 @@ create_pixbuf_from_xpm (const gchar *hex)
 	return gdk_pixbuf_new_from_xpm_data ((gchar const **) xpm);
 }
 
-static void
-gcolor3_window_action_copy (UNUSED GSimpleAction *action,
-			     UNUSED GVariant      *parameter,
-			     gpointer              user_data)
+static gboolean
+gcolor3_window_tree_view_key_handler (GtkWidget   *tree_view,
+				      GdkEventKey *event,
+				      gpointer     user_data)
 {
 	Gcolor3WindowPrivate *priv;
 	GtkTreeIter iter;
 	GtkTreeModel *model;
 	gchar *hex;
 
-	priv = gcolor3_window_get_instance_private (GCOLOR3_WINDOW (user_data));
-
-	if (!gtk_tree_selection_get_selected (priv->selection, &model, &iter)) {
-		return;
+	if (event->type != GDK_KEY_RELEASE) {
+		return GDK_EVENT_PROPAGATE;
 	}
 
-	gtk_tree_model_get (model, &iter, COLOR_VALUE, &hex, -1);
-	set_color_in_clipboard (hex);
-	g_free (hex);
+	switch (event->keyval) {
+	case GDK_KEY_c:
+		if ((event->state & GDK_CONTROL_MASK) == GDK_CONTROL_MASK) {
+			priv = gcolor3_window_get_instance_private (GCOLOR3_WINDOW (user_data));
+
+			if (gtk_tree_selection_get_selected (priv->selection, &model, &iter)) {
+				gtk_tree_model_get (model, &iter, COLOR_VALUE, &hex, -1);
+				set_color_in_clipboard (hex);
+				g_free (hex);
+			}
+
+			return GDK_EVENT_STOP;
+		}
+		break;
+	default:
+		break;
+	}
+
+	return GDK_EVENT_PROPAGATE;
 }
 
 static void
@@ -189,7 +204,6 @@ gcolor3_window_action_change_page (UNUSED GSimpleAction *action,
 }
 
 static const GActionEntry window_actions[] = {
-	{ "copy", gcolor3_window_action_copy, NULL, NULL, NULL },
 	{ "save", gcolor3_window_action_save, NULL, NULL, NULL },
 	{ "delete", gcolor3_window_action_delete, NULL, NULL, NULL },
 	{ "change-page", gcolor3_window_action_change_page, NULL, NULL, NULL },
@@ -484,6 +498,7 @@ gcolor3_window_class_init (Gcolor3WindowClass *gcolor3_window_class)
 	gtk_widget_class_bind_template_callback (widget_class, gcolor3_window_stack_changed);
 	gtk_widget_class_bind_template_callback (widget_class, gcolor3_window_picker_changed);
 	gtk_widget_class_bind_template_callback (widget_class, gcolor3_window_selection_changed);
+	gtk_widget_class_bind_template_callback (widget_class, gcolor3_window_tree_view_key_handler);
 }
 
 static void

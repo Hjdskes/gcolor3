@@ -95,7 +95,6 @@ gcolor3_application_init_accelerators (GtkApplication *application)
 	 * Enter the action name followed by the accelerator strings
 	 * and terminate the entry with a NULL-string.*/
 	static const gchar *const accelmap[] = {
-		"win.copy", "<Ctrl>c", NULL,
 		"win.save", "<Ctrl>s", NULL,
 		"win.delete", "<Shift>Delete", NULL,
 		"win.change-page", "F9", NULL,
