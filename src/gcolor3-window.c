@@ -45,8 +45,8 @@ enum {
 
 struct _Gcolor3WindowPrivate {
 	GtkWidget *headerbar;
-	GtkWidget *button;
-	GtkWidget *revealer;
+	GtkWidget *button_save;
+	GtkWidget *button_delete;
 	GtkWidget *entry;
 	GtkWidget *stack;
 	GtkWidget *picker;
@@ -102,6 +102,24 @@ create_pixbuf_from_xpm (const gchar *hex)
 	return gdk_pixbuf_new_from_xpm_data ((gchar const **) xpm);
 }
 
+static void
+delete_color (GtkTreeSelection *selection, Gcolor3ColorStore *store)
+{
+	GtkTreeIter iter;
+	GtkTreeModel *model;
+	gchar *key;
+
+	if (gtk_tree_selection_get_selected (selection, &model, &iter)) {
+		gtk_tree_model_get (model, &iter, COLOR_NAME, &key, -1);
+		/* This will remove the color from the store,
+		 * which in turn shall emit the signal which
+		 * will trigger the color_removed callback
+		 * below. */
+		gcolor3_color_store_remove_color (store, key);
+		g_free (key);
+	}
+}
+
 static gboolean
 gcolor3_window_tree_view_key_handler (GtkWidget   *tree_view,
 				      GdkEventKey *event,
@@ -130,22 +148,22 @@ gcolor3_window_tree_view_key_handler (GtkWidget   *tree_view,
 		}
 		break;
 	case GDK_KEY_Delete:
-		if (gtk_tree_selection_get_selected (priv->selection, &model, &iter)) {
-			gchar *key;
-			gtk_tree_model_get (model, &iter, COLOR_NAME, &key, -1);
-			/* This will remove the color from the store,
-			 * which in turn shall emit the signal which
-			 * will trigger the color_removed callback
-			 * below. */
-			gcolor3_color_store_remove_color (priv->store, key);
-			g_free (key);
-		}
+		delete_color (priv->selection, priv->store);
 		return GDK_EVENT_STOP;
 	default:
 		break;
 	}
 
 	return GDK_EVENT_PROPAGATE;
+}
+
+static void
+gcolor3_window_delete_button_clicked (UNUSED GtkButton *button, gpointer user_data)
+{
+	Gcolor3WindowPrivate *priv;
+
+	priv = gcolor3_window_get_instance_private (GCOLOR3_WINDOW (user_data));
+	delete_color (priv->selection, priv->store);
 }
 
 static void
@@ -217,14 +235,12 @@ gcolor3_window_picker_changed (Gcolor3ColorSelection *picker, gpointer user_data
 	gcolor3_color_selection_get_current_color (GCOLOR3_COLOR_SELECTION (picker), &priv->current);
 }
 
-/* FIXME: delete button is sensitive when switching to saved colors, even though there are none. */
 static void
 gcolor3_window_stack_changed (GtkStack          *stack,
 			      UNUSED GParamSpec *pspec,
 			      gpointer           user_data)
 {
 	Gcolor3WindowPrivate *priv;
-	GtkWidget *image;
 	const gchar *page;
 	GAction *save_action;
 
@@ -234,23 +250,23 @@ gcolor3_window_stack_changed (GtkStack          *stack,
 
 	page = gtk_stack_get_visible_child_name (stack);
 	if (g_strcmp0 (page, "saved-colors") == 0) {
-		image = gtk_image_new_from_icon_name ("edit-delete-symbolic", GTK_ICON_SIZE_MENU);
-		if (gtk_tree_selection_get_selected (priv->selection, NULL, NULL)) {
-			gtk_widget_set_sensitive (priv->button, TRUE);
-		} else {
-			gtk_widget_set_sensitive (priv->button, FALSE);
-		}
-		g_simple_action_set_enabled (G_SIMPLE_ACTION (save_action), FALSE);
-		gtk_revealer_set_reveal_child (GTK_REVEALER (priv->revealer), FALSE);
-	} else {
-		image = gtk_image_new_from_icon_name ("document-save-symbolic", GTK_ICON_SIZE_MENU);
-		gtk_widget_set_sensitive (priv->button, TRUE);
-		gtk_actionable_set_action_name (GTK_ACTIONABLE (priv->button), "win.save");
-		g_simple_action_set_enabled (G_SIMPLE_ACTION (save_action), TRUE);
-		gtk_revealer_set_reveal_child (GTK_REVEALER (priv->revealer), TRUE);
-	}
+		gtk_widget_hide (priv->button_save);
+		gtk_widget_hide (priv->entry);
+		gtk_widget_show (priv->button_delete);
 
-	gtk_button_set_image (GTK_BUTTON (priv->button), image);
+		if (gtk_tree_selection_count_selected_rows (priv->selection)) {
+			gtk_widget_set_sensitive (priv->button_delete, TRUE);
+		} else {
+			gtk_widget_set_sensitive (priv->button_delete, FALSE);
+		}
+
+		g_simple_action_set_enabled (G_SIMPLE_ACTION (save_action), FALSE);
+	} else {
+		gtk_widget_hide (priv->button_delete);
+		gtk_widget_show (priv->button_save);
+		gtk_widget_show (priv->entry);
+		g_simple_action_set_enabled (G_SIMPLE_ACTION (save_action), TRUE);
+	}
 }
 
 static void
@@ -277,9 +293,9 @@ gcolor3_window_selection_changed (GtkTreeSelection *selection, gpointer user_dat
 		gcolor3_color_selection_set_current_color (
 			GCOLOR3_COLOR_SELECTION (priv->picker), &new);
 
-		gtk_widget_set_sensitive (priv->button, TRUE);
+		gtk_widget_set_sensitive (priv->button_delete, TRUE);
 	} else {
-		gtk_widget_set_sensitive (priv->button, FALSE);
+		gtk_widget_set_sensitive (priv->button_delete, FALSE);
 	}
 }
 
@@ -473,8 +489,8 @@ gcolor3_window_class_init (Gcolor3WindowClass *gcolor3_window_class)
 	gtk_widget_class_set_template_from_resource (widget_class, "/nl/hjdskes/gcolor3/window.ui");
 
 	gtk_widget_class_bind_template_child_private (widget_class, Gcolor3Window, headerbar);
-	gtk_widget_class_bind_template_child_private (widget_class, Gcolor3Window, button);
-	gtk_widget_class_bind_template_child_private (widget_class, Gcolor3Window, revealer);
+	gtk_widget_class_bind_template_child_private (widget_class, Gcolor3Window, button_delete);
+	gtk_widget_class_bind_template_child_private (widget_class, Gcolor3Window, button_save);
 	gtk_widget_class_bind_template_child_private (widget_class, Gcolor3Window, entry);
 	gtk_widget_class_bind_template_child_private (widget_class, Gcolor3Window, stack);
 	gtk_widget_class_bind_template_child_private (widget_class, Gcolor3Window, tree);
@@ -484,6 +500,7 @@ gcolor3_window_class_init (Gcolor3WindowClass *gcolor3_window_class)
 	gtk_widget_class_bind_template_callback (widget_class, gcolor3_window_picker_changed);
 	gtk_widget_class_bind_template_callback (widget_class, gcolor3_window_selection_changed);
 	gtk_widget_class_bind_template_callback (widget_class, gcolor3_window_tree_view_key_handler);
+	gtk_widget_class_bind_template_callback (widget_class, gcolor3_window_delete_button_clicked);
 }
 
 static void
