@@ -120,6 +120,26 @@ delete_color (GtkTreeSelection *selection, Gcolor3ColorStore *store)
 	}
 }
 
+static void
+save_color (GtkWidget *entry, Gcolor3ColorStore *store, GdkRGBA *color)
+{
+	const gchar *key;
+	gchar *hex;
+
+	key = gtk_entry_get_text (GTK_ENTRY (entry));
+	hex = hex_value (color);
+	if (strlen (key) == 0) {
+		/* If using `hex` as key, do not save the first character (e.g., `#`)
+		 * because GKeyFile will see these as (and subsequently ignore) comments. */
+		key = hex + 1;
+	}
+
+	/* This will add the color to the store (if the key isn't already used), which in turn
+	 * shall emit the signal which will trigger the color_added callback below. */
+	gcolor3_color_store_add_color (store, key, hex);
+	g_free (hex);
+}
+
 static gboolean
 gcolor3_window_tree_view_key_handler (GtkWidget   *tree_view,
 				      GdkEventKey *event,
@@ -157,6 +177,44 @@ gcolor3_window_tree_view_key_handler (GtkWidget   *tree_view,
 	return GDK_EVENT_PROPAGATE;
 }
 
+static gboolean
+gcolor3_window_picker_page_key_handler (GtkWidget   *widget,
+					GdkEventKey *event,
+					gpointer     user_data)
+{
+	Gcolor3WindowPrivate *priv;
+
+	if (event->type != GDK_KEY_RELEASE) {
+		return GDK_EVENT_PROPAGATE;
+	}
+
+	priv = gcolor3_window_get_instance_private (GCOLOR3_WINDOW (user_data));
+
+	switch (event->keyval) {
+	case GDK_KEY_s:
+		if ((event->state & GDK_CONTROL_MASK) == GDK_CONTROL_MASK) {
+			save_color (priv->entry, priv->store, &priv->current);
+		}
+		break;
+	case GDK_KEY_Return:
+		save_color (priv->entry, priv->store, &priv->current);
+		break;
+	default:
+		break;
+	}
+
+	return GDK_EVENT_PROPAGATE;
+}
+
+static void
+gcolor3_window_save_button_clicked (UNUSED GtkButton *button, gpointer user_data)
+{
+	Gcolor3WindowPrivate *priv;
+
+	priv = gcolor3_window_get_instance_private (GCOLOR3_WINDOW (user_data));
+	save_color (priv->entry, priv->store, &priv->current);
+}
+
 static void
 gcolor3_window_delete_button_clicked (UNUSED GtkButton *button, gpointer user_data)
 {
@@ -164,31 +222,6 @@ gcolor3_window_delete_button_clicked (UNUSED GtkButton *button, gpointer user_da
 
 	priv = gcolor3_window_get_instance_private (GCOLOR3_WINDOW (user_data));
 	delete_color (priv->selection, priv->store);
-}
-
-static void
-gcolor3_window_action_save (UNUSED GSimpleAction *action,
-			    UNUSED GVariant      *parameter,
-			    gpointer              user_data)
-{
-	Gcolor3WindowPrivate *priv;
-	const gchar *key;
-	gchar *hex;
-
-	priv = gcolor3_window_get_instance_private (GCOLOR3_WINDOW (user_data));
-
-	key = gtk_entry_get_text (GTK_ENTRY (priv->entry));
-	hex = hex_value (&priv->current);
-	if (strlen (key) == 0) {
-		/* If using `hex` as key, do not save the first character (e.g., `#`)
-		 * because GKeyFile will see these as (and subsequently ignore) comments. */
-		key = hex + 1;
-	}
-
-	/* This will add the color to the store (if the key isn't already used), which in turn
-	 * shall emit the signal which will trigger the color_added callback below. */
-	gcolor3_color_store_add_color (priv->store, key, hex);
-	g_free (hex);
 }
 
 static void
@@ -210,7 +243,6 @@ gcolor3_window_action_change_page (UNUSED GSimpleAction *action,
 }
 
 static const GActionEntry window_actions[] = {
-	{ "save", gcolor3_window_action_save, NULL, NULL, NULL },
 	{ "change-page", gcolor3_window_action_change_page, NULL, NULL, NULL },
 };
 
@@ -242,11 +274,8 @@ gcolor3_window_stack_changed (GtkStack          *stack,
 {
 	Gcolor3WindowPrivate *priv;
 	const gchar *page;
-	GAction *save_action;
 
 	priv = gcolor3_window_get_instance_private (GCOLOR3_WINDOW (user_data));
-
-	save_action = g_action_map_lookup_action (G_ACTION_MAP (user_data), "save");
 
 	page = gtk_stack_get_visible_child_name (stack);
 	if (g_strcmp0 (page, "saved-colors") == 0) {
@@ -259,13 +288,10 @@ gcolor3_window_stack_changed (GtkStack          *stack,
 		} else {
 			gtk_widget_set_sensitive (priv->button_delete, FALSE);
 		}
-
-		g_simple_action_set_enabled (G_SIMPLE_ACTION (save_action), FALSE);
 	} else {
 		gtk_widget_hide (priv->button_delete);
 		gtk_widget_show (priv->button_save);
 		gtk_widget_show (priv->entry);
-		g_simple_action_set_enabled (G_SIMPLE_ACTION (save_action), TRUE);
 	}
 }
 
@@ -500,6 +526,8 @@ gcolor3_window_class_init (Gcolor3WindowClass *gcolor3_window_class)
 	gtk_widget_class_bind_template_callback (widget_class, gcolor3_window_picker_changed);
 	gtk_widget_class_bind_template_callback (widget_class, gcolor3_window_selection_changed);
 	gtk_widget_class_bind_template_callback (widget_class, gcolor3_window_tree_view_key_handler);
+	gtk_widget_class_bind_template_callback (widget_class, gcolor3_window_picker_page_key_handler);
+	gtk_widget_class_bind_template_callback (widget_class, gcolor3_window_save_button_clicked);
 	gtk_widget_class_bind_template_callback (widget_class, gcolor3_window_delete_button_clicked);
 }
 
@@ -560,6 +588,8 @@ gcolor3_window_init (Gcolor3Window *window)
 	gtk_widget_set_halign (priv->picker, GTK_ALIGN_CENTER);
 	g_signal_connect (priv->picker, "color-changed",
 			  G_CALLBACK (gcolor3_window_picker_changed), window);
+	g_signal_connect (priv->picker, "key-release-event",
+			  G_CALLBACK (gcolor3_window_picker_page_key_handler), window);
 	gtk_stack_add_titled (GTK_STACK (priv->stack), priv->picker, "picker", _("Picker"));
 	gtk_container_child_set (GTK_CONTAINER (priv->stack), priv->picker, "position", 0, NULL);
 	gtk_widget_set_visible (priv->picker, TRUE);

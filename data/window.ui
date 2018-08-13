@@ -102,9 +102,9 @@
             <property name="can_default">True</property>
             <property name="has_default">True</property>
             <property name="receives_default">False</property>
-            <property name="action_name">win.save</property>
             <property name="image">button_save_image</property>
             <property name="always_show_image">True</property>
+            <signal name="clicked" handler="gcolor3_window_save_button_clicked" object="Gcolor3Window" swapped="no"/>
           </object>
           <packing>
             <property name="pack_type">end</property>
@@ -117,6 +117,7 @@
             <property name="can_focus">True</property>
             <property name="activates_default">True</property>
             <property name="placeholder_text" translatable="yes">Color name...</property>
+            <signal name="key-release-event" handler="gcolor3_window_picker_page_key_handler" object="Gcolor3Window" swapped="no"/>
           </object>
           <packing>
             <property name="pack_type">end</property>
