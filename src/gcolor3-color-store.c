@@ -40,7 +40,12 @@ struct _Gcolor3ColorStorePrivate {
 	GKeyFile *colors;
 };
 
-G_DEFINE_TYPE_WITH_PRIVATE (Gcolor3ColorStore, gcolor3_color_store, G_TYPE_OBJECT)
+static void gcolor3_color_store_iface_init (GListModelInterface *iface);
+
+G_DEFINE_TYPE_WITH_CODE (Gcolor3ColorStore, gcolor3_color_store, G_TYPE_OBJECT,
+			 G_ADD_PRIVATE (Gcolor3ColorStore)
+			 G_IMPLEMENT_INTERFACE (G_TYPE_LIST_MODEL, gcolor3_color_store_iface_init)
+			)
 
 static inline gchar *
 get_user_file (void)
@@ -69,6 +74,69 @@ ensure_user_dir (void)
 		return FALSE;
 	}
 	return TRUE;
+}
+
+static GType
+gcolor3_color_store_get_item_type (UNUSED GListModel *list)
+{
+	return G_TYPE_VARIANT;
+}
+
+static guint
+gcolor3_color_store_get_n_items (GListModel *list)
+{
+	Gcolor3ColorStorePrivate *priv;
+	GError *error = NULL;
+	gsize n_items;
+	gchar **keys;
+
+	priv = gcolor3_color_store_get_instance_private (GCOLOR3_COLOR_STORE (list));
+
+	if (!(keys = g_key_file_get_keys (priv->colors, "Colors", &n_items, &error))) {
+		g_warning (_("Cannot count number of items: %s\n"), error->message);
+		g_clear_error (&error);
+		return 0;
+	}
+	g_strfreev (keys);
+	return n_items;
+}
+
+static gpointer
+gcolor3_color_store_get_item (GListModel *list, guint position)
+{
+	Gcolor3ColorStorePrivate *priv;
+	GError *error = NULL;
+	GVariant *res;
+	gsize n_items;
+	gchar **keys;
+	gchar *value;
+
+	priv = gcolor3_color_store_get_instance_private (GCOLOR3_COLOR_STORE (list));
+
+	if (!(keys = g_key_file_get_keys (priv->colors, "Colors", &n_items, &error))) {
+		g_warning (_("Cannot read colors: %s\n"), error->message);
+		g_clear_error (&error);
+		// Returning NULL violates an assumption of the interface,
+		// where get_item should never return NULL for an
+		// index that is smaller than the length of the
+		// list. Hence, we return a default value of black.
+		return g_variant_new ("(ss)", "Black", "#000000");
+	}
+
+	if (position > n_items) {
+		return NULL;
+	}
+
+	if (!(value = g_key_file_get_string (priv->colors, "Colors", keys[position], &error))) {
+		g_warning (_("Cannot access color at position %d: %s\n"), position, error->message);
+		g_clear_error (&error);
+		return g_variant_new ("(ss)", "Black", "#000000");
+	}
+
+	res = g_variant_new ("(ss)", keys[position], value);
+	g_free (value);
+	g_strfreev (keys);
+	return res;
 }
 
 static void
@@ -121,6 +189,14 @@ gcolor3_color_store_class_init (Gcolor3ColorStoreClass *gcolor3_color_store_clas
 }
 
 static void
+gcolor3_color_store_iface_init (GListModelInterface *iface)
+{
+	iface->get_item_type = gcolor3_color_store_get_item_type;
+	iface->get_n_items = gcolor3_color_store_get_n_items;
+	iface->get_item = gcolor3_color_store_get_item;
+}
+
+static void
 gcolor3_color_store_init (Gcolor3ColorStore *store)
 {
 	Gcolor3ColorStorePrivate *priv;
@@ -153,6 +229,9 @@ gboolean
 gcolor3_color_store_add_color (Gcolor3ColorStore *store, const gchar *key, const gchar *hex)
 {
 	Gcolor3ColorStorePrivate *priv;
+	GError *error = NULL;
+	gchar **keys;
+	gsize length;
 
 	g_return_val_if_fail (GCOLOR3_IS_COLOR_STORE (store), FALSE);
 	g_return_val_if_fail (key != NULL && hex != NULL, FALSE);
@@ -166,6 +245,22 @@ gcolor3_color_store_add_color (Gcolor3ColorStore *store, const gchar *key, const
 
 	g_key_file_set_string (priv->colors, "Colors", key, hex);
 	g_signal_emit (store, signals[SIGNAL_COLOR_ADDED], 0, key, hex);
+
+	if (!(keys = g_key_file_get_keys (priv->colors, "Colors", &length, &error))) {
+		g_warning (_("Cannot locate index of addition: %s. UI won't be updated\n"), error->message);
+		g_clear_error (&error);
+		return TRUE;
+	}
+
+	for (guint i = 0; i < length; i++) {
+		if (strcmp (keys[i], key) != 0) {
+			continue;
+		}
+		g_list_model_items_changed (G_LIST_MODEL (store), i, 0, 1);
+		break;
+	}
+
+	g_strfreev (keys);
 	return TRUE;
 }
 
@@ -174,11 +269,28 @@ gcolor3_color_store_remove_color (Gcolor3ColorStore *store, const gchar *key)
 {
 	Gcolor3ColorStorePrivate *priv;
 	GError *error = NULL;
+	gchar **keys;
+	gsize length;
+	guint i;
 
 	g_return_val_if_fail (GCOLOR3_IS_COLOR_STORE (store), FALSE);
 	g_return_val_if_fail (key != NULL, FALSE);
 
 	priv = gcolor3_color_store_get_instance_private (store);
+
+	if (!(keys = g_key_file_get_keys (priv->colors, "Colors", &length, &error))) {
+		g_warning (_("Cannot locate index of removal: %s. UI won't be updated\n"), error->message);
+		g_clear_error (&error);
+		return TRUE;
+	}
+
+	for (i = 0; i < length; i++) {
+		if (strcmp (keys[i], key) != 0) {
+			continue;
+		}
+		break;
+	}
+	g_strfreev (keys);
 
 	if (!(g_key_file_remove_key (priv->colors, "Colors", key, &error))) {
 		g_warning (_("Error deleting key: %s"), error->message);
@@ -186,6 +298,7 @@ gcolor3_color_store_remove_color (Gcolor3ColorStore *store, const gchar *key)
 		return FALSE;
 	}
 
+	g_list_model_items_changed (G_LIST_MODEL (store), i, 1, 0);
 	g_signal_emit (store, signals[SIGNAL_COLOR_REMOVED], 0, key);
 	return TRUE;
 }
@@ -233,6 +346,14 @@ gcolor3_color_store_rename_color (Gcolor3ColorStore *store,
 
 	g_key_file_set_string (priv->colors, "Colors", new_name, hex);
 	g_free (hex);
+
+	// TODO: find out position of rename. This is tricky, because
+	// the removal might be in a different spot than the addition,
+	// and the interface expects an in-place update. If we model
+	// this by removing and inserting, the location changes and
+	// this will be reflected in the UI, which is confusing.
+	// g_list_model_items_changed (G_LIST_MODEL (store), x, 0, 0);
+
 	return TRUE;
 }
 
