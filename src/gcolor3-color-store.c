@@ -28,14 +28,6 @@
 #include "gcolor3-color-store.h"
 #include "gcolor3-marshalers.h"
 
-enum {
-	SIGNAL_COLOR_ADDED,
-	SIGNAL_COLOR_REMOVED,
-	SIGNAL_LAST,
-};
-
-static guint signals[SIGNAL_LAST];
-
 struct _Gcolor3ColorStorePrivate {
 	GKeyFile *colors;
 };
@@ -166,26 +158,6 @@ gcolor3_color_store_class_init (Gcolor3ColorStoreClass *gcolor3_color_store_clas
 	GObjectClass *object_class = G_OBJECT_CLASS (gcolor3_color_store_class);
 
 	object_class->dispose = gcolor3_color_store_dispose;
-
-	signals[SIGNAL_COLOR_ADDED] =
-		g_signal_new ("color-added", // FIXME: wrap in I_()?
-			      GCOLOR3_TYPE_COLOR_STORE,
-			      G_SIGNAL_RUN_LAST,
-			      0,
-			      NULL, NULL,
-			      _gcolor3_marshal_VOID__STRING_STRING,
-			      G_TYPE_NONE, 2,
-			      G_TYPE_STRING, G_TYPE_STRING);
-
-	signals[SIGNAL_COLOR_REMOVED] =
-		g_signal_new ("color-removed", // FIXME: wrap in I_()?
-			      GCOLOR3_TYPE_COLOR_STORE,
-			      G_SIGNAL_RUN_LAST,
-			      0,
-			      NULL, NULL,
-			      _gcolor3_marshal_VOID__STRING,
-			      G_TYPE_NONE, 1,
-			      G_TYPE_STRING);
 }
 
 static void
@@ -244,7 +216,6 @@ gcolor3_color_store_add_color (Gcolor3ColorStore *store, const gchar *key, const
 	}
 
 	g_key_file_set_string (priv->colors, "Colors", key, hex);
-	g_signal_emit (store, signals[SIGNAL_COLOR_ADDED], 0, key, hex);
 
 	if (!(keys = g_key_file_get_keys (priv->colors, "Colors", &length, &error))) {
 		g_warning (_("Cannot locate index of addition: %s. UI won't be updated\n"), error->message);
@@ -299,7 +270,6 @@ gcolor3_color_store_remove_color (Gcolor3ColorStore *store, const gchar *key)
 	}
 
 	g_list_model_items_changed (G_LIST_MODEL (store), i, 1, 0);
-	g_signal_emit (store, signals[SIGNAL_COLOR_REMOVED], 0, key);
 	return TRUE;
 }
 
