@@ -89,18 +89,27 @@ gcolor3_window_picker_page_key_handler (GtkWidget   *widget,
 
 	switch (event->keyval) {
 	case GDK_KEY_s:
-		if ((event->state & GDK_CONTROL_MASK) == GDK_CONTROL_MASK) {
-			save_color (priv->entry, priv->store, &priv->current);
+		if ((event->state & GDK_CONTROL_MASK) != GDK_CONTROL_MASK) {
+			return GDK_EVENT_PROPAGATE;
 		}
-		break;
-	case GDK_KEY_Return:
-		save_color (priv->entry, priv->store, &priv->current);
-		break;
+		/* Emulate a button click, to give the user visual feedback of
+		   the save action. */
+		g_signal_emit_by_name (priv->button_save, "activate");
+		return GDK_EVENT_STOP;
 	default:
-		break;
+		return GDK_EVENT_PROPAGATE;
 	}
+}
 
-	return GDK_EVENT_PROPAGATE;
+static void
+gcolor3_window_entry_activated (UNUSED GtkEntry *entry, gpointer user_data)
+{
+	Gcolor3WindowPrivate *priv;
+
+	priv = gcolor3_window_get_instance_private (GCOLOR3_WINDOW (user_data));
+	/* Emulate a button click, to give the user visual feedback of
+	   the save action. */
+	g_signal_emit_by_name (priv->button_save, "activate");
 }
 
 static void
@@ -342,8 +351,8 @@ gcolor3_window_class_init (Gcolor3WindowClass *gcolor3_window_class)
 	gtk_widget_class_bind_template_callback (widget_class, gcolor3_window_stack_changed);
 	gtk_widget_class_bind_template_callback (widget_class, gcolor3_window_picker_changed);
 	gtk_widget_class_bind_template_callback (widget_class, gcolor3_window_selection_changed);
-	gtk_widget_class_bind_template_callback (widget_class, gcolor3_window_tree_view_key_handler);
 	gtk_widget_class_bind_template_callback (widget_class, gcolor3_window_picker_page_key_handler);
+	gtk_widget_class_bind_template_callback (widget_class, gcolor3_window_entry_activated);
 	gtk_widget_class_bind_template_callback (widget_class, gcolor3_window_save_button_clicked);
 }
 
