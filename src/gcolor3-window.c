@@ -26,17 +26,11 @@
 #include <glib/gprintf.h>
 #include <glib/gi18n.h>
 
+#include "gcolor3-color-row.h"
 #include "gcolor3-color-selection.h"
 #include "gcolor3-color-store.h"
 #include "gcolor3-window.h"
 #include "utils.h"
-
-enum {
-	COLOR_PIXBUF,
-	COLOR_VALUE,
-	COLOR_NAME,
-	N_COLUMNS
-};
 
 enum {
 	PROP_0,
@@ -46,79 +40,17 @@ enum {
 struct _Gcolor3WindowPrivate {
 	GtkWidget *headerbar;
 	GtkWidget *button_save;
-	GtkWidget *button_delete;
 	GtkWidget *entry;
 	GtkWidget *stack;
 	GtkWidget *picker;
-	GtkWidget *tree;
-	GtkTreeSelection *selection;
+	GtkWidget *listbox;
 
 	Gcolor3ColorStore *store;
 
 	GdkRGBA current;
 };
 
-static void gcolor3_window_color_added (UNUSED Gcolor3ColorStore *store,
-					const gchar              *key,
-					const gchar              *hex,
-					gpointer                  user_data);
-
 G_DEFINE_TYPE_WITH_PRIVATE (Gcolor3Window, gcolor3_window, GTK_TYPE_APPLICATION_WINDOW)
-
-static void
-set_color_in_clipboard (const gchar *color)
-{
-	GtkClipboard *clipboard;
-
-	clipboard = gtk_clipboard_get (GDK_SELECTION_CLIPBOARD);
-	gtk_clipboard_set_text (clipboard, color, -1);
-}
-
-static GdkPixbuf *
-create_pixbuf_from_xpm (const gchar *hex)
-{
-	gchar colorline[] = ".      c #FFFFFF";
-	const gchar *xpm[] = {
-		"16 14 1 1",
-		".      c #FFFFFF",
-		"................",
-		"................",
-		"................",
-		"................",
-		"................",
-		"................",
-		"................",
-		"................",
-		"................",
-		"................",
-		"................",
-		"................",
-		"................",
-		"................"
-	};
-
-	g_sprintf (colorline, ".      c %s", hex);
-	xpm[1] = colorline;
-	return gdk_pixbuf_new_from_xpm_data ((gchar const **) xpm);
-}
-
-static void
-delete_color (GtkTreeSelection *selection, Gcolor3ColorStore *store)
-{
-	GtkTreeIter iter;
-	GtkTreeModel *model;
-	gchar *key;
-
-	if (gtk_tree_selection_get_selected (selection, &model, &iter)) {
-		gtk_tree_model_get (model, &iter, COLOR_NAME, &key, -1);
-		/* This will remove the color from the store,
-		 * which in turn shall emit the signal which
-		 * will trigger the color_removed callback
-		 * below. */
-		gcolor3_color_store_remove_color (store, key);
-		g_free (key);
-	}
-}
 
 static void
 save_color (GtkWidget *entry, Gcolor3ColorStore *store, GdkRGBA *color)
@@ -134,47 +66,12 @@ save_color (GtkWidget *entry, Gcolor3ColorStore *store, GdkRGBA *color)
 		key = hex + 1;
 	}
 
-	/* This will add the color to the store (if the key isn't already used), which in turn
-	 * shall emit the signal which will trigger the color_added callback below. */
+	/* This will add the color to the store (if the key isn't
+	 * already used), which in turn will update the list box due
+	 * to the binding between the store's list model and the list
+	 * box. */
 	gcolor3_color_store_add_color (store, key, hex);
 	g_free (hex);
-}
-
-static gboolean
-gcolor3_window_tree_view_key_handler (GtkWidget   *tree_view,
-				      GdkEventKey *event,
-				      gpointer     user_data)
-{
-	Gcolor3WindowPrivate *priv;
-	GtkTreeIter iter;
-	GtkTreeModel *model;
-
-	if (event->type != GDK_KEY_RELEASE) {
-		return GDK_EVENT_PROPAGATE;
-	}
-
-	priv = gcolor3_window_get_instance_private (GCOLOR3_WINDOW (user_data));
-
-	switch (event->keyval) {
-	case GDK_KEY_c:
-		if ((event->state & GDK_CONTROL_MASK) == GDK_CONTROL_MASK) {
-			if (gtk_tree_selection_get_selected (priv->selection, &model, &iter)) {
-				gchar *hex;
-				gtk_tree_model_get (model, &iter, COLOR_VALUE, &hex, -1);
-				set_color_in_clipboard (hex);
-				g_free (hex);
-			}
-			return GDK_EVENT_STOP;
-		}
-		break;
-	case GDK_KEY_Delete:
-		delete_color (priv->selection, priv->store);
-		return GDK_EVENT_STOP;
-	default:
-		break;
-	}
-
-	return GDK_EVENT_PROPAGATE;
 }
 
 static gboolean
@@ -184,7 +81,7 @@ gcolor3_window_picker_page_key_handler (GtkWidget   *widget,
 {
 	Gcolor3WindowPrivate *priv;
 
-	if (event->type != GDK_KEY_RELEASE) {
+	if (event->type != GDK_KEY_PRESS) {
 		return GDK_EVENT_PROPAGATE;
 	}
 
@@ -216,12 +113,30 @@ gcolor3_window_save_button_clicked (UNUSED GtkButton *button, gpointer user_data
 }
 
 static void
-gcolor3_window_delete_button_clicked (UNUSED GtkButton *button, gpointer user_data)
+gcolor3_window_color_row_deleted (Gcolor3ColorRow *row, gpointer user_data)
+{
+	Gcolor3WindowPrivate *priv;
+	gchar *key;
+
+	priv = gcolor3_window_get_instance_private (GCOLOR3_WINDOW (user_data));
+
+	g_object_get (row, "key", &key, NULL);
+	/* Removing a color from the store will automatically remove
+	   it from the list box, due to the binding between the two. */
+	gcolor3_color_store_remove_color (priv->store, key);
+	g_free (key);
+}
+
+static void
+gcolor3_window_color_row_renamed (UNUSED Gcolor3ColorRow *row,
+				  const gchar *old_name,
+				  const gchar *new_name,
+				  gpointer user_data)
 {
 	Gcolor3WindowPrivate *priv;
 
 	priv = gcolor3_window_get_instance_private (GCOLOR3_WINDOW (user_data));
-	delete_color (priv->selection, priv->store);
+	gcolor3_color_store_rename_color (priv->store, old_name, new_name);
 }
 
 static void
@@ -247,17 +162,6 @@ static const GActionEntry window_actions[] = {
 };
 
 static void
-gcolor3_window_add_existing_color (const gchar *key, const gchar *hex, gpointer user_data)
-{
-	Gcolor3WindowPrivate *priv;
-
-	priv = gcolor3_window_get_instance_private (GCOLOR3_WINDOW (user_data));
-
-	/* Simply wrap this callback to avoid code duplication. */
-	gcolor3_window_color_added (priv->store, key, hex, user_data);
-}
-
-static void
 gcolor3_window_picker_changed (Gcolor3ColorSelection *picker, gpointer user_data)
 {
 	Gcolor3WindowPrivate *priv;
@@ -281,140 +185,57 @@ gcolor3_window_stack_changed (GtkStack          *stack,
 	if (g_strcmp0 (page, "saved-colors") == 0) {
 		gtk_widget_hide (priv->button_save);
 		gtk_widget_hide (priv->entry);
-		gtk_widget_show (priv->button_delete);
-
-		if (gtk_tree_selection_count_selected_rows (priv->selection)) {
-			gtk_widget_set_sensitive (priv->button_delete, TRUE);
-		} else {
-			gtk_widget_set_sensitive (priv->button_delete, FALSE);
-		}
 	} else {
-		gtk_widget_hide (priv->button_delete);
 		gtk_widget_show (priv->button_save);
 		gtk_widget_show (priv->entry);
 	}
 }
 
 static void
-gcolor3_window_selection_changed (GtkTreeSelection *selection, gpointer user_data)
+gcolor3_window_selection_changed (GtkListBox *listbox, gpointer user_data)
 {
 	Gcolor3WindowPrivate *priv;
+	GtkListBoxRow *row;
 	GdkRGBA new, current;
-	GtkTreeIter iter;
-	GtkTreeModel *model;
 	gchar *color;
 
 	priv = gcolor3_window_get_instance_private (GCOLOR3_WINDOW (user_data));
+	row = gtk_list_box_get_selected_row (listbox);
 
-	if (gtk_tree_selection_get_selected (selection, &model, &iter)) {
-		gtk_tree_model_get (model, &iter, COLOR_VALUE, &color, -1);
-		gdk_rgba_parse (&new, color);
-		g_free (color);
-
-		/* Save the old color in the picker. */
-		gcolor3_color_selection_get_current_color (
-			GCOLOR3_COLOR_SELECTION (priv->picker), &current);
-		gcolor3_color_selection_set_previous_color (
-			GCOLOR3_COLOR_SELECTION (priv->picker), &current);
-		gcolor3_color_selection_set_current_color (
-			GCOLOR3_COLOR_SELECTION (priv->picker), &new);
-
-		gtk_widget_set_sensitive (priv->button_delete, TRUE);
-	} else {
-		gtk_widget_set_sensitive (priv->button_delete, FALSE);
-	}
-}
-
-static void
-gcolor3_window_color_added (UNUSED Gcolor3ColorStore *store,
-			    const gchar              *key,
-			    const gchar              *hex,
-			    gpointer                  user_data)
-{
-	Gcolor3WindowPrivate *priv;
-	GdkPixbuf *pixbuf;
-	GtkTreeIter iter;
-	GtkTreeModel *model;
-
-	priv = gcolor3_window_get_instance_private (GCOLOR3_WINDOW (user_data));
-	model = gtk_tree_view_get_model (GTK_TREE_VIEW (priv->tree));
-	pixbuf = create_pixbuf_from_xpm (hex);
-
-	gtk_list_store_prepend (GTK_LIST_STORE (model), &iter);
-	gtk_list_store_set (GTK_LIST_STORE (model), &iter,
-			    COLOR_PIXBUF, pixbuf,
-			    COLOR_VALUE, hex,
-			    COLOR_NAME, key,
-			    -1);
-	gtk_tree_selection_select_iter (priv->selection, &iter);
-	g_object_unref (pixbuf);
-}
-
-static void
-gcolor3_window_color_removed (UNUSED Gcolor3ColorStore *store, UNUSED const gchar *key, gpointer user_data)
-{
-	Gcolor3WindowPrivate *priv;
-	GtkTreeIter iter;
-	GtkTreeModel *model;
-	gchar *needle;
-
-	priv = gcolor3_window_get_instance_private (GCOLOR3_WINDOW (user_data));
-	model = gtk_tree_view_get_model (GTK_TREE_VIEW (priv->tree));
-
-	if (!gtk_tree_model_get_iter_first (model, &iter)) {
-		g_warning (_("The model is empty; there are no colors to remove"));
+	if (!row) {
+		/* This callback also triggers when a row is deleted,
+		   in which the selected row returns NULL.  In this
+		   case, we don't want to select another color,
+		   anyway. */
 		return;
 	}
 
-	/* Naive way to set iter to the correct row, but the data size
-	 * shouldn't be so large that this will turn noticably
-	 * slow. Still a sad waste, considering we do have the correct
-	 * iter in the delete key handler... Note that get_selected
-	 * cannot be used as it is in there, since there might be a
-	 * secondary instance of Gcolor3 running with a different
-	 * selection.
-	 */
-	for (;;) {
-		gtk_tree_model_get (model, &iter, COLOR_NAME, &needle, -1);
-		if (g_strcmp0 (key, needle) == 0) {
-			gtk_list_store_remove (GTK_LIST_STORE (model), &iter);
-			g_free (needle);
-			break;
-		}
-		g_free (needle);
-		if (!gtk_tree_model_iter_next (model, &iter)) {
-			break;
-		}
-	}
+	g_object_get (row, "hex", &color, NULL);
+	gdk_rgba_parse (&new, color);
+	g_free (color);
+
+	/* Save the old color in the picker. */
+	gcolor3_color_selection_get_current_color (GCOLOR3_COLOR_SELECTION (priv->picker), &current);
+	gcolor3_color_selection_set_previous_color (GCOLOR3_COLOR_SELECTION (priv->picker), &current);
+	gcolor3_color_selection_set_current_color (GCOLOR3_COLOR_SELECTION (priv->picker), &new);
 }
 
-static void
-gcolor3_window_color_renamed (UNUSED GtkCellRendererText *renderer,
-			      gchar                      *path,
-			      gchar                      *new_text,
-			      gpointer                    user_data)
+static GtkWidget *
+create_widget_func (gpointer item, gpointer user_data)
 {
-	Gcolor3WindowPrivate *priv;
-	GtkTreeModel *model;
-	GtkTreeIter iter;
-	gchar *old_text;
-	gboolean success;
+	Gcolor3ColorRow *row;
+	GVariant *tuple = (GVariant *) item;
+	gchar *key, *hex;
 
-	priv = gcolor3_window_get_instance_private (GCOLOR3_WINDOW (user_data));
-	model = gtk_tree_view_get_model (GTK_TREE_VIEW (priv->tree));
-
-	success = gtk_tree_model_get_iter_from_string (model, &iter, path);
-	if (!success) {
-		g_warning (_("Cannot update color: invalid path"));
-		return;
-	}
-
-	gtk_tree_model_get (model, &iter, COLOR_NAME, &old_text, -1);
-	if (gcolor3_color_store_rename_color (priv->store, old_text, new_text)) {
-		gtk_list_store_set (GTK_LIST_STORE (model), &iter, COLOR_NAME, new_text, -1);
-	}
-
-	g_free (old_text);
+	g_variant_get (tuple, "(ss)", &key, &hex);
+	row = gcolor3_color_row_new (key, hex);
+	g_signal_connect (row, "color-removed",
+			  G_CALLBACK (gcolor3_window_color_row_deleted), user_data);
+	g_signal_connect (row, "color-renamed",
+			  G_CALLBACK (gcolor3_window_color_row_renamed), user_data);
+	g_free (key);
+	g_free (hex);
+	return GTK_WIDGET (row);
 }
 
 static void
@@ -430,13 +251,11 @@ gcolor3_window_set_property (GObject      *object,
 	switch (prop_id) {
 		case PROP_STORE:
 			priv->store = GCOLOR3_COLOR_STORE (g_value_dup_object (value));
-			g_signal_connect (priv->store, "color-added",
-					  G_CALLBACK (gcolor3_window_color_added), object);
-			g_signal_connect (priv->store, "color-removed",
-					  G_CALLBACK (gcolor3_window_color_removed), object);
-			gcolor3_color_store_foreach (priv->store,
-						     gcolor3_window_add_existing_color,
-						     object);
+			gtk_list_box_bind_model (GTK_LIST_BOX (priv->listbox),
+						 G_LIST_MODEL (priv->store),
+						 create_widget_func,
+						 object,
+						 NULL);
 			break;
 		default:
 			G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
@@ -515,12 +334,10 @@ gcolor3_window_class_init (Gcolor3WindowClass *gcolor3_window_class)
 	gtk_widget_class_set_template_from_resource (widget_class, "/nl/hjdskes/gcolor3/window.ui");
 
 	gtk_widget_class_bind_template_child_private (widget_class, Gcolor3Window, headerbar);
-	gtk_widget_class_bind_template_child_private (widget_class, Gcolor3Window, button_delete);
 	gtk_widget_class_bind_template_child_private (widget_class, Gcolor3Window, button_save);
 	gtk_widget_class_bind_template_child_private (widget_class, Gcolor3Window, entry);
 	gtk_widget_class_bind_template_child_private (widget_class, Gcolor3Window, stack);
-	gtk_widget_class_bind_template_child_private (widget_class, Gcolor3Window, tree);
-	gtk_widget_class_bind_template_child_private (widget_class, Gcolor3Window, selection);
+	gtk_widget_class_bind_template_child_private (widget_class, Gcolor3Window, listbox);
 
 	gtk_widget_class_bind_template_callback (widget_class, gcolor3_window_stack_changed);
 	gtk_widget_class_bind_template_callback (widget_class, gcolor3_window_picker_changed);
@@ -528,48 +345,6 @@ gcolor3_window_class_init (Gcolor3WindowClass *gcolor3_window_class)
 	gtk_widget_class_bind_template_callback (widget_class, gcolor3_window_tree_view_key_handler);
 	gtk_widget_class_bind_template_callback (widget_class, gcolor3_window_picker_page_key_handler);
 	gtk_widget_class_bind_template_callback (widget_class, gcolor3_window_save_button_clicked);
-	gtk_widget_class_bind_template_callback (widget_class, gcolor3_window_delete_button_clicked);
-}
-
-static void
-gcolor3_window_setup_tree_view (Gcolor3Window *window)
-{
-	Gcolor3WindowPrivate *priv;
-	GtkCellRenderer *pixbuf_renderer;
-	GtkCellRenderer *hex_renderer;
-	GtkCellRenderer *name_renderer;
-	GtkTreeViewColumn *column;
-
-	priv = gcolor3_window_get_instance_private (window);
-
-	pixbuf_renderer = gtk_cell_renderer_pixbuf_new ();
-	column = gtk_tree_view_column_new_with_attributes (_("Color"),
-							   pixbuf_renderer,
-							   "pixbuf",
-							   COLOR_PIXBUF,
-							   NULL);
-
-	hex_renderer = gtk_cell_renderer_text_new ();
-	gtk_tree_view_column_pack_start (column, hex_renderer, TRUE);
-	gtk_tree_view_column_set_attributes (column,
-					     hex_renderer,
-					     "text",
-					     COLOR_VALUE,
-					     NULL);
-	gtk_tree_view_column_set_sort_column_id (column, COLOR_VALUE);
-	gtk_tree_view_append_column (GTK_TREE_VIEW (priv->tree), column);
-
-	name_renderer = gtk_cell_renderer_text_new ();
-	g_object_set (name_renderer, "editable", TRUE, NULL);
-	g_signal_connect (name_renderer, "edited",
-			  G_CALLBACK (gcolor3_window_color_renamed), window);
-	column = gtk_tree_view_column_new_with_attributes (_("Name"),
-							   name_renderer,
-							   "text",
-							   COLOR_NAME,
-							   NULL);
-	gtk_tree_view_column_set_sort_column_id (column, COLOR_NAME);
-	gtk_tree_view_append_column (GTK_TREE_VIEW (priv->tree), column);
 }
 
 static void
@@ -588,7 +363,7 @@ gcolor3_window_init (Gcolor3Window *window)
 	gtk_widget_set_halign (priv->picker, GTK_ALIGN_CENTER);
 	g_signal_connect (priv->picker, "color-changed",
 			  G_CALLBACK (gcolor3_window_picker_changed), window);
-	g_signal_connect (priv->picker, "key-release-event",
+	g_signal_connect (priv->picker, "key-press-event",
 			  G_CALLBACK (gcolor3_window_picker_page_key_handler), window);
 	gtk_stack_add_titled (GTK_STACK (priv->stack), priv->picker, "picker", _("Picker"));
 	gtk_container_child_set (GTK_CONTAINER (priv->stack), priv->picker, "position", 0, NULL);
@@ -602,8 +377,6 @@ gcolor3_window_init (Gcolor3Window *window)
 					 window_actions,
 					 G_N_ELEMENTS (window_actions),
 					 window);
-
-	gcolor3_window_setup_tree_view (window);
 
 	/* Finally, make the color picker the visible stack page. */
 	gtk_stack_set_visible_child_name (GTK_STACK (priv->stack), "picker");
