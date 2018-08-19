@@ -3,6 +3,7 @@
   <gresource prefix="/nl/hjdskes/gcolor3/">
     <!-- Using this alias, GtkApplication will automatically pick it up for us. -->
     <file alias="gtk/menus.ui" preprocess="xml-stripblanks">menus.ui</file>
+    <file alias="color-row.ui" preprocess="xml-stripblanks">color-row.ui</file>
     <file alias="window.ui" preprocess="xml-stripblanks">window.ui</file>
   </gresource>
 </gresources>
