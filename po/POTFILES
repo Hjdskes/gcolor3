@@ -2,9 +2,12 @@
 # Please keep this list sorted alphabetically.
 data/nl.hjdskes.gcolor3.desktop.in
 data/nl.hjdskes.gcolor3.appdata.xml.in
+data/color-row.ui
 data/menus.ui
 data/window.ui
 src/main.c
 src/gcolor3-application.c
+src/gcolor3-color-row.c
+src/gcolor3-color-selection.c
 src/gcolor3-color-store.c
 src/gcolor3-window.c
