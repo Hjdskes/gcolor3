@@ -92,6 +92,16 @@ set_color_in_clipboard (const gchar *color)
 }
 
 static void
+gcolor3_color_row_copy_button_clicked (UNUSED GtkButton *button, gpointer user_data)
+{
+	Gcolor3ColorRowPrivate *priv;
+
+	priv = gcolor3_color_row_get_instance_private (GCOLOR3_COLOR_ROW (user_data));
+
+	set_color_in_clipboard (priv->hex);
+}
+
+static void
 gcolor3_color_row_delete_button_clicked (UNUSED GtkButton *button, gpointer user_data)
 {
 	g_signal_emit (GCOLOR3_COLOR_ROW (user_data), signals[SIGNAL_COLOR_REMOVED], 0);
@@ -256,6 +266,7 @@ gcolor3_color_row_class_init (Gcolor3ColorRowClass *gcolor3_color_row_class)
 	gtk_widget_class_bind_template_child_private (widget_class, Gcolor3ColorRow, label);
 	gtk_widget_class_bind_template_child_private (widget_class, Gcolor3ColorRow, entry);
 
+	gtk_widget_class_bind_template_callback (widget_class, gcolor3_color_row_copy_button_clicked);
 	gtk_widget_class_bind_template_callback (widget_class, gcolor3_color_row_delete_button_clicked);
 	gtk_widget_class_bind_template_callback (widget_class, gcolor3_color_row_entry_activated);
 }
