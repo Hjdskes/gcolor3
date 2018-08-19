@@ -14,20 +14,19 @@
     <property name="border_width">6</property>
     <property name="window_position">center</property>
     <child type="titlebar">
-      <object class="GtkHeaderBar" id="headerbar">
+      <object class="GtkHeaderBar">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
-        <property name="has_subtitle">False</property>
         <property name="show_close_button">True</property>
         <child>
-          <object class="GtkStackSwitcher">
+          <object class="GtkEntry" id="entry">
             <property name="visible">True</property>
-            <property name="can_focus">False</property>
-            <property name="stack">stack</property>
+            <property name="can_focus">True</property>
+            <property name="activates_default">True</property>
+            <property name="placeholder_text" translatable="yes">Color name...</property>
+            <signal name="activate" handler="gcolor3_window_entry_activated" object="Gcolor3Window" swapped="no"/>
+            <signal name="key-press-event" handler="gcolor3_window_picker_page_key_handler" object="Gcolor3Window" swapped="no"/>
           </object>
-          <packing>
-            <property name="position">1</property>
-          </packing>
         </child>
         <child>
           <object class="GtkButton" id="button_save">
@@ -39,23 +38,15 @@
             <signal name="clicked" handler="gcolor3_window_save_button_clicked" object="Gcolor3Window" swapped="no"/>
           </object>
           <packing>
-            <property name="pack_type">end</property>
-            <property name="position">2</property>
+            <property name="position">1</property>
           </packing>
         </child>
-        <child>
-          <object class="GtkEntry" id="entry">
+        <child type="title">
+          <object class="GtkStackSwitcher">
             <property name="visible">True</property>
-            <property name="can_focus">True</property>
-            <property name="activates_default">True</property>
-            <property name="placeholder_text" translatable="yes">Color name...</property>
-            <signal name="activate" handler="gcolor3_window_entry_activated" object="Gcolor3Window" swapped="no"/>
-            <signal name="key-press-event" handler="gcolor3_window_picker_page_key_handler" object="Gcolor3Window" swapped="no"/>
+            <property name="can_focus">False</property>
+            <property name="stack">stack</property>
           </object>
-          <packing>
-            <property name="pack_type">end</property>
-            <property name="position">3</property>
-          </packing>
         </child>
       </object>
     </child>
