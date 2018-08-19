@@ -38,7 +38,6 @@ enum {
 };
 
 struct _Gcolor3WindowPrivate {
-	GtkWidget *headerbar;
 	GtkWidget *button_save;
 	GtkWidget *entry;
 	GtkWidget *stack;
@@ -342,7 +341,6 @@ gcolor3_window_class_init (Gcolor3WindowClass *gcolor3_window_class)
 
 	gtk_widget_class_set_template_from_resource (widget_class, "/nl/hjdskes/gcolor3/window.ui");
 
-	gtk_widget_class_bind_template_child_private (widget_class, Gcolor3Window, headerbar);
 	gtk_widget_class_bind_template_child_private (widget_class, Gcolor3Window, button_save);
 	gtk_widget_class_bind_template_child_private (widget_class, Gcolor3Window, entry);
 	gtk_widget_class_bind_template_child_private (widget_class, Gcolor3Window, stack);
@@ -364,7 +362,6 @@ gcolor3_window_init (Gcolor3Window *window)
 	priv = gcolor3_window_get_instance_private (window);
 
 	gtk_widget_init_template (GTK_WIDGET (window));
-	gtk_header_bar_set_title (GTK_HEADER_BAR (priv->headerbar), g_get_application_name ());
 
 	/* Add the custom color selection widget. */
 	priv->picker = gcolor3_color_selection_new ();
