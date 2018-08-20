@@ -25,6 +25,7 @@
 #include <glib.h>
 #include <glib/gi18n.h>
 
+#include "gcolor3-color-item.h"
 #include "gcolor3-color-store.h"
 #include "gcolor3-marshalers.h"
 
@@ -97,8 +98,8 @@ static gpointer
 gcolor3_color_store_get_item (GListModel *list, guint position)
 {
 	Gcolor3ColorStorePrivate *priv;
+	Gcolor3ColorItem *item;
 	GError *error = NULL;
-	GVariant *res;
 	gsize n_items;
 	gchar **keys;
 	gchar *value;
@@ -125,10 +126,10 @@ gcolor3_color_store_get_item (GListModel *list, guint position)
 		return g_variant_new ("(ss)", "Black", "#000000");
 	}
 
-	res = g_variant_new ("(ss)", keys[position], value);
+	item = gcolor3_color_item_new (keys[position], value);
 	g_free (value);
 	g_strfreev (keys);
-	return res;
+	return item;
 }
 
 static void
