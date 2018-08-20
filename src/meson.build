@@ -1,5 +1,6 @@
 headers = [
   'gcolor3-application.h',
+  'gcolor3-color-item.h',
   'gcolor3-color-row.h',
   'gcolor3-color-selection.h',
   'gcolor3-color-store.h',
@@ -10,6 +11,7 @@ headers = [
 
 sources = [
   'gcolor3-application.c',
+  'gcolor3-color-item.c',
   'gcolor3-color-row.c',
   'gcolor3-color-selection.c',
   'gcolor3-color-store.c',

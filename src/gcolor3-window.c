@@ -26,6 +26,7 @@
 #include <glib/gprintf.h>
 #include <glib/gi18n.h>
 
+#include "gcolor3-color-item.h"
 #include "gcolor3-color-row.h"
 #include "gcolor3-color-selection.h"
 #include "gcolor3-color-store.h"
@@ -232,10 +233,9 @@ static GtkWidget *
 create_widget_func (gpointer item, gpointer user_data)
 {
 	Gcolor3ColorRow *row;
-	GVariant *tuple = (GVariant *) item;
 	gchar *key, *hex;
 
-	g_variant_get (tuple, "(ss)", &key, &hex);
+	g_object_get ((Gcolor3ColorItem *) item, "key", &key, "hex", &hex, NULL);
 	row = gcolor3_color_row_new (key, hex);
 	g_signal_connect (row, "color-removed",
 			  G_CALLBACK (gcolor3_window_color_row_deleted), user_data);
