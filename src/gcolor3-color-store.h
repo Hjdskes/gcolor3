@@ -69,6 +69,8 @@ void               gcolor3_color_store_foreach (Gcolor3ColorStore           *sto
 						Gcolor3ColorStoreForeachFunc func,
 						gpointer                     user_data);
 
+gboolean           gcolor3_color_store_empty (Gcolor3ColorStore *store);
+
 G_END_DECLS
 
 #endif /* __GCOLOR3_COLOR_STORE_H__ */
