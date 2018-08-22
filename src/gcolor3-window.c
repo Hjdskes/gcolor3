@@ -41,9 +41,12 @@ enum {
 struct _Gcolor3WindowPrivate {
 	GtkWidget *button_save;
 	GtkWidget *entry;
-	GtkWidget *stack;
+	GtkWidget *page_stack;
 	GtkWidget *picker;
+	GtkWidget *list_stack;
+	GtkWidget *scroll;
 	GtkWidget *listbox;
+	GtkWidget *empty_placeholder;
 
 	Gcolor3ColorStore *store;
 
@@ -53,13 +56,13 @@ struct _Gcolor3WindowPrivate {
 G_DEFINE_TYPE_WITH_PRIVATE (Gcolor3Window, gcolor3_window, GTK_TYPE_APPLICATION_WINDOW)
 
 static void
-save_color (GtkWidget *entry, Gcolor3ColorStore *store, GdkRGBA *color)
+save_color (Gcolor3WindowPrivate *priv)
 {
 	const gchar *key;
 	gchar *hex;
 
-	key = gtk_entry_get_text (GTK_ENTRY (entry));
-	hex = hex_value (color);
+	key = gtk_entry_get_text (GTK_ENTRY (priv->entry));
+	hex = hex_value (&priv->current);
 	if (strlen (key) == 0) {
 		/* If using `hex` as key, do not save the first character (e.g., `#`)
 		 * because GKeyFile will see these as (and subsequently ignore) comments. */
@@ -70,8 +73,13 @@ save_color (GtkWidget *entry, Gcolor3ColorStore *store, GdkRGBA *color)
 	 * already used), which in turn will update the list box due
 	 * to the binding between the store's list model and the list
 	 * box. */
-	gcolor3_color_store_add_color (store, key, hex);
+	gcolor3_color_store_add_color (priv->store, key, hex);
 	g_free (hex);
+
+	if (!gcolor3_color_store_empty (priv->store)) {
+		gtk_stack_set_visible_child (GTK_STACK (priv->list_stack),
+					     priv->scroll);
+	}
 }
 
 static gboolean
@@ -118,7 +126,7 @@ gcolor3_window_save_button_clicked (UNUSED GtkButton *button, gpointer user_data
 	Gcolor3WindowPrivate *priv;
 
 	priv = gcolor3_window_get_instance_private (GCOLOR3_WINDOW (user_data));
-	save_color (priv->entry, priv->store, &priv->current);
+	save_color (priv);
 }
 
 static void
@@ -134,6 +142,11 @@ gcolor3_window_color_row_deleted (Gcolor3ColorRow *row, gpointer user_data)
 	   it from the list box, due to the binding between the two. */
 	gcolor3_color_store_remove_color (priv->store, key);
 	g_free (key);
+
+	if (gcolor3_color_store_empty (priv->store)) {
+		gtk_stack_set_visible_child (GTK_STACK (priv->list_stack),
+					     priv->empty_placeholder);
+	}
 }
 
 static void
@@ -158,11 +171,11 @@ gcolor3_window_action_change_page (UNUSED GSimpleAction *action,
 
 	priv = gcolor3_window_get_instance_private (GCOLOR3_WINDOW (user_data));
 
-	page = gtk_stack_get_visible_child_name (GTK_STACK (priv->stack));
+	page = gtk_stack_get_visible_child_name (GTK_STACK (priv->page_stack));
 	if (g_strcmp0 (page, "saved-colors") == 0) {
-		gtk_stack_set_visible_child_name (GTK_STACK (priv->stack), "picker");
+		gtk_stack_set_visible_child_name (GTK_STACK (priv->page_stack), "picker");
 	} else {
-		gtk_stack_set_visible_child_name (GTK_STACK (priv->stack), "saved-colors");
+		gtk_stack_set_visible_child_name (GTK_STACK (priv->page_stack), "saved-colors");
 	}
 }
 
@@ -264,6 +277,13 @@ gcolor3_window_set_property (GObject      *object,
 						 create_widget_func,
 						 object,
 						 NULL);
+			if (gcolor3_color_store_empty (priv->store)) {
+				gtk_stack_set_visible_child (GTK_STACK (priv->list_stack),
+							     priv->empty_placeholder);
+			} else {
+				gtk_stack_set_visible_child (GTK_STACK (priv->list_stack),
+							     priv->scroll);
+			}
 			break;
 		default:
 			G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
@@ -343,8 +363,11 @@ gcolor3_window_class_init (Gcolor3WindowClass *gcolor3_window_class)
 
 	gtk_widget_class_bind_template_child_private (widget_class, Gcolor3Window, button_save);
 	gtk_widget_class_bind_template_child_private (widget_class, Gcolor3Window, entry);
-	gtk_widget_class_bind_template_child_private (widget_class, Gcolor3Window, stack);
+	gtk_widget_class_bind_template_child_private (widget_class, Gcolor3Window, page_stack);
+	gtk_widget_class_bind_template_child_private (widget_class, Gcolor3Window, list_stack);
+	gtk_widget_class_bind_template_child_private (widget_class, Gcolor3Window, scroll);
 	gtk_widget_class_bind_template_child_private (widget_class, Gcolor3Window, listbox);
+	gtk_widget_class_bind_template_child_private (widget_class, Gcolor3Window, empty_placeholder);
 
 	gtk_widget_class_bind_template_callback (widget_class, gcolor3_window_stack_changed);
 	gtk_widget_class_bind_template_callback (widget_class, gcolor3_window_picker_changed);
@@ -371,8 +394,8 @@ gcolor3_window_init (Gcolor3Window *window)
 			  G_CALLBACK (gcolor3_window_picker_changed), window);
 	g_signal_connect (priv->picker, "key-press-event",
 			  G_CALLBACK (gcolor3_window_picker_page_key_handler), window);
-	gtk_stack_add_titled (GTK_STACK (priv->stack), priv->picker, "picker", _("Picker"));
-	gtk_container_child_set (GTK_CONTAINER (priv->stack), priv->picker, "position", 0, NULL);
+	gtk_stack_add_titled (GTK_STACK (priv->page_stack), priv->picker, "picker", _("Picker"));
+	gtk_container_child_set (GTK_CONTAINER (priv->page_stack), priv->picker, "position", 0, NULL);
 	gtk_widget_set_visible (priv->picker, TRUE);
 
 	/* Call the callback to initialise the GtkEntry and to prevent
@@ -385,7 +408,7 @@ gcolor3_window_init (Gcolor3Window *window)
 					 window);
 
 	/* Finally, make the color picker the visible stack page. */
-	gtk_stack_set_visible_child_name (GTK_STACK (priv->stack), "picker");
+	gtk_stack_set_visible_child_name (GTK_STACK (priv->page_stack), "picker");
 }
 
 Gcolor3Window *
