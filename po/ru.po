@@ -21,7 +21,7 @@ msgstr "Выбор цвета"
 #: data/nl.hjdskes.gcolor3.desktop.in:4
 #: data/nl.hjdskes.gcolor3.appdata.xml.in:8 src/gcolor3-application.c:56
 msgid "Choose colors from the picker or the screen"
-msgstr "Выберите цвет на экране с помощью пробника"
+msgstr "Выберите цвет на экране с помощью пипетки"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
 #: data/nl.hjdskes.gcolor3.desktop.in:7
@@ -31,7 +31,7 @@ msgstr ""
 #. Translators: Extra keywords that can be used to search for Gcolor3 in GNOME Shell and Unity
 #: data/nl.hjdskes.gcolor3.desktop.in:13
 msgid "Color;Picker;Palette;"
-msgstr "Цвет;Пробник;Палитра"
+msgstr "Цвет;Пипетка;Палитра"
 
 #: data/nl.hjdskes.gcolor3.appdata.xml.in:10
 msgid ""
@@ -62,7 +62,7 @@ msgstr ""
 
 #: data/nl.hjdskes.gcolor3.appdata.xml.in:33
 msgid "The picker and the color palette"
-msgstr "Пробник и палитра цветов"
+msgstr "Пипетка и палитра цветов"
 
 #: data/nl.hjdskes.gcolor3.appdata.xml.in:37
 msgid "The list of saved colors"
@@ -118,7 +118,7 @@ msgstr "Показать версию программы"
 
 #: src/main.c:54
 msgid "- pick a color from the picker or the screen"
-msgstr "- выбрать цвет из пробника или из экрана"
+msgstr "- выбрать цвет из пипетки или из экрана"
 
 #: src/main.c:65
 #, c-format
@@ -197,5 +197,5 @@ msgstr "Имя"
 
 #: src/gcolor3-window.c:546
 msgid "Picker"
-msgstr "Пробник"
+msgstr "Цвет"
 
