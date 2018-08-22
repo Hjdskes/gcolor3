@@ -361,3 +361,9 @@ gcolor3_color_store_foreach (Gcolor3ColorStore           *store,
 	g_strfreev (keys);
 }
 
+gboolean
+gcolor3_color_store_empty (Gcolor3ColorStore *store)
+{
+	g_return_val_if_fail (GCOLOR3_IS_COLOR_STORE (store), TRUE);
+	return gcolor3_color_store_get_n_items (G_LIST_MODEL (store)) == 0;
+}
