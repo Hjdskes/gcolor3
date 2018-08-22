@@ -21,7 +21,7 @@ msgstr "Выбор цвета"
 #: data/nl.hjdskes.gcolor3.desktop.in:4
 #: data/nl.hjdskes.gcolor3.appdata.xml.in:8 src/gcolor3-application.c:56
 msgid "Choose colors from the picker or the screen"
-msgstr "Выберите цвет на экране с помощью пипетки"
+msgstr "Определите цвет на экране с помощью пипетки"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
 #: data/nl.hjdskes.gcolor3.desktop.in:7
@@ -40,7 +40,7 @@ msgid ""
 "palette, so that you can easily mix and match a couple of colors together."
 msgstr ""
 "Хотите узнать значение любого цвета на экране? Gcolor3 поможет вам, "
-"коснитесь пробником нужной точки на экране. Программа также имеет "
+"коснитесь пипеткой нужной точки на экране. Программа также имеет "
 "палитру, так что вы можете легко смешивать и сочетать пару цветов вместе."
 
 #: data/nl.hjdskes.gcolor3.appdata.xml.in:15
@@ -118,7 +118,7 @@ msgstr "Показать версию программы"
 
 #: src/main.c:54
 msgid "- pick a color from the picker or the screen"
-msgstr "- выбрать цвет из пипетки или из экрана"
+msgstr "- определите цвет на экране с помощью пипетки"
 
 #: src/main.c:65
 #, c-format
