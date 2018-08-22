@@ -1,0 +1,201 @@
+# Russian translation for Gcolor3.
+# This file is distributed under the same license as the Gcolor3 package.
+msgid ""
+msgstr ""
+"Project-Id-Version: 2.0\n"
+"Report-Msgid-Bugs-To: hjdskes@gmail.com\n"
+"POT-Creation-Date: 2018-08-12 21:42+0200\n"
+"PO-Revision-Date: 2018-08-22 10:50+0200\n"
+"Last-Translator: PuppyRus linux Team <www.puppyrus.org>\n"
+"Language-Team: puppyrus.org\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: data/nl.hjdskes.gcolor3.desktop.in:3
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:7 src/gcolor3-application.c:119
+msgid "Color picker"
+msgstr "Выбор цвета"
+
+#: data/nl.hjdskes.gcolor3.desktop.in:4
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:8 src/gcolor3-application.c:56
+msgid "Choose colors from the picker or the screen"
+msgstr "Выберите цвет на экране с помощью пробника"
+
+#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
+#: data/nl.hjdskes.gcolor3.desktop.in:7
+msgid "nl.hjdskes.gcolor3"
+msgstr ""
+
+#. Translators: Extra keywords that can be used to search for Gcolor3 in GNOME Shell and Unity
+#: data/nl.hjdskes.gcolor3.desktop.in:13
+msgid "Color;Picker;Palette;"
+msgstr "Цвет;Пробник;Палитра"
+
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:10
+msgid ""
+"Ever wanted to know the value of that color on your screen? Gcolor3 enables "
+"you to pick the color from any pixel on your screen. It also offers a "
+"palette, so that you can easily mix and match a couple of colors together."
+msgstr ""
+"Хотите узнать значение любого цвета на экране? Gcolor3 поможет вам, "
+"коснитесь пробником нужной точки на экране. Программа также имеет "
+"палитру, так что вы можете легко смешивать и сочетать пару цветов вместе."
+
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:15
+msgid ""
+"When you have found the perfect combination of colors, naturally you want to "
+"save them. Gcolor3 allows you to conveniently save and retrieve colors."
+msgstr ""
+"Gcolor3 позволяет сохранять и загружать созданные вами комбинации цвета."
+
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:19
+msgid ""
+"Gcolor3 is a color selection dialog written in GTK+ 3. It is much alike "
+"Gcolor2, but uses the newer GTK+ version and other modernisations to better "
+"integrate into your modern desktop."
+msgstr ""
+"Gcolor3 это программа выбора цвета написанная на GTK+ 3. Программа похожа на "
+"Gcolor2, но использует новую версию GTK+ и другие улучшения для более лучшей "
+"интеграции в современные рабочие столы."
+
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:33
+msgid "The picker and the color palette"
+msgstr "Пробник и палитра цветов"
+
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:37
+msgid "The list of saved colors"
+msgstr "Список сохраненных цветов"
+
+#. Translators: please do NOT translate this.
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:44
+msgid "Jente Hidskes"
+msgstr ""
+
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:53
+msgid "Centrally manage colors between several running instances;"
+msgstr "Централизованное управление цветами между несколькими запущенными экземплярами;"
+
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:54
+msgid ""
+"Follow the XDG directory specification for the configuration file. This "
+"means that the configuration file has moved from `~/.rgb.ini` to `"
+"$XDG_CONFIG_HOME/gcolor3/config.ini`;"
+msgstr ""
+
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:56
+msgid "Copy the selected color's hex value from the tree view using Ctrl-C;"
+msgstr "Копировать hex значение цвета в буфер обмена для последующей вставки Ctrl-C;"
+
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:57
+msgid "Make the main window resizable;"
+msgstr "Разрешить изменение размеров окна;"
+
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:58
+msgid "Translation updates."
+msgstr "Обновления переводов."
+
+#: data/menus.ui:7
+msgid "_About"
+msgstr "_О программе"
+
+#: data/menus.ui:11
+msgid "_Quit"
+msgstr "_Выход"
+
+#: data/window.ui:55
+msgid "Saved colors"
+msgstr "Сохраненные"
+
+#: data/window.ui:104
+msgid "Color name..."
+msgstr "Название цвета..."
+
+#: src/main.c:43
+msgid "Show the application's version"
+msgstr "Показать версию программы"
+
+#: src/main.c:54
+msgid "- pick a color from the picker or the screen"
+msgstr "- выбрать цвет из пробника или из экрана"
+
+#: src/main.c:65
+#, c-format
+msgid "Run '%s --help' to see a full list of available command line options"
+msgstr "Запустите '%s --help' для просмотра списка всех доступных параметров"
+
+#. Translators: translate this to give yourself credits.
+#: src/gcolor3-application.c:60
+msgid "translator-credits"
+msgstr "PuppyRus linux Team"
+
+#: src/gcolor3-application.c:61
+msgid "Website"
+msgstr "Website"
+
+#: src/gcolor3-color-store.c:68
+#, c-format
+msgid "Error creating config directory: %s"
+msgstr "Ошибка создания каталога с настройками: %s"
+
+#: src/gcolor3-color-store.c:86
+#, c-format
+msgid "Error writing file: %s"
+msgstr "Ошибка записи файла: %s"
+
+#: src/gcolor3-color-store.c:138
+#, c-format
+msgid "Error opening file: %s. Colors likely won't be saved"
+msgstr "Ошибка открытия файла: %s. Цвета, вероятно, не были сохранены"
+
+#: src/gcolor3-color-store.c:163 src/gcolor3-color-store.c:217
+#, c-format
+msgid "There is already a color named `%s`"
+msgstr "Уже есть цвет с именем `%s`"
+
+#: src/gcolor3-color-store.c:184
+#, c-format
+msgid "Error deleting key: %s"
+msgstr "Ошибка удаления ключа: %s"
+
+#: src/gcolor3-color-store.c:212
+#, c-format
+msgid "Cannot rename nonexisting color `%s`"
+msgstr "Нельзя переименовать несуществующий цвет `%s`"
+
+#: src/gcolor3-color-store.c:222
+#, c-format
+msgid "Cannot retrieve hex value belonging to `%s`: %s"
+msgstr "Не удается получить hex значение `%s`: %s"
+
+#: src/gcolor3-color-store.c:228
+#, c-format
+msgid "Error deleting old name `%s`: %s"
+msgstr "Ошибка удаления старого имени `%s`: %s"
+
+#: src/gcolor3-color-store.c:253
+#, c-format
+msgid "Error reading keys: %s"
+msgstr "Ошибка чтения ключа: %s"
+
+#: src/gcolor3-window.c:327
+msgid "The model is empty; there are no colors to remove"
+msgstr ""
+
+#: src/gcolor3-window.c:367
+msgid "Cannot update color: invalid path"
+msgstr "Не удается обновить цвет: неправильный путь"
+
+#: src/gcolor3-window.c:501
+msgid "Color"
+msgstr "Цвет"
+
+#: src/gcolor3-window.c:521
+msgid "Name"
+msgstr "Имя"
+
+#: src/gcolor3-window.c:546
+msgid "Picker"
+msgstr "Пробник"
+
