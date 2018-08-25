@@ -28,7 +28,8 @@
 #include "gcolor3-color-row.h"
 
 #define I_(string) g_intern_static_string (string)
-#define THUMB_SIZE 24
+#define THUMB_SIZE 32
+#define RADIUS 3
 
 enum {
       PROP_0,
@@ -59,9 +60,15 @@ static void
 set_color_thumbnail (Gcolor3ColorRow *row)
 {
 	Gcolor3ColorRowPrivate *priv;
-	GdkPixbuf *pixbuf;
+	GtkStyleContext *style_context;
+	cairo_surface_t *surface;
+	cairo_t *context;
+	GValue border_radius = { 0 };
 	GdkRGBA color;
-	guint32 hex;
+	double x = 0;
+	double y = 0;
+	double degrees = G_PI / 180.0;
+	int radius = RADIUS;
 
 	priv = gcolor3_color_row_get_instance_private (row);
 
@@ -70,16 +77,36 @@ set_color_thumbnail (Gcolor3ColorRow *row)
 		return;
 	}
 
-	hex = ((guint32) (color.red   * 255)) << 24 |
-	      ((guint32) (color.green * 255)) << 16 |
-	      ((guint32) (color.blue  * 255)) <<  8 |
-	      ((guint32) (color.alpha * 255));
+	surface = cairo_image_surface_create (CAIRO_FORMAT_ARGB32, THUMB_SIZE, THUMB_SIZE);
+	context = cairo_create (surface);
+	cairo_set_source_rgba (context, color.red, color.green, color.blue, color.alpha);
 
-	// TODO: make circular?
-	pixbuf = gdk_pixbuf_new (GDK_COLORSPACE_RGB, FALSE, 8, THUMB_SIZE, THUMB_SIZE);
-	gdk_pixbuf_fill (pixbuf,  hex);
-	gtk_image_set_from_pixbuf (GTK_IMAGE (priv->image), pixbuf);
-	g_object_unref (pixbuf);
+	style_context = gtk_widget_get_style_context (GTK_WIDGET (priv->entry));
+	gtk_style_context_save (style_context);
+	gtk_style_context_get_property (style_context,
+					GTK_STYLE_PROPERTY_BORDER_RADIUS,
+					GTK_STATE_NORMAL,
+					&border_radius);
+	gtk_style_context_restore (style_context);
+
+	if (G_VALUE_HOLDS_INT (&border_radius)) {
+		radius = g_value_get_int (&border_radius);
+	}
+	g_value_unset (&border_radius);
+
+	/* Code from https://www.cairographics.org/samples/rounded_rectangle/ */
+	cairo_new_sub_path (context);
+	cairo_arc (context, x + THUMB_SIZE - radius, y + radius, radius, -90 * degrees, 0);
+	cairo_arc (context, x + THUMB_SIZE - radius, y + THUMB_SIZE - radius, radius, 0, 90 * degrees);
+	cairo_arc (context, x + radius, y + THUMB_SIZE - radius, radius, 90 * degrees, 180 * degrees);
+	cairo_arc (context, x + radius, y + radius, radius, 180 * degrees, 270 * degrees);
+	cairo_close_path (context);
+	cairo_fill_preserve (context);
+
+	gtk_image_set_from_surface (GTK_IMAGE (priv->image), surface);
+
+	cairo_destroy (context);
+	cairo_surface_destroy (surface);
 }
 
 static void
