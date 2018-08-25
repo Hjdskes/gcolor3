@@ -35,8 +35,7 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "git://github.com/Hjdskes/gcolor3.git",
-                    "branch": "meson"
+                    "url": "git://github.com/Hjdskes/gcolor3.git"
                 }
             ]
         }
