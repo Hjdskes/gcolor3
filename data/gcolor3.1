@@ -1,0 +1,43 @@
+.TH GCOLOR3 "1" "August 26, 2018"
+.
+.SH NAME
+gcolor3 \- a color selection dialog
+.
+.SH SYNOPSIS
+.B gcolor3
+.RI [ OPTIONS ]
+.
+.SH DESCRIPTION
+.B gcolor3
+enables you to pick the color from any pixel on your screen. It also offers a palette, so that you can easily mix and match a couple of colors together.
+.
+.SH OPTIONS
+.SS "Help Options"
+.TP
+.BR \-h ", " \-\^\-help
+Show help options
+.TP
+.BR \-\^\-help\-all
+Show all help options
+.SS "Application Options"
+.TP
+.BR \-v ", " \-\^\-version
+Show the application's version
+.TP
+.BI "\-\^\-display=" DISPLAY
+X display to use
+.
+.SH FILES
+.TP
+.BR $XDG_CONFIG_HOME/gcolor3/rgb.ini
+Your saved color are stored in this file
+.
+.SH NOTES
+.B gcolor3
+prints the last selected color to stdout in hex format on exit.
+.
+.SH BUGS
+For any bugs or feature requests, please create an issue on GitHub at https://github.com/kjdskes/gcolor3/issues
+.
+.SH AUTHORS
+Jente Hidskes and contributors
