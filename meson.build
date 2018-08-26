@@ -43,8 +43,6 @@ config_h.set('UNUSED', '__attribute__ ((unused))')
 configure_file(output: 'config.h',
   configuration: config_h)
 
-install_man('man/gcolor3.1')
-
 meson.add_install_script('meson_install.sh', get_option('datadir'))
 
 output = '\n        ' + meson.project_name() + ' ' + meson.project_version() + '\n'

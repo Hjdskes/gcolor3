@@ -1,6 +1,8 @@
 install_data('nl.hjdskes.gcolor3.svg',
   install_dir: join_paths(datadir, 'icons', 'hicolor', 'scalable', 'apps'))
 
+install_man('gcolor3.1')
+
 i18n.merge_file(
   input: 'nl.hjdskes.gcolor3.desktop.in',
   output: 'nl.hjdskes.gcolor3.desktop',
