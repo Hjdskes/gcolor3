@@ -77,7 +77,7 @@ msgstr "Списак сачуваних боја"
 #. Translators: please do NOT translate this.
 #: data/nl.hjdskes.gcolor3.appdata.xml.in:44
 msgid "Jente Hidskes"
-msgstr "Jente Hidskes"
+msgstr ""
 
 #: data/nl.hjdskes.gcolor3.appdata.xml.in:53
 msgid "Centrally manage colors between several running instances;"
@@ -169,11 +169,11 @@ msgstr "Име боје..."
 
 #: data/window.ui:89
 msgid "page0"
-msgstr "страница0"
+msgstr ""
 
 #: data/window.ui:155
 msgid "page1"
-msgstr "страница1"
+msgstr ""
 
 #: data/window.ui:162
 msgid "Saved colors"
@@ -425,22 +425,3 @@ msgstr ""
 #: src/gcolor3-window.c:397
 msgid "Picker"
 msgstr "Бирач"
-
-#~ msgid "Error opening file: %s. Colors likely won't be saved"
-#~ msgstr ""
-#~ "Грешка приликом отварања датотеке: %s. Боје вероватно неће бити сачуване"
-
-#~ msgid "Error reading keys: %s"
-#~ msgstr "Грешка приликом читања кључева: %s"
-
-#~ msgid "The model is empty; there are no colors to remove"
-#~ msgstr "Модел је празан, нема боја које се могу уклонити"
-
-#~ msgid "Cannot update color: invalid path"
-#~ msgstr "Не могу да ажурирам боју: неисправна путања"
-
-#~ msgid "Color"
-#~ msgstr "Боја"
-
-#~ msgid "Error opening file: "
-#~ msgstr "Грешка приликом отварања датотеке: "
