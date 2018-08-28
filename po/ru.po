@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 2.0\n"
 "Report-Msgid-Bugs-To: hjdskes@gmail.com\n"
-"POT-Creation-Date: 2018-08-12 21:42+0200\n"
-"PO-Revision-Date: 2018-08-22 10:50+0200\n"
+"POT-Creation-Date: 2018-08-25 21:34+0200\n"
+"PO-Revision-Date: 2018-08-28 10:50+0200\n"
 "Last-Translator: PuppyRus linux Team <www.puppyrus.org>\n"
 "Language-Team: puppyrus.org\n"
 "Language: ru\n"
@@ -341,25 +341,23 @@ msgstr ""
 msgid ""
 "The previously-selected color, for comparison to the color you’re selecting "
 "now."
-msgstr ""
-"The previously-selected colour, for comparison to the colour you’re selecting "
-"now."
+msgstr "Выбранный ранее цвет, для сравнения c цветом, выбранным сейчас."
 
 #: src/gcolor3-color-selection.c:1056
 msgid "The color you’ve chosen."
-msgstr "The colour you’ve chosen."
+msgstr "Выбранный вами цвет."
 
 #: src/gcolor3-color-selection.c:1425
 msgid "_Save color here"
-msgstr "_Save colour here"
+msgstr "_Сохранить цвет"
 
 #: src/gcolor3-color-selection.c:1631
 msgid ""
 "Click this palette entry to make it the current color. To change this entry, "
 "drag a color swatch here or right-click it and select “Save color here.”"
 msgstr ""
-"Click this palette entry to make it the current colour. To change this entry, "
-"drag a colour swatch here or right-click it and select “Save colour here.”"
+"Щелкните на палитре чтобы выбрать цвет. Для изменения цвета, "
+"перемещайте указатель, щелчком правой кнопки выберите “Сохранить цвет”."
 
 #: src/gcolor3-color-store.c:66
 #, c-format
@@ -369,17 +367,17 @@ msgstr "Ошибка создания каталога с настройками
 #: src/gcolor3-color-store.c:89
 #, c-format
 msgid "Cannot count number of items: %s\n"
-msgstr "Cannot count number of items: %s\n"
+msgstr "Ошибка подсчета количества элементов: %s\n"
 
 #: src/gcolor3-color-store.c:110
-#, fuzzy, c-format
+#, c-format
 msgid "Cannot read colors: %s\n"
-msgstr "Cannot read colours: %s\n"
+msgstr "Ошибка чтения цвета: %s\n"
 
 #: src/gcolor3-color-store.c:124
 #, c-format
 msgid "Cannot access color at position %d: %s\n"
-msgstr "Cannot access colour at position %d: %s\n"
+msgstr "Ошибка чтения цвета %d: %s\n"
 
 #: src/gcolor3-color-store.c:147
 #, c-format
@@ -392,8 +390,8 @@ msgid ""
 "Error opening file: %s. Colors likely won't be saved, unless this is the "
 "first run"
 msgstr ""
-"Error opening file: %s. Colours likely won't be saved, unless this is the "
-"first run"
+"Ошибка открытия файла: %s. Цвета не были сохранены, возможно  это "
+"первый запуск программы"
 
 #: src/gcolor3-color-store.c:215 src/gcolor3-color-store.c:301
 #, c-format
@@ -403,12 +401,12 @@ msgstr "Уже есть цвет с именем `%s`"
 #: src/gcolor3-color-store.c:222
 #, c-format
 msgid "Cannot locate index of addition: %s. UI won't be updated\n"
-msgstr "Cannot locate index of addition: %s. UI won't be updated\n"
+msgstr "Cannot locate index of addition: %s. UI не обновлен\n"
 
 #: src/gcolor3-color-store.c:254
 #, c-format
 msgid "Cannot locate index of removal: %s. UI won't be updated\n"
-msgstr "Cannot locate index of removal: %s. UI won't be updated\n"
+msgstr "Cannot locate index of removal: %s. UI не обновлен\n"
 
 #: src/gcolor3-color-store.c:268
 #, c-format
@@ -433,7 +431,7 @@ msgstr "Ошибка удаления старого имени `%s`: %s"
 #: src/gcolor3-color-store.c:345
 #, c-format
 msgid "Error reading keys: %s. This is harmless if this is the first run"
-msgstr "Error reading keys: %s. This is harmless if this is the first run"
+msgstr "Ошибка чтения ключей: %s. Это нормально при первом запуске программы"
 
 #: src/gcolor3-window.c:397
 msgid "Picker"
