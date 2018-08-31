@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Gcolor3 package.
 msgid ""
 msgstr ""
-"Project-Id-Version: 2.0\n"
+"Project-Id-Version: 2.3\n"
 "Report-Msgid-Bugs-To: hjdskes@gmail.com\n"
 "POT-Creation-Date: 2018-08-25 21:34+0200\n"
 "PO-Revision-Date: 2018-08-28 10:50+0200\n"
@@ -58,7 +58,7 @@ msgid ""
 msgstr ""
 "Gcolor3 это программа выбора цвета написанная на GTK+ 3. Программа похожа на "
 "Gcolor2, но использует новую версию GTK+ и другие улучшения для лучшей "
-"интеграции в современные рабочие столы."
+"интеграции в современные окружения рабочих столов."
 
 #: data/nl.hjdskes.gcolor3.appdata.xml.in:34
 msgid "The picker and the color palette"
@@ -232,7 +232,7 @@ msgstr ""
 
 #: src/gcolor3-color-selection.c:436
 msgid "Picking a color is currently not supported on Wayland."
-msgstr "Пробник цвета в настоящее время не работает в Wayland."
+msgstr "Пипетка в настоящее время не работает в Wayland."
 
 #: src/gcolor3-color-selection.c:447
 msgid ""
