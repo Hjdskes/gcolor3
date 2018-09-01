@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-08-26 15:23+0200\n"
+"POT-Creation-Date: 2018-09-01 19:35+0200\n"
 "PO-Revision-Date: 2018-09-01 10:54+0200\n"
 "Last-Translator: Vincent Bermel <willovince@openmailbox.org>\n"
 "Language-Team: Deutsch <>\n"
@@ -75,11 +75,43 @@ msgstr "Liste der gespeicherten Farben"
 msgid "Jente Hidskes"
 msgstr ""
 
-#: data/nl.hjdskes.gcolor3.appdata.xml.in:53
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:58
+msgid "Redesign the saved colors page"
+msgstr ""
+
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:59
+msgid "Redesign the header bar"
+msgstr ""
+
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:60
+msgid "Disable color picking on Wayland for now, instead of crashing"
+msgstr ""
+
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:61
+msgid "Add a shortcuts window"
+msgstr ""
+
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:62
+msgid "Gcolor3 is now available as a Flatpak"
+msgstr ""
+
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:63
+msgid "New and updated translations"
+msgstr ""
+
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:64
+msgid "Gcolor3 now comes with a manual page"
+msgstr ""
+
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:65
+msgid "Lots of under-the-hood improvements"
+msgstr ""
+
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:74
 msgid "Centrally manage colors between several running instances;"
 msgstr "Zentrale Farbverwaltung zwischen verschiedenen laufenden Instanzen;"
 
-#: data/nl.hjdskes.gcolor3.appdata.xml.in:54
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:75
 msgid ""
 "Follow the XDG directory specification for the configuration file. This "
 "means that the configuration file has moved from `~/.rgb.ini` to `"
@@ -89,15 +121,15 @@ msgstr ""
 "bedeutet dass die Datei nun am Ort `$XDG_CONFIG_HOME/gcolor3/config.ini` "
 "statt am Ort `~/.rgb.ini` liegt;"
 
-#: data/nl.hjdskes.gcolor3.appdata.xml.in:56
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:77
 msgid "Copy the selected color's hex value from the tree view using Ctrl-C;"
 msgstr "Strg+C zum Kopieren des gewählten HEX-Werts aus der Baumansicht;"
 
-#: data/nl.hjdskes.gcolor3.appdata.xml.in:57
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:78
 msgid "Make the main window resizable;"
 msgstr "Hauptfenster größenveränderbar;"
 
-#: data/nl.hjdskes.gcolor3.appdata.xml.in:58
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:79
 msgid "Translation updates."
 msgstr "Aktualisierung der Übersetzungen."
 

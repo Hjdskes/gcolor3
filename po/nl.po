@@ -14,12 +14,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: data/nl.hjdskes.gcolor3.desktop.in:3
-#: data/nl.hjdskes.gcolor3.appdata.xml.in:8 src/gcolor3-application.c:145
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:7 src/gcolor3-application.c:145
 msgid "Color picker"
 msgstr "Kleurenkiezer"
 
 #: data/nl.hjdskes.gcolor3.desktop.in:4
-#: data/nl.hjdskes.gcolor3.appdata.xml.in:9 src/gcolor3-application.c:84
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:8 src/gcolor3-application.c:84
 msgid "Choose colors from the picker or the screen"
 msgstr "Kies kleuren van de kiezer of van het scherm"
 
@@ -33,17 +33,17 @@ msgstr ""
 msgid "Color;Picker;Palette;"
 msgstr "Kleur;Kiezer;Palet;"
 
-#: data/nl.hjdskes.gcolor3.appdata.xml.in:11
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:10
 msgid ""
 "Ever wanted to know the value of that color on your screen? Gcolor3 enables "
 "you to pick the color from any pixel on your screen. It also offers a "
 "palette, so that you can easily mix and match a couple of colors together."
 msgstr ""
 "Ooit de waarde van die kleur op uw scherm willen weten? Gcolor stelt u in "
-"staat om de kleur van elke pixel op uw scherm te kiezen. Het biedt u ook "
-"een palet, zodat u eenvoudig een selectie van kleuren kan combineren."
+"staat om de kleur van elke pixel op uw scherm te kiezen. Het biedt u ook een "
+"palet, zodat u eenvoudig een selectie van kleuren kan combineren."
 
-#: data/nl.hjdskes.gcolor3.appdata.xml.in:16
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:15
 msgid ""
 "When you have found the perfect combination of colors, naturally you want to "
 "save them. Gcolor3 allows you to conveniently save and retrieve colors."
@@ -51,7 +51,7 @@ msgstr ""
 "Als u de perfecte combinatie van kleuren hebt gevonden, wilt u deze "
 "uiteraard opslaan. Gcolor3 laat u gemakkelijk kleuren opslaan en ophalen."
 
-#: data/nl.hjdskes.gcolor3.appdata.xml.in:20
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:19
 msgid ""
 "Gcolor3 is a color selection dialog written in GTK+ 3. It is much alike "
 "Gcolor2, but uses the newer GTK+ version and other modernisations to better "
@@ -61,43 +61,47 @@ msgstr ""
 "lijkt op Gcolor2, maar gebruikt de nieuwere GTK+ versie en andere "
 "modernisaties om beter te integreren in jouw moderne bureaubladomgeving."
 
-#: data/nl.hjdskes.gcolor3.appdata.xml.in:34
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:33
 msgid "The picker and the color palette"
 msgstr "De kiezer en het kleurenpalet"
 
-#: data/nl.hjdskes.gcolor3.appdata.xml.in:38
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:37
 msgid "The list of saved colors"
 msgstr "De lijst met opgeslagen kleuren"
 
 #. Translators: please do NOT translate this.
-#: data/nl.hjdskes.gcolor3.appdata.xml.in:45
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:44
 msgid "Jente Hidskes"
 msgstr ""
 
-#: data/nl.hjdskes.gcolor3.appdata.xml.in:59
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:58
 msgid "Redesign the saved colors page"
 msgstr "De pagina voor opgeslagen kleuren opnieuw ontworpen"
 
-#: data/nl.hjdskes.gcolor3.appdata.xml.in:60
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:59
 msgid "Redesign the header bar"
 msgstr "De header bar opnieuw ontworpen"
 
-#: data/nl.hjdskes.gcolor3.appdata.xml.in:61
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:60
 msgid "Disable color picking on Wayland for now, instead of crashing"
 msgstr ""
 "Kleuren kiezen op Wayland is voor nu uitgeschakeld, in plaats van te crashen"
 
-#: data/nl.hjdskes.gcolor3.appdata.xml.in:62
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:61
 msgid "Add a shortcuts window"
 msgstr "Een shortcuts venster toegevoegd"
 
-#: data/nl.hjdskes.gcolor3.appdata.xml.in:63
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:62
 msgid "Gcolor3 is now available as a Flatpak"
 msgstr "Gcolor3 is nu beschikbaar als een Flatpak"
 
-#: data/nl.hjdskes.gcolor3.appdata.xml.in:64
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:63
 msgid "New and updated translations"
 msgstr "Nieuwe en bijgewerkte translaties"
+
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:64
+msgid "Gcolor3 now comes with a manual page"
+msgstr "Gcolor3 komt nu met een man pagina"
 
 #: data/nl.hjdskes.gcolor3.appdata.xml.in:65
 msgid "Lots of under-the-hood improvements"
@@ -113,13 +117,14 @@ msgid ""
 "means that the configuration file has moved from `~/.rgb.ini` to `"
 "$XDG_CONFIG_HOME/gcolor3/config.ini`;"
 msgstr ""
-"Volg de XDG directory specificatie voor het configuratiebestand."
-"Dit betekent dat het configuratiebestand is verplaatst van `~/.rgb.ini` naar "
-"`$XDG_CONFIG_HOME/gcolor3/config.ini`;"
+"Volg de XDG directory specificatie voor het configuratiebestand.Dit betekent "
+"dat het configuratiebestand is verplaatst van `~/.rgb.ini` naar `"
+"$XDG_CONFIG_HOME/gcolor3/config.ini`;"
 
 #: data/nl.hjdskes.gcolor3.appdata.xml.in:77
 msgid "Copy the selected color's hex value from the tree view using Ctrl-C;"
-msgstr "Kopieer de geselecteerde kleur's hex waarde van de tree view met CTRL-C;"
+msgstr ""
+"Kopieer de geselecteerde kleur's hex waarde van de tree view met CTRL-C;"
 
 #: data/nl.hjdskes.gcolor3.appdata.xml.in:78
 msgid "Make the main window resizable;"
@@ -232,8 +237,8 @@ msgid ""
 "Select the color you want from the outer ring. Select the darkness or "
 "lightness of that color using the inner triangle."
 msgstr ""
-"Selecteer de kleur die u wilt in de buitenste ring. Selecteer de "
-"helderheid van die kleur met de binnenste driehoek."
+"Selecteer de kleur die u wilt in de buitenste ring. Selecteer de helderheid "
+"van die kleur met de binnenste driehoek."
 
 #: src/gcolor3-color-selection.c:436
 msgid "Picking a color is currently not supported on Wayland."
@@ -244,7 +249,8 @@ msgid ""
 "Click the eyedropper, then click a color anywhere on your screen to select "
 "that color."
 msgstr ""
-"Klik op het piper, daarna op een kleur waar dan ook op uw scherm om deze te kiezen"
+"Klik op het piper, daarna op een kleur waar dan ook op uw scherm om deze te "
+"kiezen"
 
 #: src/gcolor3-color-selection.c:458
 msgid "_Hue:"
@@ -311,8 +317,8 @@ msgid ""
 "You can enter an HTML-style hexadecimal color value, or simply a color name "
 "such as “orange” in this entry."
 msgstr ""
-"U kunt een HTML-stijl hexadecimale kleurwaarde invullen, of simpelweg een naam "
-"zoals  “oranje”."
+"U kunt een HTML-stijl hexadecimale kleurwaarde invullen, of simpelweg een "
+"naam zoals  “oranje”."
 
 #: src/gcolor3-color-selection.c:545
 msgid "_Palette:"
@@ -328,9 +334,9 @@ msgid ""
 "now. You can drag this color to a palette entry, or select this color as "
 "current by dragging it to the other color swatch alongside."
 msgstr ""
-"De laatstgeselecteerde kleur, ter vergelijking met de kleur die u nu selecteert."
-"U kunt deze kleur naar een paletvak slepen, of als huidige kleur instellen "
-"door deze naar het kleurenmodel hiernaast te slepen."
+"De laatstgeselecteerde kleur, ter vergelijking met de kleur die u nu "
+"selecteert.U kunt deze kleur naar een paletvak slepen, of als huidige kleur "
+"instellen door deze naar het kleurenmodel hiernaast te slepen."
 
 #: src/gcolor3-color-selection.c:1046
 msgid ""
@@ -360,9 +366,9 @@ msgid ""
 "Click this palette entry to make it the current color. To change this entry, "
 "drag a color swatch here or right-click it and select “Save color here.”"
 msgstr ""
-"Klik in dit paletvak om het de huidige kleur te maken. Om dit vak te veranderen, "
-"sleep een kleur in dit vak of klik met de rechtermuisknop en selecteer "
-"“Sla hier een kleur op.”"
+"Klik in dit paletvak om het de huidige kleur te maken. Om dit vak te "
+"veranderen, sleep een kleur in dit vak of klik met de rechtermuisknop en "
+"selecteer “Sla hier een kleur op.”"
 
 #: src/gcolor3-color-store.c:66
 #, c-format
@@ -375,6 +381,7 @@ msgid "Cannot count number of items: %s\n"
 msgstr "Kan hoeveelheid items niet tellen: %s\n"
 
 #: src/gcolor3-color-store.c:110
+#, c-format
 msgid "Cannot read colors: %s\n"
 msgstr "Kan kleur niet lezen: %s\n"
 
@@ -435,7 +442,9 @@ msgstr "Fout bij het verwijderen van sleutel `%s`: %s"
 #: src/gcolor3-color-store.c:345
 #, c-format
 msgid "Error reading keys: %s. This is harmless if this is the first run"
-msgstr "Fout bij het lezen van sleutels: %s. Dit is ongevaarlijk als dit de eerste uitvoer is"
+msgstr ""
+"Fout bij het lezen van sleutels: %s. Dit is ongevaarlijk als dit de eerste "
+"uitvoer is"
 
 #: src/gcolor3-window.c:397
 msgid "Picker"

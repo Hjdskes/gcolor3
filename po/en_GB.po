@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-08-25 21:34+0200\n"
+"POT-Creation-Date: 2018-09-01 19:35+0200\n"
 "PO-Revision-Date: 2013-06-11 13:09+0200\n"
 "Last-Translator: Jente Hidskes <hjdskes@gmail.com>\n"
 "Language-Team: British English\n"
@@ -14,12 +14,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: data/nl.hjdskes.gcolor3.desktop.in:3
-#: data/nl.hjdskes.gcolor3.appdata.xml.in:8 src/gcolor3-application.c:145
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:7 src/gcolor3-application.c:145
 msgid "Color picker"
 msgstr "Colour picker"
 
 #: data/nl.hjdskes.gcolor3.desktop.in:4
-#: data/nl.hjdskes.gcolor3.appdata.xml.in:9 src/gcolor3-application.c:84
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:8 src/gcolor3-application.c:84
 msgid "Choose colors from the picker or the screen"
 msgstr "Choose colours from the picker or the screen"
 
@@ -33,7 +33,7 @@ msgstr ""
 msgid "Color;Picker;Palette;"
 msgstr "Colour;Picker;Palette"
 
-#: data/nl.hjdskes.gcolor3.appdata.xml.in:11
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:10
 msgid ""
 "Ever wanted to know the value of that color on your screen? Gcolor3 enables "
 "you to pick the color from any pixel on your screen. It also offers a "
@@ -43,7 +43,7 @@ msgstr ""
 "you to pick the colour from any pixel on your screen. It also offers a "
 "palette, so that you can easily mix and match a couple of colours together."
 
-#: data/nl.hjdskes.gcolor3.appdata.xml.in:16
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:15
 msgid ""
 "When you have found the perfect combination of colors, naturally you want to "
 "save them. Gcolor3 allows you to conveniently save and retrieve colors."
@@ -51,7 +51,7 @@ msgstr ""
 "When you have found the perfect combination of colours, naturally you want "
 "to save them. Gcolor3 allows you to conveniently save and retrieve colours."
 
-#: data/nl.hjdskes.gcolor3.appdata.xml.in:20
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:19
 msgid ""
 "Gcolor3 is a color selection dialog written in GTK+ 3. It is much alike "
 "Gcolor2, but uses the newer GTK+ version and other modernisations to better "
@@ -61,42 +61,46 @@ msgstr ""
 "Gcolor2, but uses the newer GTK+ version and other modernizations to better "
 "integrate into your modern desktop."
 
-#: data/nl.hjdskes.gcolor3.appdata.xml.in:34
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:33
 msgid "The picker and the color palette"
 msgstr "The picker and the colour palette"
 
-#: data/nl.hjdskes.gcolor3.appdata.xml.in:38
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:37
 msgid "The list of saved colors"
 msgstr "The list of saved colours"
 
 #. Translators: please do NOT translate this.
-#: data/nl.hjdskes.gcolor3.appdata.xml.in:45
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:44
 msgid "Jente Hidskes"
 msgstr ""
 
-#: data/nl.hjdskes.gcolor3.appdata.xml.in:59
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:58
 msgid "Redesign the saved colors page"
 msgstr "Redesign the saved colours page"
 
-#: data/nl.hjdskes.gcolor3.appdata.xml.in:60
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:59
 msgid "Redesign the header bar"
 msgstr "Redesign the header bar"
 
-#: data/nl.hjdskes.gcolor3.appdata.xml.in:61
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:60
 msgid "Disable color picking on Wayland for now, instead of crashing"
 msgstr "Disable colour picking on Wayland for now, instead of crashing"
 
-#: data/nl.hjdskes.gcolor3.appdata.xml.in:62
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:61
 msgid "Add a shortcuts window"
 msgstr "Add a shortcuts window"
 
-#: data/nl.hjdskes.gcolor3.appdata.xml.in:63
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:62
 msgid "Gcolor3 is now available as a Flatpak"
 msgstr "Gcolor3 is now available as a Flatpak"
 
-#: data/nl.hjdskes.gcolor3.appdata.xml.in:64
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:63
 msgid "New and updated translations"
 msgstr "New and updated translations"
+
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:64
+msgid "Gcolor3 now comes with a manual page"
+msgstr "Gcolor3 now comes with a manual page"
 
 #: data/nl.hjdskes.gcolor3.appdata.xml.in:65
 msgid "Lots of under-the-hood improvements"
@@ -311,8 +315,8 @@ msgid ""
 "You can enter an HTML-style hexadecimal color value, or simply a color name "
 "such as “orange” in this entry."
 msgstr ""
-"You can enter an HTML-style hexadecimal colour value, or simply a colour name "
-"such as “orange” in this entry."
+"You can enter an HTML-style hexadecimal colour value, or simply a colour "
+"name such as “orange” in this entry."
 
 #: src/gcolor3-color-selection.c:545
 msgid "_Palette:"
@@ -328,25 +332,25 @@ msgid ""
 "now. You can drag this color to a palette entry, or select this color as "
 "current by dragging it to the other color swatch alongside."
 msgstr ""
-"The previously-selected colour, for comparison to the colour you’re selecting "
-"now. You can drag this colour to a palette entry, or select this colour as "
-"current by dragging it to the other colour swatch alongside."
+"The previously-selected colour, for comparison to the colour you’re "
+"selecting now. You can drag this colour to a palette entry, or select this "
+"colour as current by dragging it to the other colour swatch alongside."
 
 #: src/gcolor3-color-selection.c:1046
 msgid ""
 "The color you’ve chosen. You can drag this color to a palette entry to save "
 "it for use in the future."
 msgstr ""
-"The colour you’ve chosen. You can drag this colour to a palette entry to save "
-"it for use in the future."
+"The colour you’ve chosen. You can drag this colour to a palette entry to "
+"save it for use in the future."
 
 #: src/gcolor3-color-selection.c:1052
 msgid ""
 "The previously-selected color, for comparison to the color you’re selecting "
 "now."
 msgstr ""
-"The previously-selected colour, for comparison to the colour you’re selecting "
-"now."
+"The previously-selected colour, for comparison to the colour you’re "
+"selecting now."
 
 #: src/gcolor3-color-selection.c:1056
 msgid "The color you’ve chosen."
@@ -361,8 +365,9 @@ msgid ""
 "Click this palette entry to make it the current color. To change this entry, "
 "drag a color swatch here or right-click it and select “Save color here.”"
 msgstr ""
-"Click this palette entry to make it the current colour. To change this entry, "
-"drag a colour swatch here or right-click it and select “Save colour here.”"
+"Click this palette entry to make it the current colour. To change this "
+"entry, drag a colour swatch here or right-click it and select “Save colour "
+"here.”"
 
 #: src/gcolor3-color-store.c:66
 #, c-format
