@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gcolor3 master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-08-12 21:42+0200\n"
-"PO-Revision-Date: 2016-08-11 17:40+0200\n"
+"POT-Creation-Date: 2018-09-01 19:42+0200\n"
+"PO-Revision-Date: 2018-08-26 18:28+0200\n"
 "Last-Translator: Марко М. Костић <marko.m.kostic@gmail.com>\n"
 "Language-Team: Serbian\n"
 "Language: sr\n"
@@ -14,15 +14,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Virtaal 0.7.1\n"
+"X-Generator: Poedit 2.0.6\n"
 
 #: data/nl.hjdskes.gcolor3.desktop.in:3
-#: data/nl.hjdskes.gcolor3.appdata.xml.in:7 src/gcolor3-application.c:119
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:7 src/gcolor3-application.c:145
 msgid "Color picker"
 msgstr "Бирач боја"
 
 #: data/nl.hjdskes.gcolor3.desktop.in:4
-#: data/nl.hjdskes.gcolor3.appdata.xml.in:8 src/gcolor3-application.c:56
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:8 src/gcolor3-application.c:84
 msgid "Choose colors from the picker or the screen"
 msgstr "Изаберите боју из бирача или са екрана"
 
@@ -79,44 +79,137 @@ msgstr "Списак сачуваних боја"
 msgid "Jente Hidskes"
 msgstr ""
 
-#: data/nl.hjdskes.gcolor3.appdata.xml.in:53
-msgid "Centrally manage colors between several running instances;"
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:58
+msgid "Redesign the saved colors page"
 msgstr ""
 
-#: data/nl.hjdskes.gcolor3.appdata.xml.in:54
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:59
+msgid "Redesign the header bar"
+msgstr ""
+
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:60
+msgid "Disable color picking on Wayland for now, instead of crashing"
+msgstr ""
+
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:61
+msgid "Add a shortcuts window"
+msgstr ""
+
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:62
+msgid "Gcolor3 is now available as a Flatpak"
+msgstr ""
+
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:63
+msgid "New and updated translations"
+msgstr ""
+
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:64
+msgid "Gcolor3 now comes with a manual page"
+msgstr ""
+
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:65
+msgid "Lots of under-the-hood improvements"
+msgstr ""
+
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:74
+msgid "Centrally manage colors between several running instances;"
+msgstr ""
+"Управљајте бојама са више покренутих примерака програма на једном месту;"
+
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:75
 msgid ""
 "Follow the XDG directory specification for the configuration file. This "
 "means that the configuration file has moved from `~/.rgb.ini` to `"
 "$XDG_CONFIG_HOME/gcolor3/config.ini`;"
 msgstr ""
+"Пратите XDG спецификацију фасцикли за датотеку са подешавањима. Ово значи да "
+"је датотека подешавања премештена из „~/.rgb.ini“ у „$XDG_CONFIG_HOME/"
+"gcolor3/config.ini“;"
 
-#: data/nl.hjdskes.gcolor3.appdata.xml.in:56
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:77
 msgid "Copy the selected color's hex value from the tree view using Ctrl-C;"
 msgstr ""
+"Копирај хекс вредност изабране боје из приказа стабла користећи Ctrl+C;"
 
-#: data/nl.hjdskes.gcolor3.appdata.xml.in:57
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:78
 msgid "Make the main window resizable;"
-msgstr ""
+msgstr "Учини величину главног прозора промењивом;"
 
-#: data/nl.hjdskes.gcolor3.appdata.xml.in:58
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:79
 msgid "Translation updates."
-msgstr ""
+msgstr "Ажурирања превода."
+
+#: data/color-row.ui:46
+msgid "Click to change the color's name"
+msgstr "Кликни за промену назива боје"
+
+#: data/color-row.ui:47
+msgid "Name"
+msgstr "Име"
+
+#: data/color-row.ui:68
+msgid "Copy this color's hex value to the clipboard"
+msgstr "Копирај хекс вредност ове боје у оставу"
+
+#: data/color-row.ui:90
+msgid "Delete this color"
+msgstr "Обриши ову боју"
 
 #: data/menus.ui:7
+msgid "_Keyboard Shortcuts"
+msgstr "Пречице _тастатуре"
+
+#: data/menus.ui:11
 msgid "_About"
 msgstr "_О програму"
 
-#: data/menus.ui:11
+#: data/menus.ui:15
 msgid "_Quit"
 msgstr "_Изађи"
 
-#: data/window.ui:55
-msgid "Saved colors"
-msgstr "Сачуване боје"
+#: data/shortcuts.ui:14
+msgid "General"
+msgstr "Опште"
 
-#: data/window.ui:104
+#: data/shortcuts.ui:19
+msgid "Change page"
+msgstr "Промени страницу"
+
+#: data/shortcuts.ui:27
+msgid "Palette shortcuts"
+msgstr "Пречице палете"
+
+#: data/shortcuts.ui:32
+msgid "Save currently selected color"
+msgstr "Сачувај тренутно изабрану боју"
+
+#: data/shortcuts.ui:40
+msgid "Saved color management"
+msgstr "Управљање сачуваним бојама"
+
+#: data/shortcuts.ui:45
+msgid "Copy highlighted color's hex value"
+msgstr "Копирај хекс вредност означене боје"
+
+#: data/shortcuts.ui:52
+msgid "Delete highlighted color"
+msgstr "Обриши означену боју"
+
+#: data/window.ui:26
 msgid "Color name..."
 msgstr "Име боје..."
+
+#: data/window.ui:89
+msgid "page0"
+msgstr ""
+
+#: data/window.ui:155
+msgid "page1"
+msgstr ""
+
+#: data/window.ui:162
+msgid "Saved colors"
+msgstr "Сачуване боје"
 
 #: src/main.c:43
 msgid "Show the application's version"
@@ -134,79 +227,233 @@ msgstr ""
 "терминалу"
 
 #. Translators: translate this to give yourself credits.
-#: src/gcolor3-application.c:60
+#: src/gcolor3-application.c:88
 msgid "translator-credits"
 msgstr "Марко М. Костић (Marko M. Kostić) <marko.m.kostic@gmail.com>"
 
-#: src/gcolor3-application.c:61
+#: src/gcolor3-application.c:89
 msgid "Website"
 msgstr "Веб страница"
 
-#: src/gcolor3-color-store.c:68
+#: src/gcolor3-color-row.c:76
+msgid "Could not parse color to display thumbnail\n"
+msgstr "Нисам успео да обрадим боју да бих приказао сличицу\n"
+
+#: src/gcolor3-color-selection.c:406
+msgid ""
+"Select the color you want from the outer ring. Select the darkness or "
+"lightness of that color using the inner triangle."
+msgstr ""
+"Изаберите жељену боју са спољног прстена. Изаберите светлу или тамну нијансу "
+"ове боје користећи унутрашњи троугао."
+
+#: src/gcolor3-color-selection.c:436
+msgid "Picking a color is currently not supported on Wayland."
+msgstr "Бирање боје тренутно није подржано на Вејленду."
+
+#: src/gcolor3-color-selection.c:447
+msgid ""
+"Click the eyedropper, then click a color anywhere on your screen to select "
+"that color."
+msgstr ""
+"Кликните на пипету па онда кликните на било коју боју на вашем екрану да "
+"бисте је изабрали."
+
+#: src/gcolor3-color-selection.c:458
+msgid "_Hue:"
+msgstr "_Нијанса:"
+
+#: src/gcolor3-color-selection.c:459
+msgid "Position on the color wheel."
+msgstr "Положај на точку боја."
+
+#: src/gcolor3-color-selection.c:461
+msgid "S_aturation:"
+msgstr "З_асићеност:"
+
+#: src/gcolor3-color-selection.c:462
+msgid "Intensity of the color."
+msgstr "Засићеност боје."
+
+#: src/gcolor3-color-selection.c:463
+msgid "_Value:"
+msgstr "_Вредност:"
+
+#: src/gcolor3-color-selection.c:464
+msgid "Brightness of the color."
+msgstr "Осветљеност боје."
+
+#: src/gcolor3-color-selection.c:465
+msgid "_Red:"
+msgstr "_Црвена:"
+
+#: src/gcolor3-color-selection.c:466
+msgid "Amount of red light in the color."
+msgstr "Количина црвене светлости у боји."
+
+#: src/gcolor3-color-selection.c:467
+msgid "_Green:"
+msgstr "_Зелена:"
+
+#: src/gcolor3-color-selection.c:468
+msgid "Amount of green light in the color."
+msgstr "Количина зелене светлости у боји."
+
+#: src/gcolor3-color-selection.c:469
+msgid "_Blue:"
+msgstr "_Плава:"
+
+#: src/gcolor3-color-selection.c:470
+msgid "Amount of blue light in the color."
+msgstr "Количина плаве светлости у боји."
+
+#: src/gcolor3-color-selection.c:473
+msgid "Op_acity:"
+msgstr "_Провидност:"
+
+#: src/gcolor3-color-selection.c:481 src/gcolor3-color-selection.c:491
+msgid "Transparency of the color."
+msgstr "Провидност боје."
+
+#: src/gcolor3-color-selection.c:498
+msgid "Color _name:"
+msgstr "_Назив боје:"
+
+#: src/gcolor3-color-selection.c:513
+msgid ""
+"You can enter an HTML-style hexadecimal color value, or simply a color name "
+"such as “orange” in this entry."
+msgstr ""
+"Овде можете унети ХТМЛ хексадецималну вредност боје или назив боје на "
+"енглеском као што је „orange“."
+
+#: src/gcolor3-color-selection.c:545
+msgid "_Palette:"
+msgstr "_Палета:"
+
+#: src/gcolor3-color-selection.c:575
+msgid "Color Wheel"
+msgstr "Точак боја"
+
+#: src/gcolor3-color-selection.c:1040
+msgid ""
+"The previously-selected color, for comparison to the color you’re selecting "
+"now. You can drag this color to a palette entry, or select this color as "
+"current by dragging it to the other color swatch alongside."
+msgstr ""
+"Раније изабрана боја, која се пореди са бојом коју сада изаберете. Ову боју "
+"можете превући на палету или је изабрати као текућу ако је превучете на "
+"преглед тренутно изабране боје."
+
+#: src/gcolor3-color-selection.c:1046
+msgid ""
+"The color you’ve chosen. You can drag this color to a palette entry to save "
+"it for use in the future."
+msgstr ""
+"Изабрана боја. Можете је превући на палету боја како би је сачували за "
+"накнадну употребу."
+
+#: src/gcolor3-color-selection.c:1052
+msgid ""
+"The previously-selected color, for comparison to the color you’re selecting "
+"now."
+msgstr ""
+"Раније изабрана боја која се користи за поређење са бојом коју сада бирате."
+
+#: src/gcolor3-color-selection.c:1056
+msgid "The color you’ve chosen."
+msgstr "Боја коју сте изабрали."
+
+#: src/gcolor3-color-selection.c:1425
+msgid "_Save color here"
+msgstr "Овде _сачувај боју"
+
+#: src/gcolor3-color-selection.c:1631
+msgid ""
+"Click this palette entry to make it the current color. To change this entry, "
+"drag a color swatch here or right-click it and select “Save color here.”"
+msgstr ""
+"Кликните на ову ставку палете да је изаберете као текућу боју. Уколико "
+"желите да је измените превуците другу боју овде или кликните десним тастером "
+"миша и изаберите „Овде сачувај боју.“"
+
+#: src/gcolor3-color-store.c:66
 #, c-format
 msgid "Error creating config directory: %s"
 msgstr "Грешка приликом прављења фасцикле са подешавањима: %s"
 
-#: src/gcolor3-color-store.c:86
+#: src/gcolor3-color-store.c:89
+#, c-format
+msgid "Cannot count number of items: %s\n"
+msgstr "Не могу да пребројим број ставки: %s\n"
+
+#: src/gcolor3-color-store.c:110
+#, c-format
+msgid "Cannot read colors: %s\n"
+msgstr "Не могу да прочитам боје: %s\n"
+
+#: src/gcolor3-color-store.c:124
+#, c-format
+msgid "Cannot access color at position %d: %s\n"
+msgstr "Не могу да приступим боји на положају %d: %s\n"
+
+#: src/gcolor3-color-store.c:147
 #, c-format
 msgid "Error writing file: %s"
 msgstr "Грешка приликом уписивања у датотеку:%s"
 
-#: src/gcolor3-color-store.c:138
+#: src/gcolor3-color-store.c:187
 #, c-format
-msgid "Error opening file: %s. Colors likely won't be saved"
+msgid ""
+"Error opening file: %s. Colors likely won't be saved, unless this is the "
+"first run"
 msgstr ""
-"Грешка приликом отварања датотеке: %s. Боје вероватно неће бити сачуване"
+"Не могу да отворим датотеку: %s. Боје највероватније неће бити сачуване, "
+"осим ако ово није прво покретање програма"
 
-#: src/gcolor3-color-store.c:163 src/gcolor3-color-store.c:217
+#: src/gcolor3-color-store.c:215 src/gcolor3-color-store.c:301
 #, c-format
 msgid "There is already a color named `%s`"
 msgstr "Већ постоји боја са називом „%s“"
 
-#: src/gcolor3-color-store.c:184
+#: src/gcolor3-color-store.c:222
+#, c-format
+msgid "Cannot locate index of addition: %s. UI won't be updated\n"
+msgstr "Не могу да нађем индекс додатог: %s. УИ вероватно неће бити измењен\n"
+
+#: src/gcolor3-color-store.c:254
+#, c-format
+msgid "Cannot locate index of removal: %s. UI won't be updated\n"
+msgstr ""
+"Не могу да нађем индекс уклоњеног: %s. УИ вероватно неће бити измењен\n"
+
+#: src/gcolor3-color-store.c:268
 #, c-format
 msgid "Error deleting key: %s"
 msgstr "Грешка приликом брисања кључа: %s"
 
-#: src/gcolor3-color-store.c:212
+#: src/gcolor3-color-store.c:296
 #, c-format
 msgid "Cannot rename nonexisting color `%s`"
 msgstr "Не могу да уклоним непостојећу боју „%s“"
 
-#: src/gcolor3-color-store.c:222
+#: src/gcolor3-color-store.c:306
 #, c-format
 msgid "Cannot retrieve hex value belonging to `%s`: %s"
 msgstr "Не могу да прочитам хексадецималну вредност која припада „%s“: %s"
 
-#: src/gcolor3-color-store.c:228
+#: src/gcolor3-color-store.c:312
 #, c-format
 msgid "Error deleting old name `%s`: %s"
 msgstr "Грешка приликом брисања старог назива `%s`: %s"
 
-#: src/gcolor3-color-store.c:253
+#: src/gcolor3-color-store.c:345
 #, c-format
-msgid "Error reading keys: %s"
-msgstr "Грешка приликом читања кључева: %s"
+msgid "Error reading keys: %s. This is harmless if this is the first run"
+msgstr ""
+"Грешка при читању кључева: %s. Ово је безопасно ако је ово прво покретање "
+"програма"
 
-#: src/gcolor3-window.c:327
-msgid "The model is empty; there are no colors to remove"
-msgstr "Модел је празан, нема боја које се могу уклонити"
-
-#: src/gcolor3-window.c:367
-msgid "Cannot update color: invalid path"
-msgstr "Не могу да ажурирам боју: неисправна путања"
-
-#: src/gcolor3-window.c:501
-msgid "Color"
-msgstr "Боја"
-
-#: src/gcolor3-window.c:521
-msgid "Name"
-msgstr "Име"
-
-#: src/gcolor3-window.c:546
+#: src/gcolor3-window.c:397
 msgid "Picker"
 msgstr "Бирач"
-
-#~ msgid "Error opening file: "
-#~ msgstr "Грешка приликом отварања датотеке: "
