@@ -1,4 +1,4 @@
-project('gcolor3', 'c', version: '2.2',
+project('gcolor3', 'c', version: '2.3',
   license: 'GPL2+',
   meson_version: '>= 0.40.0',
   default_options: [
