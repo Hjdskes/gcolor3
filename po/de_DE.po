@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: 2.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-26 15:23+0200\n"
-"PO-Revision-Date: 2018-08-26 16:26+0200\n"
+"PO-Revision-Date: 2018-09-01 10:54+0200\n"
 "Last-Translator: Vincent Bermel <willovince@openmailbox.org>\n"
 "Language-Team: Deutsch <>\n"
 "Language: de_DE\n"
@@ -134,9 +134,8 @@ msgid "General"
 msgstr "Allgemein"
 
 #: data/shortcuts.ui:19
-#, fuzzy
 msgid "Change page"
-msgstr "Seite wechseln"
+msgstr "Tab wechseln"
 
 #: data/shortcuts.ui:27
 msgid "Palette shortcuts"
@@ -152,7 +151,7 @@ msgstr "Gespeichertes Farbmanagement"
 
 #: data/shortcuts.ui:45
 msgid "Copy highlighted color's hex value"
-msgstr "HEX-Wert der hervorgehobenen Farbe speichern"
+msgstr "HEX-Wert der hervorgehobenen Farbe in die Zwischenablage"
 
 #: data/shortcuts.ui:52
 msgid "Delete highlighted color"
@@ -211,8 +210,8 @@ msgstr ""
 #: src/gcolor3-color-selection.c:436
 msgid "Picking a color is currently not supported on Wayland."
 msgstr ""
-"Das Abgreifen einer Farbe vom Bildschirm ist momentan nicht unter Wayland "
-"nicht möglich."
+"Das Abgreifen einer Farbe vom Bildschirm ist momentan unter Wayland nicht "
+"möglich."
 
 #: src/gcolor3-color-selection.c:447
 msgid ""
@@ -223,27 +222,24 @@ msgstr ""
 "dem Bildschirm um die dortige Farbe auszuwählen."
 
 #: src/gcolor3-color-selection.c:458
-#, fuzzy
 msgid "_Hue:"
-msgstr "Farbwert (_H)"
+msgstr "Farbwert _H:"
 
 #: src/gcolor3-color-selection.c:459
 msgid "Position on the color wheel."
-msgstr "Position auf dem Farbkreis."
+msgstr "Winkel auf dem Farbkreis."
 
 #: src/gcolor3-color-selection.c:461
-#, fuzzy
 msgid "S_aturation:"
-msgstr "_Sättigung (S)"
+msgstr "Sättigung _S:"
 
 #: src/gcolor3-color-selection.c:462
 msgid "Intensity of the color."
 msgstr "Intensität der Farbe."
 
 #: src/gcolor3-color-selection.c:463
-#, fuzzy
 msgid "_Value:"
-msgstr "Dunkelstufe (_V)"
+msgstr "Hellwert _V:"
 
 #: src/gcolor3-color-selection.c:464
 msgid "Brightness of the color."
@@ -275,7 +271,7 @@ msgstr "Blauanteil der Farbe."
 
 #: src/gcolor3-color-selection.c:473
 msgid "Op_acity:"
-msgstr "Op_azität:"
+msgstr "_Opazität:"
 
 #: src/gcolor3-color-selection.c:481 src/gcolor3-color-selection.c:491
 msgid "Transparency of the color."
@@ -302,14 +298,13 @@ msgid "Color Wheel"
 msgstr "Farbkreis"
 
 #: src/gcolor3-color-selection.c:1040
-#, fuzzy
 msgid ""
 "The previously-selected color, for comparison to the color you’re selecting "
 "now. You can drag this color to a palette entry, or select this color as "
 "current by dragging it to the other color swatch alongside."
 msgstr ""
-"Die zuvor gewählte Farbe und zum Vergleich die aktuelle Farbe. Kann in die "
-"Palette gezogen werden für einen Eintrag dort oder als gewählte Farbe "
+"Die zuvor gewählte Farbe und zum Vergleich rechts die aktuelle Farbe. Kann "
+"in die Palette gezogen werden für einen Eintrag dort oder als gewählte Farbe "
 "festgelegt werden."
 
 #: src/gcolor3-color-selection.c:1046
@@ -335,14 +330,13 @@ msgid "_Save color here"
 msgstr "Farbe hier _speichern"
 
 #: src/gcolor3-color-selection.c:1631
-#, fuzzy
 msgid ""
 "Click this palette entry to make it the current color. To change this entry, "
 "drag a color swatch here or right-click it and select “Save color here.”"
 msgstr ""
 "Auf diesen Paletteneintrag klicken um die Farbe auszuwählen. Zum Bearbeiten "
 "des Eintrags Farbfeld hier hin ziehen oder Rechtsklick und Klick auf \"Farbe "
-"hier sperichern\"."
+"hier speichern\"."
 
 #: src/gcolor3-color-store.c:66
 #, c-format
@@ -350,7 +344,7 @@ msgid "Error creating config directory: %s"
 msgstr "Fehler beim Anlegen des Konfigurationsordners: %s"
 
 #: src/gcolor3-color-store.c:89
-#, fuzzy, c-format
+#, c-format
 msgid "Cannot count number of items: %s\n"
 msgstr "Anzahl der Einträge konnte nicht gezählt werden: %s\n"
 
@@ -360,7 +354,7 @@ msgid "Cannot read colors: %s\n"
 msgstr "Folgende Farbe konnte nicht verarbeitet werden: %s\n"
 
 #: src/gcolor3-color-store.c:124
-#, fuzzy, c-format
+#, c-format
 msgid "Cannot access color at position %d: %s\n"
 msgstr "Zugriff nicht möglich auf Farbe an Position %d: %s\n"
 
@@ -370,7 +364,7 @@ msgid "Error writing file: %s"
 msgstr "Fehler beim Schreiben der Datei: %s"
 
 #: src/gcolor3-color-store.c:187
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Error opening file: %s. Colors likely won't be saved, unless this is the "
 "first run"
@@ -404,7 +398,7 @@ msgstr "Nichtexistente Farbe `%s` konnte nicht umbenannt werden."
 #: src/gcolor3-color-store.c:306
 #, c-format
 msgid "Cannot retrieve hex value belonging to `%s`: %s"
-msgstr "Der Hex-Wert konnte nicht ermittelt werden für  `%s`: %s"
+msgstr "Der HEX-Wert konnte nicht ermittelt werden für  `%s`: %s"
 
 #: src/gcolor3-color-store.c:312
 #, c-format
@@ -417,7 +411,6 @@ msgid "Error reading keys: %s. This is harmless if this is the first run"
 msgstr "Fehler beim Lesen der Schlüssel: %s. Harmlos beim ersten Start."
 
 #: src/gcolor3-window.c:397
-#, fuzzy
 msgid "Picker"
 msgstr "Farbwähler"
 
