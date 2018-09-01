@@ -4,24 +4,24 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-08-12 21:42+0200\n"
-"PO-Revision-Date: 2016-08-11 23:59+0200\n"
+"POT-Creation-Date: 2018-08-26 15:23+0200\n"
+"PO-Revision-Date: 2018-09-01 10:54+0200\n"
 "Last-Translator: Vincent Bermel <willovince@openmailbox.org>\n"
 "Language-Team: Deutsch <>\n"
 "Language: de_DE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Gtranslator 2.91.7\n"
+"X-Generator: Poedit 2.1.1\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: data/nl.hjdskes.gcolor3.desktop.in:3
-#: data/nl.hjdskes.gcolor3.appdata.xml.in:7 src/gcolor3-application.c:119
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:7 src/gcolor3-application.c:145
 msgid "Color picker"
 msgstr "Farbwähler"
 
 #: data/nl.hjdskes.gcolor3.desktop.in:4
-#: data/nl.hjdskes.gcolor3.appdata.xml.in:8 src/gcolor3-application.c:56
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:8 src/gcolor3-application.c:84
 msgid "Choose colors from the picker or the screen"
 msgstr "Wählen Sie Farben vom Farbrad oder dem Bildschirm"
 
@@ -60,7 +60,7 @@ msgid ""
 "integrate into your modern desktop."
 msgstr ""
 "Gcolor3 ist ein Farbwahlprogramm basierend auf GTK+ 3. Zur Funktionalität "
-"von Gcolor2 bietet es eine modernisierte Benutzeroberfläche. "
+"von Gcolor2 bietet es eine modernisierte Benutzeroberfläche."
 
 #: data/nl.hjdskes.gcolor3.appdata.xml.in:33
 msgid "The picker and the color palette"
@@ -77,7 +77,7 @@ msgstr ""
 
 #: data/nl.hjdskes.gcolor3.appdata.xml.in:53
 msgid "Centrally manage colors between several running instances;"
-msgstr ""
+msgstr "Zentrale Farbverwaltung zwischen verschiedenen laufenden Instanzen;"
 
 #: data/nl.hjdskes.gcolor3.appdata.xml.in:54
 msgid ""
@@ -85,34 +85,93 @@ msgid ""
 "means that the configuration file has moved from `~/.rgb.ini` to `"
 "$XDG_CONFIG_HOME/gcolor3/config.ini`;"
 msgstr ""
+"Die Konfigurationsdatei folgt nun der \"XDG directory specification\". Das "
+"bedeutet dass die Datei nun am Ort `$XDG_CONFIG_HOME/gcolor3/config.ini` "
+"statt am Ort `~/.rgb.ini` liegt;"
 
 #: data/nl.hjdskes.gcolor3.appdata.xml.in:56
 msgid "Copy the selected color's hex value from the tree view using Ctrl-C;"
-msgstr ""
+msgstr "Strg+C zum Kopieren des gewählten HEX-Werts aus der Baumansicht;"
 
 #: data/nl.hjdskes.gcolor3.appdata.xml.in:57
 msgid "Make the main window resizable;"
-msgstr ""
+msgstr "Hauptfenster größenveränderbar;"
 
 #: data/nl.hjdskes.gcolor3.appdata.xml.in:58
 msgid "Translation updates."
-msgstr ""
+msgstr "Aktualisierung der Übersetzungen."
+
+#: data/color-row.ui:46
+msgid "Click to change the color's name"
+msgstr "Klicken um den Namen der Farbe zu ändern"
+
+#: data/color-row.ui:47
+msgid "Name"
+msgstr "Name"
+
+#: data/color-row.ui:68
+msgid "Copy this color's hex value to the clipboard"
+msgstr "Diesen HEX-Wert in die Zwischenablage kopieren"
+
+#: data/color-row.ui:90
+msgid "Delete this color"
+msgstr "Diese Farbe löschen"
 
 #: data/menus.ui:7
+msgid "_Keyboard Shortcuts"
+msgstr "_Tastenkürzel"
+
+#: data/menus.ui:11
 msgid "_About"
 msgstr "_Über Gcolor3"
 
-#: data/menus.ui:11
+#: data/menus.ui:15
 msgid "_Quit"
 msgstr "_Beenden"
 
-#: data/window.ui:55
-msgid "Saved colors"
-msgstr "Gespeicherte Farben"
+#: data/shortcuts.ui:14
+msgid "General"
+msgstr "Allgemein"
 
-#: data/window.ui:104
+#: data/shortcuts.ui:19
+msgid "Change page"
+msgstr "Tab wechseln"
+
+#: data/shortcuts.ui:27
+msgid "Palette shortcuts"
+msgstr "Tastenkürzel für die Farbpalette"
+
+#: data/shortcuts.ui:32
+msgid "Save currently selected color"
+msgstr "Momentan gewählte Farbe speichern"
+
+#: data/shortcuts.ui:40
+msgid "Saved color management"
+msgstr "Gespeichertes Farbmanagement"
+
+#: data/shortcuts.ui:45
+msgid "Copy highlighted color's hex value"
+msgstr "HEX-Wert der hervorgehobenen Farbe in die Zwischenablage"
+
+#: data/shortcuts.ui:52
+msgid "Delete highlighted color"
+msgstr "Hervorgehobene Farbe löschen"
+
+#: data/window.ui:26
 msgid "Color name..."
 msgstr "Farbname..."
+
+#: data/window.ui:89
+msgid "page0"
+msgstr ""
+
+#: data/window.ui:155
+msgid "page1"
+msgstr ""
+
+#: data/window.ui:162
+msgid "Saved colors"
+msgstr "Gespeicherte Farben"
 
 #: src/main.c:43
 msgid "Show the application's version"
@@ -128,78 +187,229 @@ msgid "Run '%s --help' to see a full list of available command line options"
 msgstr "'%s --help' ausführen, um die vollständige Parameterliste anzuzeigen"
 
 #. Translators: translate this to give yourself credits.
-#: src/gcolor3-application.c:60
+#: src/gcolor3-application.c:88
 msgid "translator-credits"
 msgstr "Jens John, Vincent Bermel"
 
-#: src/gcolor3-application.c:61
+#: src/gcolor3-application.c:89
 msgid "Website"
 msgstr "Webseite"
 
-#: src/gcolor3-color-store.c:68
+#: src/gcolor3-color-row.c:76
+msgid "Could not parse color to display thumbnail\n"
+msgstr "Farbe konnte nicht verarbeitet werden\n"
+
+#: src/gcolor3-color-selection.c:406
+msgid ""
+"Select the color you want from the outer ring. Select the darkness or "
+"lightness of that color using the inner triangle."
+msgstr ""
+"Wählen Sie die gewünschte Farbe vom äußeren Farbkreis und die gewünschte "
+"Helligkeit auf dem inneren Dreieck."
+
+#: src/gcolor3-color-selection.c:436
+msgid "Picking a color is currently not supported on Wayland."
+msgstr ""
+"Das Abgreifen einer Farbe vom Bildschirm ist momentan unter Wayland nicht "
+"möglich."
+
+#: src/gcolor3-color-selection.c:447
+msgid ""
+"Click the eyedropper, then click a color anywhere on your screen to select "
+"that color."
+msgstr ""
+"Klicken Sie auf das Pipettensymbol und dann auf einen beliebigen Punkt auf "
+"dem Bildschirm um die dortige Farbe auszuwählen."
+
+#: src/gcolor3-color-selection.c:458
+msgid "_Hue:"
+msgstr "Farbwert _H:"
+
+#: src/gcolor3-color-selection.c:459
+msgid "Position on the color wheel."
+msgstr "Winkel auf dem Farbkreis."
+
+#: src/gcolor3-color-selection.c:461
+msgid "S_aturation:"
+msgstr "Sättigung _S:"
+
+#: src/gcolor3-color-selection.c:462
+msgid "Intensity of the color."
+msgstr "Intensität der Farbe."
+
+#: src/gcolor3-color-selection.c:463
+msgid "_Value:"
+msgstr "Hellwert _V:"
+
+#: src/gcolor3-color-selection.c:464
+msgid "Brightness of the color."
+msgstr "Helligkeit der Farbe."
+
+#: src/gcolor3-color-selection.c:465
+msgid "_Red:"
+msgstr "_Rot:"
+
+#: src/gcolor3-color-selection.c:466
+msgid "Amount of red light in the color."
+msgstr "Rotanteil der Farbe."
+
+#: src/gcolor3-color-selection.c:467
+msgid "_Green:"
+msgstr "_Grün:"
+
+#: src/gcolor3-color-selection.c:468
+msgid "Amount of green light in the color."
+msgstr "Grünanteil der Farbe."
+
+#: src/gcolor3-color-selection.c:469
+msgid "_Blue:"
+msgstr "_Blau:"
+
+#: src/gcolor3-color-selection.c:470
+msgid "Amount of blue light in the color."
+msgstr "Blauanteil der Farbe."
+
+#: src/gcolor3-color-selection.c:473
+msgid "Op_acity:"
+msgstr "_Opazität:"
+
+#: src/gcolor3-color-selection.c:481 src/gcolor3-color-selection.c:491
+msgid "Transparency of the color."
+msgstr "Opazität (Nichttransparenz) der Farbe."
+
+#: src/gcolor3-color-selection.c:498
+msgid "Color _name:"
+msgstr "Farb_name:"
+
+#: src/gcolor3-color-selection.c:513
+msgid ""
+"You can enter an HTML-style hexadecimal color value, or simply a color name "
+"such as “orange” in this entry."
+msgstr ""
+"Akzeptiert werden sowohl HTML-artige Hexadezimal-Farbwerte als auch "
+"Farbnamen wie \"Orange\"."
+
+#: src/gcolor3-color-selection.c:545
+msgid "_Palette:"
+msgstr "_Palette:"
+
+#: src/gcolor3-color-selection.c:575
+msgid "Color Wheel"
+msgstr "Farbkreis"
+
+#: src/gcolor3-color-selection.c:1040
+msgid ""
+"The previously-selected color, for comparison to the color you’re selecting "
+"now. You can drag this color to a palette entry, or select this color as "
+"current by dragging it to the other color swatch alongside."
+msgstr ""
+"Die zuvor gewählte Farbe und zum Vergleich rechts die aktuelle Farbe. Kann "
+"in die Palette gezogen werden für einen Eintrag dort oder als gewählte Farbe "
+"festgelegt werden."
+
+#: src/gcolor3-color-selection.c:1046
+msgid ""
+"The color you’ve chosen. You can drag this color to a palette entry to save "
+"it for use in the future."
+msgstr ""
+"Die gewählte Farbe. Kann in eine Palette gezogen und so zur zukünftigen "
+"Verwendung gespeichert werden."
+
+#: src/gcolor3-color-selection.c:1052
+msgid ""
+"The previously-selected color, for comparison to the color you’re selecting "
+"now."
+msgstr "Die zuvor gewählte Farbe und zum Vergleich die aktuelle Farbe."
+
+#: src/gcolor3-color-selection.c:1056
+msgid "The color you’ve chosen."
+msgstr "Die gewählte Farbe."
+
+#: src/gcolor3-color-selection.c:1425
+msgid "_Save color here"
+msgstr "Farbe hier _speichern"
+
+#: src/gcolor3-color-selection.c:1631
+msgid ""
+"Click this palette entry to make it the current color. To change this entry, "
+"drag a color swatch here or right-click it and select “Save color here.”"
+msgstr ""
+"Auf diesen Paletteneintrag klicken um die Farbe auszuwählen. Zum Bearbeiten "
+"des Eintrags Farbfeld hier hin ziehen oder Rechtsklick und Klick auf \"Farbe "
+"hier speichern\"."
+
+#: src/gcolor3-color-store.c:66
 #, c-format
 msgid "Error creating config directory: %s"
 msgstr "Fehler beim Anlegen des Konfigurationsordners: %s"
 
-#: src/gcolor3-color-store.c:86
+#: src/gcolor3-color-store.c:89
+#, c-format
+msgid "Cannot count number of items: %s\n"
+msgstr "Anzahl der Einträge konnte nicht gezählt werden: %s\n"
+
+#: src/gcolor3-color-store.c:110
+#, c-format
+msgid "Cannot read colors: %s\n"
+msgstr "Folgende Farbe konnte nicht verarbeitet werden: %s\n"
+
+#: src/gcolor3-color-store.c:124
+#, c-format
+msgid "Cannot access color at position %d: %s\n"
+msgstr "Zugriff nicht möglich auf Farbe an Position %d: %s\n"
+
+#: src/gcolor3-color-store.c:147
 #, c-format
 msgid "Error writing file: %s"
 msgstr "Fehler beim Schreiben der Datei: %s"
 
-#: src/gcolor3-color-store.c:138
+#: src/gcolor3-color-store.c:187
 #, c-format
-msgid "Error opening file: %s. Colors likely won't be saved"
+msgid ""
+"Error opening file: %s. Colors likely won't be saved, unless this is the "
+"first run"
 msgstr "Fehler beim Öffnen der Datei: %s. Farben werden nicht gespeichert."
 
-#: src/gcolor3-color-store.c:163 src/gcolor3-color-store.c:217
+#: src/gcolor3-color-store.c:215 src/gcolor3-color-store.c:301
 #, c-format
 msgid "There is already a color named `%s`"
 msgstr "Eine Farbe mit Name `%s` besteht bereits."
 
-#: src/gcolor3-color-store.c:184
+#: src/gcolor3-color-store.c:222
+#, c-format
+msgid "Cannot locate index of addition: %s. UI won't be updated\n"
+msgstr ""
+
+#: src/gcolor3-color-store.c:254
+#, c-format
+msgid "Cannot locate index of removal: %s. UI won't be updated\n"
+msgstr ""
+
+#: src/gcolor3-color-store.c:268
 #, c-format
 msgid "Error deleting key: %s"
 msgstr "Fehler beim Löschen des Schlüssels: %s"
 
-#: src/gcolor3-color-store.c:212
+#: src/gcolor3-color-store.c:296
 #, c-format
 msgid "Cannot rename nonexisting color `%s`"
-msgstr "Farbe `%s` konnte nicht umbenannt werden."
+msgstr "Nichtexistente Farbe `%s` konnte nicht umbenannt werden."
 
-#: src/gcolor3-color-store.c:222
+#: src/gcolor3-color-store.c:306
 #, c-format
 msgid "Cannot retrieve hex value belonging to `%s`: %s"
-msgstr "Der Hex-Wert für `%s`: %s konnte nicht ermittelt werden."
+msgstr "Der HEX-Wert konnte nicht ermittelt werden für  `%s`: %s"
 
-#: src/gcolor3-color-store.c:228
+#: src/gcolor3-color-store.c:312
 #, c-format
 msgid "Error deleting old name `%s`: %s"
 msgstr "Fehler beim Löschen des alten Namens `%s`: %s"
 
-#: src/gcolor3-color-store.c:253
+#: src/gcolor3-color-store.c:345
 #, c-format
-msgid "Error reading keys: %s"
-msgstr "Fehler beim Lesen der Schlüssel: %s"
+msgid "Error reading keys: %s. This is harmless if this is the first run"
+msgstr "Fehler beim Lesen der Schlüssel: %s. Harmlos beim ersten Start."
 
-#: src/gcolor3-window.c:327
-msgid "The model is empty; there are no colors to remove"
-msgstr "Keine Farben zum Löschen vorhanden."
-
-#: src/gcolor3-window.c:367
-msgid "Cannot update color: invalid path"
-msgstr "Farbe konnte nicht überschrieben werden, ungültiger Pfad."
-
-#: src/gcolor3-window.c:501
-msgid "Color"
-msgstr "Farbe (RGB)"
-
-#: src/gcolor3-window.c:521
-msgid "Name"
-msgstr "Name"
-
-#: src/gcolor3-window.c:546
+#: src/gcolor3-window.c:397
 msgid "Picker"
-msgstr "Farbauswahl"
-
-#~ msgid "Error opening file: "
-#~ msgstr "Fehler beim Öffnen der Datei: "
+msgstr "Farbwähler"
