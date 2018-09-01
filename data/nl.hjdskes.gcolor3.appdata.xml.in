@@ -29,11 +29,11 @@
   </kudos>
   <screenshots>
     <screenshot type="default">
-      <image>https://raw.githubusercontent.com/Hjdskes/gcolor3/0d41086dd845e3ed01f04511902aae2e84c836f1/picker.png</image>
+      <image>https://raw.githubusercontent.com/Hjdskes/gcolor3/blob/v2.3/picker.png</image>
       <caption>The picker and the color palette</caption>
     </screenshot>
     <screenshot>
-      <image>https://raw.githubusercontent.com/Hjdskes/gcolor3/0d41086dd845e3ed01f04511902aae2e84c836f1/saved.png</image>
+      <image>https://raw.githubusercontent.com/Hjdskes/gcolor3/blob/v2.3/saved.png</image>
       <caption>The list of saved colors</caption>
     </screenshot>
   </screenshots>
@@ -46,6 +46,27 @@
   <translation type="gettext">gcolor3</translation>
   <!-- Validate with `appstream-util validate nl.hjdskes.gcolor3.appdata.xml.in`. -->
   <releases>
+    <release version="2.3" date="2018-09-01">
+      <description>
+	<p>
+	  After two years, work has finally picked up again on
+	  Gcolor3. Thanks to numerous contributors, Gcolor3 version
+	  2.3 is finally here. It brings UI improvements, new and
+	  updated translations and a crash fix for Wayland. Full
+	  Wayland support is planned for version 2.4.
+	  <ul>
+	    <li>Redesign the saved colors page</li>
+	    <li>Redesign the header bar</li>
+	    <li>Disable color picking on Wayland for now, instead of crashing</li>
+	    <li>Add a shortcuts window</li>
+	    <li>Gcolor3 is now available as a Flatpak</li>
+	    <li>New and updated translations</li>
+	    <li>Gcolor3 now comes with a manual page</li>
+	    <li>Lots of under-the-hood improvements</li>
+	  </ul>
+	</p>
+      </description>
+    </release>
     <release version="2.2" date="2016-08-20">
       <description>
         <p>
@@ -62,4 +83,9 @@
       </description>
     </release>
   </releases>
+  <content_rating type="oars-1.0" />
+  <launchable type="desktop-id">nl.hjdskes.gcolor3.desktop</launchable>
+  <provides>
+    <binary>gcolor3</binary>
+  </provides>
 </component>
