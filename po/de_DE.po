@@ -413,15 +413,3 @@ msgstr "Fehler beim Lesen der Schlüssel: %s. Harmlos beim ersten Start."
 #: src/gcolor3-window.c:397
 msgid "Picker"
 msgstr "Farbwähler"
-
-#~ msgid "Error reading keys: %s"
-#~ msgstr "Fehler beim Lesen der Schlüssel: %s"
-
-#~ msgid "The model is empty; there are no colors to remove"
-#~ msgstr "Keine Farben zum Löschen vorhanden."
-
-#~ msgid "Cannot update color: invalid path"
-#~ msgstr "Farbe konnte nicht überschrieben werden, ungültiger Pfad."
-
-#~ msgid "Error opening file: "
-#~ msgstr "Fehler beim Öffnen der Datei: "
