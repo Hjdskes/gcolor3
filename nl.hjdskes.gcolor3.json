@@ -1,37 +1,28 @@
 {
     "app-id": "nl.hjdskes.gcolor3",
-
     "runtime": "org.gnome.Platform",
     "runtime-version": "3.28",
     "sdk": "org.gnome.Sdk",
-
     "command": "gcolor3",
-
     "finish-args": [
         "--share=ipc",
         "--socket=x11",
         "--socket=wayland",
-
-        "--filesystem=xdg-config/gcolor3:rw"
+        "--filesystem=xdg-run/dconf",
+        "--filesystem=~/.config/dconf:ro",
+        "--talk-name=ca.desrt.dconf",
+        "--env=DCONF_USER_CONFIG_DIR=.config/dconf"
     ],
-    
-    "build-options": {
-        "cflags": "-O2 -g"
-    },
-    
     "cleanup": [
-        "*.la",
-        "*.a",
-        "/include",
-        "/lib/pkgconfig",
         "/share/man"
     ],
-    
     "modules": [
         {
             "name": "gcolor3",
             "buildsystem": "meson",
-            "builddir": true,
+            "config-opts": [
+                    "--buildtype=debugoptimized"
+            ],
             "sources": [
                 {
                     "type": "git",
