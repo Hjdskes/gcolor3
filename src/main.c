@@ -40,7 +40,7 @@ _print_version_and_exit (UNUSED const gchar *name,
 }
 
 static const GOptionEntry options[] = {
-	{ "version", 'v', G_OPTION_FLAG_NO_ARG, G_OPTION_ARG_CALLBACK, _print_version_and_exit, N_("Show the application's version"), NULL },
+	{ "version", 'v', G_OPTION_FLAG_NO_ARG, G_OPTION_ARG_CALLBACK, _print_version_and_exit, N_("Show the application’s version"), NULL },
 	{ NULL }
 };
 
@@ -51,7 +51,7 @@ _parse_options (int argc, char **argv)
 	GError *error = NULL;
 	gboolean succes;
 
-	context = g_option_context_new (_("- pick a color from the picker or the screen"));
+	context = g_option_context_new (_("— pick a color from the picker or the screen"));
 	g_option_context_add_main_entries (context, options, GETTEXT_PACKAGE);
 	/* This initialises GTK during parsing. */
 	g_option_context_add_group (context, gtk_get_option_group (FALSE));
@@ -62,7 +62,7 @@ _parse_options (int argc, char **argv)
 	if (!succes) {
 		gchar *help;
 
-		help = g_strdup_printf (_("Run '%s --help' to see a full "
+		help = g_strdup_printf (_("Run “%s --help” to see a full "
 					"list of available command line "
 					"options"), argv[0]);
 		g_printerr ("%s\n%s\n", error->message, help);
