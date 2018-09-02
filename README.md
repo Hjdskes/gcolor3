@@ -36,31 +36,32 @@ New translations are always welcome! To do so, simply follow these steps:
 
 Where `xx` is the code of your language (e.g. `nl` for Dutch or `en_GB` for
 British English). Edit the
-[LINGUAS](https://github.com/Hjdskes/gcolor3/blob/master/po/LINGUAS) file and add
-your language code. Please keep the list sorted alphabetically. Lastly, open
-the `.po` file you just generated and translate all the strings. Don't forget to
-fill in the information in the header!
+[LINGUAS](https://gitlab.gnome.org/World/gcolor3/blob/master/po/LINGUAS) file
+and add your language code. Please keep the list sorted alphabetically. Lastly,
+open the `.po` file you just generated and translate all the strings. Don't
+forget to fill in the information in the header!
 
 When a translation needs updating, execute the following commands:
 
 	$ meson build
 	$ ninja -C build gcolor3-update-po
 
-When you are done translating, either make a pull request on [GitHub][github] or send me
-the file via [email](mailto:hjdskes@gmail.com).
+When you are done translating, either make a pull request on [GitLab][gitlab]
+or send me the file via [email](mailto:hjdskes@gmail.com).
 
 Bugs
 ----
 
 For any bug or request, please [create an
-issue](https://github.com/Hjdskes/gcolor3/issues/new) on [GitHub][github].
+issue](https://gitlab.gnome.org/World/gcolor3/issues/new?issue%5Bassignee_id%5D=&issue%5Bmilestone_id%5D=)
+on [GitLab][gitlab].
 
 License
 -------
 
-Please see [LICENSE](https://github.com/Hjdskes/gcolor3/blob/master/LICENSE) on [GitHub][github].
+Please see [LICENSE](https://gitlab.gnome.org/World/gcolor3/blob/master/LICENSE) on [GitLab][gitlab].
 
 **Copyright © 2013 - 2018** Jente Hidskes &lt;hjdskes@gmail.com&gt;
 
-  [github]: https://github.com/Hjdskes/gcolor3
+  [gitlab]: https://gitlab.gnome.org/World/gcolor3
 
