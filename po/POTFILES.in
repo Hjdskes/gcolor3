@@ -11,4 +11,5 @@ src/gcolor3-application.c
 src/gcolor3-color-row.c
 src/gcolor3-color-selection.c
 src/gcolor3-color-store.c
+src/gcolor3-hsv.c
 src/gcolor3-window.c
