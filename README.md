@@ -25,8 +25,7 @@ Translations
 ------------
 
 You can help translating Gcolor3 to your own language! Currently, Gcolor3 is
-available in Dutch, American and British English, French, Galician, German,
-Greek, Norwegian Bokmål, Serbian, Spanish, Swedish and Ukrainian.
+available in over 10 languages.
 
 New translations are always welcome! To do so, simply follow these steps:
 
