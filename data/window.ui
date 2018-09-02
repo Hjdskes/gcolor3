@@ -22,7 +22,7 @@
             <property name="visible">True</property>
             <property name="can_focus">True</property>
             <property name="activates_default">True</property>
-            <property name="placeholder_text" translatable="yes">Color name...</property>
+            <property name="placeholder_text" translatable="yes">Color name…</property>
             <signal name="activate" handler="gcolor3_window_entry_activated" object="Gcolor3Window" swapped="no"/>
             <signal name="key-press-event" handler="gcolor3_window_picker_page_key_handler" object="Gcolor3Window" swapped="no"/>
           </object>
@@ -221,7 +221,7 @@
               </object>
               <packing>
                 <property name="name">page0</property>
-                <property name="title" translatable="yes">page0</property>
+                <property name="title">page0</property>
                 <property name="position">1</property>
               </packing>
             </child>

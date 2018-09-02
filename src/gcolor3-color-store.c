@@ -293,7 +293,7 @@ gcolor3_color_store_rename_color (Gcolor3ColorStore *store,
 	}
 
 	if (!(g_key_file_has_key (priv->colors, "Colors", old_name, NULL))) {
-		g_warning (_("Cannot rename nonexisting color `%s`"), old_name);
+		g_warning (_("Cannot rename non-existing color `%s`"), old_name);
 		return FALSE;
 	}
 

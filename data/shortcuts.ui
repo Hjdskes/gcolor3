@@ -42,7 +42,7 @@
               <object class="GtkShortcutsShortcut">
                 <property name="visible">1</property>
                 <property name="accelerator">&lt;ctrl&gt;c</property>
-                <property name="title" translatable="yes">Copy highlighted color's hex value</property>
+                <property name="title" translatable="yes">Copy highlighted color’s hex value</property>
               </object>
             </child>
             <child>

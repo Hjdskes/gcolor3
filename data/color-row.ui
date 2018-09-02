@@ -43,7 +43,7 @@
           <object class="GtkEntry" id="entry">
             <property name="visible">True</property>
             <property name="can_focus">True</property>
-            <property name="tooltip_text" translatable="yes">Click to change the color's name</property>
+            <property name="tooltip_text" translatable="yes">Click to change the color’s name</property>
             <property name="text" translatable="yes">Name</property>
             <property name="caps_lock_warning">False</property>
             <signal name="activate" handler="gcolor3_color_row_entry_activated" object="Gcolor3ColorRow" swapped="no"/>
@@ -65,7 +65,7 @@
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">False</property>
-                <property name="tooltip_text" translatable="yes">Copy this color's hex value to the clipboard</property>
+                <property name="tooltip_text" translatable="yes">Copy this color’s hex value to the clipboard</property>
                 <property name="always_show_image">True</property>
                 <signal name="clicked" handler="gcolor3_color_row_copy_button_clicked" object="Gcolor3ColorRow" swapped="no"/>
                 <child>
