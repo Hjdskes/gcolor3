@@ -390,6 +390,10 @@ gcolor3_window_init (Gcolor3Window *window)
 	priv->picker = gcolor3_color_selection_new ();
 	gtk_widget_set_valign (priv->picker, GTK_ALIGN_CENTER);
 	gtk_widget_set_halign (priv->picker, GTK_ALIGN_CENTER);
+	gtk_widget_set_margin_top (priv->picker, 6);
+	gtk_widget_set_margin_bottom (priv->picker, 6);
+	gtk_widget_set_margin_start (priv->picker, 6);
+	gtk_widget_set_margin_end (priv->picker, 6);
 	g_signal_connect (priv->picker, "color-changed",
 			  G_CALLBACK (gcolor3_window_picker_changed), window);
 	g_signal_connect (priv->picker, "key-press-event",
