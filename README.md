@@ -5,7 +5,7 @@ Gcolor3
 
 This README is only relevant for development resources and instructions. For a
 description of Gcolor3, screenshots and installation instructions for end-users,
-please see the [website](https://hjdskes.github.io/projects/gcolor3/).
+please see the [website](https://hjdskes.nl/projects/gcolor3/).
 
 Compile from source
 ------------
