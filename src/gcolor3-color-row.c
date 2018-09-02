@@ -85,7 +85,7 @@ set_color_thumbnail (Gcolor3ColorRow *row)
 	gtk_style_context_save (style_context);
 	gtk_style_context_get_property (style_context,
 					GTK_STYLE_PROPERTY_BORDER_RADIUS,
-					GTK_STATE_NORMAL,
+					GTK_STATE_FLAG_NORMAL,
 					&border_radius);
 	gtk_style_context_restore (style_context);
 
