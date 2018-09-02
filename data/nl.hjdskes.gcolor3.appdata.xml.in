@@ -38,8 +38,8 @@
     </screenshot>
   </screenshots>
   <url type="homepage">https://hjdskes.github.io/projects/gcolor3/</url>
-  <url type="bugtracker">https://github.com/Hjdskes/gcolor3/issues</url>
-  <url type="help">https://github.com/Hjdskes/gcolor3/issues</url>
+  <url type="bugtracker">https://gitlab.gnome.org/World/gcolor3/issues</url>
+  <url type="help">https://gitlab.gnome.org/World/gcolor3/issues</url>
   <!-- Translators: please do NOT translate this. -->
   <developer_name>Jente Hidskes</developer_name>
   <update_contact>hjdskes_at_gmail.com</update_contact>
@@ -78,7 +78,7 @@
             <li>Make the main window resizable;</li>
             <li>Translation updates.</li>
           </ul>
-          For more information, see the release notes on Gcolor3's GitHub page.
+          For more information, see the release notes on Gcolor3's GitLab page.
         </p>
       </description>
     </release>

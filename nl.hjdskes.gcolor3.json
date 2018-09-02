@@ -26,7 +26,7 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "git://github.com/Hjdskes/gcolor3.git"
+                    "url": "https://gitlab.gnome.org/World/gcolor3.git"
                 }
             ]
         }
