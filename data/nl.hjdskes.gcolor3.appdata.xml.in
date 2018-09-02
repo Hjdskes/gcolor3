@@ -29,11 +29,11 @@
   </kudos>
   <screenshots>
     <screenshot type="default">
-      <image>https://raw.githubusercontent.com/Hjdskes/gcolor3/v2.3/picker.png</image>
+      <image>https://gitlab.gnome.org/World/gcolor3/raw/3216e4703e78e934d72255f81c9b339cd2345e69/picker.png</image>
       <caption>The picker and the color palette</caption>
     </screenshot>
     <screenshot>
-      <image>https://raw.githubusercontent.com/Hjdskes/gcolor3/v2.3/saved.png</image>
+      <image>https://gitlab.gnome.org/World/gcolor3/raw/3216e4703e78e934d72255f81c9b339cd2345e69/saved.png</image>
       <caption>The list of saved colors</caption>
     </screenshot>
   </screenshots>
@@ -46,6 +46,18 @@
   <translation type="gettext">gcolor3</translation>
   <!-- Validate with `appstream-util validate nl.hjdskes.gcolor3.appdata.xml.in`. -->
   <releases>
+    <release version="2.3.1" date="2018-09-02">
+      <description>
+	<p>
+	  Gcolor3 has moved to the GNOME umbrella! It is now part of the World collection,
+	  non official GNOME projects that use additional functionality.
+	  <ul>
+	    <li>The saved colors page is now more in-line with GNOME</li>
+	    <li>Gcolor3 now builds on FreeBSD</li>
+	  </ul>
+	</p>
+      </description>
+    </release>
     <release version="2.3" date="2018-09-01">
       <description>
 	<p>
