@@ -73,7 +73,7 @@
                   <object class="GtkLabel">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="label">Save a picked color to make it appear here</property>
+                    <property name="label" translatable="yes">Save a picked color to make it appear here</property>
                     <property name="wrap">True</property>
                     <property name="track_visited_links">False</property>
                     <style>
@@ -91,7 +91,7 @@
                   <object class="GtkLabel">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="label">You have no saved colors</property>
+                    <property name="label" translatable="yes">You have no saved colors</property>
                     <property name="track_visited_links">False</property>
                     <attributes>
                       <attribute name="scale" value="2"/>
