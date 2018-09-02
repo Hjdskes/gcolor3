@@ -36,7 +36,10 @@
 
 #include <math.h>
 #include <string.h>
+#include <gdk/gdk.h>
+#ifdef GDK_WINDOWING_WAYLAND
 #include <gdk/gdkwayland.h>
+#endif
 #include <gtk/gtk.h>
 #include <glib/gi18n.h>
 
