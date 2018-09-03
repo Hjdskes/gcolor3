@@ -11,12 +11,12 @@
         <child>
           <object class="GtkShortcutsGroup">
             <property name="visible">1</property>
-            <property name="title" translatable="yes">General</property>
+            <property name="title" translatable="yes" context="shortcut window">General</property>
             <child>
               <object class="GtkShortcutsShortcut">
                 <property name="visible">1</property>
                 <property name="accelerator">F9</property>
-                <property name="title" translatable="yes">Change page</property>
+                <property name="title" translatable="yes" context="shortcut window">Change page</property>
               </object>
             </child>
           </object>
@@ -24,12 +24,12 @@
         <child>
           <object class="GtkShortcutsGroup">
             <property name="visible">1</property>
-            <property name="title" translatable="yes">Palette shortcuts</property>
+            <property name="title" translatable="yes" context="shortcut window">Palette shortcuts</property>
             <child>
               <object class="GtkShortcutsShortcut">
                 <property name="visible">1</property>
                 <property name="accelerator">&lt;ctrl&gt;s</property>
-                <property name="title" translatable="yes">Save currently selected color</property>
+                <property name="title" translatable="yes" context="shortcut window">Save currently selected color</property>
               </object>
             </child>
           </object>
@@ -37,19 +37,19 @@
         <child>
           <object class="GtkShortcutsGroup">
             <property name="visible">1</property>
-            <property name="title" translatable="yes">Saved color management</property>
+            <property name="title" translatable="yes" context="shortcut window">Saved color management</property>
             <child>
               <object class="GtkShortcutsShortcut">
                 <property name="visible">1</property>
                 <property name="accelerator">&lt;ctrl&gt;c</property>
-                <property name="title" translatable="yes">Copy highlighted color’s hex value</property>
+                <property name="title" translatable="yes" context="shortcut window">Copy highlighted color’s hex value</property>
               </object>
             </child>
             <child>
               <object class="GtkShortcutsShortcut">
                 <property name="visible">1</property>
                 <property name="accelerator">Delete</property>
-                <property name="title" translatable="yes">Delete highlighted color</property>
+                <property name="title" translatable="yes" context="shortcut window">Delete highlighted color</property>
               </object>
             </child>
           </object>
