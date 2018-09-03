@@ -73,7 +73,7 @@ set_color_thumbnail (Gcolor3ColorRow *row)
 	priv = gcolor3_color_row_get_instance_private (row);
 
 	if (!gdk_rgba_parse (&color, priv->hex)) {
-		g_warning (_("Could not parse color to display thumbnail\n"));
+		g_warning ("Could not parse color to display thumbnail\n");
 		return;
 	}
 
