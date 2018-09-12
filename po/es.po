@@ -5,14 +5,14 @@ msgstr ""
 "Project-Id-Version: 2.2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-12 21:42+0200\n"
-"PO-Revision-Date: 2018-01-18 10:44+0100\n"
+"PO-Revision-Date: 2018-09-12 20:23+0200\n"
 "Last-Translator: Xoan Sampaiño <xoansampainho@gmail.com>\n"
 "Language-Team: Spanish\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.5\n"
+"X-Generator: Poedit 2.1.1\n"
 
 #: data/nl.hjdskes.gcolor3.desktop.in:3
 #: data/nl.hjdskes.gcolor3.appdata.xml.in:7 src/gcolor3-application.c:119
@@ -78,6 +78,8 @@ msgstr ""
 #: data/nl.hjdskes.gcolor3.appdata.xml.in:53
 msgid "Centrally manage colors between several running instances;"
 msgstr ""
+"Gestiona los colores de forma centralizada entre varias instancias en "
+"ejecución;"
 
 #: data/nl.hjdskes.gcolor3.appdata.xml.in:54
 msgid ""
@@ -85,18 +87,23 @@ msgid ""
 "means that the configuration file has moved from `~/.rgb.ini` to `"
 "$XDG_CONFIG_HOME/gcolor3/config.ini`;"
 msgstr ""
+"Seguir las especificaciones de directorio XDG para el archivo de "
+"configuración. Esto significa que el archivo de configuración se ha movido "
+"de `~/.rgb.ini` a`$XDG_CONFIG_HOME/gcolor3/config.ini`;"
 
 #: data/nl.hjdskes.gcolor3.appdata.xml.in:56
 msgid "Copy the selected color's hex value from the tree view using Ctrl-C;"
 msgstr ""
+"Copie el valor hexadecimal del color seleccionado desde la vista de árbol "
+"usando Ctrl-C;"
 
 #: data/nl.hjdskes.gcolor3.appdata.xml.in:57
 msgid "Make the main window resizable;"
-msgstr ""
+msgstr "Hacer que la ventana principal sea redimensionable;"
 
 #: data/nl.hjdskes.gcolor3.appdata.xml.in:58
 msgid "Translation updates."
-msgstr ""
+msgstr "Actualizaciones de la traducción."
 
 #: data/menus.ui:7
 msgid "_About"
