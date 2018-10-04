@@ -2212,7 +2212,7 @@ update_color (Gcolor3ColorSelection *colorsel)
   g_snprintf (opacity_text, 32, "%.0f", scale_round (priv->color[COLORSEL_OPACITY], 255));
   gtk_entry_set_text (GTK_ENTRY (priv->opacity_entry), opacity_text);
 
-  g_snprintf (entryval, 11, "#%2X%2X%2X",
+  g_snprintf (entryval, 11, "#%2x%2x%2x",
               (guint) (scale_round (priv->color[COLORSEL_RED], 255)),
               (guint) (scale_round (priv->color[COLORSEL_GREEN], 255)),
               (guint) (scale_round (priv->color[COLORSEL_BLUE], 255)));
@@ -2961,7 +2961,7 @@ gcolor3_color_selection_palette_to_string (const GdkRGBA *colors,
       gchar *ptr;
 
       strs[i] =
-        g_strdup_printf ("#%2X%2X%2X",
+        g_strdup_printf ("#%2x%2x%2x",
                          (unsigned int) colors[i].red / 256,
                          (unsigned int) colors[i].green / 256,
                          (unsigned int) colors[i].blue / 256);

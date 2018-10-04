@@ -39,7 +39,7 @@ scale_round (double val, double factor)
 
 inline gchar *
 hex_value (GdkRGBA *color) {
-	return g_strdup_printf ("#%.2X%.2X%.2X",
+	return g_strdup_printf ("#%.2x%.2x%.2x",
 			       (unsigned int) (scale_round (color->red, 255)),
 			       (unsigned int) (scale_round (color->green, 255)),
 			       (unsigned int) (scale_round (color->blue, 255)));
