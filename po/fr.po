@@ -6,7 +6,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-12 21:42+0200\n"
 "PO-Revision-Date: 2015-07-29 21:54+0200\n"
-"Last-Translator: Timothée Floure <timothee.floure@fnux.ch>\n"
+"Last-Translator: Sogal Boogalsky <sogal@opensuse.org>\n"
 "Language-Team: French\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
@@ -48,7 +48,7 @@ msgid ""
 "When you have found the perfect combination of colors, naturally you want to "
 "save them. Gcolor3 allows you to conveniently save and retrieve colors."
 msgstr ""
-"Une fois avoir trouvé la combinaison parfaite, vous ne voulez évidemment pas "
+"Après avoir trouvé la combinaison parfaite, vous ne voulez évidemment pas "
 "la perdre. Gcolor3 permet efficacement de sauvegarder puis récupérer vos "
 "couleurs."
 
@@ -61,7 +61,7 @@ msgstr ""
 "Gcolor3 est un sélecteur de couleurs écrit en GTK+ 3. Il est largement "
 "semblable à Gcolor2 mais utilise une version plus récente de GTK+. Il "
 "implémente aussi d'autres améliorations afin de mieux s'intégrer dans les "
-"environnements de bureau mordernes."
+"environnements de bureau modernes."
 
 #: data/nl.hjdskes.gcolor3.appdata.xml.in:33
 msgid "The picker and the color palette"
@@ -78,7 +78,7 @@ msgstr ""
 
 #: data/nl.hjdskes.gcolor3.appdata.xml.in:53
 msgid "Centrally manage colors between several running instances;"
-msgstr ""
+msgstr "Gestion centralisée des couleurs entre plusieurs instances;"
 
 #: data/nl.hjdskes.gcolor3.appdata.xml.in:54
 msgid ""
@@ -86,18 +86,21 @@ msgid ""
 "means that the configuration file has moved from `~/.rgb.ini` to `"
 "$XDG_CONFIG_HOME/gcolor3/config.ini`;"
 msgstr ""
+"Suivi de la spécification des dossiers XDG. Cela signifie que le "
+"fichier de configuration est déplacé depuis `~/.rgb.ini` vers "
+"`$XDG_CONFIG_HOME/gcolor3/config.ini`;"
 
 #: data/nl.hjdskes.gcolor3.appdata.xml.in:56
 msgid "Copy the selected color's hex value from the tree view using Ctrl-C;"
-msgstr ""
+msgstr "Copie de la valeur hexadécimale de la couleur sélectionnée via Ctrl-C;"
 
 #: data/nl.hjdskes.gcolor3.appdata.xml.in:57
 msgid "Make the main window resizable;"
-msgstr ""
+msgstr "La fenêtre principale devient redimensionnable;"
 
 #: data/nl.hjdskes.gcolor3.appdata.xml.in:58
 msgid "Translation updates."
-msgstr ""
+msgstr "Mise à jour des traductions."
 
 #: data/menus.ui:7
 msgid "_About"
