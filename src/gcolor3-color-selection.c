@@ -498,7 +498,7 @@ gcolor3_color_selection_init (Gcolor3ColorSelection *colorsel)
                     G_CALLBACK (opacity_entry_changed), colorsel);
   gtk_grid_attach (GTK_GRID (table), priv->opacity_entry, 7, 4, 1, 1);
 
-  label = gtk_label_new_with_mnemonic (_("Color _name:"));
+  label = gtk_label_new_with_mnemonic (_("Color _Name:"));
   gtk_grid_attach (GTK_GRID (table), label, 0, 5, 1, 1);
   gtk_widget_set_halign (label, GTK_ALIGN_START);
   gtk_widget_set_valign (label, GTK_ALIGN_CENTER);
