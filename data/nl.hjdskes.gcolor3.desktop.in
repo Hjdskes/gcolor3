@@ -1,5 +1,5 @@
 [Desktop Entry]
-Name=Color picker
+Name=Color Picker
 Comment=Choose colors from the picker or the screen
 Exec=gcolor3
 # Translators: Do NOT translate or transliterate this text (this is an icon file name)!
