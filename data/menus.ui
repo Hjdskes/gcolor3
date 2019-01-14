@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <interface>
-  <menu id="app-menu">
+  <menu id="primary-menu">
     <section>
       <item>
         <attribute name="action">app.shortcuts</attribute>
@@ -8,12 +8,7 @@
       </item>
       <item>
         <attribute name="action">app.about</attribute>
-        <attribute name="label" translatable="yes">_About</attribute>
-      </item>
-      <item>
-        <attribute name="action">app.quit</attribute>
-        <attribute name="label" translatable="yes">_Quit</attribute>
-        <attribute name="accel">&lt;Primary&gt;q</attribute>
+        <attribute name="label" translatable="yes">_About Color Picker</attribute>
       </item>
     </section>
   </menu>

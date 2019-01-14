@@ -39,6 +39,7 @@ enum {
 };
 
 struct _Gcolor3WindowPrivate {
+	GtkWidget *button_primary_menu;
 	GtkWidget *button_save;
 	GtkWidget *entry;
 	GtkWidget *page_stack;
@@ -361,6 +362,7 @@ gcolor3_window_class_init (Gcolor3WindowClass *gcolor3_window_class)
 
 	gtk_widget_class_set_template_from_resource (widget_class, "/nl/hjdskes/gcolor3/window.ui");
 
+	gtk_widget_class_bind_template_child_private (widget_class, Gcolor3Window, button_primary_menu);
 	gtk_widget_class_bind_template_child_private (widget_class, Gcolor3Window, button_save);
 	gtk_widget_class_bind_template_child_private (widget_class, Gcolor3Window, entry);
 	gtk_widget_class_bind_template_child_private (widget_class, Gcolor3Window, page_stack);
@@ -381,10 +383,17 @@ static void
 gcolor3_window_init (Gcolor3Window *window)
 {
 	Gcolor3WindowPrivate *priv;
+	GtkBuilder *menu_builder;
+	GMenuModel *model;
 
 	priv = gcolor3_window_get_instance_private (window);
 
 	gtk_widget_init_template (GTK_WIDGET (window));
+
+	/* Add the primary menu */
+	menu_builder = gtk_builder_new_from_resource ("/nl/hjdskes/gcolor3/menus.ui");
+	model = G_MENU_MODEL (gtk_builder_get_object (menu_builder, "primary-menu"));
+	gtk_menu_button_set_menu_model (GTK_MENU_BUTTON (priv->button_primary_menu), model);
 
 	/* Add the custom color selection widget. */
 	priv->picker = gcolor3_color_selection_new ();

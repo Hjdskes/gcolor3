@@ -125,6 +125,7 @@ gcolor3_application_init_accelerators (GtkApplication *application)
 	 * and terminate the entry with a NULL-string.*/
 	static const gchar *const accelmap[] = {
 		"win.change-page", "F9", NULL,
+		"app.quit", "<Primary>q", NULL,
 		NULL /* Terminating NULL */
 	};
 
