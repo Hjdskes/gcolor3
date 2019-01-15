@@ -1,15 +1,15 @@
 # Polish translation for gcolor3.
-# Copyright © 2018 the gcolor3 authors.
+# Copyright © 2018-2019 the gcolor3 authors.
 # This file is distributed under the same license as the gcolor3 package.
-# Piotr Drąg <piotrdrag@gmail.com>, 2018.
-# Aviary.pl <community-poland@mozilla.org>, 2018.
+# Piotr Drąg <piotrdrag@gmail.com>, 2018-2019.
+# Aviary.pl <community-poland@mozilla.org>, 2018-2019.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gcolor3\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/gcolor3/issues\n"
-"POT-Creation-Date: 2018-09-03 18:48+0000\n"
-"PO-Revision-Date: 2018-09-03 21:12+0200\n"
+"POT-Creation-Date: 2019-01-14 12:33+0000\n"
+"PO-Revision-Date: 2019-01-15 21:05+0100\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <community-poland@mozilla.org>\n"
 "Language: pl\n"
@@ -21,7 +21,7 @@ msgstr ""
 
 #: data/nl.hjdskes.gcolor3.desktop.in:3
 #: data/nl.hjdskes.gcolor3.appdata.xml.in:7 src/gcolor3-application.c:145
-msgid "Color picker"
+msgid "Color Picker"
 msgstr "Wybór kolorów"
 
 #: data/nl.hjdskes.gcolor3.desktop.in:4
@@ -160,7 +160,7 @@ msgid "You have no saved colors"
 msgstr "Nie ma zapisanych kolorów"
 
 #: data/window.ui:231
-msgid "Saved colors"
+msgid "Saved Colors"
 msgstr "Zapisane kolory"
 
 #: src/main.c:43
@@ -181,8 +181,8 @@ msgstr ""
 #: src/gcolor3-application.c:88
 msgid "translator-credits"
 msgstr ""
-"Piotr Drąg <piotrdrag@gmail.com>, 2018\n"
-"Aviary.pl <community-poland@mozilla.org>, 2018"
+"Piotr Drąg <piotrdrag@gmail.com>, 2018-2019\n"
+"Aviary.pl <community-poland@mozilla.org>, 2018-2019"
 
 #: src/gcolor3-application.c:89
 msgid "Website"
@@ -265,7 +265,7 @@ msgid "Transparency of the color."
 msgstr "Przezroczystość koloru."
 
 #: src/gcolor3-color-selection.c:501
-msgid "Color _name:"
+msgid "Color _Name:"
 msgstr "Nazwa _koloru:"
 
 #: src/gcolor3-color-selection.c:516
