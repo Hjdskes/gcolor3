@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gcolor3\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/gcolor3/issues\n"
-"POT-Creation-Date: 2019-01-14 12:33+0000\n"
-"PO-Revision-Date: 2019-01-15 21:05+0100\n"
+"POT-Creation-Date: 2019-01-16 12:12+0000\n"
+"PO-Revision-Date: 2019-01-17 11:22+0100\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <community-poland@mozilla.org>\n"
 "Language: pl\n"
@@ -20,7 +20,7 @@ msgstr ""
 "|| n%100>=20) ? 1 : 2);\n"
 
 #: data/nl.hjdskes.gcolor3.desktop.in:3
-#: data/nl.hjdskes.gcolor3.appdata.xml.in:7 src/gcolor3-application.c:145
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:7 src/gcolor3-application.c:146
 msgid "Color Picker"
 msgstr "Wybór kolorów"
 
@@ -67,16 +67,16 @@ msgstr ""
 "i zawiera inne unowocześnienia, aby lepiej integrować się z nowoczesnym "
 "pulpitem."
 
-#: data/nl.hjdskes.gcolor3.appdata.xml.in:33
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:32
 msgid "The picker and the color palette"
 msgstr "Okno wyboru i paleta kolorów"
 
-#: data/nl.hjdskes.gcolor3.appdata.xml.in:37
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:36
 msgid "The list of saved colors"
 msgstr "Lista zapisanych kolorów"
 
 #. Translators: please do NOT translate this.
-#: data/nl.hjdskes.gcolor3.appdata.xml.in:44
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:43
 msgid "Jente Hidskes"
 msgstr "Jente Hidskes"
 
@@ -105,12 +105,8 @@ msgid "_Keyboard Shortcuts"
 msgstr "_Skróty klawiszowe"
 
 #: data/menus.ui:11
-msgid "_About"
+msgid "_About Color Picker"
 msgstr "_O programie"
-
-#: data/menus.ui:15
-msgid "_Quit"
-msgstr "Za_kończ"
 
 #: data/shortcuts.ui:14
 msgctxt "shortcut window"
@@ -147,19 +143,19 @@ msgctxt "shortcut window"
 msgid "Delete highlighted color"
 msgstr "Usunięcie wyróżnionego koloru"
 
-#: data/window.ui:25
+#: data/window.ui:32
 msgid "Color name…"
 msgstr "Nazwa koloru…"
 
-#: data/window.ui:76
+#: data/window.ui:94
 msgid "Save a picked color to make it appear here"
 msgstr "Zapisanie wybranego koloru spowoduje wyświetlanie go tutaj"
 
-#: data/window.ui:94
+#: data/window.ui:112
 msgid "You have no saved colors"
 msgstr "Nie ma zapisanych kolorów"
 
-#: data/window.ui:231
+#: data/window.ui:249
 msgid "Saved Colors"
 msgstr "Zapisane kolory"
 
@@ -325,6 +321,6 @@ msgstr ""
 "wpis, należy przeciągnąć próbkę tutaj lub kliknąć go prawym przyciskiem "
 "myszy i wybrać „Zapisz kolor tutaj”."
 
-#: src/gcolor3-window.c:401
+#: src/gcolor3-window.c:410
 msgid "Picker"
 msgstr "Wybór"
