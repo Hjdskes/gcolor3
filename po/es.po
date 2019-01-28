@@ -1,26 +1,27 @@
 # Spanish translation for Gcolor3
 # This file is distributed under the same license as the Gcolor3 package.
 # Rodrigo <rodhos92@gmail.com>, 2018.
-# Daniel Mustieles <daniel.mustieles@gmail.com>, 2018.
+# Daniel Mustieles <daniel.mustieles@gmail.com>, 2018-2019.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: 2.2\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/gcolor3/issues\n"
-"POT-Creation-Date: 2018-09-16 16:18+0000\n"
-"PO-Revision-Date: 2018-09-24 12:12+0200\n"
+"POT-Creation-Date: 2019-01-16 12:12+0000\n"
+"PO-Revision-Date: 2019-01-28 13:42+0100\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: es <gnome-es-list@gnome.org>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Gtranslator 2.91.7\n"
+"X-Generator: Gtranslator 3.31.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: data/nl.hjdskes.gcolor3.desktop.in:3
-#: data/nl.hjdskes.gcolor3.appdata.xml.in:7 src/gcolor3-application.c:145
-msgid "Color picker"
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:7 src/gcolor3-application.c:146
+#| msgid "Color picker"
+msgid "Color Picker"
 msgstr "Selector de color"
 
 #: data/nl.hjdskes.gcolor3.desktop.in:4
@@ -66,16 +67,16 @@ msgstr ""
 "mucho a Gcolor2, pero utiliza la versión más nueva de GTK+ y otras "
 "modernizaciones para integrarse mejor en su escritorio moderno."
 
-#: data/nl.hjdskes.gcolor3.appdata.xml.in:33
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:32
 msgid "The picker and the color palette"
 msgstr "El selector y la paleta de colores"
 
-#: data/nl.hjdskes.gcolor3.appdata.xml.in:37
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:36
 msgid "The list of saved colors"
 msgstr "La lista de colores guardados"
 
 #. Translators: please do NOT translate this.
-#: data/nl.hjdskes.gcolor3.appdata.xml.in:44
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:43
 msgid "Jente Hidskes"
 msgstr "Jente Hidskes"
 
@@ -104,12 +105,9 @@ msgid "_Keyboard Shortcuts"
 msgstr "_Atajos de teclado"
 
 #: data/menus.ui:11
-msgid "_About"
-msgstr "A_cerca de"
-
-#: data/menus.ui:15
-msgid "_Quit"
-msgstr "_Salir"
+#| msgid "Color picker"
+msgid "_About Color Picker"
+msgstr "_Acerca del selector de color"
 
 #: data/shortcuts.ui:14
 msgctxt "shortcut window"
@@ -146,20 +144,21 @@ msgctxt "shortcut window"
 msgid "Delete highlighted color"
 msgstr "Eliminar el color destacado"
 
-#: data/window.ui:25
+#: data/window.ui:32
 msgid "Color name…"
 msgstr "Nombre del color…"
 
-#: data/window.ui:76
+#: data/window.ui:94
 msgid "Save a picked color to make it appear here"
 msgstr "Guarde un color seleccionado para hacer que aparezca aquí"
 
-#: data/window.ui:94
+#: data/window.ui:112
 msgid "You have no saved colors"
 msgstr "No tiene colores guardados"
 
-#: data/window.ui:231
-msgid "Saved colors"
+#: data/window.ui:249
+#| msgid "Saved colors"
+msgid "Saved Colors"
 msgstr "Colores guardados"
 
 #: src/main.c:43
@@ -264,7 +263,8 @@ msgid "Transparency of the color."
 msgstr "Transparencia del color."
 
 #: src/gcolor3-color-selection.c:501
-msgid "Color _name:"
+#| msgid "Color _name:"
+msgid "Color _Name:"
 msgstr "_Nombre del color:"
 
 #: src/gcolor3-color-selection.c:516
@@ -327,9 +327,15 @@ msgstr ""
 "cambiar esta entrada, arrastre una muestra de color aquí o pulse con el "
 "botón derecho y seleccione «Guardar color aquí»."
 
-#: src/gcolor3-window.c:401
+#: src/gcolor3-window.c:410
 msgid "Picker"
 msgstr "Selector"
+
+#~ msgid "_About"
+#~ msgstr "A_cerca de"
+
+#~ msgid "_Quit"
+#~ msgstr "_Salir"
 
 #~ msgid "Centrally manage colors between several running instances;"
 #~ msgstr ""
