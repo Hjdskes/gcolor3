@@ -1,6 +1,8 @@
 install_data('nl.hjdskes.gcolor3.svg',
   install_dir: join_paths(datadir, 'icons', 'hicolor', 'scalable', 'apps'))
-
+install_data('nl.hjdskes.gcolor3-symbolic.svg',
+  install_dir: join_paths(datadir, 'icons', 'hicolor', 'symbolic', 'apps'))
+  
 install_man('gcolor3.1')
 
 i18n.merge_file(
