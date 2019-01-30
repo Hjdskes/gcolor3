@@ -73,6 +73,8 @@ gcolor3_application_action_about (UNUSED GSimpleAction *action,
 	};
 
 	static const char *artists[] = {
+		"Sam Hewitt",
+		"Tobias Bernard",
 		"hhh",
 		NULL,
 	};
