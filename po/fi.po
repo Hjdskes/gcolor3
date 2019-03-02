@@ -7,20 +7,20 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gcolor3 master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/gcolor3/issues\n"
-"POT-Creation-Date: 2018-09-29 21:00+0000\n"
-"PO-Revision-Date: 2018-10-14 12:40+0300\n"
+"POT-Creation-Date: 2019-01-16 12:12+0000\n"
+"PO-Revision-Date: 2019-03-02 11:33+0200\n"
+"Last-Translator: Jiri Grönroos <jiri.gronroos+l10n@iki.fi>\n"
 "Language-Team: Finnish <lokalisointi-lista@googlegroups.com>\n"
 "Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Last-Translator: Jiri Grönroos <jiri.gronroos+l10n@iki.fi>\n"
 "X-Generator: Poedit 2.0.6\n"
 
 #: data/nl.hjdskes.gcolor3.desktop.in:3
-#: data/nl.hjdskes.gcolor3.appdata.xml.in:7 src/gcolor3-application.c:145
-msgid "Color picker"
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:7 src/gcolor3-application.c:146
+msgid "Color Picker"
 msgstr "Värivalitsin"
 
 #: data/nl.hjdskes.gcolor3.desktop.in:4
@@ -44,6 +44,9 @@ msgid ""
 "you to pick the color from any pixel on your screen. It also offers a "
 "palette, so that you can easily mix and match a couple of colors together."
 msgstr ""
+"Oletko koskaan halunnut tietää jonkin yksittäisen näytölläsi näkyvän värin "
+"arvon? Gcolor3 mahdollistaa värin poimimisen yksittäisistä kuvapisteistä. Se "
+"tarjoaa myös paletin, joten voi yhdistellä eri värejä."
 
 #: data/nl.hjdskes.gcolor3.appdata.xml.in:15
 msgid ""
@@ -58,16 +61,16 @@ msgid ""
 "integrate into your modern desktop."
 msgstr ""
 
-#: data/nl.hjdskes.gcolor3.appdata.xml.in:33
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:32
 msgid "The picker and the color palette"
-msgstr ""
+msgstr "Valitsin ja väripaletti"
 
-#: data/nl.hjdskes.gcolor3.appdata.xml.in:37
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:36
 msgid "The list of saved colors"
 msgstr "Luettelo tallennetuista väreistä"
 
 #. Translators: please do NOT translate this.
-#: data/nl.hjdskes.gcolor3.appdata.xml.in:44
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:43
 msgid "Jente Hidskes"
 msgstr "Jente Hidskes"
 
@@ -96,12 +99,8 @@ msgid "_Keyboard Shortcuts"
 msgstr "_Pikanäppäimet"
 
 #: data/menus.ui:11
-msgid "_About"
-msgstr "_Tietoja"
-
-#: data/menus.ui:15
-msgid "_Quit"
-msgstr "_Lopeta"
+msgid "_About Color Picker"
+msgstr "_Tietoja - Värivalitsin"
 
 #: data/shortcuts.ui:14
 msgctxt "shortcut window"
@@ -111,7 +110,7 @@ msgstr "Yleiset"
 #: data/shortcuts.ui:19
 msgctxt "shortcut window"
 msgid "Change page"
-msgstr ""
+msgstr "Vaihda sivua"
 
 #: data/shortcuts.ui:27
 msgctxt "shortcut window"
@@ -138,20 +137,20 @@ msgctxt "shortcut window"
 msgid "Delete highlighted color"
 msgstr "Poista korostettu väri"
 
-#: data/window.ui:25
+#: data/window.ui:32
 msgid "Color name…"
 msgstr "Värin nimi…"
 
-#: data/window.ui:76
+#: data/window.ui:94
 msgid "Save a picked color to make it appear here"
 msgstr "Tallenna valittu väri asettaaksesi sen tänne näkyviin"
 
-#: data/window.ui:94
+#: data/window.ui:112
 msgid "You have no saved colors"
 msgstr "Ei tallennettuja värejä"
 
-#: data/window.ui:231
-msgid "Saved colors"
+#: data/window.ui:249
+msgid "Saved Colors"
 msgstr "Tallennetut värit"
 
 #: src/main.c:43
@@ -165,7 +164,7 @@ msgstr "— valitse väri valitsimesta tai näytöltä"
 #: src/main.c:65
 #, c-format
 msgid "Run “%s --help” to see a full list of available command line options"
-msgstr ""
+msgstr "Näet kaikki komentorivivalitsimet komennolla “%s --help”"
 
 #. Translators: translate this to give yourself credits.
 #: src/gcolor3-application.c:88
@@ -206,7 +205,7 @@ msgstr "_Kylläisyys:"
 
 #: src/gcolor3-color-selection.c:465
 msgid "Intensity of the color."
-msgstr ""
+msgstr "Värin intensiteetti."
 
 #: src/gcolor3-color-selection.c:466
 msgid "_Value:"
@@ -214,7 +213,7 @@ msgstr "_Arvo:"
 
 #: src/gcolor3-color-selection.c:467
 msgid "Brightness of the color."
-msgstr ""
+msgstr "Värin kirkkaus."
 
 #: src/gcolor3-color-selection.c:468
 msgid "_Red:"
@@ -222,7 +221,7 @@ msgstr "_Punainen:"
 
 #: src/gcolor3-color-selection.c:469
 msgid "Amount of red light in the color."
-msgstr ""
+msgstr "Punaisen valon määrä värissä."
 
 #: src/gcolor3-color-selection.c:470
 msgid "_Green:"
@@ -230,7 +229,7 @@ msgstr "_Vihreä:"
 
 #: src/gcolor3-color-selection.c:471
 msgid "Amount of green light in the color."
-msgstr ""
+msgstr "Vihreän valon määrä värissä."
 
 #: src/gcolor3-color-selection.c:472
 msgid "_Blue:"
@@ -238,7 +237,7 @@ msgstr "_Sininen:"
 
 #: src/gcolor3-color-selection.c:473
 msgid "Amount of blue light in the color."
-msgstr ""
+msgstr "Sinisen valon määrä värissä."
 
 #: src/gcolor3-color-selection.c:476
 msgid "Op_acity:"
@@ -246,10 +245,10 @@ msgstr "Peittokyk_y:"
 
 #: src/gcolor3-color-selection.c:484 src/gcolor3-color-selection.c:494
 msgid "Transparency of the color."
-msgstr ""
+msgstr "Värin läpinäkyvyys."
 
 #: src/gcolor3-color-selection.c:501
-msgid "Color _name:"
+msgid "Color _Name:"
 msgstr "Värin _nimi:"
 
 #: src/gcolor3-color-selection.c:516
@@ -299,6 +298,12 @@ msgid ""
 "drag a color swatch here or right-click it and select “Save color here.”"
 msgstr ""
 
-#: src/gcolor3-window.c:401
+#: src/gcolor3-window.c:410
 msgid "Picker"
 msgstr "Valitsin"
+
+#~ msgid "_About"
+#~ msgstr "_Tietoja"
+
+#~ msgid "_Quit"
+#~ msgstr "_Lopeta"
