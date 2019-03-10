@@ -1,25 +1,27 @@
 # Brazilian Portuguese translation for gcolor3.
-# Copyright (C) 2018 gcolor3's COPYRIGHT HOLDER
+# Copyright (C) 2019 gcolor3's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gcolor3 package.
-# Rafael Fontenelle <rafaelff@gnome.org>, 2018.
+# Rafael Fontenelle <rafaelff@gnome.org>, 2018-2019.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: gcolor3 master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/gcolor3/issues\n"
-"POT-Creation-Date: 2018-09-06 17:05+0000\n"
-"PO-Revision-Date: 2018-09-07 05:11-0200\n"
+"POT-Creation-Date: 2019-01-16 12:12+0000\n"
+"PO-Revision-Date: 2019-03-10 09:30-0300\n"
 "Last-Translator: Rafael Fontenelle <rafaelff@gnome.org>\n"
-"Language-Team: Brazilian Portuguese <gnome-pt_br-list@gnome.org>\n"
+"Language-Team: Portuguese - Brazil <gnome-pt_br-list@gnome.org>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Virtaal 1.0.0-beta1\n"
+"Plural-Forms: nplurals=2; plural=(n > 1)\n"
+"X-Generator: Gtranslator 3.31.90\n"
 
 #: data/nl.hjdskes.gcolor3.desktop.in:3
-#: data/nl.hjdskes.gcolor3.appdata.xml.in:7 src/gcolor3-application.c:145
-msgid "Color picker"
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:7 src/gcolor3-application.c:146
+#| msgid "Color picker"
+msgid "Color Picker"
 msgstr "Seletor de cor"
 
 #: data/nl.hjdskes.gcolor3.desktop.in:4
@@ -67,16 +69,16 @@ msgstr ""
 "modernizações para melhor integração em seu ambiente de área de trabalho "
 "moderno."
 
-#: data/nl.hjdskes.gcolor3.appdata.xml.in:33
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:32
 msgid "The picker and the color palette"
 msgstr "O seletor e a paleta de cores"
 
-#: data/nl.hjdskes.gcolor3.appdata.xml.in:37
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:36
 msgid "The list of saved colors"
 msgstr "A lista de cores salvas"
 
 #. Translators: please do NOT translate this.
-#: data/nl.hjdskes.gcolor3.appdata.xml.in:44
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:43
 msgid "Jente Hidskes"
 msgstr "Jente Hidskes"
 
@@ -105,12 +107,9 @@ msgid "_Keyboard Shortcuts"
 msgstr "_Atalhos de teclados"
 
 #: data/menus.ui:11
-msgid "_About"
-msgstr "S_obre"
-
-#: data/menus.ui:15
-msgid "_Quit"
-msgstr "_Sair"
+#| msgid "Color picker"
+msgid "_About Color Picker"
+msgstr "_Sobre o Seletor de cor"
 
 #: data/shortcuts.ui:14
 msgctxt "shortcut window"
@@ -147,20 +146,21 @@ msgctxt "shortcut window"
 msgid "Delete highlighted color"
 msgstr "Exclui a cor selecionada"
 
-#: data/window.ui:25
+#: data/window.ui:32
 msgid "Color name…"
 msgstr "Nome da cor…"
 
-#: data/window.ui:76
+#: data/window.ui:94
 msgid "Save a picked color to make it appear here"
 msgstr "Salve a cor selecionada para fazê-la aparecer aqui"
 
-#: data/window.ui:94
+#: data/window.ui:112
 msgid "You have no saved colors"
 msgstr "Você tem nenhuma cor salva"
 
-#: data/window.ui:231
-msgid "Saved colors"
+#: data/window.ui:249
+#| msgid "Saved colors"
+msgid "Saved Colors"
 msgstr "Cores salvas"
 
 #: src/main.c:43
@@ -264,7 +264,8 @@ msgid "Transparency of the color."
 msgstr "Transparência da cor."
 
 #: src/gcolor3-color-selection.c:501
-msgid "Color _name:"
+#| msgid "Color _name:"
+msgid "Color _Name:"
 msgstr "_Nome da cor:"
 
 #: src/gcolor3-color-selection.c:516
@@ -327,6 +328,12 @@ msgstr ""
 "entrada, arraste uma amostra de cor aqui ou clique com o botão direito e "
 "selecione “Salvar cor aqui”."
 
-#: src/gcolor3-window.c:401
+#: src/gcolor3-window.c:410
 msgid "Picker"
 msgstr "Seletor"
+
+#~ msgid "_About"
+#~ msgstr "S_obre"
+
+#~ msgid "_Quit"
+#~ msgstr "_Sair"
