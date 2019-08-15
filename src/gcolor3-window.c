@@ -356,7 +356,6 @@ gcolor3_window_class_init (Gcolor3WindowClass *gcolor3_window_class)
 							      "The managed colors",
 							      GCOLOR3_TYPE_COLOR_STORE,
 							      G_PARAM_READWRITE |
-							      G_PARAM_PRIVATE |
 							      G_PARAM_CONSTRUCT_ONLY |
 							      G_PARAM_STATIC_STRINGS));
 

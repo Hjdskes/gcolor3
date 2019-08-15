@@ -110,7 +110,6 @@ gcolor3_color_item_class_init (Gcolor3ColorItemClass *klass)
 							      "Black",
 							      G_PARAM_CONSTRUCT_ONLY |
 							      G_PARAM_READWRITE |
-							      G_PARAM_PRIVATE |
 							      G_PARAM_STATIC_STRINGS));
 
 	g_object_class_install_property (object_class, PROP_HEX,
@@ -120,7 +119,6 @@ gcolor3_color_item_class_init (Gcolor3ColorItemClass *klass)
 							      "#000000",
 							      G_PARAM_CONSTRUCT_ONLY |
 							      G_PARAM_READWRITE |
-							      G_PARAM_PRIVATE |
 							      G_PARAM_STATIC_STRINGS));
 }
 

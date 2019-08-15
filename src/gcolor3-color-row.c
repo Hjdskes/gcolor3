@@ -274,7 +274,6 @@ gcolor3_color_row_class_init (Gcolor3ColorRowClass *gcolor3_color_row_class)
 							      "Black",
 							      G_PARAM_CONSTRUCT_ONLY |
 							      G_PARAM_READWRITE |
-							      G_PARAM_PRIVATE |
 							      G_PARAM_STATIC_STRINGS));
 
 	g_object_class_install_property (object_class, PROP_HEX,
@@ -284,7 +283,6 @@ gcolor3_color_row_class_init (Gcolor3ColorRowClass *gcolor3_color_row_class)
 							      "#000000",
 							      G_PARAM_CONSTRUCT_ONLY |
 							      G_PARAM_READWRITE |
-							      G_PARAM_PRIVATE |
 							      G_PARAM_STATIC_STRINGS));
 
 	gtk_widget_class_set_template_from_resource (widget_class, "/nl/hjdskes/gcolor3/color-row.ui");
