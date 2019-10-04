@@ -1,0 +1,8 @@
+_build/
+build/
+.flatpak-builder
+*.swp
+*.la
+*.lo
+*.o
+*.gresource
