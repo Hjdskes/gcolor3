@@ -27,7 +27,7 @@
 
 #include "config.h"
 
-// TODO: get rid of all deprecated API
+// TODO: replace gtk_container_set_focus_chain()
 #define GDK_DISABLE_DEPRECATION_WARNINGS
 
 #include "gcolor3-color-selection.h"
@@ -145,6 +145,7 @@ struct _Gcolor3ColorSelectionPrivate
 
   /* The Palette code */
   GtkWidget *custom_palette [CUSTOM_PALETTE_WIDTH][CUSTOM_PALETTE_HEIGHT];
+  GdkRGBA    palette_color;
 
   /* The color_sample stuff */
   GtkWidget *sample_area;
@@ -175,11 +176,11 @@ static void gcolor3_color_selection_get_property    (GObject                 *ob
                                                      GValue                  *value,
                                                      GParamSpec              *pspec);
 
-static void gcolor3_color_selection_realize         (GtkWidget               *widget);
-static void gcolor3_color_selection_unrealize       (GtkWidget               *widget);
-static void gcolor3_color_selection_show_all        (GtkWidget               *widget);
-static gboolean gcolor3_color_selection_grab_broken (GtkWidget               *widget,
-                                                     GdkEventGrabBroken      *event);
+static void     gcolor3_color_selection_realize     (GtkWidget          *widget);
+static void     gcolor3_color_selection_unrealize   (GtkWidget          *widget);
+static void     gcolor3_color_selection_show_all    (GtkWidget          *widget);
+static gboolean gcolor3_color_selection_grab_broken (GtkWidget          *widget,
+                                                     GdkEventGrabBroken *event);
 
 static void     gcolor3_color_selection_set_palette_color   (Gcolor3ColorSelection *colorsel,
                                                              gint                   index,
@@ -388,8 +389,6 @@ gcolor3_color_selection_init (Gcolor3ColorSelection *colorsel)
   gtk_orientable_set_orientation (GTK_ORIENTABLE (colorsel),
                                   GTK_ORIENTATION_VERTICAL);
 
-  gtk_widget_push_composite_child ();
-
   priv = colorsel->private_data = gcolor3_color_selection_get_instance_private (colorsel);
   priv->changing = FALSE;
   priv->default_set = FALSE;
@@ -579,8 +578,6 @@ gcolor3_color_selection_init (Gcolor3ColorSelection *colorsel)
       atk_object_set_role (gtk_widget_get_accessible (GTK_WIDGET (colorsel)), ATK_ROLE_COLOR_CHOOSER);
       make_all_relations (atk_obj, priv);
     }
-
-  gtk_widget_pop_composite_child ();
 }
 
 /* GObject methods */
@@ -1119,17 +1116,15 @@ palette_get_color (GtkWidget *drawing_area, gdouble *color)
 }
 
 static gboolean
-palette_draw (GtkWidget       *drawing_area,
-              cairo_t         *cr,
-              UNUSED gpointer  data)
+palette_draw (GtkWidget *drawing_area,
+              cairo_t   *cr,
+              gpointer   data)
 {
-  GtkStyleContext *context;
+  Gcolor3ColorSelection *self = GCOLOR3_COLOR_SELECTION (data);
+  Gcolor3ColorSelectionPrivate *priv = gcolor3_color_selection_get_instance_private (self);
   gint focus_width;
-  GdkRGBA color;
 
-  context = gtk_widget_get_style_context (drawing_area);
-  gtk_style_context_get_background_color (context, 0, &color);
-  gdk_cairo_set_source_rgba (cr, &color);
+  gdk_cairo_set_source_rgba (cr, &priv->palette_color);
   cairo_paint (cr);
 
   if (gtk_widget_has_visible_focus (drawing_area))
@@ -1352,6 +1347,7 @@ palette_set_color (GtkWidget             *drawing_area,
                    Gcolor3ColorSelection *colorsel,
                    gdouble               *color)
 {
+  Gcolor3ColorSelectionPrivate *priv = gcolor3_color_selection_get_instance_private (colorsel);
   gdouble *new_color = g_new (double, 4);
   GdkRGBA rgba;
 
@@ -1360,7 +1356,7 @@ palette_set_color (GtkWidget             *drawing_area,
   rgba.blue = color[2];
   rgba.alpha = 1;
 
-  gtk_widget_override_background_color (drawing_area, GTK_STATE_FLAG_NORMAL, &rgba);
+  priv->palette_color = rgba;
 
   if (GPOINTER_TO_INT (g_object_get_data (G_OBJECT (drawing_area), "color_set")) == 0)
     {
@@ -1725,8 +1721,8 @@ shutdown_eyedropper (GtkWidget *widget)
 
   if (priv->has_grab)
     {
-      gdk_device_ungrab (priv->keyboard_device, priv->grab_time);
-      gdk_device_ungrab (priv->pointer_device, priv->grab_time);
+      gdk_seat_ungrab (gdk_device_get_seat (priv->keyboard_device));
+      gdk_seat_ungrab (gdk_device_get_seat(priv->pointer_device));
       gtk_device_grab_remove (priv->dropper_grab_widget, priv->pointer_device);
 
       priv->has_grab = FALSE;
@@ -1874,6 +1870,7 @@ get_screen_color (GtkWidget *button)
   Gcolor3ColorSelectionPrivate *priv = colorsel->private_data;
   GdkScreen *screen = gtk_widget_get_screen (GTK_WIDGET (button));
   GdkDevice *device, *keyb_device, *pointer_device;
+  GdkSeat *keyb_seat, *pointer_seat;
   GdkCursor *picker_cursor;
   GdkGrabStatus grab_status;
   GdkWindow *window;
@@ -1886,12 +1883,16 @@ get_screen_color (GtkWidget *button)
   if (gdk_device_get_source (device) == GDK_SOURCE_KEYBOARD)
     {
       keyb_device = device;
+      keyb_seat = gdk_device_get_seat (keyb_device);
       pointer_device = gdk_device_get_associated_device (device);
+      pointer_seat = gdk_device_get_seat (pointer_device);
     }
   else
     {
       pointer_device = device;
+      pointer_seat = gdk_device_get_seat (pointer_device);
       keyb_device = gdk_device_get_associated_device (device);
+      keyb_seat = gdk_device_get_seat (keyb_device);
     }
 
   if (priv->dropper_grab_widget == NULL)
@@ -1919,26 +1920,27 @@ get_screen_color (GtkWidget *button)
 
   window = gtk_widget_get_window (priv->dropper_grab_widget);
 
-  if (gdk_device_grab (keyb_device,
-                       window,
-                       GDK_OWNERSHIP_APPLICATION, FALSE,
-                       GDK_KEY_PRESS_MASK | GDK_KEY_RELEASE_MASK,
-                       NULL, time) != GDK_GRAB_SUCCESS)
+  if (gdk_seat_grab (keyb_seat,
+                     window,
+                     GDK_SEAT_CAPABILITY_ALL, FALSE,
+                     NULL,
+                     gtk_get_current_event (),
+                     NULL, NULL) != GDK_GRAB_SUCCESS)
     return;
 
   picker_cursor = make_picker_cursor (screen);
-  grab_status = gdk_device_grab (pointer_device,
-                                 window,
-                                 GDK_OWNERSHIP_APPLICATION,
-                                 FALSE,
-                                 GDK_BUTTON_RELEASE_MASK | GDK_BUTTON_PRESS_MASK | GDK_POINTER_MOTION_MASK,
-                                 picker_cursor,
-                                 time);
+  grab_status = gdk_seat_grab (pointer_seat,
+                               window,
+                               GDK_SEAT_CAPABILITY_ALL, FALSE,
+                               picker_cursor,
+                               gtk_get_current_event (),
+                               NULL, NULL);
+
   g_object_unref (picker_cursor);
 
   if (grab_status != GDK_GRAB_SUCCESS)
     {
-      gdk_device_ungrab (keyb_device, time);
+      gdk_seat_ungrab (keyb_seat);
       return;
     }
 
@@ -2280,14 +2282,17 @@ default_change_palette_func (GdkScreen     *screen,
                              const GdkRGBA *colors,
                              gint           n_colors)
 {
+  GValue value = G_VALUE_INIT;
   gchar *str;
 
-  str = gcolor3_color_selection_palette_to_string (colors, n_colors);
+  g_value_init (&value, G_TYPE_STRING);
 
-  gtk_settings_set_string_property (gtk_settings_get_for_screen (screen),
+  str = gcolor3_color_selection_palette_to_string (colors, n_colors);
+  g_value_set_string (&value, str);
+
+  g_object_set_property (G_OBJECT (gtk_settings_get_for_screen (screen)),
                                     "gtk-color-palette",
-                                    str,
-                                    "gcolor3_color_selection_palette_to_string");
+                                    &value);
 
   g_free (str);
 }
