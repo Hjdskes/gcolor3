@@ -1,10 +1,10 @@
-Gcolor3
-=======
+Color Picker
+============
 
 **Choose colors from the picker or the screen**
 
 This README is only relevant for development resources and instructions. For a
-description of Gcolor3, screenshots and installation instructions for end-users,
+description of Color Picker, screenshots and installation instructions for end-users,
 please see the [website](https://hjdskes.nl/projects/gcolor3/).
 
 Compile from source
