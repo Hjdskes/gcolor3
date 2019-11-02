@@ -1960,8 +1960,8 @@ get_screen_color (GtkWidget *button)
 }
 
 static void
-hex_changed (UNUSED GtkWidget *hex_entry,
-             gpointer          data)
+hex_changed (GtkWidget *hex_entry,
+             gpointer   data)
 {
   Gcolor3ColorSelection *colorsel;
   Gcolor3ColorSelectionPrivate *priv;
@@ -1975,6 +1975,11 @@ hex_changed (UNUSED GtkWidget *hex_entry,
     return;
 
   text = gtk_editable_get_chars (GTK_EDITABLE (priv->hex_entry), 0, -1);
+  if (!g_str_has_prefix (text, "#"))
+    {
+      text = g_strconcat ("#", text, NULL);
+    }
+
   if (gdk_rgba_parse (&color, text))
     {
       priv->color[COLORSEL_RED]   = color.red;
