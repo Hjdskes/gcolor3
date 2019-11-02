@@ -40,8 +40,8 @@
   <url type="bugtracker">https://gitlab.gnome.org/World/gcolor3/issues</url>
   <url type="help">https://gitlab.gnome.org/World/gcolor3/issues</url>
   <!-- Translators: please do NOT translate this. -->
-  <developer_name>Jente Hidskes</developer_name>
-  <update_contact>hjdskes_at_gmail.com</update_contact>
+  <developer_name>Christopher Davis</developer_name>
+  <update_contact>christopherdavis_at_gnome.org</update_contact>
   <translation type="gettext">gcolor3</translation>
   <!-- Validate with `appstream-util validate nl.hjdskes.gcolor3.appdata.xml.in`. -->
   <releases>
