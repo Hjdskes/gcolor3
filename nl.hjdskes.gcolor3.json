@@ -18,6 +18,16 @@
     ],
     "modules": [
         {
+            "name": "libportal",
+            "buildsystem": "meson",
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/flatpak/libportal.git"
+                }
+            ]
+        },
+        {
             "name": "gcolor3",
             "buildsystem": "meson",
             "config-opts": [

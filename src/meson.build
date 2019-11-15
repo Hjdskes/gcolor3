@@ -41,6 +41,7 @@ executable(
   ],
   dependencies: [
     dep_gtk,
+    dep_libportal,
     dep_lm
   ],
   install: true,
