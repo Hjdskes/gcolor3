@@ -38,8 +38,6 @@
 
 #include <gtk/gtk.h>
 
-#define I_(string) g_intern_static_string (string)
-
 /**
  * SECTION:gtkhsv
  * @Short_description: A “color wheel” widget
@@ -158,7 +156,7 @@ gcolor3_hsv_class_init (Gcolor3HSVClass *class)
   hsv_class->move = gcolor3_hsv_move;
 
   hsv_signals[CHANGED] =
-    g_signal_new (I_("changed"),
+    g_signal_new ("changed",
                   G_OBJECT_CLASS_TYPE (gobject_class),
                   G_SIGNAL_RUN_FIRST,
                   G_STRUCT_OFFSET (Gcolor3HSVClass, changed),
@@ -167,7 +165,7 @@ gcolor3_hsv_class_init (Gcolor3HSVClass *class)
                   G_TYPE_NONE, 0);
 
   hsv_signals[MOVE] =
-    g_signal_new (I_("move"),
+    g_signal_new ("move",
                   G_OBJECT_CLASS_TYPE (gobject_class),
                   G_SIGNAL_RUN_LAST | G_SIGNAL_ACTION,
                   G_STRUCT_OFFSET (Gcolor3HSVClass, move),
