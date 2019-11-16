@@ -1,0 +1,25 @@
+<Project xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:foaf="http://xmlns.com/foaf/0.1/"
+         xmlns:gnome="http://api.gnome.org/doap-extensions#"
+         xmlns="http://usefulinc.com/ns/doap#">
+  <name xml:lang="en">Color Picker</name>
+  <shortdesc xml:lang="en">Choose colors from the picker or the screen</shortdesc>
+  <description>Color Picker enables you to pick the color from any pixel on your screen.</description>
+  <programming-language>C</programming-language>
+
+  <maintainer>
+    <foaf:Person>
+      <foaf:name>Christopher Davis</foaf:name>
+      <foaf:mbox rdf:resource="mailto:christopherdavis@gnome.org" />
+      <gnome:userid>christopherdavis</gnome:userid>
+    </foaf:Person>
+  </maintainer>
+  <author>
+    <foaf:Person>
+      <foaf:name>Jente Hidskes</foaf:name>
+      <foaf:mbox rdf:resource="mailto:hjdskes@gmail.com" />
+      <gnome:userid>hjdskes</gnome:userid>
+    </foaf:Person>
+  </author>
+</Project>
