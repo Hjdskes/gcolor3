@@ -10,16 +10,29 @@ please see the [website](https://hjdskes.nl/projects/gcolor3/).
 Compile from source
 ------------
 
-To compile Gcolor3, you need the GTK+ 3 development packages and your
-distribution's package containing the tools to compile packages.
-You also need the [meson](http://mesonbuild.com) build system.
+### GNOME Builder (Recommended)
 
-When the build- and runtime dependencies of Gcolor3 have been installed, run the
-following commands to build and install Gcolor3:
+GNOME Builder is the environment used for the development of this 
+application. It can use Flatpak manifests to create a consistent building
+and running environment cross-distro. Thus, it is highly recommended you 
+use it.
 
-	$ meson build
-	$ ninja -C build
-	# ninja -C build install
+1. Download [GNOME Builder](https://flathub.org/apps/details/org.gnome.Builder).
+2. In Builder, click the "Clone Repository" button at the bottom, using `git@gitlab.gnome.org/World/gcolor3.git`
+or `https://gitlab.gnome.org/World/gcolor3.git` as the URL.
+3. Click the build button at the top once the project is loaded.
+
+### Manual
+
+If you feel at home in the terminal or would like to build outside of Builder,
+these are the commands to use:
+
+```bash
+git clone https://gitlab.gnome.org/World/gcolor3.git
+cd gcolor3
+meson _build
+ninja -C _build
+```
 
 Bugs
 ----
