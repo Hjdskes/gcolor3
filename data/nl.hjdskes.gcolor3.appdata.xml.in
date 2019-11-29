@@ -17,8 +17,8 @@
     to save them. Color Picker allows you to conveniently save and retrieve colors.
     </p>
     <p>
-    Color Picker is a color selection dialog written in GTK+ 3. It is much alike
-    Gcolor2, but uses the newer GTK+ version and other modernisations to better
+    Color Picker is a color selection dialog written in GTK 3. It is much alike
+    Gcolor2, but uses the newer GTK version and other modernisations to better
     integrate into your modern desktop.
     </p>
   </description>

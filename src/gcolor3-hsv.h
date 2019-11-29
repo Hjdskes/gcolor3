@@ -1,10 +1,10 @@
-/* HSV color selector for GTK+
+/* HSV color selector for GTK
  *
  * Copyright (C) 1999 The Free Software Foundation
  *
  * Authors: Simon Budig <Simon.Budig@unix-ag.org> (original code)
- *          Federico Mena-Quintero <federico@gimp.org> (cleanup for GTK+)
- *          Jonathan Blandford <jrb@redhat.com> (cleanup for GTK+)
+ *          Federico Mena-Quintero <federico@gimp.org> (cleanup for GTK)
+ *          Jonathan Blandford <jrb@redhat.com> (cleanup for GTK)
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -21,10 +21,10 @@
  */
 
 /*
- * Modified by the GTK+ Team and others 1997-2000.  See the AUTHORS
- * file for a list of people on the GTK+ Team.  See the ChangeLog
+ * Modified by the GTK Team and others 1997-2000.  See the AUTHORS
+ * file for a list of people on the GTK Team.  See the ChangeLog
  * files for a list of changes.  These files are distributed with
- * GTK+ at ftp://ftp.gtk.org/pub/gtk/.
+ * GTK at ftp://ftp.gtk.org/pub/gtk/.
  *
  * Updated and adapted for inclusion in Gcolor3 by Jente Hidskes 2018.
  */
