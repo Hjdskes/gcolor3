@@ -1,16 +1,17 @@
-# Turkish translation for gcolor3.
-# Copyright (C) 2019 gcolor3's COPYRIGHT HOLDER
-# This file is distributed under the same license as the gcolor3 package.
+# Turkish translation for Color Picker.
+# Copyright (C) 2019 Color Picker's COPYRIGHT HOLDER
+# This file is distributed under the same license as the Color Picker package.
+#
 # Sabri Ünal <libreajans@gmail.com>, 2019.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gcolor3 master\n"
+"Project-Id-Version: Color Picker master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/gcolor3/issues\n"
-"POT-Creation-Date: 2019-02-02 11:18+0000\n"
-"PO-Revision-Date: 2019-02-10 09:48+0200\n"
+"POT-Creation-Date: 2019-11-21 19:52+0000\n"
+"PO-Revision-Date: 2019-11-28 05:09+0300\n"
 "Last-Translator: Sabri Ünal <libreajans@gmail.com>\n"
-"Language-Team: Turkish <tr@li.org>\n"
+"Language-Team: Turkish <gnome-turk@gnome.org>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -28,11 +29,6 @@ msgstr "Renk Seçici"
 msgid "Choose colors from the picker or the screen"
 msgstr "Seçiciden veya ekrandan renk seç"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
-#: data/nl.hjdskes.gcolor3.desktop.in:7
-msgid "nl.hjdskes.gcolor3"
-msgstr "nl.hjdskes.gcolor3"
-
 #. Translators: Extra keywords that can be used to search for Gcolor3 in GNOME Shell and Unity
 #: data/nl.hjdskes.gcolor3.desktop.in:13
 msgid "Color;Picker;Palette;"
@@ -40,29 +36,30 @@ msgstr "Renk;Seçici;Palet;"
 
 #: data/nl.hjdskes.gcolor3.appdata.xml.in:10
 msgid ""
-"Ever wanted to know the value of that color on your screen? Gcolor3 enables "
-"you to pick the color from any pixel on your screen. It also offers a "
-"palette, so that you can easily mix and match a couple of colors together."
+"Ever wanted to know the value of that color on your screen? Color Picker "
+"enables you to pick the color from any pixel on your screen. It also offers "
+"a palette, so that you can easily mix and match a couple of colors together."
 msgstr ""
-"Ekranınızdaki o rengin değerini bilmek istediniz mi? Gcolor3, ekrandaki "
+"Ekranınızdaki o rengin değerini bilmek istediniz mi? Renk Seçici, ekrandaki "
 "herhangi bir pikselden renk seçmenize olanak tanır. Ayrıca bir palet sunar, "
 "böylece birkaç rengi kolayca karıştırabilir ve eşleştirebilirsiniz."
 
 #: data/nl.hjdskes.gcolor3.appdata.xml.in:15
 msgid ""
 "When you have found the perfect combination of colors, naturally you want to "
-"save them. Gcolor3 allows you to conveniently save and retrieve colors."
+"save them. Color Picker allows you to conveniently save and retrieve colors."
 msgstr ""
 "Mükemmel renk kombinasyonunu bulduğunuzda, doğal olarak kaydetmek "
-"istersiniz. Gcolor3 renkleri kolayca yakalamanızı ve kaydetmenizi sağlar."
+"istersiniz. Renk Seçici, renkleri kolayca yakalamanızı ve kaydetmenizi "
+"sağlar."
 
 #: data/nl.hjdskes.gcolor3.appdata.xml.in:19
 msgid ""
-"Gcolor3 is a color selection dialog written in GTK+ 3. It is much alike "
+"Color Picker is a color selection dialog written in GTK+ 3. It is much alike "
 "Gcolor2, but uses the newer GTK+ version and other modernisations to better "
 "integrate into your modern desktop."
 msgstr ""
-"Gcolor3, GTK+ 3 ile yazılmış bir renk seçimi iletişim penceresidir. "
+"Renk Seçici, GTK+ 3 ile yazılmış bir renk seçimi iletişim penceresidir. "
 "Gcolor2'ye çok benzer, ancak modern masaüstünüze daha iyi entegre olmak için "
 "daha yeni GTK+ sürümünü ve diğer modernizasyonları kullanır."
 
@@ -76,8 +73,8 @@ msgstr "Kaydedilmiş renklerin listesi"
 
 #. Translators: please do NOT translate this.
 #: data/nl.hjdskes.gcolor3.appdata.xml.in:43
-msgid "Jente Hidskes"
-msgstr "Jente Hidskes"
+msgid "Christopher Davis"
+msgstr "Christopher Davis"
 
 #: data/color-row.ui:31
 msgid "Hex"
@@ -85,11 +82,11 @@ msgstr "Onaltılık"
 
 #: data/color-row.ui:46
 msgid "Click to change the color’s name"
-msgstr "Rengin ismini değiştirmek için tıklayın"
+msgstr "Rengin adını değiştirmek için tıklayın"
 
 #: data/color-row.ui:47
 msgid "Name"
-msgstr "İsim"
+msgstr "Ad"
 
 #: data/color-row.ui:68
 msgid "Copy this color’s hex value to the clipboard"
@@ -105,7 +102,7 @@ msgstr "Klavye _Kısayolları"
 
 #: data/menus.ui:11
 msgid "_About Color Picker"
-msgstr "Renk Seçici H_akkında"
+msgstr "Renk Seçici _Hakkında"
 
 #: data/shortcuts.ui:14
 msgctxt "shortcut window"
@@ -181,7 +178,7 @@ msgstr "Sabri Ünal <libreajans@gmail.com>, 2019"
 msgid "Website"
 msgstr "Web sitesi"
 
-#: src/gcolor3-color-selection.c:409
+#: src/gcolor3-color-selection.c:361
 msgid ""
 "Select the color you want from the outer ring. Select the darkness or "
 "lightness of that color using the inner triangle."
@@ -189,11 +186,7 @@ msgstr ""
 "Dış çemberden istediğiniz bir rengi seçin. İçteki üçgeni kullanarak rengin "
 "koyuluğunu ya da açıklığını seçebilirsiniz."
 
-#: src/gcolor3-color-selection.c:439
-msgid "Picking a color is currently not supported on Wayland."
-msgstr "Renk seçimi Wayland üstünde henüz desteklenmiyor."
-
-#: src/gcolor3-color-selection.c:450
+#: src/gcolor3-color-selection.c:387
 msgid ""
 "Click the eyedropper, then click a color anywhere on your screen to select "
 "that color."
@@ -201,83 +194,83 @@ msgstr ""
 "Damlalığa tıkladıktan sonra ekranınızdaki istediğiniz bir renge tıklayarak "
 "rengi seçebilirsiniz."
 
-#: src/gcolor3-color-selection.c:461
+#: src/gcolor3-color-selection.c:397
 msgid "_Hue:"
-msgstr "_Renk Özü:"
+msgstr "_Renk tonu:"
 
-#: src/gcolor3-color-selection.c:462
+#: src/gcolor3-color-selection.c:398
 msgid "Position on the color wheel."
 msgstr "Renk tekerleği üstündeki konum."
 
-#: src/gcolor3-color-selection.c:464
+#: src/gcolor3-color-selection.c:400
 msgid "S_aturation:"
 msgstr "D_oygunluk:"
 
-#: src/gcolor3-color-selection.c:465
+#: src/gcolor3-color-selection.c:401
 msgid "Intensity of the color."
 msgstr "Rengin yoğunluğu."
 
-#: src/gcolor3-color-selection.c:466
+#: src/gcolor3-color-selection.c:402
 msgid "_Value:"
 msgstr "_Değer:"
 
-#: src/gcolor3-color-selection.c:467
+#: src/gcolor3-color-selection.c:403
 msgid "Brightness of the color."
 msgstr "Rengin parlaklığı."
 
-#: src/gcolor3-color-selection.c:468
+#: src/gcolor3-color-selection.c:404
 msgid "_Red:"
 msgstr "_Kırmızı:"
 
-#: src/gcolor3-color-selection.c:469
+#: src/gcolor3-color-selection.c:405
 msgid "Amount of red light in the color."
 msgstr "Renkteki kırmızı ışık miktarı."
 
-#: src/gcolor3-color-selection.c:470
+#: src/gcolor3-color-selection.c:406
 msgid "_Green:"
 msgstr "_Yeşil:"
 
-#: src/gcolor3-color-selection.c:471
+#: src/gcolor3-color-selection.c:407
 msgid "Amount of green light in the color."
 msgstr "Renkteki yeşil ışık miktarı."
 
-#: src/gcolor3-color-selection.c:472
+#: src/gcolor3-color-selection.c:408
 msgid "_Blue:"
 msgstr "_Mavi:"
 
-#: src/gcolor3-color-selection.c:473
+#: src/gcolor3-color-selection.c:409
 msgid "Amount of blue light in the color."
 msgstr "Renkteki mavi ışık miktarı."
 
-#: src/gcolor3-color-selection.c:476
+#: src/gcolor3-color-selection.c:412
 msgid "Op_acity:"
-msgstr "_Işık geçirmezlik:"
+msgstr "_Matlık:"
 
-#: src/gcolor3-color-selection.c:484 src/gcolor3-color-selection.c:494
+#: src/gcolor3-color-selection.c:420 src/gcolor3-color-selection.c:430
 msgid "Transparency of the color."
 msgstr "Rengin şeffaflığı."
 
-#: src/gcolor3-color-selection.c:501
+#: src/gcolor3-color-selection.c:437
 msgid "Color _Name:"
 msgstr "Renk _Adı:"
 
-#: src/gcolor3-color-selection.c:516
+#: src/gcolor3-color-selection.c:452
 msgid ""
 "You can enter an HTML-style hexadecimal color value, or simply a color name "
 "such as “orange” in this entry."
 msgstr ""
-"HTML biçemi bir onaltılık renk değeri girebileceğiniz gibi, \"orange\" gibi "
+"HTML biçemi bir onaltılık renk değeri girebileceğiniz gibi, “orange” gibi "
 "bir renk adı da belirtebilirsiniz."
 
-#: src/gcolor3-color-selection.c:548
+#: src/gcolor3-color-selection.c:484
 msgid "_Palette:"
 msgstr "_Palet:"
 
-#: src/gcolor3-color-selection.c:578
+#: src/gcolor3-color-selection.c:514
 msgid "Color Wheel"
 msgstr "Renk Çemberi"
 
-#: src/gcolor3-color-selection.c:1043
+#: src/gcolor3-color-selection.c:964
 msgid ""
 "The previously-selected color, for comparison to the color you’re selecting "
 "now. You can drag this color to a palette entry, or select this color as "
@@ -287,7 +280,7 @@ msgstr ""
 "bir palete sürükleyebilir ya da diğer renk örneklerinin yanına sürükleyerek "
 "onu geçerli renk yapabilirsiniz."
 
-#: src/gcolor3-color-selection.c:1049
+#: src/gcolor3-color-selection.c:970
 msgid ""
 "The color you’ve chosen. You can drag this color to a palette entry to save "
 "it for use in the future."
@@ -295,21 +288,21 @@ msgstr ""
 "Seçtiğiniz renk. Bu rengi bir palete sürükleyerek ileride kullanmak üzere "
 "kaydedebilirsiniz."
 
-#: src/gcolor3-color-selection.c:1055
+#: src/gcolor3-color-selection.c:976
 msgid ""
 "The previously-selected color, for comparison to the color you’re selecting "
 "now."
 msgstr "Şimdi seçtiğiniz rengi karşılaştırmak için önceden seçilen renk."
 
-#: src/gcolor3-color-selection.c:1059
+#: src/gcolor3-color-selection.c:980
 msgid "The color you’ve chosen."
 msgstr "Seçmiş olduğunuz renk."
 
-#: src/gcolor3-color-selection.c:1428
+#: src/gcolor3-color-selection.c:1348
 msgid "_Save color here"
 msgstr "_Rengi buraya kaydet"
 
-#: src/gcolor3-color-selection.c:1634
+#: src/gcolor3-color-selection.c:1554
 msgid ""
 "Click this palette entry to make it the current color. To change this entry, "
 "drag a color swatch here or right-click it and select “Save color here.”"
@@ -318,12 +311,6 @@ msgstr ""
 "girdiyi değiştirmek isterseniz buraya bir renk örneğini sürekledikten sonra "
 "“Rengi buraya kaydet” ögesini seçiniz."
 
-#: src/gcolor3-window.c:410
+#: src/gcolor3-window.c:409
 msgid "Picker"
 msgstr "Seçici"
-
-#~ msgid "_About"
-#~ msgstr "_Hakkında"
-
-#~ msgid "_Quit"
-#~ msgstr "_Çıkış"
