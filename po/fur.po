@@ -1,0 +1,317 @@
+# Friulian translation for gcolor3.
+# Copyright (C) 2020 gcolor3's COPYRIGHT HOLDER
+# This file is distributed under the same license as the gcolor3 package.
+# Fabio Tomat <f.t.public@gmail.com>, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gcolor3 master\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/gcolor3/issues\n"
+"POT-Creation-Date: 2019-12-25 16:36+0000\n"
+"PO-Revision-Date: 2020-01-08 10:38+0100\n"
+"Language-Team: Friulian <fur@li.org>\n"
+"Language: fur\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Last-Translator: Fabio Tomat <f.t.public@gmail.com>\n"
+"X-Generator: Poedit 2.2.4\n"
+
+#: data/nl.hjdskes.gcolor3.desktop.in:3
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:7 src/gcolor3-application.c:148
+msgid "Color Picker"
+msgstr "Seletôr colôr"
+
+#: data/nl.hjdskes.gcolor3.desktop.in:4
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:8 src/gcolor3-application.c:86
+msgid "Choose colors from the picker or the screen"
+msgstr "Sielç i colôrs dal seletôr o dal schermi"
+
+#. Translators: Extra keywords that can be used to search for Gcolor3 in GNOME Shell and Unity
+#: data/nl.hjdskes.gcolor3.desktop.in:13
+msgid "Color;Picker;Palette;"
+msgstr "Colôr;Seletôr;Palete;"
+
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:10
+msgid ""
+"Ever wanted to know the value of that color on your screen? Color Picker "
+"enables you to pick the color from any pixel on your screen. It also offers "
+"a palette, so that you can easily mix and match a couple of colors together."
+msgstr ""
+"Âstu mai volût savê il valôr di chel colôr sul to schermi? Seletôr colôr ti "
+"permet di cjoli il colôr di cualsisei pixel sul schermi. Al ufrìs ancje une "
+"palete, in mût di podê miscliçâ in mût facil e cumbinâ une cubie di colôrs "
+"adun."
+
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:15
+msgid ""
+"When you have found the perfect combination of colors, naturally you want to "
+"save them. Color Picker allows you to conveniently save and retrieve colors."
+msgstr ""
+"Cuant che tu âs cjatât la cumbinazion perfete di colôrs, al è sigûr che tu "
+"desideredis salvâju. Seletôr colôr ti permet di salvâ e recuperâ chei colôrs."
+
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:19
+msgid ""
+"Color Picker is a color selection dialog written in GTK+ 3. It is much alike "
+"Gcolor2, but uses the newer GTK+ version and other modernisations to better "
+"integrate into your modern desktop."
+msgstr ""
+"Seletôr colôr al è un dialic di selezion dai colôrs scrit in GTK+ 3. Al è "
+"une vore simil a Gcolor2, ma al dopre la gnove version di GTK+ e altris "
+"inzornaments par integrâsi miôr sul scritori moderni."
+
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:32
+msgid "The picker and the color palette"
+msgstr "Il seletôr e la palete dai colôrs"
+
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:36
+msgid "The list of saved colors"
+msgstr "La liste dai colôrs salvâts"
+
+#. Translators: please do NOT translate this.
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:43
+msgid "Christopher Davis"
+msgstr "Christopher Davis"
+
+#: data/color-row.ui:31
+msgid "Hex"
+msgstr "Esadecimâl"
+
+#: data/color-row.ui:46
+msgid "Click to change the color’s name"
+msgstr "Fâs clic par cambiâ il non dal colôr"
+
+#: data/color-row.ui:47
+msgid "Name"
+msgstr "Non"
+
+#: data/color-row.ui:68
+msgid "Copy this color’s hex value to the clipboard"
+msgstr "Copie chest valôr esadecimâl dal colôr intes notis"
+
+#: data/color-row.ui:90
+msgid "Delete this color"
+msgstr "Elimine chest colôr"
+
+#: data/menus.ui:7
+msgid "_Keyboard Shortcuts"
+msgstr "_Scurtis di tastiere"
+
+#: data/menus.ui:11
+msgid "_About Color Picker"
+msgstr "_Informazions su Seletôr colôr"
+
+#: data/shortcuts.ui:14
+msgctxt "shortcut window"
+msgid "General"
+msgstr "Gjenerâl"
+
+#: data/shortcuts.ui:19
+msgctxt "shortcut window"
+msgid "Change page"
+msgstr "Cambie pagjine"
+
+#: data/shortcuts.ui:27
+msgctxt "shortcut window"
+msgid "Palette shortcuts"
+msgstr "Scurtis de palete"
+
+#: data/shortcuts.ui:32
+msgctxt "shortcut window"
+msgid "Save currently selected color"
+msgstr "Salve il colôr cumò selezionât"
+
+#: data/shortcuts.ui:40
+msgctxt "shortcut window"
+msgid "Saved color management"
+msgstr "Salve la gjestion colôrs"
+
+#: data/shortcuts.ui:45
+msgctxt "shortcut window"
+msgid "Copy highlighted color’s hex value"
+msgstr "Cope il valôr esadecimâl dal colôr evidenziât"
+
+#: data/shortcuts.ui:52
+msgctxt "shortcut window"
+msgid "Delete highlighted color"
+msgstr "Elimine il colôr evidenziât"
+
+#: data/window.ui:32
+msgid "Color name…"
+msgstr "Non dal colôr…"
+
+#: data/window.ui:94
+msgid "Save a picked color to make it appear here"
+msgstr "Salve une colôr selezionât par fâlu vignî fûr achì"
+
+#: data/window.ui:112
+msgid "You have no saved colors"
+msgstr "No tu âs colôrs salvâts"
+
+#: data/window.ui:249
+msgid "Saved Colors"
+msgstr "Colôrs salvâts"
+
+#: src/main.c:43
+msgid "Show the application’s version"
+msgstr "Mostre la version de aplicazion"
+
+#: src/main.c:54
+msgid "— pick a color from the picker or the screen"
+msgstr "— sielç un colôr dal seletôr o dal schermi"
+
+#: src/main.c:65
+#, c-format
+msgid "Run “%s --help” to see a full list of available command line options"
+msgstr ""
+"Eseguìs “%s --help” par viodi une liste complete des opzions a rie di comant "
+"disponibilis"
+
+#. Translators: translate this to give yourself credits.
+#: src/gcolor3-application.c:90
+msgid "translator-credits"
+msgstr "Fabio Tomat <f.t.public@gmail.com>, 2020"
+
+#: src/gcolor3-application.c:91
+msgid "Website"
+msgstr "Sît web"
+
+#: src/gcolor3-color-selection.c:361
+msgid ""
+"Select the color you want from the outer ring. Select the darkness or "
+"lightness of that color using the inner triangle."
+msgstr ""
+"Selezione il colôr che si desidere dal anel esterni. Selezion la scuretât o "
+"la luminositât di chel colôr doprant il triangul interni."
+
+#: src/gcolor3-color-selection.c:387
+msgid ""
+"Click the eyedropper, then click a color anywhere on your screen to select "
+"that color."
+msgstr ""
+"Fâs clic sul contegotis, dopo fâs clic dulà che tu vûs tal schermi par "
+"selezionâ il colôr che al sta lì."
+
+#: src/gcolor3-color-selection.c:397
+msgid "_Hue:"
+msgstr "_Tonalitât:"
+
+#: src/gcolor3-color-selection.c:398
+msgid "Position on the color wheel."
+msgstr "Posizion te ruede dal colôr."
+
+#: src/gcolor3-color-selection.c:400
+msgid "S_aturation:"
+msgstr "S_aturazion:"
+
+#: src/gcolor3-color-selection.c:401
+msgid "Intensity of the color."
+msgstr "Intensitât dal colôr."
+
+#: src/gcolor3-color-selection.c:402
+msgid "_Value:"
+msgstr "_Valôr:"
+
+#: src/gcolor3-color-selection.c:403
+msgid "Brightness of the color."
+msgstr "Luminositât dal colôr."
+
+#: src/gcolor3-color-selection.c:404
+msgid "_Red:"
+msgstr "_Ros:"
+
+#: src/gcolor3-color-selection.c:405
+msgid "Amount of red light in the color."
+msgstr "Cuantitât di lûs rosse tal colôr."
+
+#: src/gcolor3-color-selection.c:406
+msgid "_Green:"
+msgstr "_Vert:"
+
+#: src/gcolor3-color-selection.c:407
+msgid "Amount of green light in the color."
+msgstr "Cuantitât di lûs verde tal colôr."
+
+#: src/gcolor3-color-selection.c:408
+msgid "_Blue:"
+msgstr "_Blu:"
+
+#: src/gcolor3-color-selection.c:409
+msgid "Amount of blue light in the color."
+msgstr "Cuantitât di lûs blu tal colôr."
+
+#: src/gcolor3-color-selection.c:412
+msgid "Op_acity:"
+msgstr "Op_acitât:"
+
+#: src/gcolor3-color-selection.c:420 src/gcolor3-color-selection.c:430
+msgid "Transparency of the color."
+msgstr "Trasparence dal colôr."
+
+#: src/gcolor3-color-selection.c:437
+msgid "Color _Name:"
+msgstr "_Non colôr:"
+
+#: src/gcolor3-color-selection.c:452
+msgid ""
+"You can enter an HTML-style hexadecimal color value, or simply a color name "
+"such as “orange” in this entry."
+msgstr ""
+"Si pues inserî, in cheste vôs, un valôr di colôr esadecimâl in stîl HTML o "
+"semplicementri un non di colôr come “narant”."
+
+#: src/gcolor3-color-selection.c:484
+msgid "_Palette:"
+msgstr "_Palete:"
+
+#: src/gcolor3-color-selection.c:514
+msgid "Color Wheel"
+msgstr "Ruede colôr"
+
+#: src/gcolor3-color-selection.c:964
+msgid ""
+"The previously-selected color, for comparison to the color you’re selecting "
+"now. You can drag this color to a palette entry, or select this color as "
+"current by dragging it to the other color swatch alongside."
+msgstr ""
+"Il colôr selezionât prime, par comparazion cul colôr che si sta selezionant. "
+"Si pues strissinâ chest colôr suntun spazi de palete o selezionâ chest colôr "
+"come atuâl strisinantlu in bande dal altri campion di colôr."
+
+#: src/gcolor3-color-selection.c:970
+msgid ""
+"The color you’ve chosen. You can drag this color to a palette entry to save "
+"it for use in the future."
+msgstr ""
+"Il colôr che si è sielt. Si pues strissinâ chest colôr suntun spazi de "
+"palete par salvâlu par un ûs plui indenant."
+
+#: src/gcolor3-color-selection.c:976
+msgid ""
+"The previously-selected color, for comparison to the color you’re selecting "
+"now."
+msgstr ""
+"Il colôr selezionât prime, par comparazion cul colôr che si sta selezionant "
+"cumò."
+
+#: src/gcolor3-color-selection.c:980
+msgid "The color you’ve chosen."
+msgstr "Il colôr che si à sielt."
+
+#: src/gcolor3-color-selection.c:1348
+msgid "_Save color here"
+msgstr "_Salve il colôr achì"
+
+#: src/gcolor3-color-selection.c:1554
+msgid ""
+"Click this palette entry to make it the current color. To change this entry, "
+"drag a color swatch here or right-click it and select “Save color here.”"
+msgstr ""
+"Fâs clic su chest spazi de palete par fâlu deventâ il colôr atuâl. Par "
+"cambiâ chest spazi, strissine un campion colôr achì o fâsi un clic diestri e "
+"selezion “Salve colôr achì.”"
+
+#: src/gcolor3-window.c:409
+msgid "Picker"
+msgstr "Seletôr"
