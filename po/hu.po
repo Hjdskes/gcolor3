@@ -1,15 +1,15 @@
 # Hungarian translation for gcolor3.
-# Copyright (C) 2019 Free Software Foundation, Inc.
+# Copyright (C) 2019, 2020 Free Software Foundation, Inc.
 # This file is distributed under the same license as the gcolor3 package.
 #
 # Balázs Meskó <mesko.balazs at fsf dot hu>, 2019.
-# Balázs Úr <ur.balazs at fsf dot hu>, 2019.
+# Balázs Úr <ur.balazs at fsf dot hu>, 2019, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: gcolor3 master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/gcolor3/issues\n"
-"POT-Creation-Date: 2019-03-13 09:19+0000\n"
-"PO-Revision-Date: 2019-03-16 18:33+0100\n"
+"POT-Creation-Date: 2019-11-16 21:30+0000\n"
+"PO-Revision-Date: 2020-02-17 23:46+0100\n"
 "Last-Translator: Balázs Úr <ur.balazs at fsf dot hu>\n"
 "Language-Team: Hungarian <gnome-hu-list at gnome dot org>\n"
 "Language: hu\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 2.0\n"
+"X-Generator: Lokalize 19.04.3\n"
 
 #: data/nl.hjdskes.gcolor3.desktop.in:3
 #: data/nl.hjdskes.gcolor3.appdata.xml.in:7 src/gcolor3-application.c:148
@@ -29,44 +29,52 @@ msgstr "Színválasztó"
 msgid "Choose colors from the picker or the screen"
 msgstr "Válasszon színeket a színválasztóból vagy a képernyőről"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
-#: data/nl.hjdskes.gcolor3.desktop.in:7
-msgid "nl.hjdskes.gcolor3"
-msgstr "nl.hjdskes.gcolor3"
-
 #. Translators: Extra keywords that can be used to search for Gcolor3 in GNOME Shell and Unity
 #: data/nl.hjdskes.gcolor3.desktop.in:13
 msgid "Color;Picker;Palette;"
 msgstr "Szín;Színválasztó;Paletta;"
 
 #: data/nl.hjdskes.gcolor3.appdata.xml.in:10
+#| msgid ""
+#| "Ever wanted to know the value of that color on your screen? Gcolor3 "
+#| "enables you to pick the color from any pixel on your screen. It also "
+#| "offers a palette, so that you can easily mix and match a couple of colors "
+#| "together."
 msgid ""
-"Ever wanted to know the value of that color on your screen? Gcolor3 enables "
-"you to pick the color from any pixel on your screen. It also offers a "
-"palette, so that you can easily mix and match a couple of colors together."
+"Ever wanted to know the value of that color on your screen? Color Picker "
+"enables you to pick the color from any pixel on your screen. It also offers "
+"a palette, so that you can easily mix and match a couple of colors together."
 msgstr ""
-"Szerette volna már tudni a kijelzőjén lévő szín értékét? A Gcolor3 lehetővé "
-"teszi, hogy színt válasszon a képernyő tetszőleges képpontjáról. Palettát is "
-"biztosít, így könnyen keverhet és rakhat össze színeket."
+"Szerette volna már tudni a kijelzőjén lévő szín értékét? A Színválasztó"
+" lehetővé teszi, hogy színt válasszon a képernyő tetszőleges képpontjáról."
+" Palettát is biztosít, így könnyen keverhet és rakhat össze színeket."
 
 #: data/nl.hjdskes.gcolor3.appdata.xml.in:15
+#| msgid ""
+#| "When you have found the perfect combination of colors, naturally you want "
+#| "to save them. Gcolor3 allows you to conveniently save and retrieve colors."
 msgid ""
 "When you have found the perfect combination of colors, naturally you want to "
-"save them. Gcolor3 allows you to conveniently save and retrieve colors."
+"save them. Color Picker allows you to conveniently save and retrieve colors."
 msgstr ""
 "Ha megtalálta a színek tökéletes kombinációját, akkor persze el szeretné "
-"menteni őket. A Gcolor3 lehetővé teszi, hogy kényelmesen elmentse és "
+"menteni őket. A Színválasztó lehetővé teszi, hogy kényelmesen elmentse és "
 "lekérdezze a színeket."
 
 #: data/nl.hjdskes.gcolor3.appdata.xml.in:19
+#| msgid ""
+#| "Gcolor3 is a color selection dialog written in GTK+ 3. It is much alike "
+#| "Gcolor2, but uses the newer GTK+ version and other modernisations to "
+#| "better integrate into your modern desktop."
 msgid ""
-"Gcolor3 is a color selection dialog written in GTK+ 3. It is much alike "
+"Color Picker is a color selection dialog written in GTK+ 3. It is much alike "
 "Gcolor2, but uses the newer GTK+ version and other modernisations to better "
 "integrate into your modern desktop."
 msgstr ""
-"A Gcolor3 egy GTK+ 3-ban írt színválasztó párbeszédablak. Nagyon hasonlít a "
-"Gcolor2-re, de az újabb GTK+ verziót használja, és más modernizálásokat is "
-"tartalmaz, hogy jobban illeszkedjen a modern asztali környezetébe."
+"A Színválasztó egy GTK+ 3-ban írt színválasztó párbeszédablak. Nagyon"
+" hasonlít a Gcolor2-re, de az újabb GTK+ verziót használja, és más"
+" modernizálásokat is tartalmaz, hogy jobban illeszkedjen a modern asztali"
+" környezetébe."
 
 #: data/nl.hjdskes.gcolor3.appdata.xml.in:32
 msgid "The picker and the color palette"
@@ -78,8 +86,8 @@ msgstr "A mentett színek listája"
 
 #. Translators: please do NOT translate this.
 #: data/nl.hjdskes.gcolor3.appdata.xml.in:43
-msgid "Jente Hidskes"
-msgstr "Jente Hidskes"
+msgid "Christopher Davis"
+msgstr "Christopher Davis"
 
 #: data/color-row.ui:31
 msgid "Hex"
@@ -183,7 +191,7 @@ msgstr "Meskó Balázs <mesko.balazs at fsf dot hu>"
 msgid "Website"
 msgstr "Weboldal"
 
-#: src/gcolor3-color-selection.c:409
+#: src/gcolor3-color-selection.c:361
 msgid ""
 "Select the color you want from the outer ring. Select the darkness or "
 "lightness of that color using the inner triangle."
@@ -191,11 +199,7 @@ msgstr ""
 "Válassza ki a kívánt színt a külső gyűrűről. Válassza ki a szín sötétségét "
 "vagy világosságát a belső háromszög használatával."
 
-#: src/gcolor3-color-selection.c:439
-msgid "Picking a color is currently not supported on Wayland."
-msgstr "A színválasztás jelenleg nem támogatott Wayland alatt."
-
-#: src/gcolor3-color-selection.c:450
+#: src/gcolor3-color-selection.c:387
 msgid ""
 "Click the eyedropper, then click a color anywhere on your screen to select "
 "that color."
@@ -203,67 +207,67 @@ msgstr ""
 "Egy képernyőpont színének kiválasztásához kattintson a pipettára, majd a "
 "kívánt képernyőpontra."
 
-#: src/gcolor3-color-selection.c:461
+#: src/gcolor3-color-selection.c:397
 msgid "_Hue:"
 msgstr "Árny_alat:"
 
-#: src/gcolor3-color-selection.c:462
+#: src/gcolor3-color-selection.c:398
 msgid "Position on the color wheel."
 msgstr "Pozíció a színkeréken."
 
-#: src/gcolor3-color-selection.c:464
+#: src/gcolor3-color-selection.c:400
 msgid "S_aturation:"
 msgstr "Telített_ség:"
 
-#: src/gcolor3-color-selection.c:465
+#: src/gcolor3-color-selection.c:401
 msgid "Intensity of the color."
 msgstr "A szín intenzitása."
 
-#: src/gcolor3-color-selection.c:466
+#: src/gcolor3-color-selection.c:402
 msgid "_Value:"
 msgstr "É_rték:"
 
-#: src/gcolor3-color-selection.c:467
+#: src/gcolor3-color-selection.c:403
 msgid "Brightness of the color."
 msgstr "A szín fényessége."
 
-#: src/gcolor3-color-selection.c:468
+#: src/gcolor3-color-selection.c:404
 msgid "_Red:"
 msgstr "_Vörös:"
 
-#: src/gcolor3-color-selection.c:469
+#: src/gcolor3-color-selection.c:405
 msgid "Amount of red light in the color."
 msgstr "A vörös fény mennyisége a színben."
 
-#: src/gcolor3-color-selection.c:470
+#: src/gcolor3-color-selection.c:406
 msgid "_Green:"
 msgstr "_Zöld:"
 
-#: src/gcolor3-color-selection.c:471
+#: src/gcolor3-color-selection.c:407
 msgid "Amount of green light in the color."
 msgstr "A zöld fény mennyisége a színben."
 
-#: src/gcolor3-color-selection.c:472
+#: src/gcolor3-color-selection.c:408
 msgid "_Blue:"
 msgstr "_Kék:"
 
-#: src/gcolor3-color-selection.c:473
+#: src/gcolor3-color-selection.c:409
 msgid "Amount of blue light in the color."
 msgstr "A kék fény mennyisége a színben."
 
-#: src/gcolor3-color-selection.c:476
+#: src/gcolor3-color-selection.c:412
 msgid "Op_acity:"
 msgstr "Át_látszatlanság:"
 
-#: src/gcolor3-color-selection.c:484 src/gcolor3-color-selection.c:494
+#: src/gcolor3-color-selection.c:420 src/gcolor3-color-selection.c:430
 msgid "Transparency of the color."
 msgstr "A szín átlátszósága."
 
-#: src/gcolor3-color-selection.c:501
+#: src/gcolor3-color-selection.c:437
 msgid "Color _Name:"
 msgstr "Szín _neve:"
 
-#: src/gcolor3-color-selection.c:516
+#: src/gcolor3-color-selection.c:452
 msgid ""
 "You can enter an HTML-style hexadecimal color value, or simply a color name "
 "such as “orange” in this entry."
@@ -271,15 +275,15 @@ msgstr ""
 "Beírhat ide egy HTML-stílusú hexadecimális színértéket, vagy egyszerűen egy "
 "színnevet, például „orange”."
 
-#: src/gcolor3-color-selection.c:548
+#: src/gcolor3-color-selection.c:484
 msgid "_Palette:"
 msgstr "_Paletta:"
 
-#: src/gcolor3-color-selection.c:578
+#: src/gcolor3-color-selection.c:514
 msgid "Color Wheel"
 msgstr "Színkerék"
 
-#: src/gcolor3-color-selection.c:1043
+#: src/gcolor3-color-selection.c:964
 msgid ""
 "The previously-selected color, for comparison to the color you’re selecting "
 "now. You can drag this color to a palette entry, or select this color as "
@@ -289,7 +293,7 @@ msgstr ""
 "Áthúzhatja ezt a színt egy palettabejegyzéshez, vagy kiválaszthatja mint "
 "jelenlegit a mellette lévő mezőbe húzással."
 
-#: src/gcolor3-color-selection.c:1049
+#: src/gcolor3-color-selection.c:970
 msgid ""
 "The color you’ve chosen. You can drag this color to a palette entry to save "
 "it for use in the future."
@@ -297,7 +301,7 @@ msgstr ""
 "Az Ön által kiválasztott szín. Ezt a színt egy palettabejegyzésbe áthúzva "
 "elmentheti későbbi felhasználásra."
 
-#: src/gcolor3-color-selection.c:1055
+#: src/gcolor3-color-selection.c:976
 msgid ""
 "The previously-selected color, for comparison to the color you’re selecting "
 "now."
@@ -305,15 +309,15 @@ msgstr ""
 "A korábban kiválasztott szín a most kiválasztott színnel való "
 "összehasonlításhoz."
 
-#: src/gcolor3-color-selection.c:1059
+#: src/gcolor3-color-selection.c:980
 msgid "The color you’ve chosen."
 msgstr "A kiválasztott szín."
 
-#: src/gcolor3-color-selection.c:1428
+#: src/gcolor3-color-selection.c:1348
 msgid "_Save color here"
 msgstr "Szín _mentése ide"
 
-#: src/gcolor3-color-selection.c:1634
+#: src/gcolor3-color-selection.c:1554
 msgid ""
 "Click this palette entry to make it the current color. To change this entry, "
 "drag a color swatch here or right-click it and select “Save color here.”"
@@ -323,6 +327,6 @@ msgstr ""
 "színmezőből vagy a jobb gombos menüben kattintson a „Szín mentése ide” "
 "menüpontra."
 
-#: src/gcolor3-window.c:410
+#: src/gcolor3-window.c:409
 msgid "Picker"
 msgstr "Színválasztó"
