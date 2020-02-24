@@ -4,31 +4,26 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 2.2\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/gcolor3/issues\n"
-"POT-Creation-Date: 2018-09-03 18:44+0000\n"
-"PO-Revision-Date: 2018-10-30 21:15+0700\n"
+"POT-Creation-Date: 2019-11-16 21:30+0000\n"
+"PO-Revision-Date: 2020-02-13 19:42+0700\n"
 "Last-Translator: Kukuh Syafaat <kukuhsyafaat@gnome.org>\n"
 "Language-Team: Indonesian\n"
 "Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.6\n"
+"X-Generator: Poedit 2.3\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: data/nl.hjdskes.gcolor3.desktop.in:3
-#: data/nl.hjdskes.gcolor3.appdata.xml.in:7 src/gcolor3-application.c:145
-msgid "Color picker"
-msgstr "Pemilih warna"
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:7 src/gcolor3-application.c:148
+msgid "Color Picker"
+msgstr "Pemilih Warna"
 
 #: data/nl.hjdskes.gcolor3.desktop.in:4
-#: data/nl.hjdskes.gcolor3.appdata.xml.in:8 src/gcolor3-application.c:84
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:8 src/gcolor3-application.c:86
 msgid "Choose colors from the picker or the screen"
 msgstr "Pilih warna dari pemilih atau layar"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
-#: data/nl.hjdskes.gcolor3.desktop.in:7
-msgid "nl.hjdskes.gcolor3"
-msgstr "nl.hjdskes.gcolor3"
 
 #. Translators: Extra keywords that can be used to search for Gcolor3 in GNOME Shell and Unity
 #: data/nl.hjdskes.gcolor3.desktop.in:13
@@ -37,47 +32,47 @@ msgstr "Warna;Pemilih; Palet;"
 
 #: data/nl.hjdskes.gcolor3.appdata.xml.in:10
 msgid ""
-"Ever wanted to know the value of that color on your screen? Gcolor3 enables "
-"you to pick the color from any pixel on your screen. It also offers a "
-"palette, so that you can easily mix and match a couple of colors together."
+"Ever wanted to know the value of that color on your screen? Color Picker "
+"enables you to pick the color from any pixel on your screen. It also offers "
+"a palette, so that you can easily mix and match a couple of colors together."
 msgstr ""
-"Pernah ingin tahu nilai warna itu di layar Anda? Gcolor3 memungkinkan Anda "
-"untuk memilih warna dari piksel pada layar Anda. Ini juga menawarkan palet, "
-"sehingga Anda dapat dengan mudah mencampur dan mencocokkan beberapa warna "
-"bersama-sama."
+"Pernah ingin tahu nilai warna itu di layar Anda? Pemilih Warna memungkinkan "
+"Anda untuk memilih warna dari piksel pada layar Anda. Ini juga menawarkan "
+"palet, sehingga Anda dapat dengan mudah mencampur dan mencocokkan beberapa "
+"warna bersama-sama."
 
 #: data/nl.hjdskes.gcolor3.appdata.xml.in:15
 msgid ""
 "When you have found the perfect combination of colors, naturally you want to "
-"save them. Gcolor3 allows you to conveniently save and retrieve colors."
+"save them. Color Picker allows you to conveniently save and retrieve colors."
 msgstr ""
 "Bila Anda telah menemukan kombinasi warna yang sempurna, tentu Anda ingin "
-"menyimpanya. Gcolor3 memungkinkan Anda menyimpan dan mengambil warna dengan "
-"mudah."
+"menyimpanya. Pemilih Warna memungkinkan Anda menyimpan dan mengambil warna "
+"dengan mudah."
 
 #: data/nl.hjdskes.gcolor3.appdata.xml.in:19
 msgid ""
-"Gcolor3 is a color selection dialog written in GTK+ 3. It is much alike "
+"Color Picker is a color selection dialog written in GTK+ 3. It is much alike "
 "Gcolor2, but uses the newer GTK+ version and other modernisations to better "
 "integrate into your modern desktop."
 msgstr ""
-"Gcolor3 adalah dialog pilihan warna yang ditulis dalam GTK+ 3. Ini sangat "
-"mirip dengan Gcolor2, namun menggunakan versi GTK + yang lebih baru dan "
-"modernisasi lainnya untuk mengintegrasikannya dengan lebih baik ke dalam "
+"Pemilih Warna adalah dialog pilihan warna yang ditulis dalam GTK+ 3. Ini "
+"sangat mirip dengan Gcolor2, namun menggunakan versi GTK+ yang lebih baru "
+"dan modernisasi lainnya untuk mengintegrasikannya dengan lebih baik ke dalam "
 "destop modern Anda."
 
-#: data/nl.hjdskes.gcolor3.appdata.xml.in:33
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:32
 msgid "The picker and the color palette"
 msgstr "Pemilih dan palet warna"
 
-#: data/nl.hjdskes.gcolor3.appdata.xml.in:37
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:36
 msgid "The list of saved colors"
 msgstr "Daftar warna yang disimpan"
 
 #. Translators: please do NOT translate this.
-#: data/nl.hjdskes.gcolor3.appdata.xml.in:44
-msgid "Jente Hidskes"
-msgstr "Jente Hidskes"
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:43
+msgid "Christopher Davis"
+msgstr "Christopher Davis"
 
 #: data/color-row.ui:31
 msgid "Hex"
@@ -104,12 +99,8 @@ msgid "_Keyboard Shortcuts"
 msgstr "Pintasan Papan Ti_k"
 
 #: data/menus.ui:11
-msgid "_About"
-msgstr "_Tentang"
-
-#: data/menus.ui:15
-msgid "_Quit"
-msgstr "_Keluar"
+msgid "_About Color Picker"
+msgstr "Tent_ang Pemilih Warna"
 
 #: data/shortcuts.ui:14
 msgctxt "shortcut window"
@@ -146,21 +137,21 @@ msgctxt "shortcut window"
 msgid "Delete highlighted color"
 msgstr "Hapus warna yang disorot"
 
-#: data/window.ui:25
+#: data/window.ui:32
 msgid "Color name…"
 msgstr "Nama warna..."
 
-#: data/window.ui:76
+#: data/window.ui:94
 msgid "Save a picked color to make it appear here"
 msgstr "Simpan warna yang dipilih untuk membuatnya muncul di sini"
 
-#: data/window.ui:94
+#: data/window.ui:112
 msgid "You have no saved colors"
 msgstr "Anda tidak memiliki warna yang disimpan"
 
-#: data/window.ui:231
-msgid "Saved colors"
-msgstr "Warna tersimpan"
+#: data/window.ui:249
+msgid "Saved Colors"
+msgstr "Warna Tersimpan"
 
 #: src/main.c:43
 msgid "Show the application’s version"
@@ -178,15 +169,15 @@ msgstr ""
 "tersedia"
 
 #. Translators: translate this to give yourself credits.
-#: src/gcolor3-application.c:88
+#: src/gcolor3-application.c:90
 msgid "translator-credits"
-msgstr "Kukuh Syafaat <kukuhsyafaat@gnome.org>, 2018."
+msgstr "Kukuh Syafaat <kukuhsyafaat@gnome.org>, 2018, 2020."
 
-#: src/gcolor3-application.c:89
+#: src/gcolor3-application.c:91
 msgid "Website"
 msgstr "Situs web"
 
-#: src/gcolor3-color-selection.c:409
+#: src/gcolor3-color-selection.c:361
 msgid ""
 "Select the color you want from the outer ring. Select the darkness or "
 "lightness of that color using the inner triangle."
@@ -194,11 +185,7 @@ msgstr ""
 "Pilih warna yang Anda inginkan dari cincin luar. Pilih kegelapan atau "
 "kecerahan warna itu menggunakan segitiga dalam."
 
-#: src/gcolor3-color-selection.c:439
-msgid "Picking a color is currently not supported on Wayland."
-msgstr "Memilih warna saat ini tidak didukung di Wayland."
-
-#: src/gcolor3-color-selection.c:450
+#: src/gcolor3-color-selection.c:387
 msgid ""
 "Click the eyedropper, then click a color anywhere on your screen to select "
 "that color."
@@ -206,67 +193,67 @@ msgstr ""
 "Klik eyedropper, lalu klik warna di mana saja pada layar Anda untuk memilih "
 "warna itu."
 
-#: src/gcolor3-color-selection.c:461
+#: src/gcolor3-color-selection.c:397
 msgid "_Hue:"
 msgstr "_Corak:"
 
-#: src/gcolor3-color-selection.c:462
+#: src/gcolor3-color-selection.c:398
 msgid "Position on the color wheel."
 msgstr "Posisikan di roda warna."
 
-#: src/gcolor3-color-selection.c:464
+#: src/gcolor3-color-selection.c:400
 msgid "S_aturation:"
 msgstr "S_aturasi:"
 
-#: src/gcolor3-color-selection.c:465
+#: src/gcolor3-color-selection.c:401
 msgid "Intensity of the color."
 msgstr "Intensitas warna."
 
-#: src/gcolor3-color-selection.c:466
+#: src/gcolor3-color-selection.c:402
 msgid "_Value:"
 msgstr "_Nilai:"
 
-#: src/gcolor3-color-selection.c:467
+#: src/gcolor3-color-selection.c:403
 msgid "Brightness of the color."
 msgstr "Kecerahan warna."
 
-#: src/gcolor3-color-selection.c:468
+#: src/gcolor3-color-selection.c:404
 msgid "_Red:"
 msgstr "Me_rah:"
 
-#: src/gcolor3-color-selection.c:469
+#: src/gcolor3-color-selection.c:405
 msgid "Amount of red light in the color."
 msgstr "Jumlah cahaya merah dalam warna."
 
-#: src/gcolor3-color-selection.c:470
+#: src/gcolor3-color-selection.c:406
 msgid "_Green:"
 msgstr "_Hijau:"
 
-#: src/gcolor3-color-selection.c:471
+#: src/gcolor3-color-selection.c:407
 msgid "Amount of green light in the color."
 msgstr "Jumlah cahaya hijau dalam warna."
 
-#: src/gcolor3-color-selection.c:472
+#: src/gcolor3-color-selection.c:408
 msgid "_Blue:"
 msgstr "_Biru:"
 
-#: src/gcolor3-color-selection.c:473
+#: src/gcolor3-color-selection.c:409
 msgid "Amount of blue light in the color."
 msgstr "Jumlah cahaya biru dalam warna."
 
-#: src/gcolor3-color-selection.c:476
+#: src/gcolor3-color-selection.c:412
 msgid "Op_acity:"
 msgstr "Op_asitas:"
 
-#: src/gcolor3-color-selection.c:484 src/gcolor3-color-selection.c:494
+#: src/gcolor3-color-selection.c:420 src/gcolor3-color-selection.c:430
 msgid "Transparency of the color."
 msgstr "Transparansi warna."
 
-#: src/gcolor3-color-selection.c:501
-msgid "Color _name:"
-msgstr "_Nama warna:"
+#: src/gcolor3-color-selection.c:437
+msgid "Color _Name:"
+msgstr "_Nama Warna:"
 
-#: src/gcolor3-color-selection.c:516
+#: src/gcolor3-color-selection.c:452
 msgid ""
 "You can enter an HTML-style hexadecimal color value, or simply a color name "
 "such as “orange” in this entry."
@@ -274,15 +261,15 @@ msgstr ""
 "Anda dapat memasukkan nilai warna heksadesimal gaya HTML, atau hanya nama "
 "warna seperti \"jingga\" dalam entri ini."
 
-#: src/gcolor3-color-selection.c:548
+#: src/gcolor3-color-selection.c:484
 msgid "_Palette:"
 msgstr "_Palet:"
 
-#: src/gcolor3-color-selection.c:578
+#: src/gcolor3-color-selection.c:514
 msgid "Color Wheel"
 msgstr "Roda Warna"
 
-#: src/gcolor3-color-selection.c:1043
+#: src/gcolor3-color-selection.c:964
 msgid ""
 "The previously-selected color, for comparison to the color you’re selecting "
 "now. You can drag this color to a palette entry, or select this color as "
@@ -293,7 +280,7 @@ msgstr ""
 "warna ini sebagai warna saat ini dengan menyeretnya ke carikan warna lain di "
 "sampingnya. "
 
-#: src/gcolor3-color-selection.c:1049
+#: src/gcolor3-color-selection.c:970
 msgid ""
 "The color you’ve chosen. You can drag this color to a palette entry to save "
 "it for use in the future."
@@ -301,7 +288,7 @@ msgstr ""
 "Warna yang Anda pilih. Anda dapat menyeret warna ini ke entri palet untuk "
 "menyimpannya untuk digunakan di masa mendatang."
 
-#: src/gcolor3-color-selection.c:1055
+#: src/gcolor3-color-selection.c:976
 msgid ""
 "The previously-selected color, for comparison to the color you’re selecting "
 "now."
@@ -309,15 +296,15 @@ msgstr ""
 "Warna yang sebelumnya dipilih, untuk dibandingkan dengan warna yang Anda "
 "pilih sekarang."
 
-#: src/gcolor3-color-selection.c:1059
+#: src/gcolor3-color-selection.c:980
 msgid "The color you’ve chosen."
 msgstr "Warna yang Anda pilih."
 
-#: src/gcolor3-color-selection.c:1428
+#: src/gcolor3-color-selection.c:1348
 msgid "_Save color here"
 msgstr "_Simpan warna di sini"
 
-#: src/gcolor3-color-selection.c:1634
+#: src/gcolor3-color-selection.c:1554
 msgid ""
 "Click this palette entry to make it the current color. To change this entry, "
 "drag a color swatch here or right-click it and select “Save color here.”"
@@ -326,9 +313,24 @@ msgstr ""
 "entri ini, seret suatu warna ke sini atau klik kanan dan pilih \"Simpan "
 "warna di sini.\""
 
-#: src/gcolor3-window.c:401
+#: src/gcolor3-window.c:409
 msgid "Picker"
 msgstr "Pemilih"
+
+#~ msgid "nl.hjdskes.gcolor3"
+#~ msgstr "nl.hjdskes.gcolor3"
+
+#~ msgid "Jente Hidskes"
+#~ msgstr "Jente Hidskes"
+
+#~ msgid "_About"
+#~ msgstr "_Tentang"
+
+#~ msgid "_Quit"
+#~ msgstr "_Keluar"
+
+#~ msgid "Picking a color is currently not supported on Wayland."
+#~ msgstr "Memilih warna saat ini tidak didukung di Wayland."
 
 #, fuzzy
 #~ msgid "Error creating config directory: %s"
