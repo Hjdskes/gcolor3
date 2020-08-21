@@ -27,7 +27,7 @@ subdir('po')
 defines = [
   ['PACKAGE', meson.project_name()],
   ['PACKAGE_NAME', meson.project_name()],
-  ['PACKAGE_URL', 'https://hjdskes.nl/projects/gcolor3'],
+  ['PACKAGE_URL', 'https://www.hjdskes.nl/projects/gcolor3'],
   ['PACKAGE_VERSION', meson.project_version()],
   ['GETTEXT_PACKAGE', meson.project_name()],
   ['LOCALE_DIR', localedir],
