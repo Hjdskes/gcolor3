@@ -5,8 +5,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/gcolor3/issues\n"
-"POT-Creation-Date: 2019-11-16 21:30+0000\n"
-"PO-Revision-Date: 2020-04-01 22:02+0300\n"
+"POT-Creation-Date: 2020-08-26 06:52+0000\n"
+"PO-Revision-Date: 2020-08-26 11:16+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -15,11 +15,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<"
 "=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Lokalize 20.07.70\n"
+"X-Generator: Lokalize 20.11.70\n"
 
 #: data/nl.hjdskes.gcolor3.desktop.in:3
 #: data/nl.hjdskes.gcolor3.appdata.xml.in:7 src/gcolor3-application.c:148
-#| msgid "Color picker"
 msgid "Color Picker"
 msgstr "Піпетка"
 
@@ -34,25 +33,16 @@ msgid "Color;Picker;Palette;"
 msgstr "Color;Picker;Palette;колір;піпетка;палітра;"
 
 #: data/nl.hjdskes.gcolor3.appdata.xml.in:10
-#| msgid ""
-#| "Ever wanted to know the value of that color on your screen? Gcolor3 "
-#| "enables you to pick the color from any pixel on your screen. It also "
-#| "offers a palette, so that you can easily mix and match a couple of colors "
-#| "together."
 msgid ""
 "Ever wanted to know the value of that color on your screen? Color Picker "
 "enables you to pick the color from any pixel on your screen. It also offers "
 "a palette, so that you can easily mix and match a couple of colors together."
 msgstr ""
-"Бажаєте одержати значення кольору на вашому екрані? «Піпетка» надає змогу"
-" вибрати "
-"колір з будь-якої точки екрана. Також є палітра, тож можете легко змішувати "
-"і поєднувати кольори."
+"Бажаєте одержати значення кольору на вашому екрані? «Піпетка» надає змогу "
+"вибрати колір з будь-якої точки екрана. Також є палітра, тож можете легко "
+"змішувати і поєднувати кольори."
 
 #: data/nl.hjdskes.gcolor3.appdata.xml.in:15
-#| msgid ""
-#| "When you have found the perfect combination of colors, naturally you want "
-#| "to save them. Gcolor3 allows you to conveniently save and retrieve colors."
 msgid ""
 "When you have found the perfect combination of colors, naturally you want to "
 "save them. Color Picker allows you to conveniently save and retrieve colors."
@@ -62,16 +52,16 @@ msgstr ""
 
 #: data/nl.hjdskes.gcolor3.appdata.xml.in:19
 #| msgid ""
-#| "Gcolor3 is a color selection dialog written in GTK+ 3. It is much alike "
-#| "Gcolor2, but uses the newer GTK+ version and other modernisations to "
-#| "better integrate into your modern desktop."
+#| "Color Picker is a color selection dialog written in GTK+ 3. It is much "
+#| "alike Gcolor2, but uses the newer GTK+ version and other modernisations "
+#| "to better integrate into your modern desktop."
 msgid ""
-"Color Picker is a color selection dialog written in GTK+ 3. It is much alike "
-"Gcolor2, but uses the newer GTK+ version and other modernisations to better "
+"Color Picker is a color selection dialog written in GTK 3. It is much alike "
+"Gcolor2, but uses the newer GTK version and other modernisations to better "
 "integrate into your modern desktop."
 msgstr ""
-"«Піпетка» — вікно вибору кольорів, написаних на GTK+ 3. Дуже схожий на "
-"Gcolor2, але підтримує новішу версію GTK+ та інші покращення для "
+"«Піпетка» — вікно вибору кольорів, написаних на GTK 3. Дуже схожий на "
+"Gcolor2, але підтримує новішу версію GTK та інші покращення для "
 "інтегрування в сучасні стільниці."
 
 #: data/nl.hjdskes.gcolor3.appdata.xml.in:32
@@ -113,7 +103,6 @@ msgid "_Keyboard Shortcuts"
 msgstr "_Клавіатурні скорочення"
 
 #: data/menus.ui:11
-#| msgid "Color picker"
 msgid "_About Color Picker"
 msgstr "_Про «Піпетку»"
 
@@ -138,7 +127,6 @@ msgid "Save currently selected color"
 msgstr "Зберегти поточний позначений колір"
 
 #: data/shortcuts.ui:40
-#| msgid "Saved colors"
 msgctxt "shortcut window"
 msgid "Saved color management"
 msgstr "Керування збереженими кольорам"
@@ -154,7 +142,6 @@ msgid "Delete highlighted color"
 msgstr "Вилучити підсвічений колір"
 
 #: data/window.ui:32
-#| msgid "Color name..."
 msgid "Color name…"
 msgstr "Назва кольору…"
 
@@ -163,28 +150,23 @@ msgid "Save a picked color to make it appear here"
 msgstr "Збережіть вибраний колір, щоб він з'явився у цьому наборі"
 
 #: data/window.ui:112
-#| msgid "The list of saved colors"
 msgid "You have no saved colors"
 msgstr "У вас немає збережених кольорів"
 
 #: data/window.ui:249
-#| msgid "Saved colors"
 msgid "Saved Colors"
 msgstr "Збережені кольори"
 
 #: src/main.c:43
-#| msgid "Show the application's version"
 msgid "Show the application’s version"
 msgstr "Показати версію програми"
 
 #: src/main.c:54
-#| msgid "- pick a color from the picker or the screen"
 msgid "— pick a color from the picker or the screen"
 msgstr "— виберіть колір з набору або з екрана"
 
 #: src/main.c:65
 #, c-format
-#| msgid "Run '%s --help' to see a full list of available command line options"
 msgid "Run “%s --help” to see a full list of available command line options"
 msgstr ""
 "Щоб переглянути повний список можливих параметрів командного рядка, віддайте "
@@ -272,7 +254,6 @@ msgid "Transparency of the color."
 msgstr "Прозорість вибраного кольору."
 
 #: src/gcolor3-color-selection.c:437
-#| msgid "Color name..."
 msgid "Color _Name:"
 msgstr "Н_азва кольору:"
 
@@ -289,7 +270,6 @@ msgid "_Palette:"
 msgstr "_Палітра:"
 
 #: src/gcolor3-color-selection.c:514
-#| msgid "Color"
 msgid "Color Wheel"
 msgstr "Колірне коло"
 
@@ -322,7 +302,6 @@ msgid "The color you’ve chosen."
 msgstr "Вибраний колір."
 
 #: src/gcolor3-color-selection.c:1348
-#| msgid "Saved colors"
 msgid "_Save color here"
 msgstr "З_берегти колір тут"
 
