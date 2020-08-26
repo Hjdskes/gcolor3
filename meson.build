@@ -1,4 +1,4 @@
-project('gcolor3', 'c', version: '2.3.1',
+project('gcolor3', 'c', version: '2.4.0',
   license: 'GPL2+',
   meson_version: '>= 0.40.0',
 )
@@ -32,7 +32,7 @@ defines = [
   ['PACKAGE_VERSION', meson.project_version()],
   ['GETTEXT_PACKAGE', meson.project_name()],
   ['LOCALE_DIR', localedir],
-  ['COPYRIGHT', '2013 - 2018'],
+  ['COPYRIGHT', '2013 - 2020'],
 ]
 
 config_h = configuration_data()

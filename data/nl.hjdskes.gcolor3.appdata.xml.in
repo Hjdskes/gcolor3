@@ -45,6 +45,20 @@
   <translation type="gettext">gcolor3</translation>
   <!-- Validate with `appstream-util validate nl.hjdskes.gcolor3.appdata.xml.in`. -->
   <releases>
+    <release version="2.4.0" date="2020-08-24">
+      <description>
+        <p>
+          Gcolor3 is now "Color Picker"! With the rename comes a new maintiner,
+          a new icon, lots of new improvements, and many translation updates.
+          <ul>
+            <li>Color Picker now works on Wayland!</li>
+            <li>The typography and iconography of Color Picker has changed to be consistent and more in line with the GNOME HIG.</li>
+            <li>The use of deprecated GTK APIs has been dropped, which will make porting to GTK4 a smooth process.</li>
+            <li>Multiple other under-the-hood improvements</li>
+          </ul>
+        </p>
+      </description>
+    </release>
     <release version="2.3.1" date="2018-09-02">
       <description>
 	<p>
