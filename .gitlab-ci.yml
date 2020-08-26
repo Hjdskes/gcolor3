@@ -15,12 +15,3 @@ flatpak:
   variables:
     RUNTIME_REPO: 'https://nightly.gnome.org/gnome-nightly.flatpakrepo'
     APP_ID: "nl.hjdskes.gcolor3"
-
-review:
-  dependencies:
-    - 'flatpak'
-  extends: '.review'
-
-stop_review:
-  extends: '.stop_review'
-
