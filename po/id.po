@@ -1,18 +1,19 @@
 # Indonesian translation for Gcolor3.
 # This file is distributed under the same license as the Gcolor3 package.
+# Kukuh Syafaat <kukuhsyafaat@gnome.org>, 2018, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: 2.2\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/gcolor3/issues\n"
-"POT-Creation-Date: 2019-11-16 21:30+0000\n"
-"PO-Revision-Date: 2020-02-13 19:42+0700\n"
+"POT-Creation-Date: 2020-08-26 06:52+0000\n"
+"PO-Revision-Date: 2020-08-26 22:06+0700\n"
 "Last-Translator: Kukuh Syafaat <kukuhsyafaat@gnome.org>\n"
 "Language-Team: Indonesian\n"
 "Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.3\n"
+"X-Generator: Poedit 2.4.1\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: data/nl.hjdskes.gcolor3.desktop.in:3
@@ -52,13 +53,13 @@ msgstr ""
 
 #: data/nl.hjdskes.gcolor3.appdata.xml.in:19
 msgid ""
-"Color Picker is a color selection dialog written in GTK+ 3. It is much alike "
-"Gcolor2, but uses the newer GTK+ version and other modernisations to better "
+"Color Picker is a color selection dialog written in GTK 3. It is much alike "
+"Gcolor2, but uses the newer GTK version and other modernisations to better "
 "integrate into your modern desktop."
 msgstr ""
-"Pemilih Warna adalah dialog pilihan warna yang ditulis dalam GTK+ 3. Ini "
-"sangat mirip dengan Gcolor2, namun menggunakan versi GTK+ yang lebih baru "
-"dan modernisasi lainnya untuk mengintegrasikannya dengan lebih baik ke dalam "
+"Pemilih Warna adalah dialog pilihan warna yang ditulis dalam GTK 3. Ini "
+"sangat mirip dengan Gcolor2, namun menggunakan versi GTK yang lebih baru dan "
+"modernisasi lainnya untuk mengintegrasikannya dengan lebih baik ke dalam "
 "destop modern Anda."
 
 #: data/nl.hjdskes.gcolor3.appdata.xml.in:32
@@ -139,7 +140,7 @@ msgstr "Hapus warna yang disorot"
 
 #: data/window.ui:32
 msgid "Color name…"
-msgstr "Nama warna..."
+msgstr "Nama warna…"
 
 #: data/window.ui:94
 msgid "Save a picked color to make it appear here"
@@ -278,7 +279,7 @@ msgstr ""
 "Warna yang sebelumnya dipilih, untuk dibandingkan dengan warna yang Anda "
 "pilih sekarang. Anda dapat menyeret warna ini ke entri palet, atau memilih "
 "warna ini sebagai warna saat ini dengan menyeretnya ke carikan warna lain di "
-"sampingnya. "
+"sampingnya."
 
 #: src/gcolor3-color-selection.c:970
 msgid ""
