@@ -69,6 +69,7 @@ gcolor3_application_action_about (UNUSED GSimpleAction *action,
 {
 	static const char *authors[] = {
 		"Jente Hidskes <hjdskes@gmail.com>",
+		"Christopher Davis <christopherdavis@gnome.org>",
 		NULL,
 	};
 
@@ -82,7 +83,7 @@ gcolor3_application_action_about (UNUSED GSimpleAction *action,
 	gtk_show_about_dialog (gtk_application_get_active_window (GTK_APPLICATION (user_data)),
 			       "program-name", g_get_application_name (),
 			       "version", PACKAGE_VERSION,
-			       "copyright", "Copyright \xc2\xa9 "COPYRIGHT" Jente Hidskes",
+			       "copyright", "Copyright \xc2\xa9 "COPYRIGHT" Jente Hidskes, Christopher Davis",
 			       "comments", _("Choose colors from the picker or the screen"),
 			       "authors", authors,
 			       "artists", artists,
