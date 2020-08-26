@@ -1,14 +1,15 @@
 project('gcolor3', 'c', version: '2.3.1',
   license: 'GPL2+',
   meson_version: '>= 0.40.0',
-  default_options: [
-    'c_std=c99',
-    'werror=true'
-  ]
 )
 
 dep_gtk = dependency('gtk+-3.0', version: '>= 3.20.0', required: true)
-dep_libportal = dependency('libportal', required: true)
+dep_libportal = dependency(
+  'libportal',
+  required: true,
+  fallback: ['libportal', 'libportal_dep'],
+  default_options: ['gtk_doc=false'],
+)
 cc = meson.get_compiler('c')
 dep_lm = cc.find_library('m', required: true)
 
