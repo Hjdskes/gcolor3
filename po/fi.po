@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gcolor3 master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/gcolor3/issues\n"
-"POT-Creation-Date: 2019-11-16 21:30+0000\n"
-"PO-Revision-Date: 2020-03-08 13:29+0200\n"
+"POT-Creation-Date: 2020-08-26 06:52+0000\n"
+"PO-Revision-Date: 2020-08-30 21:35+0300\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos+l10n@iki.fi>\n"
 "Language-Team: Finnish <lokalisointi-lista@googlegroups.com>\n"
 "Language: fi\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.3\n"
+"X-Generator: Poedit 2.4.1\n"
 
 #: data/nl.hjdskes.gcolor3.desktop.in:3
 #: data/nl.hjdskes.gcolor3.appdata.xml.in:7 src/gcolor3-application.c:148
@@ -54,11 +54,11 @@ msgstr ""
 
 #: data/nl.hjdskes.gcolor3.appdata.xml.in:19
 msgid ""
-"Color Picker is a color selection dialog written in GTK+ 3. It is much alike "
-"Gcolor2, but uses the newer GTK+ version and other modernisations to better "
+"Color Picker is a color selection dialog written in GTK 3. It is much alike "
+"Gcolor2, but uses the newer GTK version and other modernisations to better "
 "integrate into your modern desktop."
 msgstr ""
-"Värivalitsin on värin valintaikkuna, joka on toteutettu GTK+ 3:lla. Se on "
+"Värivalitsin on värin valintaikkuna, joka on toteutettu GTK 3:lla. Se on "
 "kuten Gcolor2, mutta käyttää uudempaa GTK-versiota ja muita uusia "
 "teknologioita, jotka mahdollistavat integraation nykyaikaiseen työpöytään."
 
@@ -181,12 +181,16 @@ msgid ""
 "Select the color you want from the outer ring. Select the darkness or "
 "lightness of that color using the inner triangle."
 msgstr ""
+"Valitse haluamasi väri kehältä. Valitse värin tumman tai kirkkauden taso "
+"käyttäen kehän sisällä olevaa kolmiota."
 
 #: src/gcolor3-color-selection.c:387
 msgid ""
 "Click the eyedropper, then click a color anywhere on your screen to select "
 "that color."
 msgstr ""
+"Napsauta värivalitsinta, sen jälkeen napsauta mitä tahansa näytöllä näkyvää "
+"väriä valitaksesi sen."
 
 #: src/gcolor3-color-selection.c:397
 msgid "_Hue:"
@@ -194,7 +198,7 @@ msgstr "_Sävy:"
 
 #: src/gcolor3-color-selection.c:398
 msgid "Position on the color wheel."
-msgstr ""
+msgstr "Sijainti väripyörällä."
 
 #: src/gcolor3-color-selection.c:400
 msgid "S_aturation:"
@@ -270,18 +274,24 @@ msgid ""
 "now. You can drag this color to a palette entry, or select this color as "
 "current by dragging it to the other color swatch alongside."
 msgstr ""
+"Aiemmin valittu väri. Toimii vertailukohtana nyt valittavaa väriä varten. "
+"Voit vetää tämän värin palettitietueeseen, tai valita tämän värin nykyiseksi "
+"vetämällä sen viereiseen värilaatikkoon."
 
 #: src/gcolor3-color-selection.c:970
 msgid ""
 "The color you’ve chosen. You can drag this color to a palette entry to save "
 "it for use in the future."
 msgstr ""
+"Valitsemasi väri. Voit vetää tämän värin palettitietueeseen tallentaaksesi "
+"sen myöhempää käyttöä varten."
 
 #: src/gcolor3-color-selection.c:976
 msgid ""
 "The previously-selected color, for comparison to the color you’re selecting "
 "now."
 msgstr ""
+"Aiemmin valittu väri. Toimii vertailukohtana nyt valittavaa väriä varten."
 
 #: src/gcolor3-color-selection.c:980
 msgid "The color you’ve chosen."
@@ -296,6 +306,9 @@ msgid ""
 "Click this palette entry to make it the current color. To change this entry, "
 "drag a color swatch here or right-click it and select “Save color here.”"
 msgstr ""
+"Napsauta tätä väritietuetta tehdäksesi siitä nykyisen värin. Muuta tietuetta "
+"vetämällä värilaatikko tähän tai napsauttamalla oikealla ja valitsemalla "
+"\"Tallenna väri tähän\"."
 
 #: src/gcolor3-window.c:409
 msgid "Picker"
