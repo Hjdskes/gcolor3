@@ -5,7 +5,7 @@ Color Picker
 
 This README is only relevant for development resources and instructions. For a
 description of Color Picker, screenshots and installation instructions for end-users,
-please see the [website](https://hjdskes.nl/projects/gcolor3/).
+please see the [website](https://www.hjdskes.nl/projects/gcolor3/).
 
 Compile from source
 ------------
