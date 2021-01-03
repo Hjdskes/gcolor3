@@ -7,14 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gcolor3 master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/gcolor3/issues\n"
-"POT-Creation-Date: 2020-09-02 23:08+0000\n"
-"PO-Revision-Date: 2020-09-02 20:23-0400\n"
+"POT-Creation-Date: 2020-09-03 00:24+0000\n"
+"PO-Revision-Date: 2020-10-22 12:45+0800\n"
+"Last-Translator: Boyuan Yang <073plan@gmail.com>\n"
 "Language-Team: Chinese (China) <i18n-zh@googlegroups.com>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Last-Translator: Boyuan Yang <073plan@gmail.com>\n"
 "X-Generator: Poedit 2.4.1\n"
 
 #: data/nl.hjdskes.gcolor3.desktop.in:3
@@ -30,7 +30,7 @@ msgstr "从拾取器或屏幕选择颜色"
 #. Translators: Extra keywords that can be used to search for Gcolor3 in GNOME Shell and Unity
 #: data/nl.hjdskes.gcolor3.desktop.in:13
 msgid "Color;Picker;Palette;"
-msgstr "Color;Picker;Palette;颜色;拾色器;调色板;"
+msgstr "Color;Picker;Palette;颜色;拾取器;调色板;"
 
 #: data/nl.hjdskes.gcolor3.appdata.xml.in:10
 msgid ""
@@ -38,16 +38,16 @@ msgid ""
 "enables you to pick the color from any pixel on your screen. It also offers "
 "a palette, so that you can easily mix and match a couple of colors together."
 msgstr ""
-"是否想要知道您的屏幕上某处颜色的具体值是什么？颜色拾取器可以帮您选择屏幕上任"
-"一像素点的颜色。它也提供了调色板，您可以用它方便地混合或比较不同的颜色。"
+"是否想要知道您的屏幕上某处颜色的值？颜色拾取器允许您拾取您的屏幕上任何像素的"
+"颜色。它还提供了调色板，因此您可以轻松地将一对颜色混合并搭配在一起。"
 
 #: data/nl.hjdskes.gcolor3.appdata.xml.in:15
 msgid ""
 "When you have found the perfect combination of colors, naturally you want to "
 "save them. Color Picker allows you to conveniently save and retrieve colors."
 msgstr ""
-"当找到了完美的颜色组合时，您自然地会想要将其保存下来。颜色拾取器能够帮助您方"
-"便地保存并获取颜色。"
+"当您找到了完美的颜色组合时，您自然会想要将其保存。颜色拾取器允许您方便地保存"
+"并获取颜色。"
 
 #: data/nl.hjdskes.gcolor3.appdata.xml.in:19
 msgid ""
@@ -55,16 +55,16 @@ msgid ""
 "Gcolor2, but uses the newer GTK version and other modernisations to better "
 "integrate into your modern desktop."
 msgstr ""
-"颜色拾取器是一个颜色选择对话框，使用 GTK 3 编写。它和 Gcolor2 类似，但使用了"
-"新的 GTK 版本并应用了各类现代化方式以和您的现代桌面环境更好地整合。"
+"颜色拾取器是一个颜色选择对话框，使用 GTK 3 编写。它和 Gcolor2 很类似，但使用"
+"了较新的 GTK 版本和其他现代化方式，以与您的现代桌面更好地集成。"
 
 #: data/nl.hjdskes.gcolor3.appdata.xml.in:32
 msgid "The picker and the color palette"
-msgstr "拾色器和调色板"
+msgstr "拾取器和调色板"
 
 #: data/nl.hjdskes.gcolor3.appdata.xml.in:36
 msgid "The list of saved colors"
-msgstr "已保存颜色列表"
+msgstr "已保存的颜色列表"
 
 #. Translators: please do NOT translate this.
 #: data/nl.hjdskes.gcolor3.appdata.xml.in:43
@@ -85,7 +85,7 @@ msgstr "名称"
 
 #: data/color-row.ui:68
 msgid "Copy this color’s hex value to the clipboard"
-msgstr "复制该颜色的十六进制值到剪贴板"
+msgstr "将该颜色的十六进制值复制到剪贴板"
 
 #: data/color-row.ui:90
 msgid "Delete this color"
@@ -107,7 +107,7 @@ msgstr "常规"
 #: data/shortcuts.ui:19
 msgctxt "shortcut window"
 msgid "Change page"
-msgstr ""
+msgstr "更改页面"
 
 #: data/shortcuts.ui:27
 msgctxt "shortcut window"
@@ -122,12 +122,12 @@ msgstr "保存当前选中的颜色"
 #: data/shortcuts.ui:40
 msgctxt "shortcut window"
 msgid "Saved color management"
-msgstr ""
+msgstr "已保存颜色管理"
 
 #: data/shortcuts.ui:45
 msgctxt "shortcut window"
 msgid "Copy highlighted color’s hex value"
-msgstr "复制高亮的颜色十六进制值"
+msgstr "复制高亮颜色的十六进制值"
 
 #: data/shortcuts.ui:52
 msgctxt "shortcut window"
@@ -140,11 +140,11 @@ msgstr "颜色名称…"
 
 #: data/window.ui:94
 msgid "Save a picked color to make it appear here"
-msgstr ""
+msgstr "保存已拾取的颜色以使其出现在此处"
 
 #: data/window.ui:112
 msgid "You have no saved colors"
-msgstr "您没有保存的颜色"
+msgstr "您没有已保存的颜色"
 
 #: data/window.ui:248
 msgid "Saved Colors"
@@ -152,11 +152,11 @@ msgstr "已保存的颜色"
 
 #: src/main.c:43
 msgid "Show the application’s version"
-msgstr "显示应用版本"
+msgstr "显示此应用程序的版本"
 
 #: src/main.c:54
 msgid "— pick a color from the picker or the screen"
-msgstr "— 从调色板或屏幕选取颜色"
+msgstr "—从拾取器或屏幕拾取颜色"
 
 #: src/main.c:65
 #, c-format
@@ -176,37 +176,37 @@ msgstr "网站"
 msgid ""
 "Select the color you want from the outer ring. Select the darkness or "
 "lightness of that color using the inner triangle."
-msgstr ""
+msgstr "从外部的环中选择您想要的颜色。使用内部的三角形来选择该颜色的深浅。"
 
 #: src/gcolor3-color-selection.c:387
 msgid ""
 "Click the eyedropper, then click a color anywhere on your screen to select "
 "that color."
-msgstr ""
+msgstr "点击吸管工具，然后点击您的屏幕上任何位置的颜色，以选择该颜色。"
 
 #: src/gcolor3-color-selection.c:397
 msgid "_Hue:"
-msgstr ""
+msgstr "色调(_H)："
 
 #: src/gcolor3-color-selection.c:398
 msgid "Position on the color wheel."
-msgstr ""
+msgstr "色轮上的位置。"
 
 #: src/gcolor3-color-selection.c:400
 msgid "S_aturation:"
-msgstr ""
+msgstr "饱和度(_A)："
 
 #: src/gcolor3-color-selection.c:401
 msgid "Intensity of the color."
-msgstr ""
+msgstr "该颜色的强度。"
 
 #: src/gcolor3-color-selection.c:402
 msgid "_Value:"
-msgstr ""
+msgstr "值(_V)："
 
 #: src/gcolor3-color-selection.c:403
 msgid "Brightness of the color."
-msgstr ""
+msgstr "该颜色的亮度。"
 
 #: src/gcolor3-color-selection.c:404
 msgid "_Red:"
@@ -214,7 +214,7 @@ msgstr "红(_R)："
 
 #: src/gcolor3-color-selection.c:405
 msgid "Amount of red light in the color."
-msgstr ""
+msgstr "该颜色中红色光的数量。"
 
 #: src/gcolor3-color-selection.c:406
 msgid "_Green:"
@@ -222,7 +222,7 @@ msgstr "绿(_G)："
 
 #: src/gcolor3-color-selection.c:407
 msgid "Amount of green light in the color."
-msgstr ""
+msgstr "该颜色中绿色光的数量。"
 
 #: src/gcolor3-color-selection.c:408
 msgid "_Blue:"
@@ -230,15 +230,15 @@ msgstr "蓝(_B)："
 
 #: src/gcolor3-color-selection.c:409
 msgid "Amount of blue light in the color."
-msgstr ""
+msgstr "该颜色中蓝色光的数量。"
 
 #: src/gcolor3-color-selection.c:412
 msgid "Op_acity:"
-msgstr ""
+msgstr "不透明度(_A)："
 
 #: src/gcolor3-color-selection.c:420 src/gcolor3-color-selection.c:430
 msgid "Transparency of the color."
-msgstr "颜色的透明度。"
+msgstr "该颜色的透明度。"
 
 #: src/gcolor3-color-selection.c:437
 msgid "Color _Name:"
@@ -249,14 +249,16 @@ msgid ""
 "You can enter an HTML-style hexadecimal color value, or simply a color name "
 "such as “orange” in this entry."
 msgstr ""
+"您可以在此文本框中输入 HTML 样式的十六进制颜色值，或者仅仅是颜色名称，例"
+"如“orange”。"
 
 #: src/gcolor3-color-selection.c:484
 msgid "_Palette:"
-msgstr ""
+msgstr "调色板(_P)："
 
 #: src/gcolor3-color-selection.c:514
 msgid "Color Wheel"
-msgstr ""
+msgstr "色轮"
 
 #: src/gcolor3-color-selection.c:964
 msgid ""
@@ -264,33 +266,37 @@ msgid ""
 "now. You can drag this color to a palette entry, or select this color as "
 "current by dragging it to the other color swatch alongside."
 msgstr ""
+"之前选中的颜色，用于与您现在选择的颜色进行对比。您可以将此颜色拖动到调色板"
+"项，或通过将此颜色拖动到旁边的另一个色块以将其选为当前颜色。"
 
 #: src/gcolor3-color-selection.c:970
 msgid ""
 "The color you’ve chosen. You can drag this color to a palette entry to save "
 "it for use in the future."
-msgstr ""
+msgstr "您已选中的颜色。您可以将此颜色拖动到调色板项，来将其保存以便未来使用。"
 
 #: src/gcolor3-color-selection.c:976
 msgid ""
 "The previously-selected color, for comparison to the color you’re selecting "
 "now."
-msgstr ""
+msgstr "之前选中的颜色，用于与您现在选择的颜色进行对比。"
 
 #: src/gcolor3-color-selection.c:980
 msgid "The color you’ve chosen."
-msgstr "您选中的颜色。"
+msgstr "您已选中的颜色。"
 
 #: src/gcolor3-color-selection.c:1348
 msgid "_Save color here"
-msgstr ""
+msgstr "将颜色保存到此处(_S)"
 
 #: src/gcolor3-color-selection.c:1554
 msgid ""
 "Click this palette entry to make it the current color. To change this entry, "
 "drag a color swatch here or right-click it and select “Save color here.”"
 msgstr ""
+"点击此调色板项以使其成为当前颜色。要改变此项，将一个色块拖动到此处，或用右键"
+"点击此项并选择“将颜色保存到此处”。"
 
 #: src/gcolor3-window.c:409
 msgid "Picker"
-msgstr "拾色器"
+msgstr "拾取器"
