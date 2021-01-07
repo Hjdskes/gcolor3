@@ -7,8 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gcolor3 master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/gcolor3/issues\n"
-"POT-Creation-Date: 2020-04-01 19:03+0000\n"
-"PO-Revision-Date: 2020-05-18 18:20+0300\n"
+"POT-Creation-Date: 2020-08-26 06:52+0000\n"
+"PO-Revision-Date: 2021-01-07 16:02+0200\n"
+"Last-Translator: Florentina Mușat <florentina.musat.28@gmail.com>\n"
 "Language-Team: Romanian <gnomero-list@lists.sourceforge.net>\n"
 "Language: ro\n"
 "MIME-Version: 1.0\n"
@@ -16,8 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
 "20)) ? 1 : 2);;\n"
-"Last-Translator: Florentina Mușat <emryslokadottir [at] gmail [dot] com>\n"
-"X-Generator: Poedit 2.3.1\n"
+"X-Generator: Poedit 2.4.2\n"
 
 #: data/nl.hjdskes.gcolor3.desktop.in:3
 #: data/nl.hjdskes.gcolor3.appdata.xml.in:7 src/gcolor3-application.c:148
@@ -56,13 +56,13 @@ msgstr ""
 
 #: data/nl.hjdskes.gcolor3.appdata.xml.in:19
 msgid ""
-"Color Picker is a color selection dialog written in GTK+ 3. It is much alike "
-"Gcolor2, but uses the newer GTK+ version and other modernisations to better "
+"Color Picker is a color selection dialog written in GTK 3. It is much alike "
+"Gcolor2, but uses the newer GTK version and other modernisations to better "
 "integrate into your modern desktop."
 msgstr ""
-"Selector de culori este un dialog de selectare a culorii scris în GTK+ 3. "
-"Este foarte similar cu Gcolor2, dar utilizează versiunea nouă GTK+ și alte "
-"modernizări pentru a se integra mai bine în desktopul modern."
+"Selector de culori este un dialog de selecție a culorilor scris în GTK 3. "
+"Este foarte asemănător cu Gcolor2, dar utilizează versiunea GTK mai nouă și "
+"alte modernizări pentru a se integra mai bine în desktopul modern."
 
 #: data/nl.hjdskes.gcolor3.appdata.xml.in:32
 msgid "The picker and the color palette"
@@ -174,7 +174,9 @@ msgstr ""
 #. Translators: translate this to give yourself credits.
 #: src/gcolor3-application.c:90
 msgid "translator-credits"
-msgstr "Florentina Mușat <emryslokadottir [at] gmail [dot] com>, 2020"
+msgstr ""
+"Florentina Mușat <florentina [dot] musat [dot] 28 [at] gmail [dot] com>, "
+"2020-2021"
 
 #: src/gcolor3-application.c:91
 msgid "Website"
