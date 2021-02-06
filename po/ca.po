@@ -9,12 +9,12 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/gcolor3/issues\n"
 "POT-Creation-Date: 2021-01-20 07:21+0000\n"
 "PO-Revision-Date: 2021-01-27 07:17+0100\n"
+"Last-Translator: Òscar Pérez <oscarpc@gmail.com>\n"
 "Language-Team: Catalan <gnome@llistes.softcatala.org>\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Last-Translator: Òscar Pérez <oscarpc@gmail.com>\n"
 "X-Generator: Poedit 2.4.2\n"
 
 #: data/nl.hjdskes.gcolor3.desktop.in:3
@@ -46,11 +46,10 @@ msgstr ""
 
 #: data/nl.hjdskes.gcolor3.appdata.xml.in:15
 msgid ""
-"When you have found the perfect combination of colors, naturally you want "
-"to save them. Color Picker allows you to conveniently save and retrieve "
-"colors."
+"When you have found the perfect combination of colors, naturally you want to "
+"save them. Color Picker allows you to conveniently save and retrieve colors."
 msgstr ""
-"Quan hagueu trobat la combinació perfecta de colors, voldreu desar-los. El "
+"Quan hàgeu trobat la combinació perfecta de colors, voldreu desar-los. El "
 "selector de colors us permetrà desar i recuperar els colors fàcilment."
 
 #: data/nl.hjdskes.gcolor3.appdata.xml.in:19
@@ -61,7 +60,7 @@ msgid ""
 msgstr ""
 "El selector de colors és un diàleg de selecció de colors escrit amb GTK 3. "
 "És molt semblant al Gcolor2, però utilitza la versió GTK més nova, així com "
-"altres modernitzacions per integrar-se millor al vostre modern escriptori."
+"altres modernitzacions per a integrar-se millor al vostre modern escriptori."
 
 #: data/nl.hjdskes.gcolor3.appdata.xml.in:32
 msgid "The picker and the color palette"
@@ -82,7 +81,7 @@ msgstr "Hex"
 
 #: data/color-row.ui:46
 msgid "Click to change the color’s name"
-msgstr "Feu clic per canviar el nom del color"
+msgstr "Feu clic per a canviar el nom del color"
 
 #: data/color-row.ui:47
 msgid "Name"
@@ -145,7 +144,7 @@ msgstr "Nom del color…"
 
 #: data/window.ui:94
 msgid "Save a picked color to make it appear here"
-msgstr "Desa un color seleccionat per a que aparegui aquí"
+msgstr "Desa un color seleccionat perquè aparegui aquí"
 
 #: data/window.ui:112
 msgid "You have no saved colors"
@@ -167,13 +166,13 @@ msgstr "— pren un color del selector o de la pantalla"
 #, c-format
 msgid "Run “%s --help” to see a full list of available command line options"
 msgstr ""
-"Executeu «%s --help» per veure una llista completa de les opcions "
-"disponibles de la línia de comandes"
+"Executeu «%s --help» per a veure una llista completa de les opcions "
+"disponibles de la línia d'ordres"
 
 #. Translators: translate this to give yourself credits.
 #: src/gcolor3-application.c:91
 msgid "translator-credits"
-msgstr "translator-credits"
+msgstr "Òscar Pérez <oscarpc@gmail.com>"
 
 #: src/gcolor3-application.c:92
 msgid "Website"
@@ -193,7 +192,7 @@ msgid ""
 "that color."
 msgstr ""
 "Feu clic al comptagotes i, a continuació, feu clic qualsevol lloc de la "
-"pantalla per seleccionar-ne el color."
+"pantalla per a seleccionar-ne el color."
 
 #: src/gcolor3-color-selection.c:397
 msgid "_Hue:"
@@ -288,7 +287,7 @@ msgid ""
 "it for use in the future."
 msgstr ""
 "El color que heu triat. Podeu arrossegar aquest color a una entrada de la "
-"paleta per desar-lo per al seu ús en el futur."
+"paleta per a desar-lo per al seu ús en el futur."
 
 #: src/gcolor3-color-selection.c:976
 msgid ""
@@ -308,11 +307,10 @@ msgstr "De_sa el color aquí"
 
 #: src/gcolor3-color-selection.c:1554
 msgid ""
-"Click this palette entry to make it the current color. To change this "
-"entry, drag a color swatch here or right-click it and select “Save color "
-"here.”"
+"Click this palette entry to make it the current color. To change this entry, "
+"drag a color swatch here or right-click it and select “Save color here.”"
 msgstr ""
-"Feu clic a aquesta entrada de la paleta per fer-la el color actual. Per "
+"Feu clic a aquesta entrada de la paleta per a fer-la el color actual. Per a "
 "canviar aquesta entrada, arrossegueu una mostra de color aquí o feu-hi clic "
 "amb el botó dret i seleccioneu «Desa el color aquí»."
 
