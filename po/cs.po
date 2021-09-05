@@ -74,7 +74,7 @@ msgstr "Seznam uložených barev"
 #. Translators: please do NOT translate this.
 #: data/nl.hjdskes.gcolor3.appdata.xml.in:43
 msgid "Christopher Davis"
-msgstr ""
+msgstr "Christopher Davis"
 
 #: data/color-row.ui:31
 msgid "Hex"
