@@ -7,9 +7,11 @@ dep_gtk = dependency('gtk+-3.0', version: '>= 3.20.0', required: true)
 dep_libportal = dependency(
   'libportal',
   required: true,
+  version: '>= 0.5',
   fallback: ['libportal', 'libportal_dep'],
   default_options: ['gtk_doc=false'],
 )
+dep_libportal_gtk3 = dependency('libportal-gtk3', version: '>= 0.5', required: true)
 cc = meson.get_compiler('c')
 dep_lm = cc.find_library('m', required: true)
 

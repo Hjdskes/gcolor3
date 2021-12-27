@@ -41,7 +41,7 @@
 #include <gtk/gtk.h>
 #include <glib/gi18n.h>
 #include <libportal/portal.h>
-#include <libportal/portal-gtk3.h>
+#include <libportal-gtk3/portal-gtk3.h>
 
 #ifdef ENABLE_NLS
 #define P_(String) g_dgettext(GETTEXT_PACKAGE "-properties",String)
