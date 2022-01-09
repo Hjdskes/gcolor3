@@ -17,6 +17,10 @@
         {
             "name": "libportal",
             "buildsystem": "meson",
+            "config-opts": [
+              "-Ddocs=false",
+              "-Dbackends=gtk3"
+            ],
             "sources": [
                 {
                     "type": "git",
