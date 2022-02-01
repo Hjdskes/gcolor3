@@ -4,6 +4,7 @@ project('gcolor3', 'c', version: '2.4.0',
 )
 
 dep_gtk = dependency('gtk+-3.0', version: '>= 3.20.0', required: true)
+dep_handy = dependency('libhandy-1', version: '>= 1.5')
 dep_libportal = dependency(
   'libportal',
   required: true,

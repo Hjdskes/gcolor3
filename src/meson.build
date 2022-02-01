@@ -41,6 +41,7 @@ executable(
   ],
   dependencies: [
     dep_gtk,
+    dep_handy,
     dep_libportal,
     dep_libportal_gtk3,
     dep_lm

@@ -23,6 +23,7 @@
 
 #include <gtk/gtk.h>
 #include <glib/gi18n.h>
+#include <libhandy-1/handy.h>
 
 #include "gcolor3-application.h"
 #include "gcolor3-color-store.h"
@@ -144,6 +145,10 @@ gcolor3_application_startup (GApplication *application)
 	Gcolor3Application *app = GCOLOR3_APPLICATION (application);
 
 	G_APPLICATION_CLASS (gcolor3_application_parent_class)->startup (application);
+
+	hdy_init ();
+	hdy_style_manager_set_color_scheme (hdy_style_manager_get_default (),
+										HDY_COLOR_SCHEME_PREFER_LIGHT);
 
 	gtk_window_set_default_icon_name ("gcolor3");
 	g_set_application_name (_("Color Picker"));
