@@ -6,10 +6,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gcolor3 master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/gcolor3/issues\n"
-"POT-Creation-Date: 2020-08-26 06:52+0000\n"
+"POT-Creation-Date: 2022-11-23 20:08+0000\n"
 "PO-Revision-Date: 2020-08-28 02:39+0200\n"
 "Last-Translator: Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
-"Language-Team: Swedish\n"
+"Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -17,12 +17,12 @@ msgstr ""
 "X-Generator: Poedit 2.4.1\n"
 
 #: data/nl.hjdskes.gcolor3.desktop.in:3
-#: data/nl.hjdskes.gcolor3.appdata.xml.in:7 src/gcolor3-application.c:148
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:7 src/gcolor3-application.c:154
 msgid "Color Picker"
 msgstr "Färgväljare"
 
 #: data/nl.hjdskes.gcolor3.desktop.in:4
-#: data/nl.hjdskes.gcolor3.appdata.xml.in:8 src/gcolor3-application.c:86
+#: data/nl.hjdskes.gcolor3.appdata.xml.in:8 src/gcolor3-application.c:88
 msgid "Choose colors from the picker or the screen"
 msgstr "Välj färger från väljaren eller skärmen"
 
@@ -147,7 +147,7 @@ msgstr "Spara en vald färg för att få den att dyka upp här"
 msgid "You have no saved colors"
 msgstr "Du har inga sparade färger"
 
-#: data/window.ui:249
+#: data/window.ui:248
 msgid "Saved Colors"
 msgstr "Sparade färger"
 
@@ -166,13 +166,13 @@ msgstr ""
 "Kör ”%s --help” för en komplett lista över tillgängliga kommandoradsflaggor"
 
 #. Translators: translate this to give yourself credits.
-#: src/gcolor3-application.c:90
+#: src/gcolor3-application.c:92
 msgid "translator-credits"
 msgstr ""
 "Angelica Ankarberg\n"
 "Anders Jonsson"
 
-#: src/gcolor3-application.c:91
+#: src/gcolor3-application.c:93
 msgid "Website"
 msgstr "Webbplats"
 
@@ -312,51 +312,3 @@ msgstr ""
 #: src/gcolor3-window.c:409
 msgid "Picker"
 msgstr "Väljare"
-
-#~ msgid "Picking a color is currently not supported on Wayland."
-#~ msgstr "Att välja en färg stöds för närvarande inte på Wayland."
-
-#~ msgid "nl.hjdskes.gcolor3"
-#~ msgstr "nl.hjdskes.gcolor3"
-
-#~ msgid "Jente Hidskes"
-#~ msgstr "Jente Hidskes"
-
-#~ msgid "_About"
-#~ msgstr "_Om"
-
-#~ msgid "_Quit"
-#~ msgstr "_Avsluta"
-
-#~ msgid "Error creating config directory: %s"
-#~ msgstr "Fel vid skapande av konfigurationsmappen: %s"
-
-#~ msgid "Error writing file: %s"
-#~ msgstr "Fel vid skrivande av fil: %s"
-
-#~ msgid "Error opening file: %s. Colors likely won't be saved"
-#~ msgstr "Fel vid öppnande av fil: %s. Färger kommer inte att sparas"
-
-#~ msgid "There is already a color named `%s`"
-#~ msgstr "Det finns redan en färg som heter `%s`"
-
-#~ msgid "Error deleting key: %s"
-#~ msgstr "Fel vid radering av nyckel: %s"
-
-#~ msgid "Cannot rename nonexisting color `%s`"
-#~ msgstr "Kan inte namge obefintlig färg `%s`"
-
-#~ msgid "Cannot retrieve hex value belonging to `%s`: %s"
-#~ msgstr "Kan inte hämta hex-värde tillhörande `%s`: %s"
-
-#~ msgid "Error deleting old name `%s`: %s"
-#~ msgstr "Fel vid radering av gammalt namn `%s`: %s"
-
-#~ msgid "Error reading keys: %s"
-#~ msgstr "Fel vid avläsning av nycklar: %s"
-
-#~ msgid "The model is empty; there are no colors to remove"
-#~ msgstr "Modellen är tom; det finns inga färger att radera"
-
-#~ msgid "Cannot update color: invalid path"
-#~ msgstr "Kan inte uppdatera färg: ogiltig väg"
