@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Color Picker master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/World/gcolor3/issues\n"
-"POT-Creation-Date: 2022-05-30 10:40+0000\n"
-"PO-Revision-Date: 2019-11-28 05:09+0300\n"
+"POT-Creation-Date: 2022-11-23 20:08+0000\n"
+"PO-Revision-Date: 2023-10-23 17:29+0300\n"
 "Last-Translator: Sabri Ünal <libreajans@gmail.com>\n"
 "Language-Team: Turkish <gnome-turk@gnome.org>\n"
 "Language: tr\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 2.0.6\n"
+"X-Generator: Poedit 3.4\n"
 
 #: data/nl.hjdskes.gcolor3.desktop.in:3
 #: data/nl.hjdskes.gcolor3.appdata.xml.in:7 src/gcolor3-application.c:154
@@ -248,7 +248,7 @@ msgstr "_Matlık:"
 
 #: src/gcolor3-color-selection.c:420 src/gcolor3-color-selection.c:430
 msgid "Transparency of the color."
-msgstr "Rengin şeffaflığı."
+msgstr "Rengin saydamlığı."
 
 #: src/gcolor3-color-selection.c:437
 msgid "Color _Name:"
